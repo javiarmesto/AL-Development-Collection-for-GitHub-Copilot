@@ -4,42 +4,42 @@ description: Comprehensive toolkit for Microsoft Dynamics 365 Business Central A
 tags: [al, business-central, dynamics365, erp, microsoft, architecture, testing, api, copilot, debugging]
 
 items:
-  # Auto-Applied Instructions (Layer 1 & 2)
-  - path: .github/instructions/al-guidelines.instructions.md
+    # Auto-Applied Instructions (Layer 1 & 2)
+  - path: instructions/al-guidelines.instructions.md
     kind: instruction
-  - path: .github/instructions/al-code-style.instructions.md
+  - path: instructions/al-code-style.instructions.md
     kind: instruction
-  - path: .github/instructions/al-naming-conventions.instructions.md
+  - path: instructions/al-naming-conventions.instructions.md
     kind: instruction
-  - path: .github/instructions/al-performance.instructions.md
+  - path: instructions/al-performance.instructions.md
     kind: instruction
-  - path: .github/instructions/al-error-handling.instructions.md
+  - path: instructions/al-error-handling.instructions.md
     kind: instruction
-  - path: .github/instructions/al-events.instructions.md
+  - path: instructions/al-events.instructions.md
     kind: instruction
-  - path: .github/instructions/al-testing.instructions.md
+  - path: instructions/al-testing.instructions.md
     kind: instruction
 
   # Task-Specific Prompts (Layer 3)
-  - path: .github/copilot-prompts/al-workspace.prompt.md
+  - path: prompts/al-workspace.prompt.md
     kind: prompt
-  - path: .github/copilot-prompts/al-build.prompt.md
+  - path: prompts/al-build.prompt.md
     kind: prompt
-  - path: .github/copilot-prompts/al-events.prompt.md
+  - path: prompts/al-events.prompt.md
     kind: prompt
-  - path: .github/copilot-prompts/al-debug.prompt.md
+  - path: prompts/al-debug.prompt.md
     kind: prompt
-  - path: .github/copilot-prompts/al-performance.prompt.md
+  - path: prompts/al-performance.prompt.md
     kind: prompt
-  - path: .github/copilot-prompts/al-permissions.prompt.md
+  - path: prompts/al-permissions.prompt.md
     kind: prompt
-  - path: .github/copilot-prompts/al-troubleshoot.prompt.md
+  - path: prompts/al-troubleshoot.prompt.md
     kind: prompt
-  - path: .github/copilot-prompts/al-migrate.prompt.md
+  - path: prompts/al-migrate.prompt.md
     kind: prompt
-  - path: .github/copilot-prompts/al-pages.prompt.md
+  - path: prompts/al-pages.prompt.md
     kind: prompt
-  - path: .github/copilot-prompts/al-workflow.prompt.md
+  - path: prompts/al-workflow.prompt.md
     kind: prompt
 
   # Role-Based Chat Modes (Layer 4)

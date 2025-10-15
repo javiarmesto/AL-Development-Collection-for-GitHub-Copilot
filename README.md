@@ -1,10 +1,10 @@
 # AL Development Collection for GitHub Copilot
 
-> Comprehensive toolkit for Microsoft Dynamics 365 Business Central AL development with 25 specialized tools across 4 intelligent layers.
+> Comprehensive toolkit for Microsoft Dynamics 365 Business Central AL development with **24 specialized tools** across **4 intelligent layers**.
 
 [![Validation Status](https://img.shields.io/badge/validation-passing-brightgreen)](./validate-al-collection.js)
-[![Version](https://img.shields.io/badge/version-2.0-blue)](./al-development.collection.yml)
-[![Tools](https://img.shields.io/badge/tools-25-orange)](./al-development.md)
+[![Version](https://img.shields.io/badge/version-2.1-blue)](./al-development.collection.yml)
+[![Tools](https://img.shields.io/badge/tools-24-orange)](./al-development.md)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
 ## 🚀 Quick Start
@@ -21,10 +21,10 @@
    ```bash
    # Copy files to your AL project
    cp -r .github/instructions your-al-project/.github/
-   cp -r .github/copilot-prompts your-al-project/.github/
-   cp -r chatmodes your-al-project/
+   cp -r .github/prompts your-al-project/.github/
+   cp -r .github/chatmodes your-al-project/.github/
    cp -r collections your-al-project/
-   cp copilot-instructions.md your-al-project/
+   cp .github/copilot-instructions.md your-al-project/.github/
    ```
 
 3. **Reload VS Code**
@@ -51,39 +51,84 @@ Open any `.al` file and start coding. The auto-applied instructions will guide C
 Switch to al-orchestrator mode and ask: "I need to build a sales approval workflow"
 ```
 
+## 🏗️ The 4-Layer System Architecture
+
+This collection implements a unique **4-layer architecture** that combines automation, context, tasks, and strategy:
+
+```mermaid
+graph TB
+    User[� Developer] --> Layer4[Layer 4: Strategic Modes]
+    User --> Layer3[Layer 3: Task Prompts]
+    User --> Coding[💻 Coding in AL]
+    
+    Coding --> Layer1[Layer 1: Auto-Applied Guidelines]
+    Coding --> Layer2[Layer 2: Contextual Guidelines]
+    
+    Layer4 --> |Recommends| Layer3
+    Layer4 --> |Guides to| Layer1
+    Layer3 --> |Uses| Tools[🔧 AL Tools]
+    
+    Layer1 --> |Always Active| Copilot[🤖 GitHub Copilot]
+    Layer2 --> |Context-Aware| Copilot
+    Layer3 --> |Workflows| Copilot
+    Layer4 --> |Strategic| Copilot
+    
+    style Layer1 fill:#4CAF50
+    style Layer2 fill:#8BC34A
+    style Layer3 fill:#2196F3
+    style Layer4 fill:#9C27B0
+    style Copilot fill:#FF9800
+```
+
+### 📊 Layer Breakdown
+
+| Layer | Type | Count | Activation | Purpose |
+|-------|------|-------|------------|---------|
+| **Layer 1** | Auto-Applied | 4 files | Always on `*.al` | Code style, naming, performance |
+| **Layer 2** | Contextual | 3 files | Context-triggered | Error handling, events, testing |
+| **Layer 3** | Task Prompts | 10 files | `@workspace use [name]` | Specific workflows |
+| **Layer 4** | Strategic Modes | 6 files | `Use [mode-name]` | Expert consultation |
+| **Guide** | Documentation | 1 file | Reference | Master integration guide |
+| **Total** | — | **24 tools** | — | Complete toolkit |
+
 ## 📦 What's Included
 
-### 🔧 Layer 1: Auto-Applied Instructions (7 files)
-Always active when working with AL code:
-- **al-guidelines** - Core development principles
+### 🔧 Layer 1 & 2: Instructions (7 files)
+
+**Always Active** (Layer 1):
 - **al-code-style** - Formatting and structure
-- **al-naming-conventions** - Naming standards
+- **al-naming-conventions** - Naming standards  
 - **al-performance** - Optimization patterns
-- **al-error-handling** - Error patterns (contextual)
-- **al-events** - Event-driven development (contextual)
-- **al-testing** - Testing guidelines (contextual)
+- **al-guidelines** - Core development principles
 
-### 📝 Layer 2: Task-Specific Prompts (10 files)
+**Context-Activated** (Layer 2):
+- **al-error-handling** - Error patterns & TryFunctions
+- **al-events** - Event-driven development
+- **al-testing** - Testing guidelines & AL-Go structure
+
+### 📝 Layer 3: Task-Specific Prompts (10 files)
+
 Invoke with `@workspace use [name]`:
-- **al-workspace** - Project setup
-- **al-build** - Build & deployment
+- **al-workspace** - Project setup & initialization
+- **al-build** - Build & deployment workflows
 - **al-events** - Event implementation
-- **al-debug** - Debugging sessions
-- **al-performance** - Performance analysis
-- **al-permissions** - Permission management
-- **al-troubleshoot** - Problem solving
-- **al-migrate** - Version migration
-- **al-pages** - Page designer
-- **al-workflow** - Complete guidance
+- **al-debug** - Debugging sessions & snapshots
+- **al-performance** - Performance analysis & profiling
+- **al-permissions** - Permission set generation
+- **al-troubleshoot** - Common problem solving
+- **al-migrate** - Version migration support
+- **al-pages** - Page designer & UI customization
+- **al-workflow** - End-to-end feature guidance
 
-### 💬 Layer 3: Role-Based Chat Modes (6 files)
-Specialized consultants:
-- **al-orchestrator** 🎯 - Smart router
-- **al-architect** 🏗️ - Solution design
-- **al-debugger** 🐛 - Issue diagnosis
-- **al-tester** ✅ - Testing strategy
-- **al-api** 🌐 - API development
-- **al-copilot** 🤖 - AI features
+### 💬 Layer 4: Role-Based Chat Modes (6 files)
+
+Specialized expert consultants:
+- **al-orchestrator** 🎯 - Smart router (START HERE)
+- **al-architect** 🏗️ - Solution architecture & design
+- **al-debugger** 🐛 - Deep issue diagnosis
+- **al-tester** ✅ - Testing strategy & TDD
+- **al-api** 🌐 - RESTful API development
+- **al-copilot** 🤖 - AI-powered features
 
 ## 🎯 Common Workflows
 
@@ -120,8 +165,8 @@ Specialized consultants:
 ## 📚 Documentation
 
 - **[Collection Overview](./al-development.md)** - User-facing documentation
-- **[Complete Reference](./COLLECTION-SUMMARY.md)** - Internal documentation
-- **[Integration Guide](./copilot-instructions.md)** - Copilot setup
+- **[Complete Reference](./COLLECTION-SUMMARY.md)** - Internal documentation  
+- **[Integration Guide](./.github/copilot-instructions.md)** - Master Copilot setup guide
 
 ## 🛠️ Requirements
 
@@ -209,16 +254,17 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
 ## 📋 File Structure
 
 ```
-al-development-collection/
+AL_Copilot_Collection/
 ├── .github/
-│   ├── instructions/              # 7 auto-applied instruction files
-│   └── copilot-prompts/           # 10 task-specific prompts
-├── chatmodes/                     # 6 role-based chat modes
+│   ├── copilot-instructions.md    # 🎯 Master integration guide
+│   ├── instructions/              # Layer 1 & 2: Auto-applied (7 files)
+│   ├── prompts/                   # Layer 3: Task workflows (10 files)
+│   └── chatmodes/                 # Layer 4: Strategic modes (6 files)
+├── archive/                       # Legacy files (not active)
 ├── collections/
 │   └── al-development.collection.yml  # Collection manifest
-├── al-development.md              # Collection documentation
+├── al-development.md              # User documentation
 ├── COLLECTION-SUMMARY.md          # Internal reference
-├── copilot-instructions.md        # Integration guide
 ├── validate-al-collection.js      # Validation script
 ├── package.json                   # Dependencies
 └── README.md                      # This file
@@ -226,17 +272,24 @@ al-development-collection/
 
 ## 🏷️ Version History
 
+### 2.1.0 (2025-10-15)
+- ✨ **Streamlined chat modes** - Archived 5 duplicate modes
+- 🎯 **Focused toolkit** - 6 core strategic chatmodes
+- 📊 **Updated to 24 tools** - Clearer separation of concerns
+- 📚 **Enhanced documentation** - Practical examples integrated
+- 🏗️ **4-layer architecture diagram** - Mermaid visualization
+
 ### 2.0.0 (2025-01-15)
 - ✅ Full compliance with contribution guidelines
-- ✅ All files renamed to proper extensions
+- ✅ All files renamed to proper extensions (.prompt.md, .chatmode.md)
 - ✅ Collection manifest created
 - ✅ Validation script added
 - ✅ Complete documentation
 
 ### 1.0.0 (2025-01-15)
-- Initial release
-- 7 instructions, 10 prompts, 6 modes
-- Multi-layer architecture
+- 🎉 Initial release
+- 📦 7 instructions, 10 prompts, 6 modes
+- 🏗️ Multi-layer architecture concept
 
 ## 📄 License
 
@@ -263,6 +316,7 @@ MIT License - see [LICENSE](./LICENSE) file for details.
 ---
 
 **Status**: ✅ Ready for contribution  
-**Last Updated**: 2025-01-15 08:19:35 UTC  
+**Last Updated**: 2025-10-15  
 **Collection ID**: `al-development`  
-**Total Tools**: 25
+**Version**: 2.1.0  
+**Total Tools**: 24 (7 instructions + 10 prompts + 6 chatmodes + 1 guide)

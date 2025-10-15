@@ -31,3 +31,6 @@ coverage/
 .alcache/
 .snapshots/
 rad.json
+
+#Archive
+Archive/

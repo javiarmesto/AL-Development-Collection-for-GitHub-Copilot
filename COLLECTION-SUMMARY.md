@@ -3,8 +3,8 @@
 > **Note**: This is the complete internal documentation. For the official collection description, see [al-development.md](./al-development.md)
 
 **Collection ID**: `al-development`  
-**Version**: 2.0  
-**Last Updated**: 2025-01-15 08:15:56 UTC  
+**Version**: 2.1  
+**Last Updated**: 2025-10-15  
 **Author**: javiarmesto
 
 ## 📁 Official File Structure (Following Contribution Guidelines)
@@ -31,13 +31,13 @@
     ├── al-pages.prompt.md               # ✅ RENAMED
     └── al-workflow.prompt.md            # ✅ RENAMED
 
-chatmodes/                               # Role-based specialist consultants
-├── al-orchestrator.chatmode.md          # ✅ RENAMED (was .md)
-├── al-architect.chatmode.md             # ✅ RENAMED
-├── al-debugger.chatmode.md              # ✅ RENAMED
-├── al-tester.chatmode.md                # ✅ RENAMED
-├── al-api.chatmode.md                   # ✅ RENAMED
-└── al-copilot.chatmode.md               # ✅ RENAMED
+chatmodes/                               # Role-based specialist consultants (6 core)
+├── al-orchestrator.chatmode.md          # Smart router (ESSENTIAL)
+├── al-architect.chatmode.md             # Architecture & design
+├── al-debugger.chatmode.md              # Deep debugging
+├── al-tester.chatmode.md                # Testing strategy
+├── al-api.chatmode.md                   # API development
+└── al-copilot.chatmode.md               # AI features
 
 collections/
 └── al-development.collection.yml        # ✅ NEW - Collection manifest
@@ -72,10 +72,11 @@ copilot-instructions.md                  # Integration guide
 
 ## 📊 Collection Statistics
 
-**Total Items**: 23 files
+**Total Items**: 24 tools
 - 7 Instructions (auto-applied + contextual)
 - 10 Prompts (task-specific)
-- 6 Chat Modes (role-based)
+- 6 Chat Modes (role-based, core only)
+- 1 Master Guide (copilot-instructions.md)
 
 **Tags**: al, business-central, dynamics365, erp, microsoft, architecture, testing, api, copilot, debugging
 
@@ -215,6 +216,13 @@ Expected output:
 ## 📝 Maintenance Notes
 
 ### Version History
+
+- **2.1** (2025-10-15) - Streamlined chat modes
+  - Archived 5 duplicate chatmodes to maintain focus
+  - Kept 6 core strategic chatmodes (orchestrator, architect, debugger, tester, api, copilot)
+  - Updated documentation to reflect 24 total tools
+  - Integrated practical examples into master guide
+
 - **2.0** (2025-01-15) - Compliance with contribution guidelines
   - Renamed all prompts to `.prompt.md`
   - Renamed all chat modes to `.chatmode.md`

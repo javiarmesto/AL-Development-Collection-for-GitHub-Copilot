@@ -1,522 +1,707 @@
----
-description: AL Development guidelines and prompt file usage for Business Central extensions with GitHub Copilot
-globs: ["*.al", "app.json", "launch.json", ".vscode/**"]
-alwaysApply: true
----
+<!-- Use this file to provide workspace-specific custom instructions to Copilot. For more details, visit https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilotinstructionsmd-file -->
 
-# AL Development with GitHub Copilot Agent Tools
+# GitHub Copilot Instructions for AL Development
 
-These instructions guide GitHub Copilot in assisting with AL (Application Language) development for Microsoft Dynamics 365 Business Central, leveraging specialized agent tools and custom prompt files.
+## Overview
+This workspace contains AL (Application Language) code for Microsoft Dynamics 365 Business Central. GitHub Copilot is configured with a **comprehensive suite of guidelines, prompts, and specialized modes** to assist with AL development following Microsoft's best practices and this project's specific standards.
 
-## Available AL Agent Tools
+## 🎯 Complete Toolset Available
 
-GitHub Copilot agents have access to specialized AL development tools:
-- **Project**: `al_new_project`, `al_go`, `al_generate_manifest`
-- **Build/Deploy**: `al_build`, `al_package`, `al_publish`, `al_incremental_publish`, `al_publish_without_debug`, `al_publish_existing_extension`, `al_full_package`
-- **Debug**: `al_debug_without_publish`, `al_initalize_snapshot_debugging`, `al_finish_snapshot_debugging`, `al_snapshots`
-- **Development**: `al_open_Page_Designer`, `al_open_Event_Recorder`, `al_insert_event`
-- **Dependencies**: `al_download_symbols`, `al_download_source`, `al_get_package_dependencies`
-- **Performance**: `al_generate_cpu_profile_file`, `al_clear_profile_codelenses`
-- **Security**: `al_generate_permissionset_for_extension_objects`, `al_generate_permissionset_for_extension_objects_as_xml`
-- **Maintenance**: `al_clear_credentials_cache`
+This workspace provides **four layers** of Copilot assistance:
 
-## Custom Prompt Files Reference
+### Layer 1: Auto-Applied Guidelines (Always Active)
+Located in `.github/instructions/` - These apply automatically based on file type:
 
-Ten specialized prompt files are available for common AL development scenarios. Reference them when appropriate.
+- **al-guidelines.instructions.md** - Master hub referencing all guidelines
+- **al-code-style.instructions.md** - Code formatting & structure (applies to `*.al`)
+- **al-naming-conventions.instructions.md** - Naming rules (applies to `*.al`)
+- **al-performance.instructions.md** - Performance optimization (applies to `*.al`)
 
-## Rule 1: Use Appropriate Prompt Files for Complex Tasks
+### Layer 2: Contextual Guidelines (Auto-Activate When Relevant)
+Located in `.github/instructions/` - These activate based on context:
 
-### Intent
-Leverage specialized prompt files for complex AL development scenarios instead of providing ad-hoc guidance. Each prompt file contains comprehensive workflows and best practices for specific tasks.
+- **al-error-handling.instructions.md** - Error patterns, TryFunctions, telemetry
+- **al-events.instructions.md** - Event-driven development patterns
+- **al-testing.instructions.md** - Testing guidelines, AL-Go structure
 
-### When to Reference Prompt Files
+### Layer 3: Task-Specific Prompts (Explicit Invocation)
+Located in `.github/prompts/` - Invoke with `@workspace use [prompt-name]`:
 
-**Project Setup Tasks** → Use `al-workspace-setup.md`
-- Creating new AL projects
-- Initializing development environments
-- Configuring symbols and dependencies
+- `al-workspace` - Project setup & configuration
+- `al-build` - Build & deployment workflows
+- `al-events` - Event implementation
+- `al-debug` - Debugging sessions
+- `al-performance` - Performance analysis
+- `al-permissions` - Permission management
+- `al-troubleshoot` - Common problem solving
+- `al-migrate` - Version migration
+- `al-pages` - Page designer & UI
+- `al-workflow` - End-to-end guidance
 
-**Build and Deployment Tasks** → Use `al-build-deploy.md`
-- Building extensions for different environments
-- Creating deployment packages
-- Publishing to development, test, or production
+### Layer 4: Role-Based Chat Modes (Strategic Consulting)
+Located in `.github/chatmodes/` - Specialized consultant personalities:
 
-**Event-Driven Development** → Use `al-event-implementation.md`
-- Discovering available events
-- Creating event subscribers
-- Implementing event publishers
+- **al-orchestrator** - Smart router, guides you to the right tool (ESSENTIAL)
+- **al-architect** - Solution architecture & design
+- **al-debugger** - Deep debugging & diagnosis
+- **al-tester** - Testing strategy & TDD
+- **al-api** - API development
+- **al-copilot** - AI/Copilot feature development
 
-**Debugging Issues** → Use `al-debugging-session.md`
-- Standard debugging sessions
-- Snapshot debugging for intermittent issues
-- Agent session debugging
+## 🚀 Quick Start Guide
 
-**Performance Problems** → Use `al-performance-analysis.md`
-- Generating CPU profiles
-- Resolving AL0896 recursive FlowField errors
-- Optimizing slow operations
+### For New AL Developers
 
-**Security and Permissions** → Use `al-permission-management.md`
-- Generating permission sets
-- Implementing security best practices
+1. **Start here**: Ask the **al-orchestrator** mode
+   - It will analyze your request and route you to the right tool
+   - Example: "I need to build a sales approval workflow"
 
-**Development Issues** → Use `al-troubleshooting.md`
-- Authentication failures
-- Symbol and dependency problems
-- Build errors
+2. **Let the auto-guidelines work**
+   - As you code, Layer 1 & 2 guidelines apply automatically
+   - Copilot will suggest code that follows all rules
 
-**Version Migration** → Use `al-project-migration.md`
-- Upgrading between Business Central versions
-- Handling breaking changes
+3. **Use prompts for specific tasks**
+   - Setting up a project? → `@workspace use al-workspace`
+   - Debugging? → `@workspace use al-debug`
 
-**UI Customization** → Use `al-page-designer-customization.md`
-- Designing pages visually
-- Implementing page extensions
+### For Experienced AL Developers
 
-**Complete Workflows** → Use `al-complete-workflow.md`
-- End-to-end extension development
-- Integrated development patterns
+1. **Modes for strategic work**
+   - Designing architecture? → **al-architect** mode
+   - Debugging complex issues? → **al-debugger** mode
+   - Building APIs? → **al-api** mode
 
-### Examples
+2. **Prompts for tactical execution**
+   - Use task-specific prompts for workflows
+   - They have access to AL tools (al_build, al_publish, etc.)
 
-```markdown
-// Good example - Reference appropriate prompt file
-User: "I need to create a new AL extension for inventory management"
-Assistant: "I'll use the al-workspace-setup prompt to guide you through creating a new AL project..."
+3. **Guidelines ensure quality**
+   - Let auto-applied guidelines maintain standards
+   - No need to remember all rules manually
 
-User: "My extension is running slowly"
-Assistant: "I'll use the al-performance-analysis prompt to help identify and resolve performance bottlenecks..."
+## 🎓 Getting Started with Copilot
+
+### Prerequisites
+- Visual Studio Code with AL Language extension installed
+- GitHub Copilot extension enabled
+- Business Central sandbox environment for testing
+
+### Setup Steps
+1. Ensure Copilot is enabled in VS Code (View > Command Palette > GitHub Copilot: Enable)
+2. Open an .al file to start receiving suggestions
+3. Use the chat feature (Ctrl/Cmd + I) for complex queries
+4. The 4-layer system activates automatically as you work
+
+### How the Layers Work Together
+
+**While coding** (no action needed):
+- Layer 1 & 2 (Instructions) apply automatically
+- Code suggestions follow all standards
+- Performance and naming conventions enforced
+
+**For specific tasks** (explicit invocation):
+```
+@workspace use al-workspace    # Setup project
+@workspace use al-debug        # Debug session
+@workspace use al-build        # Deploy
 ```
 
-```markdown
-// Bad example - Avoid ad-hoc guidance for complex scenarios
-User: "I need to create a new AL extension"
-Assistant: "First, open VS Code, then create a folder, then run AL:Go command..."
-// Instead: Use al-workspace-setup.md prompt
+**For strategic guidance** (mode switching):
+```
+Use al-architect mode          # Design solutions
+Use al-debugger mode          # Investigate issues
+Use al-orchestrator mode      # Route to right tool
 ```
 
-## Rule 2: AL Code Naming and Structure Conventions
+## 💻 Code Generation Examples
 
-### Intent
-Follow AL naming conventions consistently to ensure code clarity and maintainability. Use appropriate naming patterns that clearly indicate object types and purposes.
+### Creating AL Objects with Copilot
 
-### Naming Patterns
+Copilot can generate complete AL objects following all layer guidelines automatically.
 
-**Objects**: PascalCase with descriptive names
-**Variables**: PascalCase (global), camelCase (local)
-**Object IDs**: 50000-99999 range for customizations
-**Fields**: Use descriptive names with spaces in quotes
-**Procedures**: Verb + Noun pattern
-
-### Examples
-
+#### Example: Table with Validation
 ```al
-// Good example - Clear naming conventions
-table 50100 "Custom Sales Statistics"
+// Ask Copilot: "Create a table for customer addresses with validation"
+table 50100 "Customer Address"
 {
+    DataClassification = CustomerContent;
+    
     fields
     {
-        field(1; "Entry No."; Integer) { }
-        field(10; "Customer No."; Code[20]) { }
-        field(20; "Total Amount"; Decimal) { }
+        field(1; "Customer No."; Code[20])
+        {
+            TableRelation = Customer."No.";
+            NotBlank = true;
+        }
+        field(2; "Address Line 1"; Text[100])
+        {
+            Caption = 'Address Line 1';
+        }
+        field(3; "City"; Text[50])
+        {
+            Caption = 'City';
+        }
+        field(4; "Post Code"; Code[20])
+        {
+            Caption = 'Post Code';
+        }
+    }
+    
+    keys
+    {
+        key(PK; "Customer No.")
+        {
+            Clustered = true;
+        }
     }
 }
+```
+**Auto-applied**: al-code-style, al-naming-conventions, al-performance
 
-pageextension 50100 "Customer Card Extension" extends "Customer Card"
+#### Example: Event Subscriber
+```al
+// Ask: "Create event subscriber for customer validation"
+[EventSubscriber(ObjectType::Table, Database::Customer, 'OnBeforeValidateEvent', 'Email', false, false)]
+local procedure ValidateCustomerEmail(var Rec: Record Customer)
+begin
+    if Rec.Email <> '' then
+        if not Rec.Email.Contains('@') then
+            Error('Email must contain @');
+end;
+```
+**Auto-applied**: al-events.instructions.md, al-error-handling.instructions.md
+
+#### Example: API Page
+```al
+// Ask: "Create API page for customer data"
+page 50100 "Customer API"
 {
+    PageType = API;
+    APIPublisher = 'contoso';
+    APIGroup = 'sales';
+    APIVersion = 'v1.0';
+    EntityName = 'customer';
+    EntitySetName = 'customers';
+    SourceTable = Customer;
+    DelayedInsert = true;
+    
     layout
     {
-        addafter(General)
+        area(content)
         {
-            group(CustomStatistics)
+            repeater(Group)
             {
-                Caption = 'Sales Statistics';
-                field(TotalSalesAmount; TotalSales)
-                {
-                    Caption = 'Total Sales Amount';
-                    Editable = false;
-                }
+                field(number; Rec."No.") { }
+                field(name; Rec.Name) { }
+                field(email; Rec.Email) { }
             }
         }
     }
 }
-
-codeunit 50100 "Sales Statistics Management"
-{
-    procedure CalculateTotalSales(CustomerNo: Code[20]): Decimal
-    var
-        salesEntry: Record "Cust. Ledger Entry";
-        totalAmount: Decimal;
-    begin
-        salesEntry.SetRange("Customer No.", CustomerNo);
-        if salesEntry.FindSet() then
-            repeat
-                totalAmount += salesEntry.Amount;
-            until salesEntry.Next() = 0;
-        exit(totalAmount);
-    end;
-}
 ```
+**Suggested mode**: al-api for design, auto-guidelines for implementation
 
-```al
-// Bad example - Unclear naming
-table 50100 "tbl1" // Unclear table name
-{
-    fields
-    {
-        field(1; "f1"; Integer) { } // Cryptic field name
-        field(10; "cn"; Code[20]) { } // Abbreviated
-    }
-}
-```
+## 📝 Common Copilot Commands
 
-## Rule 3: Use AL Tools Over Manual Operations
+Practical examples of what to ask Copilot:
 
-### Intent
-Always prefer AL-specific tools over manual operations when available. The AL tools provide proper integration, error handling, and workflow support.
+### Object Creation
+- "Create a codeunit for customer management with procedures for create, update, delete"
+- "Generate a page extension for customer card adding address fields"
+- "Create a list page for showing customer addresses"
+- "Build a report for customer address labels"
 
-### Tool Selection Priority
+### Logic Implementation
+- "Implement validation for email field in customer table"
+- "Add event subscriber for customer modification logging"
+- "Create TryFunction for safe customer creation"
+- "Implement field validation with Error() and FieldError()"
 
-1. **Use AL tools first**: `al_build`, `al_publish`, etc.
-2. **Use prompt files for complex workflows**
-3. **Manual operations only when no tool exists**
+### Integration & APIs
+- "Create API page for customer data exposure"
+- "Implement webhook handler for external integrations"
+- "Generate OAuth authentication for API"
+- "Create API v2 page with OData annotations"
 
-### Examples
+### Testing
+- "Create test codeunit for customer validation"
+- "Generate test data using Library - Sales codeunit"
+- "Write Given/When/Then test for customer creation"
+
+### Performance Optimization
+- "Refactor this code to use SetLoadFields"
+- "Optimize this loop to use set-based operations"
+- "Add filtering before FindSet"
+
+**Tip**: After asking, Copilot applies all 4 layers automatically!
+
+## 📋 Common Scenarios & How to Use the Toolset
+
+### Scenario 1: "I'm starting a new AL project"
 
 ```markdown
-// Good example - Use AL tools
-User: "Build my project and deploy it"
-Assistant: "I'll build your project using al_build and then deploy with al_incremental_publish..."
-
-User: "I need to download symbols"
-Assistant: "I'll use al_download_symbols to fetch the required symbols..."
+Step 1: Use al-orchestrator (if unsure) OR go directly to:
+Step 2: @workspace use al-workspace
+  → Guides through project initialization
+  → Downloads symbols
+  → Configures dependencies
+  
+Auto-applied during setup:
+  → al-code-style enforces structure
+  → al-naming-conventions ensures proper names
 ```
+
+### Scenario 2: "I need to design a new feature"
 
 ```markdown
-// Bad example - Manual operations when tools exist
-User: "Build my project"
-Assistant: "Open terminal and run: dotnet build..."
-// Instead: Use al_build
+Step 1: Switch to al-architect mode
+  → Helps design solution architecture
+  → Plans data model
+  → Identifies integration points
+
+Step 2: Implement with auto-guidelines active
+  → al-code-style maintains formatting
+  → al-performance suggests optimizations
+  → al-events activates if using events
+
+Step 3 (if needed): @workspace use al-events
+  → Implements event subscribers/publishers
 ```
 
-## Rule 4: Performance and AL0896 Error Handling
-
-### Intent
-Proactively address performance issues and handle the new AL0896 compiler error for recursive FlowField dependencies. Always consider performance implications in AL code.
-
-### Performance Best Practices
-
-**FlowFields**: Avoid circular CalcFormula dependencies
-**Queries**: Use SetLoadFields for partial record loading
-**Loops**: Minimize database calls in iterations
-**Temporary Tables**: Use for complex in-memory operations
-
-### Examples
-
-```al
-// Good example - Avoid recursive FlowFields
-table 50100 "Sales Statistics"
-{
-    fields
-    {
-        field(1; "Customer No."; Code[20]) { }
-        
-        // Good: Direct calculation
-        field(10; "Total Sales"; Decimal)
-        {
-            FieldClass = FlowField;
-            CalcFormula = Sum("Cust. Ledger Entry".Amount where("Customer No." = field("Customer No.")));
-        }
-    }
-}
-
-// Good example - Optimized query
-procedure GetCustomerOrders(CustomerNo: Code[20])
-var
-    salesHeader: Record "Sales Header";
-begin
-    salesHeader.SetLoadFields("No.", "Order Date", Amount);
-    salesHeader.SetRange("Sell-to Customer No.", CustomerNo);
-    if salesHeader.FindSet() then
-        repeat
-            // Process only loaded fields
-        until salesHeader.Next() = 0;
-end;
-```
-
-```al
-// Bad example - Circular FlowField (AL0896 error)
-table 50100 "Table A"
-{
-    fields
-    {
-        field(1; "Amount from B"; Decimal)
-        {
-            FieldClass = FlowField;
-            CalcFormula = Sum("Table B"."Amount from A");
-        }
-    }
-}
-
-table 50101 "Table B"
-{
-    fields
-    {
-        field(1; "Amount from A"; Decimal)
-        {
-            FieldClass = FlowField;
-            CalcFormula = Sum("Table A"."Amount from B"); // Circular!
-        }
-    }
-}
-```
-
-## Rule 5: Event-Driven Programming Patterns
-
-### Intent
-Use events for extensibility following AL best practices. Leverage the Event Recorder and proper event patterns for maintainable code.
-
-### Event Patterns
-
-**Subscribers**: Use `al_insert_event` or `al_open_Event_Recorder`
-**Publishers**: Implement OnBefore/OnAfter pattern
-**Parameters**: Include IsHandled for OnBefore events
-
-### Examples
-
-```al
-// Good example - Event subscriber pattern
-codeunit 50100 "Sales Document Events"
-{
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforePostSalesDoc', '', false, false)]
-    local procedure OnBeforePostSalesDocument(var SalesHeader: Record "Sales Header"; var IsHandled: Boolean)
-    begin
-        // Validate custom fields
-        ValidateCustomFields(SalesHeader);
-        
-        // Set IsHandled if preventing default behavior
-        if SalesHeader."Custom Field" = 'BLOCK' then
-            IsHandled := true;
-    end;
-
-    local procedure ValidateCustomFields(var SalesHeader: Record "Sales Header")
-    begin
-        SalesHeader.TestField("Custom Approval Status", SalesHeader."Custom Approval Status"::Approved);
-    end;
-}
-
-// Good example - Event publisher
-codeunit 50101 "Custom Document Management"
-{
-    procedure ProcessDocument(var DocumentHeader: Record "Sales Header")
-    begin
-        OnBeforeProcessDocument(DocumentHeader);
-        
-        // Processing logic
-        
-        OnAfterProcessDocument(DocumentHeader);
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnBeforeProcessDocument(var DocumentHeader: Record "Sales Header")
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnAfterProcessDocument(var DocumentHeader: Record "Sales Header")
-    begin
-    end;
-}
-```
-
-## Rule 6: Debugging Strategy Selection
-
-### Intent
-Choose the appropriate debugging strategy based on the scenario. Use snapshot debugging for intermittent issues, agent debugging for AI-executed code, and standard debugging for active development.
-
-### Debugging Strategy Matrix
-
-**Active Development** → `al_incremental_publish` (fast iteration)
-**Standard Issues** → `al_publish` or `al_debug_without_publish`
-**Intermittent Issues** → Snapshot debugging workflow
-**Agent-Executed Code** → Agent session debugging with clientType: "Agent"
-
-### Examples
+### Scenario 3: "I have a bug I can't figure out"
 
 ```markdown
-// Good example - Appropriate debugging strategy
-User: "This error only happens sometimes"
-Assistant: "For intermittent issues, I'll set up snapshot debugging:
-1. al_initalize_snapshot_debugging
-2. Run your scenario multiple times
-3. al_finish_snapshot_debugging
-4. al_snapshots to analyze"
+Step 1: Use al-debugger mode
+  → Systematic diagnosis
+  → Root cause analysis
 
-User: "Need to debug code executed by an agent"
-Assistant: "I'll configure agent session debugging in launch.json with clientType: 'Agent'..."
+Step 2: @workspace use al-debug
+  → Attaches debugger
+  → Uses snapshot debugging if intermittent
+
+Step 3 (if performance related): @workspace use al-performance
+  → Generates CPU profile
+  → Identifies bottlenecks
 ```
 
-## Rule 7: Security and Permission Management
+### Scenario 4: "I'm building an API"
 
-### Intent
-Always generate and review permission sets for extensions. Follow the principle of least privilege and create role-based permission structures.
+```markdown
+Step 1: al-architect mode (design API architecture)
+Step 2: al-api mode (implement endpoints)
+  → API page patterns
+  → Authentication setup
+  → Error handling
 
-### Permission Patterns
-
-**Generate First**: Use `al_generate_permissionset_for_extension_objects`
-**Review and Adjust**: Never deploy auto-generated permissions without review
-**Role-Based**: Create hierarchical permission sets (Base → User → Admin)
-
-### Examples
-
-```al
-// Good example - Hierarchical permissions
-permissionset 50100 "Sales Ext - Base"
-{
-    Assignable = false;
-    Caption = 'Sales Extension - Base';
-    
-    Permissions = 
-        tabledata "Custom Sales Statistics" = R;
-}
-
-permissionset 50101 "Sales Ext - User"
-{
-    Assignable = true;
-    Caption = 'Sales Extension - User';
-    IncludedPermissionSets = "Sales Ext - Base";
-    
-    Permissions = 
-        tabledata "Custom Sales Statistics" = RM,
-        page "Sales Statistics Page" = X;
-}
-
-permissionset 50102 "Sales Ext - Admin"
-{
-    Assignable = true;
-    Caption = 'Sales Extension - Admin';
-    IncludedPermissionSets = "Sales Ext - User";
-    
-    Permissions = 
-        tabledata "Custom Sales Statistics" = RIMD,
-        codeunit "Sales Statistics Management" = X;
-}
+Auto-applied:
+  → al-error-handling ensures proper error responses
+  → al-naming-conventions for API objects
 ```
 
-## Rule 8: Project Structure and Organization
+### Scenario 5: "I need to add tests"
 
-### Intent
-Organize AL projects by feature rather than object type for better maintainability and logical grouping.
+```markdown
+Step 1: al-tester mode (design test strategy)
 
-### Organization Patterns
+Auto-applied:
+  → al-testing.instructions.md activates
+  → Enforces AL-Go structure (App vs Test separation)
+  → Only generates tests when explicitly requested
 
-**Feature-Based**: `src/FeatureName/SubFeature/`
-**Shared Components**: `src/Common/` or `src/Shared/`
-**Tests**: `test/FeatureName/`
-
-### Examples
-
-```
-// Good example - Feature-based organization
-src/
-├── SalesEnhancements/
-│   ├── Statistics/
-│   │   ├── CustomSalesStatistics.Table.al
-│   │   ├── SalesStatisticsPage.Page.al
-│   │   └── SalesStatisticsMgt.Codeunit.al
-│   └── Approval/
-│       ├── SalesApprovalWorkflow.Codeunit.al
-│       └── SalesApprovalPage.Page.al
-├── Common/
-│   ├── Helpers/
-│   │   └── DateTimeHelper.Codeunit.al
-│   └── Interfaces/
-│       └── IValidatable.Interface.al
-└── Permissions/
-    └── SalesExtPermissions.PermissionSet.al
-
-test/
-└── SalesEnhancements/
-    └── SalesStatisticsTests.Codeunit.al
+Step 2: Implement tests with guidance
+  → Use standard library codeunits
+  → Follow Given/When/Then pattern
 ```
 
-## Rule 9: Error Handling and Validation
+## 📖 Detailed Tool Reference
 
-### Intent
-Implement comprehensive error handling with meaningful messages. Use proper validation patterns and provide clear user feedback.
+### Auto-Applied Guidelines
 
-### Error Handling Patterns
+#### al-code-style.instructions.md
+**Always active on `*.al` files**
+- 2-space indentation
+- PascalCase naming
+- Feature-based folder organization
+- XML documentation for public functions
 
-**Validation**: Use TestField and Error with clear messages
-**Confirmation**: Use Confirm for destructive operations
-**Messages**: Use Message for informational feedback
+#### al-naming-conventions.instructions.md
+**Always active on `*.al` files**
+- File naming: `ObjectName.ObjectType.al`
+- Object names: Max 26 characters (+ 4 for prefix)
+- Variables: PascalCase
+- Event parameters: Descriptive names
 
-### Examples
+#### al-performance.instructions.md
+**Always active on `*.al` files**
+- Early data filtering
+- SetLoadFields usage
+- Temporary tables/dictionaries/lists
+- Avoid unnecessary loops
 
-```al
-// Good example - Comprehensive validation
-procedure ValidateAndPostSalesOrder(var SalesHeader: Record "Sales Header")
-begin
-    // Validate required fields
-    SalesHeader.TestField("Sell-to Customer No.");
-    SalesHeader.TestField("Order Date");
-    
-    // Custom validation with clear message
-    if SalesHeader."Shipment Date" < SalesHeader."Order Date" then
-        Error('Shipment date %1 cannot be earlier than order date %2', 
-              SalesHeader."Shipment Date", 
-              SalesHeader."Order Date");
-    
-    // Confirm before destructive operation
-    if not Confirm('Do you want to post sales order %1?', true, SalesHeader."No.") then
-        exit;
-    
-    // Post and provide feedback
-    PostSalesOrder(SalesHeader);
-    Message('Sales order %1 posted successfully', SalesHeader."No.");
-end;
+#### al-error-handling.instructions.md
+**Activates when handling errors**
+- TryFunctions for error handling
+- Error labels (no hardcoded messages)
+- Custom telemetry (when requested)
+- Proper error propagation
+
+#### al-events.instructions.md
+**Activates when working with events**
+- Event subscriber patterns
+- Integration event creation
+- Handler suffix naming
+- Handled pattern implementation
+
+#### al-testing.instructions.md
+**Activates on test files and app.json**
+- AL-Go workspace structure (App vs Test)
+- Tests only generated when requested
+- Standard library codeunit usage
+- Given/When/Then naming
+
+### Task-Specific Prompts
+
+All prompts are invoked with: `@workspace use [prompt-name]`
+
+#### al-workspace
+**When**: Setting up new projects, configuring environments
+**Tools**: al_new_project, al_go, al_download_symbols, al_get_package_dependencies
+
+#### al-build
+**When**: Building, packaging, deploying extensions
+**Tools**: al_build, al_package, al_publish, al_incremental_publish
+
+#### al-events
+**When**: Implementing event-driven logic
+**Tools**: al_insert_event, al_open_Event_Recorder
+
+#### al-debug
+**When**: Debugging issues
+**Tools**: al_debug_without_publish, al_initalize_snapshot_debugging, al_snapshots
+
+#### al-performance
+**When**: Optimizing code, profiling
+**Tools**: al_generate_cpu_profile_file, al_clear_profile_codelenses
+
+#### al-permissions
+**When**: Generating permission sets
+**Tools**: al_generate_permissionset_for_extension_objects
+
+#### al-troubleshoot
+**When**: Solving authentication, symbol, build issues
+**Tools**: al_clear_credentials_cache, al_download_symbols, al_download_source
+
+#### al-migrate
+**When**: Upgrading BC versions
+**Tools**: al_download_source, al_get_package_dependencies, al_generate_manifest
+
+#### al-pages
+**When**: Designing pages with Page Designer
+**Tools**: al_open_Page_Designer, al_build, al_incremental_publish
+
+#### al-workflow
+**When**: Need end-to-end guidance for complete features
+**Tools**: Multiple tools across the development lifecycle
+
+### Role-Based Chat Modes
+
+#### al-orchestrator 🎯
+**Your starting point when unsure**
+- Analyzes your request
+- Routes to appropriate mode or prompt
+- Provides workflow roadmaps for complex tasks
+- Acts as strategic guide
+
+#### al-architect 🏗️
+**Solution design specialist**
+- Architecture planning
+- Data model design
+- Integration strategy
+- Design pattern guidance
+- Long-term maintainability
+
+#### al-debugger 🐛
+**Debugging & troubleshooting expert**
+- Systematic issue diagnosis
+- Root cause analysis
+- Snapshot debugging for intermittent issues
+- Performance bottleneck identification
+- Evidence-based debugging
+
+#### al-tester ✅
+**Testing & quality assurance**
+- Test-driven development (TDD)
+- Test strategy design
+- Coverage improvement
+- Test pattern implementation
+- Quality assurance practices
+
+#### al-api 🌐
+**API development specialist**
+- RESTful API design
+- OData endpoints
+- API page implementation
+- Authentication & security
+- API versioning strategies
+
+#### al-copilot 🤖
+**AI feature development**
+- Copilot experience design
+- Azure OpenAI integration
+- Prompt engineering
+- Responsible AI implementation
+- AI-powered user experiences
+
+## 🎓 Best Practices for Copilot Interaction
+
+### 1. Start with Context
+✅ **Good**: "I'm building a customer approval workflow that needs to send notifications"
+❌ **Avoid**: "Create a workflow"
+
+### 2. Use the Right Tool for the Job
+
+**For strategic questions** → Use modes (al-architect, al-debugger, etc.)
+**For tactical tasks** → Use prompts (@workspace use al-[task])
+**For normal coding** → Let auto-guidelines work in background
+
+### 3. Be Specific with Prompts
+✅ **Good**: "@workspace use al-events to create a subscriber for sales order posting"
+❌ **Avoid**: "help with events"
+
+### 4. Trust the Auto-Guidelines
+The instruction files work automatically:
+- You don't need to ask for proper naming (al-naming-conventions handles it)
+- You don't need to request performance optimization (al-performance suggests it)
+- Error handling patterns apply automatically (al-error-handling activates)
+
+### 5. Leverage the Orchestrator
+Not sure which tool to use?
+```
+User: "I need to build a feature but not sure how to start"
+Copilot (orchestrator): "Let me analyze your needs and provide a roadmap..."
 ```
 
-## Rule 10: Documentation and Code Comments
+### 6. Review Generated Code
+Always review Copilot suggestions:
+- Verify compliance with project guidelines
+- Test in sandbox environment
+- Check security implications
+- Validate performance impact
 
-### Intent
-Provide XML documentation for all public procedures. Keep code self-documenting through clear naming, but document complex business logic.
+## 🔄 Common Workflows
 
-### Documentation Patterns
-
-**Public Procedures**: Always use XML documentation
-**Complex Logic**: Add explanation comments
-**Business Rules**: Document why, not what
-
-### Examples
-
-```al
-// Good example - XML documentation for public API
-codeunit 50100 "Discount Calculator"
-{
-    /// <summary>
-    /// Calculates the discount amount based on customer tier and total amount.
-    /// </summary>
-    /// <param name="CustomerNo">The customer number for tier lookup.</param>
-    /// <param name="TotalAmount">The base amount before discount.</param>
-    /// <returns>The calculated discount amount.</returns>
-    procedure CalculateCustomerDiscount(CustomerNo: Code[20]; TotalAmount: Decimal): Decimal
-    var
-        customer: Record Customer;
-        discountPct: Decimal;
-    begin
-        customer.Get(CustomerNo);
-        discountPct := GetDiscountPercentage(customer."Customer Tier");
-        
-        // Apply maximum discount cap per company policy (CFO approval 2024-03-15)
-        if discountPct > 25 then
-            discountPct := 25;
-            
-        exit(TotalAmount * discountPct / 100);
-    end;
-}
+### Workflow 1: Complete Feature Development
+```markdown
+1. al-orchestrator → Analyze requirements
+2. al-architect → Design solution
+3. @workspace use al-workspace → Setup (if needed)
+4. Implement (auto-guidelines active)
+5. @workspace use al-events → Add events
+6. al-tester → Design tests
+7. @workspace use al-permissions → Security
+8. @workspace use al-build → Deploy
 ```
+
+### Workflow 2: Bug Investigation
+```markdown
+1. al-debugger → Diagnose issue
+2. @workspace use al-debug → Debug session
+3. @workspace use al-performance → Profile (if slow)
+4. Fix with auto-guidelines
+5. al-tester → Regression tests
+```
+
+### Workflow 3: API Development
+```markdown
+1. al-architect → Design API architecture
+2. al-api → Implement endpoints
+3. @workspace use al-permissions → API security
+4. al-tester → API testing
+5. @workspace use al-build → Deploy
+```
+
+## 📚 Reference Documentation
+
+### Microsoft Documentation
+- [GitHub Copilot Documentation](https://docs.github.com/en/copilot)
+- [VS Code Copilot Guide](https://code.visualstudio.com/docs/copilot)
+- [AL Language Reference](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/devenv-reference-overview)
+- [Business Central Development](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/)
+
+### This Project's Documentation
+- [Collection Summary](../COLLECTION-SUMMARY.md) - Complete tool overview
+- [AL Guidelines](./instructions/al-guidelines.instructions.md) - Master guidelines
+- [All Instructions](./instructions/) - Detailed rule sets
+
+## 🛠️ Troubleshooting Copilot
+
+### No Suggestions Appearing
+1. Check Copilot extension is enabled (View → Extensions)
+2. Verify file type is `.al`
+3. Check if guidelines are being applied (look for auto-formatting)
+4. Try reloading VS Code window
+
+### Suggestions Don't Follow Guidelines
+1. Ensure instruction files are in correct locations
+2. Check file glob patterns in instruction frontmatter
+3. Try being more explicit in your request
+4. Reference specific guidelines: "Follow al-code-style patterns"
+
+### Performance Issues
+1. Disable Copilot temporarily if causing lag
+2. Use selective suggestion mode
+3. Close unnecessary files
+4. Reduce workspace size if very large
+
+### Wrong Mode or Prompt Selected
+- Use **al-orchestrator** to get routed correctly
+- Be explicit: "Use al-architect mode for this"
+- Reference prompts explicitly: "@workspace use al-debug"
+
+## 📊 Tool Selection Decision Tree
+
+```
+Question or Task?
+│
+├─ Don't know where to start?
+│  └─ al-orchestrator mode ✅
+│
+├─ Need to design/plan?
+│  └─ al-architect mode
+│
+├─ Have a bug/error?
+│  ├─ al-debugger mode (diagnosis)
+│  └─ @workspace use al-debug (tools)
+│
+├─ Need tests?
+│  ├─ al-tester mode (strategy)
+│  └─ Auto: al-testing.instructions.md
+│
+├─ Building API?
+│  └─ al-api mode
+│
+├─ Adding AI features?
+│  └─ al-copilot mode
+│
+├─ Specific task?
+│  └─ @workspace use al-[task]
+│
+└─ Just coding?
+   └─ Auto-guidelines handle it ✨
+```
+
+## 🎯 Quick Commands Cheat Sheet
+
+### Modes (Strategic)
+- "Use al-orchestrator" - Route me to the right tool
+- "Use al-architect" - Design my solution
+- "Use al-debugger" - Help me debug
+- "Use al-tester" - Testing strategy
+- "Use al-api" - API development
+- "Use al-copilot" - AI features
+
+### Prompts (Tactical)
+- `@workspace use al-workspace` - Setup project
+- `@workspace use al-build` - Build/deploy
+- `@workspace use al-events` - Work with events
+- `@workspace use al-debug` - Debug tools
+- `@workspace use al-performance` - Optimize
+- `@workspace use al-permissions` - Security
+- `@workspace use al-troubleshoot` - Fix issues
+- `@workspace use al-migrate` - Upgrade version
+- `@workspace use al-pages` - Design UI
+- `@workspace use al-workflow` - Complete guidance
+
+### Auto-Active (Background)
+- al-code-style ✅ Always
+- al-naming-conventions ✅ Always
+- al-performance ✅ Always
+- al-error-handling ⚡ When handling errors
+- al-events ⚡ When working with events
+- al-testing ⚡ When in test files
+
+## 💡 Tips for Maximum Productivity
+
+1. **Start with the orchestrator** if you're ever unsure
+2. **Let auto-guidelines work** - don't micromanage formatting
+3. **Use modes for thinking**, prompts for doing
+4. **Combine tools** - modes can recommend prompts
+5. **Trust the system** - all layers work together
+6. **Provide context** - the more Copilot knows, the better it helps
+
+## � Workspace Structure
+
+Understanding the folder organization helps you leverage the 4-layer system:
+
+```
+AL_Copilot_Collection/
+├── .github/
+│   ├── copilot-instructions.md          # This file - Master guide
+│   ├── instructions/                    # Layer 1 & 2: Auto-applied
+│   │   ├── al-guidelines.instructions.md
+│   │   ├── al-code-style.instructions.md
+│   │   ├── al-naming-conventions.instructions.md
+│   │   ├── al-performance.instructions.md
+│   │   ├── al-error-handling.instructions.md
+│   │   ├── al-events.instructions.md
+│   │   └── al-testing.instructions.md
+│   ├── prompts/                         # Layer 3: Task workflows
+│   │   ├── al-workspace.prompt.md
+│   │   ├── al-build.prompt.md
+│   │   ├── al-events.prompt.md
+│   │   ├── al-debug.prompt.md
+│   │   ├── al-performance.prompt.md
+│   │   ├── al-permissions.prompt.md
+│   │   ├── al-troubleshoot.prompt.md
+│   │   ├── al-migrate.prompt.md
+│   │   ├── al-pages.prompt.md
+│   │   └── al-workflow.prompt.md
+│   └── chatmodes/                       # Layer 4: Strategic modes (6 core)
+│       ├── al-orchestrator.chatmode.md  # Smart router (ESSENTIAL)
+│       ├── al-architect.chatmode.md     # Architecture & design
+│       ├── al-debugger.chatmode.md      # Deep debugging
+│       ├── al-tester.chatmode.md        # Testing strategy
+│       ├── al-api.chatmode.md           # API development
+│       └── al-copilot.chatmode.md       # AI features
+├── src/                                 # Your AL code here
+│   ├── Tables/
+│   ├── Pages/
+│   ├── Codeunits/
+│   └── ...
+├── app.json
+└── README.md
+```
+
+### How Files Are Used
+
+**Instructions** (`.instructions.md`):
+- Auto-loaded based on file type or context
+- Apply silently in the background
+- No explicit invocation needed
+
+**Prompts** (`.prompt.md`):
+- Invoked with `@workspace use [name]`
+- Provide step-by-step workflows
+- Have access to AL tools
+
+**Chatmodes** (`.chatmode.md`):
+- Switched via "Use [mode-name] mode"
+- 6 core strategic consultant roles
+- Can recommend prompts and instructions
+- Orchestrator is essential for routing
+
+## �📝 Feedback & Iteration
+
+This workspace configuration evolves based on usage. If you find:
+- Suggestions don't meet expectations → Try rephrasing or use a different mode
+- Missing functionality → Suggest new prompts or modes
+- Conflicting guidance → Report for clarification
+
+Remember: **You have 24 specialized tools working together to make AL development easier, faster, and better!**
 
 ---
 
-**Note**: These instructions work in conjunction with the specialized AL prompt files located in the `.github/copilot-prompts/` directory. Always reference the appropriate prompt file for complex scenarios to ensure comprehensive and consistent guidance.
+**Version**: 2.1  
+**Last Updated**: 2025-10-15  
+**Workspace**: AL Development for Business Central  
+**Total Tools**: 24 (1 guide + 7 instructions + 10 prompts + 6 chatmodes)

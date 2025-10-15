@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+package-lock.json
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test outputs
+test-results/
+coverage/
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# AL specific
+.alpackages/
+.alcache/
+.snapshots/
+rad.json

@@ -1,0 +1,269 @@
+id: al-development
+name: AL Development for Business Central
+description: Comprehensive toolkit for Microsoft Dynamics 365 Business Central AL development, including architecture guidance, debugging tools, testing frameworks, API development, and AI-powered Copilot features. This collection provides auto-applied coding standards, task-specific workflows, and specialized consultant modes.
+tags: [al, business-central, dynamics365, erp, microsoft, architecture, testing, api, copilot, debugging]
+
+items:
+  # Auto-Applied Instructions (Layer 1 & 2)
+  - path: .github/instructions/al-guidelines.instructions.md
+    kind: instruction
+  - path: .github/instructions/al-code-style.instructions.md
+    kind: instruction
+  - path: .github/instructions/al-naming-conventions.instructions.md
+    kind: instruction
+  - path: .github/instructions/al-performance.instructions.md
+    kind: instruction
+  - path: .github/instructions/al-error-handling.instructions.md
+    kind: instruction
+  - path: .github/instructions/al-events.instructions.md
+    kind: instruction
+  - path: .github/instructions/al-testing.instructions.md
+    kind: instruction
+
+  # Task-Specific Prompts (Layer 3)
+  - path: .github/copilot-prompts/al-workspace.prompt.md
+    kind: prompt
+  - path: .github/copilot-prompts/al-build.prompt.md
+    kind: prompt
+  - path: .github/copilot-prompts/al-events.prompt.md
+    kind: prompt
+  - path: .github/copilot-prompts/al-debug.prompt.md
+    kind: prompt
+  - path: .github/copilot-prompts/al-performance.prompt.md
+    kind: prompt
+  - path: .github/copilot-prompts/al-permissions.prompt.md
+    kind: prompt
+  - path: .github/copilot-prompts/al-troubleshoot.prompt.md
+    kind: prompt
+  - path: .github/copilot-prompts/al-migrate.prompt.md
+    kind: prompt
+  - path: .github/copilot-prompts/al-pages.prompt.md
+    kind: prompt
+  - path: .github/copilot-prompts/al-workflow.prompt.md
+    kind: prompt
+
+  # Role-Based Chat Modes (Layer 4)
+  - path: chatmodes/al-orchestrator.chatmode.md
+    kind: chat-mode
+    usage: recommended
+    description: |
+      This chat mode is your entry point when unsure which tool to use. It analyzes your request and routes you to the appropriate mode or prompt.
+
+      This chat mode works best with:
+      - All other AL chat modes and prompts in this collection
+      - AL Instructions for enforcing code standards
+
+      This chat mode is ideal for:
+      - Starting a new task without knowing which tool to use
+      - Getting a strategic roadmap for complex multi-domain tasks
+      - Understanding how different tools in the collection work together
+
+      Example usage:
+      ```markdown
+      ---
+      mode: al-orchestrator
+      title: Build AI-powered API for sales forecasting
+      ---
+      
+      I need to create an API that uses AI to forecast sales based on historical data.
+      I'm not sure where to start or which tools I need.
+      ```
+
+      To get the best results:
+      - Provide context about what you're trying to accomplish
+      - Mention any constraints (timeline, existing code, team size)
+      - Let the orchestrator analyze before jumping into implementation
+
+  - path: chatmodes/al-architect.chatmode.md
+    kind: chat-mode
+    usage: recommended
+    description: |
+      This chat mode specializes in solution architecture and design decisions for Business Central extensions.
+
+      This chat mode requires:
+      - al-guidelines.instructions.md (for BC patterns)
+      - al-code-style.instructions.md (for structure guidance)
+      - al-performance.instructions.md (for design considerations)
+
+      This chat mode is ideal for:
+      - Planning new feature architecture
+      - Designing data models and table structures
+      - Evaluating integration strategies
+      - Making strategic technical decisions
+      - Reviewing and refactoring existing designs
+
+      Example usage:
+      ```markdown
+      ---
+      mode: al-architect
+      title: Design multi-company approval workflow
+      ---
+      
+      #file: src/Sales/SalesHeader.Table.al
+      #file: src/Approval/ApprovalEntry.Table.al
+      
+      Design an approval workflow system that:
+      - Works across multiple companies
+      - Supports delegation
+      - Sends email notifications
+      - Integrates with existing sales documents
+      ```
+
+      To get the best results:
+      - Include relevant existing code in context
+      - Specify business requirements clearly
+      - Mention scalability and data volume expectations
+      - Ask about alternatives and trade-offs
+
+  - path: chatmodes/al-debugger.chatmode.md
+    kind: chat-mode
+    usage: optional
+    description: |
+      This chat mode provides systematic debugging guidance and troubleshooting for AL code issues.
+
+      This chat mode works best with:
+      - al-debug.prompt.md (for debugging tools)
+      - al-performance.prompt.md (for performance issues)
+      - al-troubleshoot.prompt.md (for common problems)
+
+      This chat mode is ideal for:
+      - Diagnosing bugs and unexpected behavior
+      - Root cause analysis of complex issues
+      - Investigating intermittent problems
+      - Understanding code execution flow
+      - Performance bottleneck identification
+
+      Example usage:
+      ```markdown
+      ---
+      mode: al-debugger
+      title: Debug event subscriber not firing
+      ---
+      
+      #file: src/Sales/SalesEventHandler.Codeunit.al
+      
+      My OnBeforePostSalesDoc event subscriber isn't being called.
+      The signature looks correct but it never executes.
+      ```
+
+      To get the best results:
+      - Include error messages and symptoms
+      - Share relevant code in context
+      - Describe steps to reproduce
+      - Mention what you've already tried
+
+  - path: chatmodes/al-tester.chatmode.md
+    kind: chat-mode
+    usage: optional
+    description: |
+      This chat mode specializes in testing strategy, test-driven development, and quality assurance for AL code.
+
+      This chat mode requires:
+      - al-testing.instructions.md (for AL-Go structure and test patterns)
+
+      This chat mode is ideal for:
+      - Designing test strategies
+      - Implementing test-driven development (TDD)
+      - Creating comprehensive test suites
+      - Improving test coverage
+      - Setting up test automation
+
+      Example usage:
+      ```markdown
+      ---
+      mode: al-tester
+      title: Create test suite for sales posting logic
+      ---
+      
+      #file: src/Sales/SalesPost.Codeunit.al
+      
+      I need comprehensive tests for the sales posting logic.
+      What test scenarios should I cover?
+      ```
+
+      To get the best results:
+      - Share the code you want to test
+      - Specify if you want unit, integration, or UI tests
+      - Mention any specific edge cases to cover
+      - Indicate your test coverage goals
+
+  - path: chatmodes/al-api.chatmode.md
+    kind: chat-mode
+    usage: optional
+    description: |
+      This chat mode specializes in designing and implementing RESTful APIs and OData services for Business Central.
+
+      This chat mode works best with:
+      - al-error-handling.instructions.md (for API error responses)
+      - al-performance.instructions.md (for API optimization)
+      - al-permissions.prompt.md (for API security)
+
+      This chat mode is ideal for:
+      - Designing API endpoints and contracts
+      - Implementing API pages (v2.0)
+      - Setting up authentication and security
+      - API versioning strategies
+      - External system integrations
+
+      Example usage:
+      ```markdown
+      ---
+      mode: al-api
+      title: Create API for mobile app integration
+      ---
+      
+      I need to expose sales orders to a mobile app.
+      The app needs to:
+      - List orders by customer
+      - Get order details with lines
+      - Create new orders
+      - Update order status
+      ```
+
+      To get the best results:
+      - Describe the API consumer (mobile app, external system, etc.)
+      - Specify required operations (CRUD, custom actions)
+      - Mention authentication requirements
+      - Include performance expectations
+
+  - path: chatmodes/al-copilot.chatmode.md
+    kind: chat-mode
+    usage: optional
+    description: |
+      This chat mode specializes in building AI-powered Copilot experiences and integrating Azure OpenAI services into Business Central.
+
+      This chat mode works best with:
+      - al-architect.chatmode.md (for designing AI integration architecture)
+      - al-error-handling.instructions.md (for handling AI service failures)
+
+      This chat mode is ideal for:
+      - Designing Copilot user experiences
+      - Implementing Azure OpenAI integration
+      - Prompt engineering for business scenarios
+      - Creating AI-powered suggestions and insights
+      - Implementing responsible AI practices
+
+      Example usage:
+      ```markdown
+      ---
+      mode: al-copilot
+      title: Add AI sales forecasting to customer card
+      ---
+      
+      I want to add an AI-powered sales forecast feature that:
+      - Analyzes historical sales data
+      - Provides monthly forecasts
+      - Suggests optimal order quantities
+      - Explains its reasoning
+      ```
+
+      To get the best results:
+      - Describe the AI feature from user perspective
+      - Specify what data the AI should analyze
+      - Mention desired output format
+      - Include any responsible AI considerations
+      - Ask about prompt engineering best practices
+
+display:
+  ordering: manual
+  show_badge: true

@@ -157,7 +157,7 @@ For EVERY request, analyze:
 - "How to build a Copilot chat for inventory?"
 - "Need help with prompt engineering"
 
-#### 6. **al-performance-mode** (via performance-analysis prompt)
+#### 6. **al-performance-mode** ⚡️ (via performance-analysis prompt)
 **Use when:**
 - Performance optimization needed
 - Slow operations or timeouts
@@ -179,7 +179,7 @@ For EVERY request, analyze:
 
 #### When to Recommend Multiple Modes
 
-**Sequential Workflow** (Do A, then B, then C):
+##### Sequential Workflow (Do A, then B, then C):
 ```markdown
 Example: "I need to build a new feature"
 
@@ -197,7 +197,7 @@ Recommended sequence:
 5. VERIFY with al-test-mode
 ```
 
-**Parallel Concerns** (Different aspects):
+##### Parallel Concerns (Different aspects):
 ```markdown
 Example: "Building an AI-powered API"
 
@@ -215,7 +215,7 @@ Recommended approach:
    → How to test AI responses and API reliability
 ```
 
-**Iterative Problem-Solving**:
+##### Iterative Problem-Solving:
 ```markdown
 Example: "Feature works but performance is poor"
 
@@ -228,7 +228,7 @@ Recommended sequence:
    
 3. IMPLEMENT changes
    
-4. al-test-mode: Verify functionality maintained
+4. al-test-mode: Verify functionality is maintained
    → Regression testing
    
 5. al-debug-mode: Re-profile to confirm improvement
@@ -304,4 +304,9 @@ This is a [complexity level] task that requires multiple specializations. Here's
 ### Phase 2: [Phase Name]
 **Mode**: [mode-name]
 **Purpose**: [What you'll accomplish]
-**Transition Point
+**Key Questions to Ask**:
+- "[Question 1]"
+- "[Question 2]"
+
+**Transition Point**: [When to proceed to next phase]"
+```

@@ -32,6 +32,8 @@ Invoke with `@workspace use [prompt-name]`:
 - **al-pages** - Page designer and UI
 - **al-workflow** - End-to-end guidance
 
+📖 **See [PROMPTS.md](./PROMPTS.md) for detailed parameter documentation and usage examples for each prompt.**
+
 ### Layer 4: Role-Based Chat Modes (6 Specialist Consultants)
 Switch modes for strategic consulting:
 - **al-orchestrator** 🎯 - Smart router and strategic guide

@@ -165,6 +165,8 @@ Specialized expert consultants:
 ## 📚 Documentation
 
 - **[Collection Overview](./al-development.md)** - User-facing documentation
+- **[Prompts Parameter Reference](./PROMPTS.md)** - Comprehensive prompt parameter documentation
+- **[Referencia de Parámetros de Prompts](./PROMPTS-ES.md)** - Documentación de parámetros (Español)
 - **[Complete Reference](./COLLECTION-SUMMARY.md)** - Internal documentation  
 - **[Integration Guide](./.github/copilot-instructions.md)** - Master Copilot setup guide
 

@@ -97,8 +97,9 @@ You will guide the user through the complete setup process for their Business Ce
    **Configuration Parameters:**
    - `server`: Business Central server URL
    - `serverInstance`: BC instance name
-   - `authentication`: AAD (cloud), Windows, or NavUserPassword (on-prem)
-   - `startupObjectType/Id`: Object to launch when debugging starts
+   - `authentication`: AAD (cloud), Windows, or NavUserPassword (on-prem). Note: NavUserPassword requires additional `username` and `password` properties in the configuration
+   - `startupObjectType`: Type of object to launch when debugging starts (valid types: Page, Codeunit, Report, Query, Table, XMLport)
+   - `startupObjectId`: ID of an existing object of the specified type to launch
    - `schemaUpdateMode`: How to handle database schema changes (Synchronize, Recreate, ForceSync)
    - `tenant`: Tenant name for multi-tenant environments
    - `environmentName`: Cloud environment name (for Sandbox/Production)

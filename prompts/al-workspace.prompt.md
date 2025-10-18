@@ -32,9 +32,80 @@ You will guide the user through the complete setup process for their Business Ce
    - Verify manifest contents are correct
 
 5. **Launch Configuration**
-   - Set up launch.json for debugging
-   - Configure server settings
-   - Add agent debugging configurations if needed
+   
+   Create a `.vscode/launch.json` file in the workspace root with the appropriate debugging configuration. Choose the configuration that matches your development environment:
+   
+   **For Standard Debugging (Cloud Sandbox):**
+   ```json
+   {
+       "version": "0.2.0",
+       "configurations": [
+           {
+               "type": "al",
+               "request": "launch",
+               "name": "Your own server",
+               "server": "https://businesscentral.dynamics.com",
+               "serverInstance": "BC",
+               "authentication": "AAD",
+               "startupObjectType": "Page",
+               "startupObjectId": 22,
+               "schemaUpdateMode": "Synchronize",
+               "tenant": "default"
+           }
+       ]
+   }
+   ```
+   
+   **For On-Premises Debugging:**
+   ```json
+   {
+       "version": "0.2.0",
+       "configurations": [
+           {
+               "type": "al",
+               "request": "launch",
+               "name": "Local server",
+               "server": "http://localhost",
+               "serverInstance": "BC210",
+               "authentication": "Windows",
+               "startupObjectType": "Page",
+               "startupObjectId": 22,
+               "schemaUpdateMode": "Synchronize"
+           }
+       ]
+   }
+   ```
+   
+   **For Agent Debugging (Copilot/AI features):**
+   ```json
+   {
+       "version": "0.2.0",
+       "configurations": [
+           {
+               "type": "al",
+               "request": "attach",
+               "name": "Attach to agent (Sandbox)",
+               "clientType": "Agent",
+               "environmentType": "Sandbox",
+               "environmentName": "${input:EnvironmentName}",
+               "breakOnNext": "WebClient"
+           }
+       ]
+   }
+   ```
+   
+   **Configuration Parameters:**
+   - `server`: Business Central server URL
+   - `serverInstance`: BC instance name
+   - `authentication`: AAD (cloud), Windows, or NavUserPassword (on-prem). Note: NavUserPassword requires additional `username` and `password` properties in the configuration
+   - `startupObjectType`: Type of object to launch when debugging starts (valid types: Page, Codeunit, Report, Query, Table, XMLport)
+   - `startupObjectId`: ID of an existing object of the specified type to launch
+   - `schemaUpdateMode`: How to handle database schema changes (Synchronize, Recreate, ForceSync)
+   - `tenant`: Tenant name for multi-tenant environments
+   - `environmentName`: Cloud environment name (for Sandbox/Production)
+   - `clientType`: Standard WebClient or Agent (for Copilot features)
+   
+   Ask the user about their environment to create the appropriate configuration.
 
 ## Troubleshooting
 

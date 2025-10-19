@@ -78,7 +78,7 @@ Create or update `.vscode/settings.json` in the workspace root with optimal sett
 
 **Configuration Explanation:**
 - `al.enableCodeAnalysis`: Enables real-time code analysis
-- `al.codeAnalyzers`: Activates CodeCop, PerTenantExtensionCop, and UICop
+- `al.codeAnalyzers`: Activates standard AL analyzers (CodeCop for code style, PerTenantExtensionCop for per-tenant extension rules, UICop for UI guidelines)
 - `github.copilot.enable`: Ensures Copilot is active for AL files
 - `editor.inlineSuggest.enabled`: Shows inline AI suggestions
 - `editor.quickSuggestions`: Enables suggestions in all contexts
@@ -281,10 +281,10 @@ Educate users about AI service data sharing:
 **Best Practices:**
 - Review organization's AI usage policy
 - Use `.gitignore` for sensitive files
-- Consider `.copilotignore` for additional exclusions
 - Use environment variables for credentials
 - Be mindful of code in workspace
 - For enterprise needs, use GitHub Copilot for Business
+- Close files with sensitive information when not actively needed
 
 #### Create .gitignore
 
@@ -317,21 +317,7 @@ TestResults/
 *~
 ```
 
-#### Create .copilotignore (Optional)
 
-For additional privacy control:
-
-```
-# Sensitive configuration
-launch.json
-appsettings.json
-
-# Customer data
-TestData/RealCustomerData/
-
-# Proprietary algorithms
-src/Proprietary/*.al
-```
 
 ### 8. Testing Your Setup
 
@@ -508,7 +494,7 @@ Learn about all available tools and when to use them.
 ## Resources
 
 **Official Documentation:**
-- [AL Language Documentation](https://docs.microsoft.com/dynamics365/business-central/dev-itpro/developer/devenv-dev-overview)
+- [AL Language Documentation](https://learn.microsoft.com/dynamics365/business-central/dev-itpro/developer/devenv-dev-overview)
 - [GitHub Copilot Documentation](https://docs.github.com/copilot)
 - [VS Code AL Extension](https://marketplace.visualstudio.com/items?itemName=ms-dynamics-smb.al)
 

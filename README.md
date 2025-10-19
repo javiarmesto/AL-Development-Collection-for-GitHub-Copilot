@@ -20,11 +20,8 @@
 2. **Install the collection in your AL workspace**
    ```bash
    # Copy files to your AL project
-   cp -r .github/instructions your-al-project/.github/
-   cp -r .github/prompts your-al-project/.github/
-   cp -r .github/chatmodes your-al-project/.github/
+   cp -r .github your-al-project/
    cp -r collections your-al-project/
-   cp .github/copilot-instructions.md your-al-project/.github/
    ```
 
 3. **Reload VS Code**

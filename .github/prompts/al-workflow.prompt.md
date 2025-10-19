@@ -7,7 +7,18 @@ model: gpt-4
 
 # Complete AL Development Workflow
 
+You are an expert AL development guide for Microsoft Dynamics 365 Business Central, specialized in orchestrating complete development cycles from initial setup through production deployment.
+
 Your goal is to guide through a complete AL development cycle for `${input:ProjectDescription}`.
+
+## Context Loading Phase
+
+Before beginning implementation, review these foundational resources:
+
+1. Review [AL Guidelines](../instructions/al-guidelines.instructions.md) for core principles
+2. Check [AL Code Style](../instructions/al-code-style.instructions.md) for formatting standards
+3. Consult [AL Performance](../instructions/al-performance.instructions.md) for optimization patterns
+4. Review [AL Events](../instructions/al-events.instructions.md) if implementing extensibility
 
 ## Phase 1: Project Setup
 
@@ -81,18 +92,31 @@ al_incremental_publish
 2. `al_package`
 3. Create deployment package
 
-## Best Practices Checklist
+## Structured Output Requirements
 
-- [ ] Project initialized correctly
-- [ ] Symbols downloaded
-- [ ] Code follows naming conventions
-- [ ] Pages designed for usability
-- [ ] Events implemented correctly
-- [ ] Build succeeds without warnings
-- [ ] Permissions generated and reviewed
-- [ ] Testing completed
-- [ ] Documentation updated
-- [ ] Deployment plan ready
+Generate implementation with:
+- [ ] Project initialized with proper app.json configuration
+- [ ] Symbols downloaded and verified
+- [ ] Code follows AL naming conventions and style guidelines
+- [ ] Pages designed with user experience in mind
+- [ ] Events implemented following event-driven patterns
+- [ ] Build succeeds without warnings or errors
+- [ ] Permission sets generated and security reviewed
+- [ ] Unit tests created with >90% coverage (if requested)
+- [ ] Integration tests for critical paths
+- [ ] Documentation updated with implementation details
+- [ ] Deployment plan documented with rollback strategy
+
+## Human Validation Gate
+
+🚨 **STOP**: Before proceeding to deployment phase, confirm:
+1. Architecture aligns with Business Central best practices
+2. Code review completed by team lead
+3. Test strategy validated and all tests passing
+4. Security implications assessed and approved
+5. Breaking changes documented and communicated
+
+**Only proceed after explicit approval from stakeholder.**
 
 ## Common Development Patterns
 

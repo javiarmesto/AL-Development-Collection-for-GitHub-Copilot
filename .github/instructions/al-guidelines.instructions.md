@@ -1,7 +1,6 @@
 ---
-description: AL Guidelines - Comprehensive AI-optimized coding rules for Microsoft Dynamics 365 Business Central development
-globs: ["*.al", "*.json", "app.json", "launch.json"]
-alwaysApply: true
+applyTo: "**/*.{al,json}"
+description: "AL Guidelines - Comprehensive AI-optimized coding rules for Microsoft Dynamics 365 Business Central development"
 ---
 
 # AL Guidelines - Vibe Coding Rules

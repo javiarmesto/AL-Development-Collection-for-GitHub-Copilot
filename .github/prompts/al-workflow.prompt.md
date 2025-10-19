@@ -2,6 +2,7 @@
 mode: 'agent'
 description: 'Complete end-to-end AL development workflow from setup to deployment.'
 tools: ['al_new_project', 'al_go', 'al_download_symbols', 'al_build', 'al_package', 'al_publish', 'al_incremental_publish', 'al_open_Page_Designer', 'al_insert_event', 'al_generate_permissionset_for_extension_objects', 'al_generate_manifest']
+model: gpt-4
 ---
 
 # Complete AL Development Workflow

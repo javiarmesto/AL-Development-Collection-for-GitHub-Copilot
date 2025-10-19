@@ -1,8 +1,6 @@
 ---
-title: "AL Performance Optimization Rules"
+applyTo: "**/*.al"
 description: "Performance optimization guidelines and best practices for AL development"
-globs: ["*.al"]
-alwaysApply: true
 ---
 
 # AL Performance Optimization Rules

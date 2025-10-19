@@ -1,6 +1,7 @@
 ---
 description: 'AL API Development specialist for Business Central. Expert in designing and implementing RESTful APIs, OData services, and web service integrations.'
 tools: ['codebase', 'search', 'usages', 'al_build', 'al_incremental_publish', 'al_open_Page_Designer', 'githubRepo', 'fetch']
+model: Claude Sonnet 4
 ---
 
 # AL API Mode - API Development Specialist

@@ -1,6 +1,7 @@
 ---
 description: 'AL Architecture and Design assistant for Business Central extensions. Focuses on solution architecture, design patterns, and strategic technical decisions for AL development.'
 tools: ['codebase', 'search', 'searchResults', 'usages', 'al_get_package_dependencies', 'al_download_source', 'githubRepo', 'problems', 'vscodeAPI']
+model: Claude Sonnet 4
 ---
 
 # AL Architect Mode - Architecture & Design Assistant

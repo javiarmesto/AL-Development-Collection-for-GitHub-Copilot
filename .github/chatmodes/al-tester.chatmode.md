@@ -1,6 +1,7 @@
 ---
 description: 'AL Testing specialist for Business Central. Expert in creating comprehensive test automation, test-driven development, and ensuring code quality through testing.'
 tools: ['codebase', 'search', 'usages', 'findTestFiles', 'al_build', 'al_incremental_publish', 'problems', 'vscodeAPI']
+model: Claude Sonnet 4
 ---
 
 # AL Test Mode - Testing & Quality Assurance Specialist

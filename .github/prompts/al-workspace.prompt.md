@@ -2,6 +2,7 @@
 mode: 'agent'
 description: 'Set up and configure an AL development workspace for Business Central development.'
 tools: ['al_new_project', 'al_go', 'al_download_symbols', 'al_get_package_dependencies', 'al_generate_manifest', 'al_clear_credentials_cache']
+model: gpt-4
 ---
 
 # AL Workspace Setup

@@ -211,8 +211,8 @@ function validateCollectionItems(manifest) {
       
       // Validate specific frontmatter by kind
       if (item.kind === 'instruction') {
-        if (!frontmatter.globs) {
-          addWarning(`Item ${itemNum}: Instruction missing 'globs' in frontmatter: ${item.path}`);
+        if (!frontmatter.applyTo && !frontmatter.globs) {
+          addWarning(`Item ${itemNum}: Instruction missing 'applyTo' or 'globs' in frontmatter: ${item.path}`);
         }
       }
       
@@ -222,6 +222,18 @@ function validateCollectionItems(manifest) {
         }
         if (!frontmatter.tools) {
           addWarning(`Item ${itemNum}: Prompt missing 'tools' in frontmatter: ${item.path}`);
+        }
+        if (!frontmatter.model) {
+          addWarning(`Item ${itemNum}: Prompt missing 'model' in frontmatter: ${item.path}`);
+        }
+      }
+      
+      if (item.kind === 'chat-mode') {
+        if (!frontmatter.tools) {
+          addWarning(`Item ${itemNum}: Chat mode missing 'tools' in frontmatter: ${item.path}`);
+        }
+        if (!frontmatter.model) {
+          addWarning(`Item ${itemNum}: Chat mode missing 'model' in frontmatter: ${item.path}`);
         }
       }
       
@@ -329,8 +341,8 @@ function validateDirectoryStructure() {
   
   const requiredDirs = [
     '.github/instructions',
-    '.github/copilot-prompts',
-    'chatmodes',
+    '.github/prompts',
+    '.github/chatmodes',
     'collections'
   ];
   

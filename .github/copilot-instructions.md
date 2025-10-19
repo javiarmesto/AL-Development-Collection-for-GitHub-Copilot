@@ -12,7 +12,7 @@ This workspace provides **four layers** of Copilot assistance:
 ### Layer 1: Auto-Applied Guidelines (Always Active)
 Located in `.github/instructions/` - These apply automatically based on file type:
 
-- **al-guidelines.instructions.md** - Master hub referencing all guidelines
+- **al-guidelines.instructions.md** - Master hub referencing all guidelines (applies to `*.al`, `*.json`)
 - **al-code-style.instructions.md** - Code formatting & structure (applies to `*.al`)
 - **al-naming-conventions.instructions.md** - Naming rules (applies to `*.al`)
 - **al-performance.instructions.md** - Performance optimization (applies to `*.al`)
@@ -20,9 +20,9 @@ Located in `.github/instructions/` - These apply automatically based on file typ
 ### Layer 2: Contextual Guidelines (Auto-Activate When Relevant)
 Located in `.github/instructions/` - These activate based on context:
 
-- **al-error-handling.instructions.md** - Error patterns, TryFunctions, telemetry
-- **al-events.instructions.md** - Event-driven development patterns
-- **al-testing.instructions.md** - Testing guidelines, AL-Go structure
+- **al-error-handling.instructions.md** - Error patterns, TryFunctions, telemetry (applies to `*.al`)
+- **al-events.instructions.md** - Event-driven development patterns (applies to `*.al`)
+- **al-testing.instructions.md** - Testing guidelines, AL-Go structure (applies to test files)
 
 ### Layer 3: Task-Specific Prompts (Explicit Invocation)
 Located in `.github/prompts/` - Invoke with `@workspace use [prompt-name]`:

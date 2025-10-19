@@ -11,40 +11,40 @@
 
 ```
 .github/
-├── instructions/                        # Auto-applied AL coding standards
-│   ├── al-guidelines.instructions.md
-│   ├── al-code-style.instructions.md
-│   ├── al-naming-conventions.instructions.md
-│   ├── al-performance.instructions.md
-│   ├── al-error-handling.instructions.md
-│   ├── al-events.instructions.md
-│   └── al-testing.instructions.md
-└── copilot-prompts/                     # Task-specific workflow prompts
-    ├── al-workspace.prompt.md           # ✅ RENAMED (was .md)
-    ├── al-build.prompt.md               # ✅ RENAMED
-    ├── al-events.prompt.md              # ✅ RENAMED
-    ├── al-debug.prompt.md               # ✅ RENAMED
-    ├── al-performance.prompt.md         # ✅ RENAMED
-    ├── al-permissions.prompt.md         # ✅ RENAMED
-    ├── al-troubleshoot.prompt.md        # ✅ RENAMED
-    ├── al-migrate.prompt.md             # ✅ RENAMED
-    ├── al-pages.prompt.md               # ✅ RENAMED
-    └── al-workflow.prompt.md            # ✅ RENAMED
-
-chatmodes/                               # Role-based specialist consultants (6 core)
-├── al-orchestrator.chatmode.md          # Smart router (ESSENTIAL)
-├── al-architect.chatmode.md             # Architecture & design
-├── al-debugger.chatmode.md              # Deep debugging
-├── al-tester.chatmode.md                # Testing strategy
-├── al-api.chatmode.md                   # API development
-└── al-copilot.chatmode.md               # AI features
+├── copilot-instructions.md              # ✅ Master integration guide
+├── instructions/                        # ✅ Auto-applied AL coding standards
+│   ├── al-guidelines.instructions.md    # (applyTo: **/*.{al,json})
+│   ├── al-code-style.instructions.md    # (applyTo: **/*.al)
+│   ├── al-naming-conventions.instructions.md  # (applyTo: **/*.al)
+│   ├── al-performance.instructions.md   # (applyTo: **/*.al)
+│   ├── al-error-handling.instructions.md  # (applyTo: **/*.al)
+│   ├── al-events.instructions.md        # (applyTo: **/*.al)
+│   └── al-testing.instructions.md       # (applyTo: **/test/**/*.al)
+├── prompts/                             # ✅ Agentic workflows (task execution)
+│   ├── al-workspace.prompt.md           # (model: gpt-4)
+│   ├── al-build.prompt.md               # (model: gpt-4)
+│   ├── al-events.prompt.md              # (model: gpt-4)
+│   ├── al-debug.prompt.md               # (model: gpt-4)
+│   ├── al-performance.prompt.md         # (model: gpt-4)
+│   ├── al-permissions.prompt.md         # (model: gpt-4)
+│   ├── al-troubleshoot.prompt.md        # (model: gpt-4)
+│   ├── al-migrate.prompt.md             # (model: gpt-4)
+│   ├── al-pages.prompt.md               # (model: gpt-4)
+│   └── al-workflow.prompt.md            # (model: gpt-4)
+└── chatmodes/                           # ✅ Strategic consultants (bounded tools)
+    ├── al-orchestrator.chatmode.md      # (model: Claude Sonnet 4)
+    ├── al-architect.chatmode.md         # (model: Claude Sonnet 4)
+    ├── al-debugger.chatmode.md          # (model: Claude Sonnet 4)
+    ├── al-tester.chatmode.md            # (model: Claude Sonnet 4)
+    ├── al-api.chatmode.md               # (model: Claude Sonnet 4)
+    └── al-copilot.chatmode.md           # (model: Claude Sonnet 4)
 
 collections/
-└── al-development.collection.yml        # ✅ NEW - Collection manifest
+└── al-development.collection.yml        # ✅ Collection manifest
 
-al-development.md                        # ✅ NEW - Collection documentation
+al-development.md                        # ✅ Collection documentation
 COLLECTION-SUMMARY.md                    # This file - Internal docs
-copilot-instructions.md                  # Integration guide
+README.md                                # User-facing documentation
 ```
 
 ## ✅ Compliance with Contribution Guidelines

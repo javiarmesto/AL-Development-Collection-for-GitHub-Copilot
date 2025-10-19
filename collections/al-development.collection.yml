@@ -5,41 +5,41 @@ tags: [al, business-central, dynamics365, erp, microsoft, architecture, testing,
 
 items:
     # Auto-Applied Instructions (Layer 1 & 2)
-  - path: instructions/al-guidelines.instructions.md
+  - path: .github/instructions/al-guidelines.instructions.md
     kind: instruction
-  - path: instructions/al-code-style.instructions.md
+  - path: .github/instructions/al-code-style.instructions.md
     kind: instruction
-  - path: instructions/al-naming-conventions.instructions.md
+  - path: .github/instructions/al-naming-conventions.instructions.md
     kind: instruction
-  - path: instructions/al-performance.instructions.md
+  - path: .github/instructions/al-performance.instructions.md
     kind: instruction
-  - path: instructions/al-error-handling.instructions.md
+  - path: .github/instructions/al-error-handling.instructions.md
     kind: instruction
-  - path: instructions/al-events.instructions.md
+  - path: .github/instructions/al-events.instructions.md
     kind: instruction
-  - path: instructions/al-testing.instructions.md
+  - path: .github/instructions/al-testing.instructions.md
     kind: instruction
 
   # Task-Specific Prompts (Layer 3)
-  - path: prompts/al-workspace.prompt.md
+  - path: .github/prompts/al-workspace.prompt.md
     kind: prompt
-  - path: prompts/al-build.prompt.md
+  - path: .github/prompts/al-build.prompt.md
     kind: prompt
-  - path: prompts/al-events.prompt.md
+  - path: .github/prompts/al-events.prompt.md
     kind: prompt
-  - path: prompts/al-debug.prompt.md
+  - path: .github/prompts/al-debug.prompt.md
     kind: prompt
-  - path: prompts/al-performance.prompt.md
+  - path: .github/prompts/al-performance.prompt.md
     kind: prompt
-  - path: prompts/al-permissions.prompt.md
+  - path: .github/prompts/al-permissions.prompt.md
     kind: prompt
-  - path: prompts/al-troubleshoot.prompt.md
+  - path: .github/prompts/al-troubleshoot.prompt.md
     kind: prompt
-  - path: prompts/al-migrate.prompt.md
+  - path: .github/prompts/al-migrate.prompt.md
     kind: prompt
-  - path: prompts/al-pages.prompt.md
+  - path: .github/prompts/al-pages.prompt.md
     kind: prompt
-  - path: prompts/al-workflow.prompt.md
+  - path: .github/prompts/al-workflow.prompt.md
     kind: prompt
   - path: prompts/al-spec.create.prompt.md
     kind: prompt
@@ -49,7 +49,7 @@ items:
     kind: prompt
 
   # Role-Based Chat Modes (Layer 4)
-  - path: chatmodes/al-orchestrator.chatmode.md
+  - path: .github/chatmodes/al-orchestrator.chatmode.md
     kind: chat-mode
     usage: recommended
     description: |
@@ -80,7 +80,7 @@ items:
       - Mention any constraints (timeline, existing code, team size)
       - Let the orchestrator analyze before jumping into implementation
 
-  - path: chatmodes/al-architect.chatmode.md
+  - path: .github/chatmodes/al-architect.chatmode.md
     kind: chat-mode
     usage: recommended
     description: |
@@ -121,7 +121,7 @@ items:
       - Mention scalability and data volume expectations
       - Ask about alternatives and trade-offs
 
-  - path: chatmodes/al-debugger.chatmode.md
+  - path: .github/chatmodes/al-debugger.chatmode.md
     kind: chat-mode
     usage: optional
     description: |
@@ -158,7 +158,7 @@ items:
       - Describe steps to reproduce
       - Mention what you've already tried
 
-  - path: chatmodes/al-tester.chatmode.md
+  - path: .github/chatmodes/al-tester.chatmode.md
     kind: chat-mode
     usage: optional
     description: |
@@ -193,7 +193,7 @@ items:
       - Mention any specific edge cases to cover
       - Indicate your test coverage goals
 
-  - path: chatmodes/al-api.chatmode.md
+  - path: .github/chatmodes/al-api.chatmode.md
     kind: chat-mode
     usage: optional
     description: |
@@ -232,7 +232,7 @@ items:
       - Mention authentication requirements
       - Include performance expectations
 
-  - path: chatmodes/al-copilot.chatmode.md
+  - path: .github/chatmodes/al-copilot.chatmode.md
     kind: chat-mode
     usage: optional
     description: |

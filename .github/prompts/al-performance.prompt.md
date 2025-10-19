@@ -2,6 +2,7 @@
 mode: 'agent'
 description: 'Analyze and optimize AL code performance using profiling tools and best practices.'
 tools: ['al_generate_cpu_profile_file', 'al_clear_profile_codelenses', 'al_build']
+model: gpt-4
 ---
 
 # AL Performance Analysis

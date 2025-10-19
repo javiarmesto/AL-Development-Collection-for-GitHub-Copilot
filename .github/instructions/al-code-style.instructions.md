@@ -1,7 +1,6 @@
 ---
-description: AL Code structure, formatting, and folder organization guidelines for AL development
-globs: ["*.al"]
-alwaysApply: true
+applyTo: "**/*.al"
+description: "AL Code structure, formatting, and folder organization guidelines for AL development"
 ---
 
 # AL Code Style & Formatting Rules

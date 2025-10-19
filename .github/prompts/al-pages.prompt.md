@@ -2,6 +2,7 @@
 mode: 'agent'
 description: 'Design and customize Business Central pages using the AL Page Designer for enhanced user experience.'
 tools: ['al_open_Page_Designer', 'al_build', 'al_incremental_publish']
+model: gpt-4
 ---
 
 # AL Page Designer Customization

@@ -1,54 +1,91 @@
 # AL Development for Business Central
 
-A comprehensive toolkit for Microsoft Dynamics 365 Business Central AL development, providing multi-layered assistance through auto-applied coding standards, task-specific workflows, and specialized consultant modes.
+**AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[A-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. Transform ad-hoc AI usage into systematic engineering through **28 Agent Primitives** across **3 framework layers**.
 
-## What's Included
+## Framework Architecture
 
-This collection provides **25 specialized tools** organized in four layers:
+This collection implements the **A-Instructions Architecture** with three systematic layers:
 
-### Layer 1: Auto-Applied Instructions (Always Active)
-These instructions apply automatically when working with AL code:
-- **al-guidelines** - Master development principles
-- **al-code-style** - Code formatting and structure
-- **al-naming-conventions** - Naming standards for objects and variables
-- **al-performance** - Performance optimization patterns
+### Layer 1: Markdown Prompt Engineering
+**Foundation** - Structured instructions using semantic markdown (headers, lists, links) that guide AI reasoning for predictable, repeatable results.
 
-### Layer 2: Contextual Instructions (Activate When Relevant)
-These activate based on what you're doing:
-- **al-error-handling** - Error patterns and TryFunctions
-- **al-events** - Event-driven development
-- **al-testing** - Testing guidelines and AL-Go structure
+### Layer 2: Agent Primitives  
+**Implementation** - 28 configurable tools that deploy your prompt engineering systematically:
+- **📋 Instructions** (7) - Auto-applied coding rules via `applyTo` patterns
+- **🎯 Agentic Workflows** (14) - Complete task execution processes
+- **💬 Chat Modes** (6) - Role-based specialists with tool boundaries
+- **📖 Integration Guide** (1) - Master coordination document
 
-### Layer 3: Task-Specific Prompts (10 Workflow Guides)
+### Layer 3: Context Engineering
+**Strategic Management** - Optimized LLM context windows through modular loading, `applyTo` patterns, and AGENTS.md compilation readiness.
+
+## What's Included: The 28 Agent Primitives
+
+### 📋 Instructions Files (7 primitives)
+
+**Auto-applied persistent rules** via `applyTo` patterns for optimal **Context Engineering**:
+
+**Always Active** (`applyTo: **/*.al`):
+- **al-guidelines** - Master hub referencing all development patterns
+- **al-code-style** - Feature-based organization, 2-space indentation, XML docs
+- **al-naming-conventions** - PascalCase, 26-character limits, descriptive names
+- **al-performance** - Early filtering, SetLoadFields, temporary tables, set-based ops
+
+**Context-Activated** (trigger on specific contexts):
+- **al-error-handling** - TryFunctions, error labels, telemetry patterns
+- **al-events** - Event subscribers, integration events, handled patterns
+- **al-testing** - AL-Go structure, test generation rules, Given/When/Then
+
+> 💡 **Context Engineering in Action**: Instructions load only when relevant via `applyTo` frontmatter, preserving context window space for code understanding.
+
+### 🎯 Agentic Workflows (14 primitives)
+
+**Complete systematic processes** as `.prompt.md` files with validation gates:
+
 Invoke with `@workspace use [prompt-name]`:
-- **al-workspace** - Project setup and configuration
-- **al-build** - Build and deployment workflows
-- **al-events** - Event implementation
-- **al-debug** - Debugging sessions
-- **al-performance** - Performance analysis
-- **al-permissions** - Permission management
-- **al-troubleshoot** - Common problem solving
-- **al-migrate** - Version migration
-- **al-pages** - Page designer and UI
-- **al-workflow** - End-to-end guidance
+- **al-setup** - AI-assisted environment configuration
+- **al-workspace** - Project initialization with symbol download
+- **al-build** - Build, package, publish workflows with AL tools
+- **al-events** - Event subscriber/publisher implementation
+- **al-debug** - Debugging with snapshot support
+- **al-performance** - CPU profiling and bottleneck analysis
+- **al-permissions** - Permission set generation from objects
+- **al-troubleshoot** - Systematic problem resolution workflows
+- **al-migrate** - BC version upgrade assistance
+- **al-pages** - Page Designer integration workflows
+- **al-workflow** - Complete feature lifecycle from design to deploy
+- **al-spec.create** - Functional-technical specification generation
+- **al-performance.triage** - Performance bottleneck prioritization
+- **al-pr.prepare** - Pull request preparation with documentation
 
-📖 **See [PROMPTS.md](./PROMPTS.md) for detailed parameter documentation and usage examples for each prompt.**
+📖 **See [PROMPTS.md](./PROMPTS.md) for detailed parameter documentation and usage examples.**
 
-### Layer 4: Role-Based Chat Modes (6 Specialist Consultants)
-Switch modes for strategic consulting:
-- **al-orchestrator** 🎯 - Smart router and strategic guide
-- **al-architect** 🏗️ - Solution architecture and design
-- **al-debugger** 🐛 - Debugging and troubleshooting
-- **al-tester** ✅ - Testing strategy and TDD
-- **al-api** 🌐 - API development
-- **al-copilot** 🤖 - AI/Copilot feature development
+> 💡 **Agentic Workflows**: Prompts orchestrate all primitives (instructions, modes, tools) into end-to-end processes with human validation checkpoints.
+
+### 💬 Chat Modes (6 primitives)
+
+**Role-based specialists** with MCP tool boundaries preventing cross-domain security breaches:
+
+- **al-orchestrator** 🎯 - Smart router, workflow coordinator (START HERE)
+- **al-architect** 🏗️ - Solution architecture design (cannot execute builds)
+- **al-debugger** 🐛 - Deep systematic diagnosis and troubleshooting
+- **al-tester** ✅ - Testing strategy, TDD methodology, quality assurance
+- **al-api** 🌐 - RESTful API design and implementation
+- **al-copilot** 🤖 - AI-powered Copilot feature development
+
+> 💡 **Tool Boundaries**: Like professional licensing, each mode has explicit CAN/CANNOT lists preventing dangerous cross-domain operations.
+
+### 📖 Integration Guide (1 primitive)
+
+- **copilot-instructions.md** - Master document coordinating all 27 primitives with comprehensive usage guidance and workflow examples
 
 ## Quick Start
 
 ### For New AL Developers
 
 1. **Start with the orchestrator**
-   ```
+
+   ```markdown
    Switch to al-orchestrator mode and ask:
    "I need to build a sales approval workflow. Where should I start?"
    ```
@@ -58,7 +95,8 @@ Switch modes for strategic consulting:
    - Code suggestions follow all standards without asking
 
 3. **Use prompts for tasks**
-   ```
+
+   ```bash
    @workspace use al-workspace  # Setup project
    @workspace use al-build      # Deploy
    ```
@@ -81,7 +119,8 @@ Switch modes for strategic consulting:
 ## Common Workflows
 
 ### Building a New Feature
-```
+
+```text
 1. al-orchestrator → Analyze requirements
 2. al-architect → Design architecture
 3. @workspace use al-workspace → Setup (if needed)
@@ -93,7 +132,8 @@ Switch modes for strategic consulting:
 ```
 
 ### Debugging Issues
-```
+
+```text
 1. al-debugger → Systematic diagnosis
 2. @workspace use al-debug → Debug tools
 3. @workspace use al-performance → Profile (if slow)
@@ -102,7 +142,8 @@ Switch modes for strategic consulting:
 ```
 
 ### API Development
-```
+
+```text
 1. al-architect → Design API
 2. al-api → Implement endpoints
 3. @workspace use al-permissions → Security
@@ -135,33 +176,51 @@ The **al-orchestrator** mode analyzes your request and provides:
 - Time estimates and success criteria
 - Alternative approaches with trade-offs
 
-## Best Practices
+## Best Practices: AI Native Development
 
-### When to Use Each Layer
+### Understanding the Framework Layers
 
-**Layer 1 & 2 (Auto-Instructions)**
-- Always active in background
-- No need to reference manually
-- Enforces standards automatically
+**Layer 1: Markdown Prompt Engineering**
 
-**Layer 3 (Prompts)**
-- Specific tasks: setup, build, debug, etc.
-- Access to AL tools
-- Step-by-step workflows
+- Structured instructions embedded in all primitives
+- Semantic markdown (headers, lists, links) guides AI reasoning
+- Context loading via links to relevant files
+- Precision language eliminates ambiguity
 
-**Layer 4 (Chat Modes)**
-- Strategic planning and design
-- Complex problem diagnosis
-- Expert consultation
-- When you need to think, not do
+**Layer 2: Agent Primitives Usage**
 
-### Getting the Best Results
+📋 **Instructions** (auto-active background enforcement):
 
-1. **Start with context** - More info = better help
-2. **Use the right layer** - Tasks vs. strategy
-3. **Trust auto-guidelines** - They work in background
-4. **Combine tools** - Modes can recommend prompts
-5. **Ask the orchestrator** - When unsure
+- Load automatically via `applyTo` patterns
+- No manual invocation needed
+- Maintain standards without cognitive overhead
+- Trust the system - it's working silently
+
+🎯 **Agentic Workflows** (explicit task execution):
+- Use for specific development tasks
+- Access to AL tools (build, debug, profile)
+- Step-by-step systematic processes
+- Built-in human validation checkpoints
+
+💬 **Chat Modes** (strategic consulting):
+- Switch for architecture and design work
+- Complex problem diagnosis and analysis
+- Expert consultation on approaches
+- Use when you need to think, not execute
+
+**Layer 3: Context Engineering**
+- Instructions use `applyTo` for selective loading
+- Preserves context window for code understanding
+- Ready for AGENTS.md compilation for universal portability
+- Modular architecture scales with project complexity
+
+### Getting Maximum Value
+
+1. **Start with al-orchestrator** - Routes you to right primitive
+2. **Provide rich context** - More information = better guidance
+3. **Trust instruction primitives** - They work automatically
+4. **Combine primitives** - Modes recommend workflows, workflows use instructions
+5. **Leverage framework layers** - Right tool for right situation
 
 ## Examples
 
@@ -275,15 +334,30 @@ Found an issue or have a suggestion? This collection improves through use:
 - Propose new modes for specialized scenarios
 - Share successful patterns
 
-## Version
+## Framework Compliance
 
-**Version**: 2.0  
-**Last Updated**: 2025-01-15  
+**Framework**: [A-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)  
+**Version**: 2.2.0  
+**Last Updated**: 2025-10-19  
 **Author**: javiarmesto  
-**Total Tools**: 25 (7 instructions + 10 prompts + 6 modes + integration docs)
+**Total Primitives**: 28 (7 instructions + 14 workflows + 6 modes + 1 guide)  
+**Status**: ✅ Fully compliant with A-Instructions Architecture
+
+### Framework Implementation
+- ✅ **Layer 1: Markdown Prompt Engineering** - Structured semantic markdown
+- ✅ **Layer 2: Agent Primitives** - 28 configurable tools
+- ✅ **Layer 3: Context Engineering** - Modular `applyTo` patterns
+- ✅ **AGENTS.md Ready** - Prepared for universal context compilation
+- ✅ **Validation Passing** - All 34 compliance checks
 
 ## Related Resources
 
-- [Microsoft AL Language Documentation](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/)
+### Framework & Standards
+- [A-Instructions Architecture Guide](https://danielmeppiel.github.io/awesome-ai-native/)
+- [AGENTS.md Standard](https://agents.md)
+- [Context Engineering Patterns](https://danielmeppiel.github.io/awesome-ai-native/docs/concepts/)
+
+### Microsoft Business Central
+- [AL Language Documentation](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/)
 - [Business Central Development](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/)
 - [GitHub Copilot Documentation](https://docs.github.com/en/copilot)

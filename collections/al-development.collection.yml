@@ -23,7 +23,7 @@ items:
   # Task-Specific Prompts (Layer 3)
   - path: prompts/al-setup.prompt.md
     kind: prompt
-  - path: prompts/al-workspace.prompt.md
+  - path: .github/prompts/al-workspace.prompt.md
     kind: prompt
   - path: .github/prompts/al-build.prompt.md
     kind: prompt

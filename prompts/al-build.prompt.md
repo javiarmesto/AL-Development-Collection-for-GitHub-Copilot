@@ -1,13 +1,15 @@
 ---
 mode: 'agent'
 description: 'Build, package, and deploy AL extensions to Business Central environments.'
-tools: ['al_build', 'al_package', 'al_publish', 'al_incremental_publish', 'al_publish_without_debug', 'al_publish_existing_extension', 'al_full_package']
+tools: ['search', 'Microsoft Docs/microsoft_docs_fetch', 'ms-dynamics-smb.al/al_package', 'ms-dynamics-smb.al/al_publish', 'ms-dynamics-smb.al/al_publish_without_debug', 'ms-dynamics-smb.al/al_publish_existing_extension']
 ---
 
 # Build and Deploy AL Extension
 
 Your goal is to build and deploy the AL extension for `${input:DeploymentType}` environment.
-
+## Select Deployment Strategy
+Based on #codebase select the appropriate deployment strategy
+Ask and confirm with the user before proceeding.
 ## Deployment Types
 
 Based on the deployment type, use the appropriate strategy:

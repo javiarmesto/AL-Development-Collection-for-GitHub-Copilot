@@ -1,7 +1,7 @@
 ---
 mode: 'agent'
 description: 'Set up and configure an AL development workspace for Business Central development.'
-tools: ['al_new_project', 'al_go', 'al_download_symbols', 'al_get_package_dependencies', 'al_generate_manifest', 'al_clear_credentials_cache']
+tools: ['ms-dynamics-smb.al/al_download_symbols', 'ms-dynamics-smb.al/al_clear_credentials_cache', 'ms-dynamics-smb.al/al_go', 'ms-dynamics-smb.al/al_new_project', 'ms-dynamics-smb.al/al_generate_manifest']
 ---
 
 # AL Workspace Setup

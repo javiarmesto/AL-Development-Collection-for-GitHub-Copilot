@@ -179,8 +179,6 @@ pageextension 50100 "Customer Card Ext" extends "Customer Card"
 
 ## Workflow
 
-1. Open Page Designer: `al_open_Page_Designer`
-2. Make visual changes
-3. Build project: `al_build`
-4. Deploy quickly: `al_incremental_publish`
-5. Test and iterate
+1. Read Page object.
+2. Propose visual changes
+3. Test and iterate

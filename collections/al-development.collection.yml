@@ -41,6 +41,12 @@ items:
     kind: prompt
   - path: prompts/al-workflow.prompt.md
     kind: prompt
+  - path: prompts/al-spec.create.prompt.md
+    kind: prompt
+  - path: prompts/al-performance.triage.prompt.md
+    kind: prompt
+  - path: prompts/al-pr.prepare.prompt.md
+    kind: prompt
 
   # Role-Based Chat Modes (Layer 4)
   - path: chatmodes/al-orchestrator.chatmode.md

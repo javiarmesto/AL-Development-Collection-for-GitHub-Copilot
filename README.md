@@ -4,7 +4,7 @@
 
 [![Validation Status](https://img.shields.io/badge/validation-passing-brightgreen)](./validate-al-collection.js)
 [![Version](https://img.shields.io/badge/version-2.1-blue)](./al-development.collection.yml)
-[![Tools](https://img.shields.io/badge/tools-24-orange)](./al-development.md)
+[![Tools](https://img.shields.io/badge/tools-27-orange)](./al-development.md)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
 ## 🚀 Quick Start
@@ -86,10 +86,10 @@ graph TB
 |-------|------|-------|------------|---------|
 | **Layer 1** | Auto-Applied | 4 files | Always on `*.al` | Code style, naming, performance |
 | **Layer 2** | Contextual | 3 files | Context-triggered | Error handling, events, testing |
-| **Layer 3** | Task Prompts | 10 files | `@workspace use [name]` | Specific workflows |
+| **Layer 3** | Task Prompts | 13 files | `@workspace use [name]` | Specific workflows |
 | **Layer 4** | Strategic Modes | 6 files | `Use [mode-name]` | Expert consultation |
 | **Guide** | Documentation | 1 file | Reference | Master integration guide |
-| **Total** | — | **24 tools** | — | Complete toolkit |
+| **Total** | — | **27 tools** | — | Complete toolkit |
 
 ## 📦 What's Included
 
@@ -106,7 +106,7 @@ graph TB
 - **al-events** - Event-driven development
 - **al-testing** - Testing guidelines & AL-Go structure
 
-### 📝 Layer 3: Task-Specific Prompts (10 files)
+### 📝 Layer 3: Task-Specific Prompts (13 files)
 
 Invoke with `@workspace use [name]`:
 - **al-workspace** - Project setup & initialization
@@ -119,6 +119,9 @@ Invoke with `@workspace use [name]`:
 - **al-migrate** - Version migration support
 - **al-pages** - Page designer & UI customization
 - **al-workflow** - End-to-end feature guidance
+- **al-spec.create** - Create functional-technical specifications
+- **al-performance.triage** - Identify and prioritize performance bottlenecks
+- **al-pr.prepare** - Prepare pull request drafts with documentation
 
 ### 💬 Layer 4: Role-Based Chat Modes (6 files)
 
@@ -318,7 +321,7 @@ MIT License - see [LICENSE](./LICENSE) file for details.
 ---
 
 **Status**: ✅ Ready for contribution  
-**Last Updated**: 2025-10-15  
+**Last Updated**: 2025-10-19  
 **Collection ID**: `al-development`  
 **Version**: 2.1.0  
-**Total Tools**: 24 (7 instructions + 10 prompts + 6 chatmodes + 1 guide)
+**Total Tools**: 27 (7 instructions + 13 prompts + 6 chatmodes + 1 guide)

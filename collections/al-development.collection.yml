@@ -1,10 +1,11 @@
 id: al-development
 name: AL Development for Business Central
-description: Comprehensive toolkit for Microsoft Dynamics 365 Business Central AL development, including architecture guidance, debugging tools, testing frameworks, API development, and AI-powered Copilot features. This collection provides auto-applied coding standards, task-specific workflows, and specialized consultant modes.
-tags: [al, business-central, dynamics365, erp, microsoft, architecture, testing, api, copilot, debugging]
+description: AI Native Development toolkit implementing the A-Instructions Architecture framework with 28 Agent Primitives across 3 systematic layers. Provides Markdown Prompt Engineering through Instructions files, Agentic Workflows via prompts, and Context Engineering through applyTo patterns for optimal LLM performance in Business Central development.
+tags: [al, business-central, dynamics365, erp, microsoft, ai-native, a-instructions, agent-primitives, context-engineering, copilot]
 
 items:
-    # Auto-Applied Instructions (Layer 1 & 2)
+    # Layer 2: Agent Primitives - Instructions (7 files)
+    # Context Engineering via applyTo patterns for modular context loading
   - path: .github/instructions/al-guidelines.instructions.md
     kind: instruction
   - path: .github/instructions/al-code-style.instructions.md
@@ -20,7 +21,8 @@ items:
   - path: .github/instructions/al-testing.instructions.md
     kind: instruction
 
-  # Task-Specific Prompts (Layer 3)
+  # Layer 2: Agent Primitives - Agentic Workflows (14 files)
+  # Complete systematic processes with validation gates and AL tool access
   - path: prompts/al-setup.prompt.md
     kind: prompt
   - path: .github/prompts/al-workspace.prompt.md
@@ -50,21 +52,24 @@ items:
   - path: prompts/al-pr.prepare.prompt.md
     kind: prompt
 
-  # Role-Based Chat Modes (Layer 4)
+  # Layer 2: Agent Primitives - Chat Modes (6 files)
+  # Role-based specialists with MCP tool boundaries preventing cross-domain operations
   - path: .github/chatmodes/al-orchestrator.chatmode.md
     kind: chat-mode
     usage: recommended
     description: |
-      This chat mode is your entry point when unsure which tool to use. It analyzes your request and routes you to the appropriate mode or prompt.
+      Strategic router and workflow coordinator implementing Markdown Prompt Engineering principles. This is your entry point for complex tasks - it analyzes requirements and orchestrates the right combination of Agent Primitives (Instructions, Workflows, Chat Modes) for optimal results.
 
-      This chat mode works best with:
-      - All other AL chat modes and prompts in this collection
-      - AL Instructions for enforcing code standards
+      Orchestrates Agent Primitives through:
+      - Context Loading - Analyzes requirements and loads relevant Instructions
+      - Workflow Routing - Recommends appropriate Agentic Workflows for execution
+      - Mode Coordination - Routes to specialized Chat Modes for strategic work
+      - Multi-Phase Planning - Creates systematic workflows for complex features
 
-      This chat mode is ideal for:
-      - Starting a new task without knowing which tool to use
-      - Getting a strategic roadmap for complex multi-domain tasks
-      - Understanding how different tools in the collection work together
+      Implements Context Engineering by:
+      - Selective primitive activation based on task complexity
+      - Preventing context window pollution through strategic routing
+      - Recommending parallel vs sequential execution patterns
 
       Example usage:
       ```markdown
@@ -86,14 +91,18 @@ items:
     kind: chat-mode
     usage: recommended
     description: |
-      This chat mode specializes in solution architecture and design decisions for Business Central extensions.
+      Solution architecture and design specialist applying Markdown Prompt Engineering for structured technical decision-making. Uses semantic markdown (headers, lists, links) to create clear architectural documentation and design rationale.
 
-      This chat mode requires:
-      - al-guidelines.instructions.md (for BC patterns)
-      - al-code-style.instructions.md (for structure guidance)
-      - al-performance.instructions.md (for design considerations)
+      Tool Boundaries (professional licensing model):
+      - CAN: Design solutions, analyze patterns, recommend approaches
+      - CANNOT: Execute builds, deploy code, run tests (delegates to workflows)
 
-      This chat mode is ideal for:
+      Auto-loads Instructions for context:
+      - al-guidelines.instructions.md (BC architectural patterns)
+      - al-code-style.instructions.md (feature-based structure)
+      - al-performance.instructions.md (scalability considerations)
+
+      Ideal for (strategic thinking, not execution):
       - Planning new feature architecture
       - Designing data models and table structures
       - Evaluating integration strategies
@@ -127,14 +136,18 @@ items:
     kind: chat-mode
     usage: optional
     description: |
-      This chat mode provides systematic debugging guidance and troubleshooting for AL code issues.
+      Systematic debugging specialist applying Markdown Prompt Engineering for structured problem diagnosis. Uses semantic markdown to create clear diagnostic trees and root cause analysis documentation.
 
-      This chat mode works best with:
-      - al-debug.prompt.md (for debugging tools)
-      - al-performance.prompt.md (for performance issues)
-      - al-troubleshoot.prompt.md (for common problems)
+      Tool Boundaries (professional licensing model):
+      - CAN: Analyze issues, diagnose root causes, recommend fixes
+      - CANNOT: Execute code, run debuggers directly (recommends workflows)
 
-      This chat mode is ideal for:
+      Recommends Agentic Workflows:
+      - al-debug.prompt.md (for attaching debugger)
+      - al-performance.prompt.md (for profiling bottlenecks)
+      - al-troubleshoot.prompt.md (for common patterns)
+
+      Ideal for (diagnosis, not execution):
       - Diagnosing bugs and unexpected behavior
       - Root cause analysis of complex issues
       - Investigating intermittent problems
@@ -164,12 +177,20 @@ items:
     kind: chat-mode
     usage: optional
     description: |
-      This chat mode specializes in testing strategy, test-driven development, and quality assurance for AL code.
+      Testing strategy and TDD specialist applying Markdown Prompt Engineering for structured test planning. Uses semantic markdown to create clear test scenarios and coverage matrices.
 
-      This chat mode requires:
-      - al-testing.instructions.md (for AL-Go structure and test patterns)
+      Tool Boundaries (professional licensing model):
+      - CAN: Design test strategies, plan scenarios, review coverage
+      - CANNOT: Execute tests, run code (delegates to workflows)
 
-      This chat mode is ideal for:
+      Auto-loads Instructions for context:
+      - al-testing.instructions.md (AL-Go structure, test patterns)
+      
+      Implements Context Engineering:
+      - Only generates tests when explicitly requested
+      - Preserves context for test design over implementation
+
+      Ideal for (strategy, not execution):
       - Designing test strategies
       - Implementing test-driven development (TDD)
       - Creating comprehensive test suites
@@ -199,14 +220,21 @@ items:
     kind: chat-mode
     usage: optional
     description: |
-      This chat mode specializes in designing and implementing RESTful APIs and OData services for Business Central.
+      RESTful API design specialist applying Markdown Prompt Engineering for structured API contracts. Uses semantic markdown to create clear endpoint documentation and integration patterns.
 
-      This chat mode works best with:
-      - al-error-handling.instructions.md (for API error responses)
-      - al-performance.instructions.md (for API optimization)
-      - al-permissions.prompt.md (for API security)
+      Tool Boundaries (professional licensing model):
+      - CAN: Design APIs, plan endpoints, document contracts
+      - CANNOT: Execute builds, test APIs directly (recommends workflows)
 
-      This chat mode is ideal for:
+      Auto-loads Instructions for context:
+      - al-error-handling.instructions.md (proper error responses)
+      - al-performance.instructions.md (API optimization patterns)
+
+      Recommends Agentic Workflows:
+      - al-permissions.prompt.md (for API security setup)
+      - al-build.prompt.md (for deployment)
+
+      Ideal for (design and implementation guidance):
       - Designing API endpoints and contracts
       - Implementing API pages (v2.0)
       - Setting up authentication and security
@@ -238,13 +266,21 @@ items:
     kind: chat-mode
     usage: optional
     description: |
-      This chat mode specializes in building AI-powered Copilot experiences and integrating Azure OpenAI services into Business Central.
+      AI-powered feature specialist applying advanced Markdown Prompt Engineering for Copilot experiences. Expert in prompt engineering patterns, context loading strategies, and responsible AI implementation.
 
-      This chat mode works best with:
-      - al-architect.chatmode.md (for designing AI integration architecture)
-      - al-error-handling.instructions.md (for handling AI service failures)
+      Tool Boundaries (professional licensing model):
+      - CAN: Design AI features, engineer prompts, plan integrations
+      - CANNOT: Execute code, deploy services (recommends workflows)
 
-      This chat mode is ideal for:
+      Coordinates with other Agent Primitives:
+      - al-architect.chatmode.md (for AI integration architecture)
+      - al-error-handling.instructions.md (for AI service failures)
+
+      Implements meta-level Context Engineering:
+      - Designs prompt engineering patterns for end-user Copilot features
+      - Plans context optimization strategies for AI features
+
+      Ideal for (AI feature design and prompt engineering):
       - Designing Copilot user experiences
       - Implementing Azure OpenAI integration
       - Prompt engineering for business scenarios

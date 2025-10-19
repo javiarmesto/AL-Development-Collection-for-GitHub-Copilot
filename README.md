@@ -51,45 +51,50 @@ Open any `.al` file and start coding. The auto-applied instructions will guide C
 Switch to al-orchestrator mode and ask: "I need to build a sales approval workflow"
 ```
 
-## 🏗️ The 4-Layer System Architecture
+## 🏗️ A-Instructions Architecture Framework
 
-This collection implements a unique **4-layer architecture** that combines automation, context, tasks, and strategy:
+This collection implements the **[A-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **3 systematic layers** that transform ad-hoc AI usage into reliable, repeatable engineering:
 
 ```mermaid
 graph TB
-    User[� Developer] --> Layer4[Layer 4: Strategic Modes]
-    User --> Layer3[Layer 3: Task Prompts]
-    User --> Coding[💻 Coding in AL]
+    Dev[👤 Developer] --> Layer1[Layer 1: Markdown Prompt Engineering]
+    Layer1 --> |Structured Instructions| Layer2[Layer 2: Agent Primitives]
+    Layer2 --> |Context Optimization| Layer3[Layer 3: Context Engineering]
     
-    Coding --> Layer1[Layer 1: Auto-Applied Guidelines]
-    Coding --> Layer2[Layer 2: Contextual Guidelines]
+    Layer2 --> Instructions[📋 Instructions Files<br/>Auto-applied guidelines]
+    Layer2 --> ChatModes[💬 Chat Modes<br/>Role-based specialists]
+    Layer2 --> Prompts[🎯 Agentic Workflows<br/>Task execution]
     
-    Layer4 --> |Recommends| Layer3
-    Layer4 --> |Guides to| Layer1
-    Layer3 --> |Uses| Tools[🔧 AL Tools]
+    Layer3 --> Modular[Modular Loading<br/>applyTo patterns]
+    Layer3 --> AGENTSMD[AGENTS.md Standard<br/>Universal portability]
     
-    Layer1 --> |Always Active| Copilot[🤖 GitHub Copilot]
-    Layer2 --> |Context-Aware| Copilot
-    Layer3 --> |Workflows| Copilot
-    Layer4 --> |Strategic| Copilot
+    Instructions --> Copilot[🤖 GitHub Copilot]
+    ChatModes --> Copilot
+    Prompts --> Copilot
     
-    style Layer1 fill:#4CAF50
-    style Layer2 fill:#8BC34A
-    style Layer3 fill:#2196F3
-    style Layer4 fill:#9C27B0
+    style Layer1 fill:#9C27B0
+    style Layer2 fill:#2196F3
+    style Layer3 fill:#4CAF50
     style Copilot fill:#FF9800
 ```
 
-### 📊 Layer Breakdown
+### 🎯 Framework Layers
 
-| Layer | Type | Count | Activation | Purpose |
-|-------|------|-------|------------|---------|
-| **Layer 1** | Auto-Applied | 4 files | Always on `*.al` | Code style, naming, performance |
-| **Layer 2** | Contextual | 3 files | Context-triggered | Error handling, events, testing |
-| **Layer 3** | Task Prompts | 14 files | `@workspace use [name]` | Specific workflows |
-| **Layer 4** | Strategic Modes | 6 files | `Use [mode-name]` | Expert consultation |
-| **Guide** | Documentation | 1 file | Reference | Master integration guide |
-| **Total** | — | **28 tools** | — | Complete toolkit |
+| Layer | Focus | Purpose | AL Implementation |
+|-------|-------|---------|-------------------|
+| **Layer 1** | **Markdown Prompt Engineering** | Structured instructions using semantic markdown | Headers, lists, links for AI reasoning |
+| **Layer 2** | **Agent Primitives** | Configurable tools (Instructions, Modes, Prompts) | 7 Instructions + 6 Chat Modes + 14 Prompts + 1 Guide |
+| **Layer 3** | **Context Engineering** | Strategic context management via `applyTo` patterns | Modular loading, AGENTS.md compilation ready |
+
+### 📊 Agent Primitives Breakdown
+
+| Primitive Type | Count | Activation | Purpose |
+|----------------|-------|------------|---------|
+| **Instructions** | 7 files | Auto via `applyTo` patterns | Persistent coding rules & standards |
+| **Chat Modes** | 6 files | `Use [mode-name]` | Role-based strategic consulting |
+| **Agentic Workflows** | 14 files | `@workspace use [name]` | Complete task execution processes |
+| **Integration Guide** | 1 file | Reference | Master coordination document |
+| **Total Primitives** | **28 tools** | — | Complete AI Native toolkit |
 
 ## 📦 What's Included: Agent Primitives
 

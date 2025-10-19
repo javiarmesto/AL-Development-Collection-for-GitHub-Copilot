@@ -21,8 +21,11 @@
 2. **Install the collection in your AL workspace**
    ```bash
    # Copy files to your AL project
-   cp -r .github your-al-project/
+   cp -r instructions your-al-project/
+   cp -r prompts your-al-project/
+   cp -r chatmodes your-al-project/
    cp -r collections your-al-project/
+   cp -r .github your-al-project/  # Templates only
    ```
 
 3. **Reload VS Code**
@@ -198,6 +201,9 @@ Invoke with `@workspace use [name]`:
 
 ### Collection Documentation
 - **[Collection Overview](./al-development.md)** - User-facing guide
+- **[Instructions Index](./instructions/index.md)** - Complete guide to all 8 instruction files
+- **[Prompts Index](./prompts/index.md)** - Complete guide to all 14 agentic workflows
+- **[Chat Modes Index](./chatmodes/index.md)** - Complete guide to all 6 chat modes
 - **[Prompts Parameter Reference](./PROMPTS.md)** - Workflow parameters (English)
 - **[Referencia de Parámetros](./PROMPTS-ES.md)** - Parámetros de workflows (Español)
 - **[Complete Reference](./COLLECTION-SUMMARY.md)** - Internal architecture
@@ -292,29 +298,40 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
 
 ```
 AL_Copilot_Collection/
-├── .github/                                      # Agent Primitives (Layer 2)
+├── .github/                                      # GitHub templates only
+│   ├── ISSUE_TEMPLATE/                          # Issue templates (3)
+│   └── PULL_REQUEST_TEMPLATE.md                 # PR template
+├── instructions/                                 # 📋 Instructions (8 files)
+│   ├── index.md                                 # Complete instructions guide
 │   ├── copilot-instructions.md                  # Master integration guide
-│   ├── instructions/                            # 📋 Instructions (7 files)
-│   │   ├── al-guidelines.instructions.md        # applyTo: **/*.{al,json}
-│   │   ├── al-code-style.instructions.md        # applyTo: **/*.al
-│   │   ├── al-naming-conventions.instructions.md
-│   │   ├── al-performance.instructions.md
-│   │   ├── al-error-handling.instructions.md
-│   │   ├── al-events.instructions.md
-│   │   └── al-testing.instructions.md           # applyTo: **/test/**/*.al
-│   ├── prompts/                                 # 🎯 Agentic Workflows (14 files)
-│   │   ├── al-workspace.prompt.md
-│   │   ├── al-build.prompt.md
-│   │   └── ... (14 total workflow prompts)
-│   └── chatmodes/                               # 💬 Chat Modes (6 files)
-│       ├── al-orchestrator.chatmode.md          # Smart router
-│       ├── al-architect.chatmode.md             # Architecture specialist
-│       └── ... (6 total strategic modes)
-├── A-INSTRUCTIONS-ARCHITECTURE.md               # Framework implementation docs
-├── ai-native-concepts.md                        # Framework concepts reference
-├── ai-native-structure.md                       # Framework structure reference
+│   ├── al-guidelines.instructions.md            # applyTo: **/*.{al,json}
+│   ├── al-code-style.instructions.md            # applyTo: **/*.al
+│   ├── al-naming-conventions.instructions.md
+│   ├── al-performance.instructions.md
+│   ├── al-error-handling.instructions.md
+│   ├── al-events.instructions.md
+│   └── al-testing.instructions.md               # applyTo: **/test/**/*.al
+├── prompts/                                      # 🎯 Agentic Workflows (15 files)
+│   ├── index.md                                 # Complete workflows guide
+│   ├── al-workspace.prompt.md
+│   ├── al-build.prompt.md
+│   └── ... (14 total workflow prompts)
+├── chatmodes/                                    # 💬 Chat Modes (7 files)
+│   ├── index.md                                 # Complete modes guide
+│   ├── al-orchestrator.chatmode.md              # Smart router
+│   ├── al-architect.chatmode.md                 # Architecture specialist
+│   └── ... (6 total strategic modes)
+├── collections/                                  # Collection manifests
+│   └── al-development.collection.yml            # Main collection definition
+├── references/                                   # Framework documentation
+│   ├── A-INSTRUCTIONS-ARCHITECTURE.md           # Framework implementation
+│   ├── ai-native-concepts.md                    # Framework concepts
+│   └── ai-native-structure.md                   # Framework structure
+├── archive/                                      # Historical files
 ├── al-development.md                            # User documentation
-├── COLLECTION-SUMMARY.md                        # Internal reference
+├── CONTRIBUTING.md                              # Contribution guidelines
+├── LICENSE                                      # MIT License
+├── SECURITY.md                                  # Security policy
 ├── validate-al-collection.js                    # Compliance validation
 ├── package.json                                 # Dependencies
 └── README.md                                    # This file

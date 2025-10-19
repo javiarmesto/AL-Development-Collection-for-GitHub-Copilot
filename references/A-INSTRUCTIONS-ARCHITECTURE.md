@@ -15,7 +15,7 @@ This repository has been refactored to follow the **A-Instructions Architecture*
 All Agent Primitives now reside in the `.github/` directory following VSCode Copilot conventions:
 
 ```
-AL C
+AL-Development-Collection-for-GitHub-Copilot
 ├── copilot-instructions.md              # Master integration guide
 ├── instructions/                        # Modular, context-scoped guidelines
 │   ├── al-guidelines.instructions.md    # (applyTo: **/*.{al,json})

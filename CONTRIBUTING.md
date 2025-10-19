@@ -35,7 +35,9 @@ You can contribute three types of **Agent Primitives** (Layer 2):
 
 Instructions are **Markdown Prompt Engineering** (Layer 1) files that customize GitHub Copilot's behavior using `applyTo` patterns (Layer 3).
 
-1. **Create your file** in `.github/instructions/`
+📖 **See [instructions/index.md](./instructions/index.md) for complete guide to existing instructions.**
+
+1. **Create your file** in `instructions/`
 2. **Use naming convention**: `al-[feature].instructions.md`
 3. **Include frontmatter** (Context Engineering):
    ```yaml
@@ -61,7 +63,9 @@ Instructions are **Markdown Prompt Engineering** (Layer 1) files that customize 
 
 **Agentic Workflows** (formerly called "prompts") are complete execution processes for specific AL development tasks.
 
-1. **Create your file** in `.github/prompts/`
+📖 **See [prompts/index.md](./prompts/index.md) for complete guide to existing workflows.**
+
+1. **Create your file** in `prompts/`
 2. **Use naming convention**: `al-[task].prompt.md`
 3. **Include frontmatter**:
    ```markdown
@@ -88,7 +92,9 @@ Instructions are **Markdown Prompt Engineering** (Layer 1) files that customize 
 
 **Chat Modes** are role-based strategic consultants with defined **Tool Boundaries** (MCP constraints) for specialized AL guidance.
 
-1. **Create your file** in `.github/chatmodes/`
+📖 **See [chatmodes/index.md](./chatmodes/index.md) for complete guide to existing modes.**
+
+1. **Create your file** in `chatmodes/`
 2. **Use naming convention**: `al-[role].chatmode.md`
 3. **Include frontmatter**:
    ```markdown
@@ -195,10 +201,10 @@ Before submitting a pull request:
 
 Example manifest entry:
 ```yaml
-- path: .github/instructions/al-security.instructions.md
+- path: instructions/al-security.instructions.md
   kind: instruction
 
-- path: .github/copilot-prompts/al-deploy.prompt.md
+- path: prompts/al-deploy.prompt.md
   kind: prompt
 
 - path: chatmodes/al-security-expert.chatmode.md

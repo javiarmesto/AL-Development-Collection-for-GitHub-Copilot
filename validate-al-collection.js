@@ -340,9 +340,9 @@ function validateDirectoryStructure() {
   log('\n📂 Validating Directory Structure...', 'cyan');
   
   const requiredDirs = [
-    '.github/instructions',
-    '.github/prompts',
-    '.github/chatmodes',
+    'instructions',
+    'prompts',
+    'chatmodes',
     'collections'
   ];
   

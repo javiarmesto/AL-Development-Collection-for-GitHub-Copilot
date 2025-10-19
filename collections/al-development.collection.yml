@@ -6,44 +6,44 @@ tags: [al, business-central, dynamics365, erp, microsoft, ai-native, a-instructi
 items:
     # Layer 2: Agent Primitives - Instructions (7 files)
     # Context Engineering via applyTo patterns for modular context loading
-  - path: .github/instructions/al-guidelines.instructions.md
+  - path: instructions/al-guidelines.instructions.md
     kind: instruction
-  - path: .github/instructions/al-code-style.instructions.md
+  - path: instructions/al-code-style.instructions.md
     kind: instruction
-  - path: .github/instructions/al-naming-conventions.instructions.md
+  - path: instructions/al-naming-conventions.instructions.md
     kind: instruction
-  - path: .github/instructions/al-performance.instructions.md
+  - path: instructions/al-performance.instructions.md
     kind: instruction
-  - path: .github/instructions/al-error-handling.instructions.md
+  - path: instructions/al-error-handling.instructions.md
     kind: instruction
-  - path: .github/instructions/al-events.instructions.md
+  - path: instructions/al-events.instructions.md
     kind: instruction
-  - path: .github/instructions/al-testing.instructions.md
+  - path: instructions/al-testing.instructions.md
     kind: instruction
 
   # Layer 2: Agent Primitives - Agentic Workflows (14 files)
   # Complete systematic processes with validation gates and AL tool access
   - path: prompts/al-setup.prompt.md
     kind: prompt
-  - path: .github/prompts/al-workspace.prompt.md
+  - path: prompts/al-workspace.prompt.md
     kind: prompt
-  - path: .github/prompts/al-build.prompt.md
+  - path: prompts/al-build.prompt.md
     kind: prompt
-  - path: .github/prompts/al-events.prompt.md
+  - path: prompts/al-events.prompt.md
     kind: prompt
-  - path: .github/prompts/al-debug.prompt.md
+  - path: prompts/al-debug.prompt.md
     kind: prompt
-  - path: .github/prompts/al-performance.prompt.md
+  - path: prompts/al-performance.prompt.md
     kind: prompt
-  - path: .github/prompts/al-permissions.prompt.md
+  - path: prompts/al-permissions.prompt.md
     kind: prompt
-  - path: .github/prompts/al-troubleshoot.prompt.md
+  - path: prompts/al-troubleshoot.prompt.md
     kind: prompt
-  - path: .github/prompts/al-migrate.prompt.md
+  - path: prompts/al-migrate.prompt.md
     kind: prompt
-  - path: .github/prompts/al-pages.prompt.md
+  - path: prompts/al-pages.prompt.md
     kind: prompt
-  - path: .github/prompts/al-workflow.prompt.md
+  - path: prompts/al-workflow.prompt.md
     kind: prompt
   - path: prompts/al-spec.create.prompt.md
     kind: prompt
@@ -54,7 +54,7 @@ items:
 
   # Layer 2: Agent Primitives - Chat Modes (6 files)
   # Role-based specialists with MCP tool boundaries preventing cross-domain operations
-  - path: .github/chatmodes/al-orchestrator.chatmode.md
+  - path: chatmodes/al-orchestrator.chatmode.md
     kind: chat-mode
     usage: recommended
     description: |
@@ -87,7 +87,7 @@ items:
       - Mention any constraints (timeline, existing code, team size)
       - Let the orchestrator analyze before jumping into implementation
 
-  - path: .github/chatmodes/al-architect.chatmode.md
+  - path: chatmodes/al-architect.chatmode.md
     kind: chat-mode
     usage: recommended
     description: |
@@ -132,7 +132,7 @@ items:
       - Mention scalability and data volume expectations
       - Ask about alternatives and trade-offs
 
-  - path: .github/chatmodes/al-debugger.chatmode.md
+  - path: chatmodes/al-debugger.chatmode.md
     kind: chat-mode
     usage: optional
     description: |
@@ -173,7 +173,7 @@ items:
       - Describe steps to reproduce
       - Mention what you've already tried
 
-  - path: .github/chatmodes/al-tester.chatmode.md
+  - path: chatmodes/al-tester.chatmode.md
     kind: chat-mode
     usage: optional
     description: |
@@ -216,7 +216,7 @@ items:
       - Mention any specific edge cases to cover
       - Indicate your test coverage goals
 
-  - path: .github/chatmodes/al-api.chatmode.md
+  - path: chatmodes/al-api.chatmode.md
     kind: chat-mode
     usage: optional
     description: |
@@ -262,7 +262,7 @@ items:
       - Mention authentication requirements
       - Include performance expectations
 
-  - path: .github/chatmodes/al-copilot.chatmode.md
+  - path: chatmodes/al-copilot.chatmode.md
     kind: chat-mode
     usage: optional
     description: |

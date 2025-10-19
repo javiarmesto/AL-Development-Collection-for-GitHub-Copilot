@@ -1,6 +1,7 @@
 ---
 description: 'AL Development Orchestrator - Intelligent router that analyzes development requests and guides users to the most appropriate specialized mode or combination of modes.'
 tools: ['codebase', 'search', 'problems', 'githubRepo', 'usages']
+model: Claude Sonnet 4
 ---
 
 # AL Orchestrator Mode - Development Strategy & Mode Router

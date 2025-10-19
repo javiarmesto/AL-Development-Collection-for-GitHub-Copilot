@@ -1,8 +1,6 @@
 ---
-title: "AL Testing & Project Structure Rules"
-description: >
-globs: ["*.al", "app.json"]
-alwaysApply: false
+applyTo: "**/test/**/*.al"
+description: "AL Testing & Project Structure Rules - Ensure proper project organization and test implementation"
 ---
 
 # AL Testing & Project Structure Rules

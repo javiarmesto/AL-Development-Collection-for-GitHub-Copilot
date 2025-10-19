@@ -1,7 +1,6 @@
 ---
-description: AL Guidelines - Comprehensive AI-optimized coding rules for Microsoft Dynamics 365 Business Central development
-globs: ["*.al", "*.json", "app.json", "launch.json"]
-alwaysApply: true
+applyTo: "**/*.{al,json}"
+description: "AL Guidelines - Comprehensive AI-optimized coding rules for Microsoft Dynamics 365 Business Central development"
 ---
 
 # AL Guidelines - Vibe Coding Rules
@@ -17,16 +16,16 @@ You are an AI assistant designed to aid in AL development, particularly for Micr
 - Only generate test code when explicitly requested
 - Maintain proper AL-Go workspace structure separation
 
-## Rule Categories
+## Context Loading
 
-The following rule sets provide comprehensive guidance for AL development:
+Before implementing AL code, review the following domain-specific guidelines that apply to your current file context:
 
-- [AL Code Style](al-code-style.instructions.md)
-- [AL Naming Conventions](al-naming-conventions.instructions.md)
-- [AL Performance](al-performance.instructions.md)
-- [AL Error Handling](al-error-handling.instructions.md)
-- [AL Events](al-events.instructions.md)
-- [AL Testing](al-testing.instructions.md)
+- [AL Code Style Guidelines](./al-code-style.instructions.md) - Code structure and formatting
+- [AL Naming Conventions](./al-naming-conventions.instructions.md) - Consistent naming patterns
+- [AL Performance Guidelines](./al-performance.instructions.md) - Optimization best practices
+- [AL Error Handling](./al-error-handling.instructions.md) - Error patterns and telemetry
+- [AL Events Guidelines](./al-events.instructions.md) - Event-driven development
+- [AL Testing Guidelines](./al-testing.instructions.md) - Test implementation patterns
 
 ## Key Guidelines Summary
 

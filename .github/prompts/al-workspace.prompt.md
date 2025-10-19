@@ -2,6 +2,7 @@
 mode: 'agent'
 description: 'Set up and configure an AL development workspace for Business Central development.'
 tools: ['ms-dynamics-smb.al/al_download_symbols', 'ms-dynamics-smb.al/al_clear_credentials_cache', 'ms-dynamics-smb.al/al_go', 'ms-dynamics-smb.al/al_new_project', 'ms-dynamics-smb.al/al_generate_manifest']
+model: gpt-4
 ---
 
 # AL Workspace Setup

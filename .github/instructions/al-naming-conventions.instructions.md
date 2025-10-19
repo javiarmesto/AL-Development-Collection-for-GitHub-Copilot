@@ -1,8 +1,6 @@
 ---
-title: "Naming Conventions Rules"
+applyTo: "**/*.al"
 description: "Comprehensive naming conventions for AL files, objects, variables, and functions"
-globs: ["*.al"]
-alwaysApply: true
 ---
 
 # Naming Conventions Rules

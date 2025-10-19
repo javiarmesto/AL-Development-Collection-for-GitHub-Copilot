@@ -2,6 +2,7 @@
 mode: 'agent'
 description: 'Build, package, and deploy AL extensions to Business Central environments.'
 tools: ['search', 'Microsoft Docs/microsoft_docs_fetch', 'ms-dynamics-smb.al/al_package', 'ms-dynamics-smb.al/al_publish', 'ms-dynamics-smb.al/al_publish_without_debug', 'ms-dynamics-smb.al/al_publish_existing_extension']
+model: gpt-4
 ---
 
 # Build and Deploy AL Extension

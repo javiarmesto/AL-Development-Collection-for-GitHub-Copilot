@@ -2,6 +2,7 @@
 mode: 'agent'
 description: 'Set up and conduct AL debugging sessions including standard, snapshot, and agent debugging.'
 tools: ['al_publish', 'al_debug_without_publish', 'al_incremental_publish', 'al_initalize_snapshot_debugging', 'al_finish_snapshot_debugging', 'al_snapshots']
+model: gpt-4
 ---
 
 # AL Debugging Session

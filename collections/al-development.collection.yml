@@ -21,6 +21,8 @@ items:
     kind: instruction
 
   # Task-Specific Prompts (Layer 3)
+  - path: prompts/al-setup.prompt.md
+    kind: prompt
   - path: prompts/al-workspace.prompt.md
     kind: prompt
   - path: prompts/al-build.prompt.md

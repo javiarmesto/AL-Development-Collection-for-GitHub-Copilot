@@ -1,10 +1,10 @@
 # AL Development Collection for GitHub Copilot
 
-> Comprehensive toolkit for Microsoft Dynamics 365 Business Central AL development with **24 specialized tools** across **4 intelligent layers**.
+> Comprehensive toolkit for Microsoft Dynamics 365 Business Central AL development with **28 specialized tools** across **4 intelligent layers**.
 
 [![Validation Status](https://img.shields.io/badge/validation-passing-brightgreen)](./validate-al-collection.js)
 [![Version](https://img.shields.io/badge/version-2.1-blue)](./al-development.collection.yml)
-[![Tools](https://img.shields.io/badge/tools-27-orange)](./al-development.md)
+[![Tools](https://img.shields.io/badge/tools-28-orange)](./al-development.md)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
 ## 🚀 Quick Start
@@ -86,10 +86,10 @@ graph TB
 |-------|------|-------|------------|---------|
 | **Layer 1** | Auto-Applied | 4 files | Always on `*.al` | Code style, naming, performance |
 | **Layer 2** | Contextual | 3 files | Context-triggered | Error handling, events, testing |
-| **Layer 3** | Task Prompts | 13 files | `@workspace use [name]` | Specific workflows |
+| **Layer 3** | Task Prompts | 14 files | `@workspace use [name]` | Specific workflows |
 | **Layer 4** | Strategic Modes | 6 files | `Use [mode-name]` | Expert consultation |
 | **Guide** | Documentation | 1 file | Reference | Master integration guide |
-| **Total** | — | **27 tools** | — | Complete toolkit |
+| **Total** | — | **28 tools** | — | Complete toolkit |
 
 ## 📦 What's Included
 
@@ -106,9 +106,10 @@ graph TB
 - **al-events** - Event-driven development
 - **al-testing** - Testing guidelines & AL-Go structure
 
-### 📝 Layer 3: Task-Specific Prompts (13 files)
+### 📝 Layer 3: Task-Specific Prompts (14 files)
 
 Invoke with `@workspace use [name]`:
+- **al-setup** - Environment setup & configuration for AI-assisted development
 - **al-workspace** - Project setup & initialization
 - **al-build** - Build & deployment workflows
 - **al-events** - Event implementation
@@ -324,4 +325,4 @@ MIT License - see [LICENSE](./LICENSE) file for details.
 **Last Updated**: 2025-10-19  
 **Collection ID**: `al-development`  
 **Version**: 2.1.0  
-**Total Tools**: 27 (7 instructions + 13 prompts + 6 chatmodes + 1 guide)
+**Total Tools**: 28 (7 instructions + 14 prompts + 6 chatmodes + 1 guide)

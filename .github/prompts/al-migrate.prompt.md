@@ -2,6 +2,7 @@
 mode: 'agent'
 description: 'Migrate AL projects between versions or environments.'
 tools: ['al_download_source', 'al_get_package_dependencies', 'al_generate_manifest', 'al_full_package', 'al_build']
+model: gpt-4
 ---
 
 # AL Project Migration

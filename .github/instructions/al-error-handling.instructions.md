@@ -1,8 +1,6 @@
 ---
-title: "AL Error Handling & Troubleshooting Rules"
+applyTo: "**/*.al"
 description: "AL Error handling patterns, debugging techniques, and troubleshooting guidelines for AL development"
-globs: ["*.al"]
-alwaysApply: false
 ---
 
 # AL Error Handling & Troubleshooting Rules

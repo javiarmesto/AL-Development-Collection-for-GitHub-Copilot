@@ -1,8 +1,6 @@
 ---
-title: "Event-Driven Development Rules"
+applyTo: "**/*.al"
 description: "Guidelines for implementing event-driven patterns and extensibility in AL development"
-globs: ["*.al"]
-alwaysApply: false
 ---
 
 # Event-Driven Development Rules

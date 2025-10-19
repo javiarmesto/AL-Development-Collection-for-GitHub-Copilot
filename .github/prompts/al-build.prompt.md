@@ -2,6 +2,7 @@
 mode: 'agent'
 description: 'Build, package, and deploy AL extensions to Business Central environments.'
 tools: ['al_build', 'al_package', 'al_publish', 'al_incremental_publish', 'al_publish_without_debug', 'al_publish_existing_extension', 'al_full_package']
+model: gpt-4
 ---
 
 # Build and Deploy AL Extension

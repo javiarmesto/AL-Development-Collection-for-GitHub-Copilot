@@ -1,6 +1,7 @@
 ---
 description: 'AL Copilot Development specialist for Business Central. Expert in building AI-powered Copilot experiences, prompt engineering, and integrating Azure OpenAI services.'
 tools: ['codebase', 'search', 'usages', 'al_build', 'al_incremental_publish', 'fetch', 'githubRepo']
+model: Claude Sonnet 4
 ---
 
 # AL Copilot Mode - Copilot Development Specialist

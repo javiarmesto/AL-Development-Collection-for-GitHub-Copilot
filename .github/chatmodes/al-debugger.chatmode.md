@@ -1,6 +1,7 @@
 ---
 description: 'AL Debugging specialist for Business Central. Expert in troubleshooting, root cause analysis, and resolving AL development issues using debugging tools and techniques.'
 tools: ['al_debug_without_publish', 'al_initalize_snapshot_debugging', 'al_finish_snapshot_debugging', 'al_snapshots', 'al_generate_cpu_profile_file', 'al_clear_profile_codelenses', 'problems', 'terminalLastCommand', 'codebase', 'search', 'usages']
+model: Claude Sonnet 4
 ---
 
 # AL Debug Mode - Debugging & Troubleshooting Specialist

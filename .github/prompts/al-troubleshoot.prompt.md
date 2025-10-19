@@ -2,6 +2,7 @@
 mode: 'agent'
 description: 'Troubleshoot common AL development issues including authentication, symbols, and dependencies.'
 tools: ['al_clear_credentials_cache', 'al_download_symbols', 'al_download_source', 'al_get_package_dependencies', 'al_build']
+model: gpt-4
 ---
 
 # AL Development Troubleshooting

@@ -1,6 +1,6 @@
 ---
 description: 'AL Copilot Development specialist for Business Central. Expert in building AI-powered Copilot experiences, prompt engineering, and integrating Azure OpenAI services.'
-tools: ['codebase', 'search', 'usages', 'al_build', 'al_incremental_publish', 'fetch', 'githubRepo']
+tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'Azure MCP/search', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_incremental_publish', 'extensions', 'todos']
 model: Claude Sonnet 4
 ---
 

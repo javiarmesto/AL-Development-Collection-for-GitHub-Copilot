@@ -1,7 +1,7 @@
 ---
 mode: 'agent'
 description: 'Troubleshoot common AL development issues including authentication, symbols, and dependencies.'
-tools: ['al_clear_credentials_cache', 'al_download_symbols', 'al_download_source', 'al_get_package_dependencies', 'al_build']
+tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_download_symbols', 'ms-dynamics-smb.al/al_download_source', 'ms-dynamics-smb.al/al_clear_credentials_cache', 'extensions', 'todos', 'runTests']
 model: gpt-4
 ---
 

@@ -1,7 +1,7 @@
 ---
 mode: 'agent'
 description: 'Complete end-to-end AL development workflow from setup to deployment.'
-tools: ['al_new_project', 'al_go', 'al_download_symbols', 'al_build', 'al_package', 'al_publish', 'al_incremental_publish', 'al_open_Page_Designer', 'al_insert_event', 'al_generate_permissionset_for_extension_objects', 'al_generate_manifest']
+tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_download_symbols', 'ms-dynamics-smb.al/al_insert_event', 'ms-dynamics-smb.al/al_go', 'ms-dynamics-smb.al/al_new_project', 'ms-dynamics-smb.al/al_incremental_publish', 'ms-dynamics-smb.al/al_generate_manifest', 'ms-dynamics-smb.al/al_package', 'ms-dynamics-smb.al/al_publish', 'extensions', 'todos', 'runTests']
 model: gpt-4
 ---
 

@@ -1,7 +1,7 @@
 ---
 mode: 'agent'
 description: 'Analyze AL codebase to identify performance bottlenecks, circular dependencies, or FlowField inefficiencies.'
-tools: ['codebase', 'problems']
+tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'todos', 'runTests']
 ---
 
 # AL Performance Triage Workflow

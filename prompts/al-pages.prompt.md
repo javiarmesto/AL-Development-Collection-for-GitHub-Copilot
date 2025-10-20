@@ -1,7 +1,7 @@
 ---
 mode: 'agent'
 description: 'Design and customize Business Central pages using the AL Page Designer for enhanced user experience.'
-tools: ['al_open_Page_Designer', 'al_build', 'al_incremental_publish']
+tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'github/github-mcp-server/*', 'microsoft-docs/*', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_incremental_publish', 'extensions', 'todos', 'runTests']
 model: gpt-4
 ---
 

@@ -1,7 +1,7 @@
 ---
 description: 'AL Debugging specialist for Business Central. Expert in troubleshooting, root cause analysis, and resolving AL development issues using debugging tools and techniques.'
-tools: ['al_debug_without_publish', 'al_initalize_snapshot_debugging', 'al_finish_snapshot_debugging', 'al_snapshots', 'al_generate_cpu_profile_file', 'al_clear_profile_codelenses', 'problems', 'terminalLastCommand', 'codebase', 'search', 'usages']
-model: Claude Sonnet 4
+tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'Azure MCP/search', 'github/create_issue', 'github/create_pull_request', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_clear_profile_codelenses', 'ms-dynamics-smb.al/al_initalize_snapshot_debugging', 'ms-dynamics-smb.al/al_finish_snapshot_debugging', 'ms-dynamics-smb.al/al_debug_without_publish', 'ms-dynamics-smb.al/al_generate_cpu_profile_file', 'extensions', 'todos', 'runTests']
+model: Claude Sonnet 4.5
 ---
 
 # AL Debug Mode - Debugging & Troubleshooting Specialist

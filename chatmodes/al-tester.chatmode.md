@@ -1,6 +1,6 @@
 ---
 description: 'AL Testing specialist for Business Central. Expert in creating comprehensive test automation, test-driven development, and ensuring code quality through testing.'
-tools: ['codebase', 'search', 'usages', 'findTestFiles', 'al_build', 'al_incremental_publish', 'problems', 'vscodeAPI']
+tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'Azure MCP/search', 'microsoft/playwright-mcp/*', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_incremental_publish', 'extensions', 'todos', 'runTests']
 model: Claude Sonnet 4
 ---
 

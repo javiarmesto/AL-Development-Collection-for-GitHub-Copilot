@@ -1,6 +1,6 @@
 ---
 description: 'AL API Development specialist for Business Central. Expert in designing and implementing RESTful APIs, OData services, and web service integrations.'
-tools: ['codebase', 'search', 'usages', 'al_build', 'al_incremental_publish', 'al_open_Page_Designer', 'githubRepo', 'fetch']
+tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'Azure MCP/search', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_incremental_publish', 'extensions', 'todos', 'runTests']
 model: Claude Sonnet 4
 ---
 

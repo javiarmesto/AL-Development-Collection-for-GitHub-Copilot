@@ -1,7 +1,7 @@
 ---
 description: 'AL Development Orchestrator - Intelligent router that analyzes development requests and guides users to the most appropriate specialized mode or combination of modes.'
-tools: ['codebase', 'search', 'problems', 'githubRepo', 'usages']
-model: Claude Sonnet 4
+tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'Microsoft Docs/*', 'github/github-mcp-server/*', 'markitdown/*', 'microsoft-docs/*', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'todos']
+model: Claude Sonnet 4.5
 ---
 
 # AL Orchestrator Mode - Development Strategy & Mode Router

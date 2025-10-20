@@ -1,7 +1,7 @@
 ---
 mode: 'agent'
 description: 'Generate and manage permission sets for AL extensions.'
-tools: ['al_generate_permissionset_for_extension_objects', 'al_generate_permissionset_for_extension_objects_as_xml']
+tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'todos', 'runTests']
 model: gpt-4
 ---
 

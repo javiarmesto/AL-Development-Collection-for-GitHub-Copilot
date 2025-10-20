@@ -1,7 +1,7 @@
 ---
 mode: 'agent'
 description: 'Prepare a clean, documented pull request draft for AL features or fixes with summary, testing notes, and checklist.'
-tools: ['codebase', 'githubRepo']
+tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'github/*', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'todos', 'runTests']
 ---
 
 # AL Pull Request Preparation Workflow

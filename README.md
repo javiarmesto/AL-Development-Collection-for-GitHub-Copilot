@@ -1,6 +1,6 @@
 # AL Development Collection for GitHub Copilot
 
-> **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[A-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **28 specialized Agent Primitives** across **3 systematic layers**.
+> **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **28 specialized Agent Primitives** across **3 systematic layers**.
 
 [![Validation Status](https://img.shields.io/badge/validation-passing-brightgreen)](./validate-al-collection.js)
 [![Version](https://img.shields.io/badge/version-2.2-blue)](./al-development.collection.yml)
@@ -54,9 +54,9 @@ Open any `.al` file and start coding. The auto-applied instructions will guide C
 Switch to al-orchestrator mode and ask: "I need to build a sales approval workflow"
 ```
 
-## 🏗️ A-Instructions Architecture Framework
+## 🏗️ AI Native-Instructions Architecture Framework
 
-This collection implements the **[A-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **3 systematic layers** that transform ad-hoc AI usage into reliable, repeatable engineering:
+This collection implements the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **3 systematic layers** that transform ad-hoc AI usage into reliable, repeatable engineering:
 
 ```mermaid
 graph TB
@@ -195,8 +195,8 @@ Invoke with `@workspace use [name]`:
 ## 📚 Documentation
 
 ### Framework Documentation
-- **[A-Instructions Architecture Implementation](./A-INSTRUCTIONS-ARCHITECTURE.md)** - Framework compliance details
-- **[A-Instructions Framework Guide](https://danielmeppiel.github.io/awesome-ai-native/)** - Complete framework reference
+- **[AI Native-Instructions Architecture Implementation](./A-INSTRUCTIONS-ARCHITECTURE.md)** - Framework compliance details
+- **[AI Native-Instructions Framework Guide](https://danielmeppiel.github.io/awesome-ai-native/)** - Complete framework reference
 - **[AGENTS.md Standard](https://agents.md)** - Universal context format
 
 ### Collection Documentation
@@ -294,7 +294,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
 
 ## 📋 File Structure
 
-**A-Instructions Architecture** implementation following VSCode Copilot conventions:
+**AI Native-Instructions Architecture** implementation following VSCode Copilot conventions:
 
 ```
 AL_Copilot_Collection/
@@ -342,8 +342,8 @@ AL_Copilot_Collection/
 
 ## 🏷️ Version History
 
-### 2.2.0 (2025-10-19) - A-Instructions Architecture
-- 🏗️ **Framework Implementation** - Full A-Instructions Architecture compliance
+### 2.2.0 (2025-10-19) - AI Native-Instructions Architecture
+- 🏗️ **Framework Implementation** - Full AI Native-Instructions Architecture compliance
 - 📋 **Layer 1: Markdown Prompt Engineering** - Structured semantic markdown throughout
 - 🔧 **Layer 2: Agent Primitives** - 28 configurable tools (Instructions, Modes, Prompts)
 - 🎯 **Layer 3: Context Engineering** - `applyTo` patterns for modular context loading
@@ -391,8 +391,8 @@ MIT License - see [LICENSE](./LICENSE) file for details.
 
 ---
 
-**Status**: ✅ A-Instructions Architecture Compliant  
-**Framework**: [A-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)  
+**Status**: ✅ AI Native-Instructions Architecture Compliant  
+**Framework**: [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)  
 **Last Updated**: 2025-10-19  
 **Collection ID**: `al-development`  
 **Version**: 2.2.0  

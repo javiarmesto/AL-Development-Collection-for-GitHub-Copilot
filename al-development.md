@@ -1,10 +1,10 @@
 # AL Development for Business Central
 
-**AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[A-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. Transform ad-hoc AI usage into systematic engineering through **28 Agent Primitives** across **3 framework layers**.
+**AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. Transform ad-hoc AI usage into systematic engineering through **28 Agent Primitives** across **3 framework layers**.
 
 ## Framework Architecture
 
-This collection implements the **A-Instructions Architecture** with three systematic layers:
+This collection implements the **AI Native-Instructions Architecture** with three systematic layers:
 
 ### Layer 1: Markdown Prompt Engineering
 **Foundation** - Structured instructions using semantic markdown (headers, lists, links) that guide AI reasoning for predictable, repeatable results.
@@ -48,7 +48,7 @@ Invoke with `@workspace use [prompt-name]`:
 - **al-build** - Build, package, publish workflows with AL tools
 - **al-events** - Event subscriber/publisher implementation
 - **al-debug** - Debugging with snapshot support
-- **al-performance** - CPU profiling and bottleneck analysis
+- **al-performance** - Profiling and bottleneck analysis
 - **al-permissions** - Permission set generation from objects
 - **al-troubleshoot** - Systematic problem resolution workflows
 - **al-migrate** - BC version upgrade assistance
@@ -336,12 +336,12 @@ Found an issue or have a suggestion? This collection improves through use:
 
 ## Framework Compliance
 
-**Framework**: [A-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)  
+**Framework**: [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)  
 **Version**: 2.2.0  
 **Last Updated**: 2025-10-19  
 **Author**: javiarmesto  
 **Total Primitives**: 28 (7 instructions + 14 workflows + 6 modes + 1 guide)  
-**Status**: ✅ Fully compliant with A-Instructions Architecture
+**Status**: ✅ Fully compliant with AI Native-Instructions Architecture
 
 ### Framework Implementation
 - ✅ **Layer 1: Markdown Prompt Engineering** - Structured semantic markdown
@@ -353,7 +353,7 @@ Found an issue or have a suggestion? This collection improves through use:
 ## Related Resources
 
 ### Framework & Standards
-- [A-Instructions Architecture Guide](https://danielmeppiel.github.io/awesome-ai-native/)
+- [AI Native-Instructions Architecture Guide](https://danielmeppiel.github.io/awesome-ai-native/)
 - [AGENTS.md Standard](https://agents.md)
 - [Context Engineering Patterns](https://danielmeppiel.github.io/awesome-ai-native/docs/concepts/)
 

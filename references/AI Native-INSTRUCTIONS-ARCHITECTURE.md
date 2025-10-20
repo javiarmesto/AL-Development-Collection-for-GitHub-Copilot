@@ -1,10 +1,10 @@
-# A-Instructions Architecture Implementation
+# AI Native-Instructions Architecture Implementation
 
-This document describes the implementation of the A-Instructions Architecture framework in this repository, following the principles from [danielmeppiel.github.io/awesome-ai-native](https://danielmeppiel.github.io/awesome-ai-native/docs/getting-started/).
+This document describes the implementation of the AI Native-Instructions Architecture framework in this repository, following the principles from [danielmeppiel.github.io/awesome-ai-native](https://danielmeppiel.github.io/awesome-ai-native/docs/getting-started/).
 
 ## What Changed
 
-This repository has been refactored to follow the **A-Instructions Architecture** principles, which provides a systematic approach to building AI Native Development workflows through:
+This repository has been refactored to follow the **AI Native-Instructions Architecture** principles, which provides a systematic approach to building AI Native Development workflows through:
 
 1. **Markdown Prompt Engineering** - Structured instructions using semantic markdown
 2. **Agent Primitives** - Configurable tools (instructions, chatmodes, prompts)
@@ -143,7 +143,7 @@ Instructions now use:
 
 The refactored structure is fully compliant with:
 - ✅ [VSCode Copilot Customization](https://code.visualstudio.com/docs/copilot/copilot-customization)
-- ✅ [A-Instructions Architecture principles](https://danielmeppiel.github.io/awesome-ai-native/docs/getting-started/)
+- ✅ [AI Native-Instructions Architecture principles](https://danielmeppiel.github.io/awesome-ai-native/docs/getting-started/)
 - ✅ Repository validation script (all 34 checks passing)
 
 ## Migration Path
@@ -191,14 +191,14 @@ Expected output:
 
 ## References
 
-- [A-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/docs/getting-started/)
+- [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/docs/getting-started/)
 - [VSCode Copilot Customization](https://code.visualstudio.com/docs/copilot/copilot-customization)
 - [AGENTS.md Standard](https://agents.md)
 - [GitHub Copilot Chat Modes](https://code.visualstudio.com/docs/copilot/chat/chat-modes)
 
 ## Version History
 
-- **v2.2** (2025-10-19) - Implemented A-Instructions Architecture
+- **v2.2** (2025-10-19) - Implemented AI Native-Instructions Architecture
   - Moved all files to `.github/` directory
   - Updated frontmatter with `applyTo`, `model`, and `tools`
   - Added Context Loading, Validation Gates, and Tool Boundaries
@@ -207,6 +207,6 @@ Expected output:
 
 ---
 
-**Status**: ✅ Fully Compliant with A-Instructions Architecture  
+**Status**: ✅ Fully Compliant with AI Native-Instructions Architecture  
 **Last Updated**: 2025-10-19  
 **Framework Version**: Based on AI Native Development Guide

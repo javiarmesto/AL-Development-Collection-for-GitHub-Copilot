@@ -1,10 +1,10 @@
 # Contributing to AL Development Collection
 
-Thank you for your interest in contributing to the AL Development Collection! This document provides guidelines for contributing **Agent Primitives** following the **[A-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework.
+Thank you for your interest in contributing to the AL Development Collection! This document provides guidelines for contributing **Agent Primitives** following the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework.
 
 ## 🏗️ Framework Overview
 
-This collection implements the A-Instructions Architecture with 3 layers:
+This collection implements the AI Native-Instructions Architecture with 3 layers:
 
 - **Layer 1: Markdown Prompt Engineering** - Structured instructions using semantic markdown
 - **Layer 2: Agent Primitives** - Configurable tools (Instructions, Agentic Workflows, Chat Modes)

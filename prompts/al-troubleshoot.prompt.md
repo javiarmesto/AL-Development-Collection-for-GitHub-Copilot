@@ -19,7 +19,16 @@ Your goal is to diagnose and resolve `${input:IssueDescription}`.
 - Publishing fails with 401/403 errors
 
 #### Resolution Steps
-1. Clear credential cache:
+
+##### Human Gate: Credential Cache Warning
+**Clearing credentials will disconnect active sessions**
+
+Before clearing cache:
+1. **Confirm impact** - Active connections will be terminated
+2. **Save work** - Ensure no unsaved changes
+3. **Obtain approval** - Wait for confirmation
+
+1. Clear credential cache (only after approval):
    ```
    al_clear_credentials_cache
    ```

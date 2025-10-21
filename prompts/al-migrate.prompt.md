@@ -9,9 +9,29 @@ model: gpt-4
 
 Your goal is to migrate the AL project from `${input:SourceVersion}` to `${input:TargetVersion}`.
 
+## ⚠️ CRITICAL: Human Gate Required
+
+**STOP - Migration Risk Assessment Required**
+
+Before proceeding with ANY migration steps:
+1. **Present migration plan** to stakeholder for review
+2. **Confirm backup strategy** is in place
+3. **Verify rollback plan** is documented and tested
+4. **Obtain explicit approval** before executing migration commands
+
+**Migration involves HIGH RISK operations that can:**
+- Break production environments
+- Cause data incompatibilities
+- Require complex rollbacks
+- Impact multiple users simultaneously
+
+**MANDATORY: Wait for human approval before continuing**
+
+---
+
 ## Migration Process
 
-### 1. Preparation Phase
+### 1. Preparation Phase (Analysis Only - No Changes)
 
 #### Download Current Source
 ```
@@ -20,6 +40,7 @@ al_download_source
 - Backup current codebase
 - Document customizations
 - Note dependencies
+- **Human Review Required**: Confirm backup is complete
 
 #### Analyze Dependencies
 ```
@@ -31,8 +52,11 @@ al_get_package_dependencies
 
 ### 2. Migration Steps
 
+#### Human Gate: Configuration Changes
+**Present proposed changes and wait for approval before modifying files**
+
 #### Update Project Configuration
-1. Modify app.json:
+1. **Review and Approve**: Present app.json changes:
    ```json
    {
      "platform": "${input:TargetVersion}",
@@ -41,8 +65,8 @@ al_get_package_dependencies
    }
    ```
 
-2. Update dependencies versions
-3. Adjust compiler features
+2. **Wait for Approval**: Update dependencies versions (requires confirmation)
+3. **Wait for Approval**: Adjust compiler features (requires confirmation)
 
 #### Code Migration
 1. **Breaking Changes**

@@ -22,20 +22,25 @@ Before beginning implementation, review these foundational resources:
 
 ## Phase 1: Project Setup
 
+### Human Gate: Setup Configuration Review
+**Present setup plan and wait for approval**
+
 ### Initialize Project
 Choose based on scenario:
-- New project: `al_new_project`
-- Existing folder: `al_go`
+- New project: `al_new_project` (requires approval)
+- Existing folder: `al_go` (requires approval)
 
 ### Download Dependencies
 ```
 al_download_symbols
 ```
+**Human Review**: Confirm symbols downloaded successfully
 
 ### Generate Manifest
 ```
 al_generate_manifest
 ```
+**Human Review**: Validate manifest before proceeding
 
 ## Phase 2: Development
 
@@ -59,8 +64,15 @@ al_build
 
 ## Phase 3: Testing
 
+### Human Gate: Testing Approval
+**Present build results and obtain approval before deploying**
+
 ### Quick Testing
 For rapid iteration:
+```
+al_build
+```
+**Human Approval Required**: Review build output before publishing
 ```
 al_incremental_publish
 ```
@@ -68,29 +80,39 @@ al_incremental_publish
 ### Full Testing
 For comprehensive testing:
 1. `al_build`
-2. `al_package`
-3. `al_publish`
+2. **Human Review**: Validate build success
+3. `al_package`
+4. **Human Approval Required**: Review package before publishing
+5. `al_publish`
 
 ## Phase 4: Security
 
-### Generate Permissions
-```
-al_generate_permissionset_for_extension_objects
-```
+### Human Gate: Permission Review (MANDATORY)
+**Security-critical operation - approval required**
 
-Review and adjust as needed.
+### Generate Permissions
+1. **Present permission requirements** for stakeholder review
+2. **Obtain security approval** before generation
+3. Execute: `al_generate_permissionset_for_extension_objects`
+4. **Review generated permissions** and confirm correctness
 
 ## Phase 5: Deployment
 
+### Human Gate: Deployment Approval
+**All deployments require explicit human authorization**
+
 ### Development Deployment
-```
-al_incremental_publish
-```
+1. **Present deployment plan** and changes summary
+2. **Obtain approval** from stakeholder
+3. Execute: `al_incremental_publish` (only after approval)
 
 ### Production Deployment
 1. `al_build`
-2. `al_package`
-3. Create deployment package
+2. **Human Review**: Validate build output
+3. `al_package`
+4. **Human Review**: Inspect package contents
+5. **STOP**: Create deployment package for manual deployment
+6. **Note**: Automated production deployment is intentionally disabled
 
 ## Structured Output Requirements
 

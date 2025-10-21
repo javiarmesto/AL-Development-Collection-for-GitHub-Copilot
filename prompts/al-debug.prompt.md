@@ -27,6 +27,15 @@ Your goal is to set up a debugging session for investigating `${input:DebugScena
 - Best for active development scenarios
 
 ### 4. Snapshot Debugging
+
+#### Human Gate: Snapshot Data Review
+**Snapshots may capture sensitive runtime data - approval required**
+
+Before initializing snapshot debugging:
+1. **Confirm data scope** - What data will be captured?
+2. **Security review** - Any sensitive information in scope?
+3. **Obtain approval** - Wait for explicit confirmation
+
 Initialize snapshot debugging:
 ```
 al_initalize_snapshot_debugging
@@ -36,6 +45,8 @@ After collecting data:
 ```
 al_finish_snapshot_debugging
 ```
+
+**Human Review**: Review captured snapshots before sharing
 
 View collected snapshots:
 ```

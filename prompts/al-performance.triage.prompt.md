@@ -135,7 +135,15 @@ For each finding, evaluate:
 
 ### 4. Generate Report
 
-Create `/reports/perf-summary.md` with findings:
+#### Human Gate: Report Content Review
+**Performance reports may contain sensitive code patterns**
+
+Before saving report:
+1. **Review findings** - Ensure no sensitive information exposed
+2. **Validate recommendations** - Confirm suggestions are appropriate
+3. **Obtain approval** - Wait for confirmation before creating file
+
+Create `/reports/perf-summary.md` with findings (only after approval):
 
 #### Report Structure
 

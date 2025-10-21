@@ -17,20 +17,25 @@ Based on the deployment type, use the appropriate strategy:
 
 ### Development Environment
 1. **Build**: Use `al_build` to compile the project
-2. **Deploy**: Use `al_incremental_publish` for rapid iteration
-3. **Verify**: Check for any compilation errors
+2. **Review**: Present build results for human approval
+3. **Deploy**: Use `al_incremental_publish` for rapid iteration (requires approval)
+4. **Verify**: Check for any compilation errors
 
 ### Testing Environment
 1. **Build**: Use `al_build` with full validation
 2. **Package**: Create .app file with `al_package`
-3. **Deploy**: Use `al_publish` to deploy with debugging enabled
-4. **Test**: Ensure all unit tests pass
+3. **Review**: Present package details for human approval
+4. **Deploy**: Use `al_publish` to deploy with debugging enabled (requires approval)
+5. **Test**: Ensure all unit tests pass
 
-### Production Environment
+### Production Environment 
 1. **Build**: Use `al_build` with strict validation
 2. **Package**: Create release package with `al_package`
-3. **Deploy**: Use `al_publish_without_debug` for production
-4. **Verify**: Confirm deployment without debug symbols
+3. **Validation**: Verify package integrity and dependencies
+4. **Documentation**: Generate deployment checklist and present for review
+5. **Human Gate**: **MANDATORY** - Manual approval required before any production action
+   - **Note**: Automated deployment to production is intentionally disabled as safeguard
+   - All production changes require explicit human authorization
 
 ### Existing Package Deployment
 - Use `al_publish_existing_extension` when deploying pre-built .app files

@@ -9,6 +9,22 @@ model: gpt-4
 
 Your goal is to create and manage permissions for `${input:ExtensionName}`.
 
+## 🛡️ SECURITY: Human Gate Required
+
+**STOP - Permission Review Required**
+
+Permission generation directly affects system security. Before generating:
+
+1. **Analyze security implications** of required permissions
+2. **Present permission list** to stakeholder for review
+3. **Justify each permission** (Read, Insert, Modify, Delete, Execute)
+4. **Confirm principle of least privilege** is followed
+5. **Obtain explicit approval** before generating permission sets
+
+**MANDATORY: Wait for security approval before executing permission generation**
+
+---
+
 ## Permission Generation Options
 
 ### 1. AL Permission Set Object
@@ -107,12 +123,13 @@ permissionset 50102 "EXT Admin"
 
 ## Implementation Steps
 
-1. Generate base permissions with `al_generate_permissionset_for_extension_objects`
-2. Review and adjust generated permissions
-3. Create role-based permission sets
-4. Implement permission checks in code
-5. Test with different user roles
-6. Document permission model
+1. **Human Review Gate**: Analyze required permissions and present for approval
+2. **After Approval**: Generate base permissions with `al_generate_permissionset_for_extension_objects`
+3. **Human Review Gate**: Review generated permissions before applying
+4. Create role-based permission sets (requires approval for each role)
+5. Implement permission checks in code
+6. **Human Review Gate**: Test with different user roles and confirm expected behavior
+7. Document permission model and obtain final approval
 
 ## Alternative XML Format
 

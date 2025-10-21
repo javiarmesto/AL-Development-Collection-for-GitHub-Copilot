@@ -85,7 +85,16 @@ if OtherTable.FindSet() then
 - Use SumIndexFields when possible
 
 ### 5. Clean Up
-Clear profiling code lenses after analysis:
+
+#### Human Gate: Profile Data Removal Confirmation
+**Clearing codelenses will remove performance analysis data**
+
+Before clearing:
+1. **Confirm analysis is complete** - All data captured?
+2. **Save important findings** - Document bottlenecks identified
+3. **Obtain approval** - Wait for confirmation to proceed
+
+Clear profiling code lenses after analysis (only after approval):
 ```
 al_clear_profile_codelenses
 ```

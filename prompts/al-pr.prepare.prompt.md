@@ -20,6 +20,17 @@ This workflow analyzes changes between the feature branch and the main branch, c
 - Focus on documentation and analysis
 - Stop if branch not found or uncommitted changes present
 
+## 🔒 Human Gate: Pre-PR Review
+
+**Before generating PR draft document:**
+
+1. **Review code changes** - Present summary of all modifications
+2. **Security check** - Confirm no sensitive data in commits
+3. **Quality validation** - Verify tests pass and build succeeds
+4. **Human approval required** - Obtain confirmation before creating PR draft
+
+**Note**: Even though this creates a draft, the document will contain code details that may be shared. Review is mandatory.
+
 ## Process
 
 ### 1. Change Analysis

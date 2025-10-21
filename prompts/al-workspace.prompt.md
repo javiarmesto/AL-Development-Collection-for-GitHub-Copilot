@@ -34,6 +34,15 @@ You will guide the user through the complete setup process for their Business Ce
 
 5. **Launch Configuration**
    
+   ### 🔒 Human Gate: Authentication Configuration Review
+   **SECURITY CHECKPOINT - Configuration contains sensitive information**
+   
+   Before creating launch.json:
+   1. **Review authentication method** with stakeholder
+   2. **Confirm server URLs** are correct for target environment
+   3. **Verify credentials handling** follows security policies
+   4. **Obtain approval** before saving configuration
+   
    Create a `.vscode/launch.json` file in the workspace root with the appropriate debugging configuration. Choose the configuration that matches your development environment:
    
    **For Standard Debugging (Cloud Sandbox):**

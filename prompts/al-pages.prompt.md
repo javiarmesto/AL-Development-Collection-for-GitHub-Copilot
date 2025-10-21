@@ -142,17 +142,27 @@ pageextension 50100 "Customer Card Ext" extends "Customer Card"
 
 ### 5. Testing and Deployment
 
+#### Human Gate: UI Changes Review
+**Present UI changes for approval before deploying**
+
 1. **Build Changes**
    ```
    al_build
    ```
+   
+2. **Human Review**: Present build results and UI modifications
+   - Show affected pages/fields
+   - Describe user experience impact
+   - Confirm changes meet requirements
 
-2. **Quick Deploy**
+3. **Approval Required**: Wait for confirmation before deployment
+
+4. **Quick Deploy** (only after approval)
    ```
    al_incremental_publish
    ```
 
-3. **User Testing**
+5. **User Testing**
    - Navigation flow
    - Data entry efficiency
    - Visual clarity

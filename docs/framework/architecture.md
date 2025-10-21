@@ -87,7 +87,7 @@ tools:
 ## Directory Structure
 
 ```
-AL_Copilot_Collection/
+AL-Development-Collection-for-GitHub-Copilot/
 ├── instructions/           # Auto-applied guidelines
 │   ├── al-guidelines.instructions.md
 │   ├── al-code-style.instructions.md

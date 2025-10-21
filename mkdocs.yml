@@ -1,11 +1,11 @@
 site_name: AL Development Collection
 site_description: AI Native AL Development toolkit for Microsoft Dynamics 365 Business Central
 site_author: Javier Armesto González
-site_url: https://javiarmesto.github.io/AL_Copilot_Collection/
+site_url: https://javiarmesto.github.io/AL-Development-Collection-for-GitHub-Copilot/
 
-repo_name: javiarmesto/AL_Copilot_Collection
-repo_url: https://github.com/javiarmesto/AL_Copilot_Collection
-edit_uri: edit/main/
+repo_name: javiarmesto/AL-Development-Collection-for-GitHub-Copilot
+repo_url: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot
+edit_uri: edit/main/docs/
 
 copyright: Copyright &copy; 2025 Javier Armesto González
 
@@ -135,5 +135,40 @@ nav:
   - Framework:
     - Overview: framework/overview.md
     - Architecture: framework/architecture.md
+  - Instructions:
+    - Overview: instructions/index.md
+    - Guidelines: instructions/al-guidelines.instructions.md
+    - Code Style: instructions/al-code-style.instructions.md
+    - Naming Conventions: instructions/al-naming-conventions.instructions.md
+    - Performance: instructions/al-performance.instructions.md
+    - Error Handling: instructions/al-error-handling.instructions.md
+    - Events: instructions/al-events.instructions.md
+    - Testing: instructions/al-testing.instructions.md
+    - Copilot Integration: instructions/copilot-instructions.md
+  - Agentic Workflows:
+    - Overview: prompts/index.md
+    - Workspace Setup: prompts/al-workspace.prompt.md
+    - Build & Deploy: prompts/al-build.prompt.md
+    - Events: prompts/al-events.prompt.md
+    - Debug: prompts/al-debug.prompt.md
+    - Performance Analysis: prompts/al-performance.prompt.md
+    - Performance Triage: prompts/al-performance.triage.prompt.md
+    - Permissions: prompts/al-permissions.prompt.md
+    - Troubleshooting: prompts/al-troubleshoot.prompt.md
+    - Migration: prompts/al-migrate.prompt.md
+    - Pages: prompts/al-pages.prompt.md
+    - Workflows: prompts/al-workflow.prompt.md
+    - Specifications: prompts/al-spec.create.prompt.md
+    - PR Preparation: prompts/al-pr.prepare.prompt.md
+    - Setup: prompts/al-setup.prompt.md
+  - Chat Modes:
+    - Overview: chatmodes/index.md
+    - Orchestrator: chatmodes/al-orchestrator.chatmode.md
+    - Architect: chatmodes/al-architect.chatmode.md
+    - Debugger: chatmodes/al-debugger.chatmode.md
+    - Tester: chatmodes/al-tester.chatmode.md
+    - API Specialist: chatmodes/al-api.chatmode.md
+    - Copilot: chatmodes/al-copilot.chatmode.md
+  - Collection Guide: al-development.md
   - Contributing: CONTRIBUTING.md
   - Changelog: CHANGELOG.md

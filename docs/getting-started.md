@@ -27,7 +27,7 @@ Before starting, ensure you have:
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/javiarmesto/AL_Copilot_Collection.git
+git clone https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot.git
 cd AL_Copilot_Collection
 ```
 
@@ -157,6 +157,6 @@ Switch to al-orchestrator mode and ask:
 
 ## Getting Help
 
-- **Issues**: [GitHub Issues](https://github.com/javiarmesto/AL_Copilot_Collection/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/javiarmesto/AL_Copilot_Collection/discussions)
+- **Issues**: [GitHub Issues](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/discussions)
 - **Documentation**: [Full Documentation](al-development.md)

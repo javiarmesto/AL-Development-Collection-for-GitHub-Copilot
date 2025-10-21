@@ -529,9 +529,10 @@ Always review Copilot suggestions:
 - [Business Central Development](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/)
 
 ### This Project's Documentation
-- [Collection Summary](../COLLECTION-SUMMARY.md) - Complete tool overview
-- [AL Guidelines](./instructions/al-guidelines.instructions.md) - Master guidelines
-- [All Instructions](./instructions/) - Detailed rule sets
+- [Instructions Index](../instructions/index.md) - Complete guide to all instruction files
+- [Prompts Index](../prompts/index.md) - Complete guide to all agentic workflows
+- [Chat Modes Index](../chatmodes/index.md) - Complete guide to all chat modes
+- [AL Guidelines](../instructions/al-guidelines.instructions.md) - Master guidelines
 
 ## 🛠️ Troubleshooting Copilot
 

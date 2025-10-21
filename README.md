@@ -3,7 +3,7 @@
 > **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **28 specialized Agent Primitives** across **3 systematic layers**.
 
 [![Validation Status](https://img.shields.io/badge/validation-passing-brightgreen)](./validate-al-collection.js)
-[![Version](https://img.shields.io/badge/version-2.2-blue)](./al-development.collection.yml)
+[![Version](https://img.shields.io/badge/version-2.2-blue)](./collections/al-development.collection.yml)
 [![Tools](https://img.shields.io/badge/tools-28-orange)](./al-development.md)
 [![Framework](https://img.shields.io/badge/framework-A--Instructions-purple)](https://danielmeppiel.github.io/awesome-ai-native/)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
@@ -66,7 +66,7 @@ graph TB
     
     Layer2 --> Instructions[📋 Instructions Files<br/>Auto-applied guidelines]
     Layer2 --> ChatModes[💬 Chat Modes<br/>Role-based specialists]
-    Layer2 --> Prompts[🎯 Agentic Workflows<br/>Task execution]
+    Layer2 --> Prompts[🎯 Prompts-Agentic Workflows<br/>Task execution]
     
     Layer3 --> Modular[Modular Loading<br/>applyTo patterns]
     Layer3 --> AGENTSMD[AGENTS.md Standard<br/>Universal portability]
@@ -195,19 +195,16 @@ Invoke with `@workspace use [name]`:
 ## 📚 Documentation
 
 ### Framework Documentation
-- **[AI Native-Instructions Architecture Implementation](./A-INSTRUCTIONS-ARCHITECTURE.md)** - Framework compliance details
+- **[AI Native-Instructions Architecture Implementation](./references/AI%20Native-INSTRUCTIONS-ARCHITECTURE.md)** - Framework compliance details
 - **[AI Native-Instructions Framework Guide](https://danielmeppiel.github.io/awesome-ai-native/)** - Complete framework reference
 - **[AGENTS.md Standard](https://agents.md)** - Universal context format
 
 ### Collection Documentation
 - **[Collection Overview](./al-development.md)** - User-facing guide
-- **[Instructions Index](./instructions/index.md)** - Complete guide to all 8 instruction files
-- **[Prompts Index](./prompts/index.md)** - Complete guide to all 14 agentic workflows
-- **[Chat Modes Index](./chatmodes/index.md)** - Complete guide to all 6 chat modes
-- **[Prompts Parameter Reference](./PROMPTS.md)** - Workflow parameters (English)
-- **[Referencia de Parámetros](./PROMPTS-ES.md)** - Parámetros de workflows (Español)
-- **[Complete Reference](./COLLECTION-SUMMARY.md)** - Internal architecture
-- **[Integration Guide](./.github/copilot-instructions.md)** - Master coordination document
+- **[Instructions Index](./instructions/index.md)** - Complete guide to all instruction files
+- **[Prompts Index](./prompts/index.md)** - Complete guide to all agentic workflows
+- **[Chat Modes Index](./chatmodes/index.md)** - Complete guide to all chat modes
+- **[Integration Guide](./instructions/copilot-instructions.md)** - Master coordination document
 
 ## 🛠️ Requirements
 
@@ -324,9 +321,9 @@ AL_Copilot_Collection/
 ├── collections/                                  # Collection manifests
 │   └── al-development.collection.yml            # Main collection definition
 ├── references/                                   # Framework documentation
-│   ├── A-INSTRUCTIONS-ARCHITECTURE.md           # Framework implementation
-│   ├── ai-native-concepts.md                    # Framework concepts
-│   └── ai-native-structure.md                   # Framework structure
+│   ├── AI Native-INSTRUCTIONS-ARCHITECTURE.md   # Framework implementation
+│   ├── ai native-concepts.md                    # Framework concepts
+│   └── ai native structure.md                   # Framework structure
 ├── archive/                                      # Historical files
 ├── al-development.md                            # User documentation
 ├── CONTRIBUTING.md                              # Contribution guidelines

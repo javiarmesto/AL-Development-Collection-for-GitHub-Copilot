@@ -1,7 +1,7 @@
 # Site settings
 title: AL Development Collection
 description: AI Native AL Development toolkit for Microsoft Dynamics 365 Business Central
-baseurl: "/AL_Copilot_Collection"
+baseurl: "/AL-Development-Collection-for-GitHub-Copilot"
 url: "https://javiarmesto.github.io"
 
 # Theme
@@ -31,12 +31,12 @@ nav_enabled: true
 # Aux links
 aux_links:
   "View on GitHub":
-    - "https://github.com/javiarmesto/AL_Copilot_Collection"
+    - "https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot"
   "Download Release":
-    - "https://github.com/javiarmesto/AL_Copilot_Collection/releases/latest"
+    - "https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/releases/latest"
 
 # Footer
-footer_content: 'Copyright &copy; 2025 Javier Armesto González. Licensed under the <a href="https://github.com/javiarmesto/AL_Copilot_Collection/blob/main/LICENSE">MIT License</a>.'
+footer_content: 'Copyright &copy; 2025 Javier Armesto González. Licensed under the <a href="https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/blob/main/LICENSE">MIT License</a>.'
 
 # Back to top link
 back_to_top: true

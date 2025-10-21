@@ -1,7 +1,7 @@
 {
   "name": "al-development-collection",
-  "version": "2.0.0",
-  "description": "AL Development Collection for GitHub Copilot - Validation and utilities",
+  "version": "2.2.0",
+  "description": "AL Development Collection for GitHub Copilot - AI Native-Instructions Architecture implementation with 28 Agent Primitives",
   "main": "validate-al-collection.js",
   "scripts": {
     "validate": "node validate-al-collection.js",
@@ -12,9 +12,17 @@
     "business-central",
     "dynamics365",
     "github-copilot",
-    "collection"
+    "collection",
+    "ai-native",
+    "instructions-architecture",
+    "agent-primitives",
+    "copilot-extension"
   ],
-  "author": "javiarmesto",
+  "author": {
+    "name": "Javier Armesto González",
+    "email": "javiarmesto@gmail.com",
+    "url": "https://github.com/javiarmesto"
+  },
   "license": "MIT",
   "dependencies": {
     "js-yaml": "^4.1.0"
@@ -22,6 +30,13 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/javiarmesto/al-development-collection"
+    "url": "https://github.com/javiarmesto/AL_Copilot_Collection"
+  },
+  "bugs": {
+    "url": "https://github.com/javiarmesto/AL_Copilot_Collection/issues"
+  },
+  "homepage": "https://github.com/javiarmesto/AL_Copilot_Collection#readme",
+  "engines": {
+    "node": ">=14.0.0"
   }
 }

@@ -1,0 +1,73 @@
+name: Validate Collection
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Validate AL Collection
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Run validation
+      run: npm run validate
+      
+    - name: Upload validation results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: validation-results
+        path: |
+          validation-report.txt
+          validation-report.json
+        retention-days: 30
+        
+    - name: Comment validation results on PR
+      if: github.event_name == 'pull_request' && always()
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          const { execSync } = require('child_process');
+          
+          // Run validation and capture output
+          let output = '';
+          try {
+            output = execSync('npm run validate', { encoding: 'utf8' });
+          } catch (error) {
+            output = error.stdout + error.stderr;
+          }
+          
+          // Create comment body
+          const body = `## 📋 Collection Validation Results
+          
+          \`\`\`
+          ${output}
+          \`\`\`
+          
+          ${output.includes('✅ Collection is valid') ? '✅ Validation passed!' : '❌ Validation failed. Please review the errors above.'}
+          `;
+          
+          // Post comment
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: body
+          });

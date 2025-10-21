@@ -1,0 +1,22 @@
+{
+  "default": true,
+  "MD013": false,
+  "MD024": {
+    "siblings_only": true
+  },
+  "MD033": false,
+  "MD041": false,
+  "MD022": {
+    "lines_above": 1,
+    "lines_below": 1
+  },
+  "MD032": {
+    "ul_single": 1,
+    "ul_multi": 1,
+    "ol_single": 1,
+    "ol_multi": 1
+  },
+  "MD031": {
+    "list_items": true
+  }
+}

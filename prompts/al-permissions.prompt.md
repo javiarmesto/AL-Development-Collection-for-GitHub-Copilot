@@ -2,7 +2,7 @@
 mode: 'agent'
 description: 'Generate and manage permission sets for AL extensions.'
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'todos', 'runTests']
-model: gpt-4
+model: claude-sonnet-4.5
 ---
 
 # AL Permission Management

@@ -20,7 +20,7 @@ Please **do not** create a public GitHub issue for security vulnerabilities.
 
 ### 2. Report Privately
 
-Send a detailed report to: **[Your Email or GitHub Security Advisory]**
+Send a detailed report via [GitHub Security Advisory](https://github.com/javiarmesto/AL_Copilot_Collection/security/advisories/new) or email to **javiarmesto [at] gmail.com**
 
 Include in your report:
 - Description of the vulnerability

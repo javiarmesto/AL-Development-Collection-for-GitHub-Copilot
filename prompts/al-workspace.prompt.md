@@ -2,7 +2,7 @@
 mode: 'agent'
 description: 'Set up and configure an AL development workspace for Business Central development.'
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_download_symbols', 'ms-dynamics-smb.al/al_clear_credentials_cache', 'ms-dynamics-smb.al/al_go', 'ms-dynamics-smb.al/al_new_project', 'ms-dynamics-smb.al/al_generate_manifest', 'extensions', 'todos', 'runTests']
-model: gpt-4
+model: claude-sonnet-4.5
 ---
 
 # AL Workspace Setup

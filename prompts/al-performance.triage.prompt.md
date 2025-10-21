@@ -2,6 +2,7 @@
 mode: 'agent'
 description: 'Analyze AL codebase to identify performance bottlenecks, circular dependencies, or FlowField inefficiencies.'
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'todos', 'runTests']
+model: claude-sonnet-4.5
 ---
 
 # AL Performance Triage Workflow

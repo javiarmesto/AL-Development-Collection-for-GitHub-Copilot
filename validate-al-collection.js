@@ -81,7 +81,8 @@ function readYaml(filePath) {
 function readFrontmatter(filePath) {
   try {
     const content = fs.readFileSync(filePath, 'utf8');
-    const match = content.match(/^---\n([\s\S]*?)\n---/);
+    // Support both Unix (\n) and Windows (\r\n) line endings
+    const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
     if (!match) {
       return null;
     }

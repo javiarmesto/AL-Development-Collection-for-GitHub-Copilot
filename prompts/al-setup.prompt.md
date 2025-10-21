@@ -2,6 +2,7 @@
 mode: 'agent'
 description: 'Configure your development environment for optimal AI-assisted AL development with GitHub Copilot and Business Central tools.'
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'Azure MCP/search', 'microsoft-docs/*', 'upstash/context7/*', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_download_symbols', 'ms-dynamics-smb.al/al_download_source', 'ms-dynamics-smb.al/al_go', 'ms-dynamics-smb.al/al_new_project', 'extensions', 'todos', 'runTests']
+model: claude-sonnet-4.5
 ---
 
 # Setting Up Your Environment

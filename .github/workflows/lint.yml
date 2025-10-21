@@ -1,0 +1,54 @@
+name: Markdown Lint
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+jobs:
+  markdownlint:
+    name: Lint Markdown Files
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        
+    - name: Install markdownlint-cli
+      run: npm install -g markdownlint-cli
+      
+    - name: Run markdownlint
+      run: |
+        markdownlint '**/*.md' \
+          --ignore node_modules \
+          --ignore archive \
+          --config .markdownlint.json \
+          --fix
+      continue-on-error: true
+      
+    - name: Check for changes
+      id: git-check
+      run: |
+        git diff --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
+        
+    - name: Commit fixes
+      if: steps.git-check.outputs.changes == 'true' && github.event_name == 'pull_request'
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add .
+        git commit -m "style: auto-fix markdown lint issues"
+        
+    - name: Push changes
+      if: steps.git-check.outputs.changes == 'true' && github.event_name == 'pull_request'
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.head_ref }}

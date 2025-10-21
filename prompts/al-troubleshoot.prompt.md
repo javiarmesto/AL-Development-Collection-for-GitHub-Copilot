@@ -2,7 +2,7 @@
 mode: 'agent'
 description: 'Troubleshoot common AL development issues including authentication, symbols, and dependencies.'
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_download_symbols', 'ms-dynamics-smb.al/al_download_source', 'ms-dynamics-smb.al/al_clear_credentials_cache', 'extensions', 'todos', 'runTests']
-model: gpt-4
+model: claude-sonnet-4.5
 ---
 
 # AL Development Troubleshooting

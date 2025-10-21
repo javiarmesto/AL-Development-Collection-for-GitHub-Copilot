@@ -1,0 +1,172 @@
+site_name: AL Development Collection
+site_description: AI Native AL Development toolkit for Microsoft Dynamics 365 Business Central
+site_author: Javier Armesto González
+site_url: https://javiarmesto.github.io/AL_Copilot_Collection/
+
+repo_name: javiarmesto/AL_Copilot_Collection
+repo_url: https://github.com/javiarmesto/AL_Copilot_Collection
+edit_uri: edit/main/
+
+copyright: Copyright &copy; 2025 Javier Armesto González
+
+theme:
+  name: material
+  language: en
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  font:
+    text: Roboto
+    code: Roboto Mono
+  
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+  
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/javiarmesto
+      name: GitHub
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/javiarmesto
+      name: LinkedIn
+  
+  version:
+    provider: mike
+    default: latest
+  
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX  # Replace with your GA4 ID
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search:
+      lang: en
+      separator: '[\s\-\.]+'
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+  - minify:
+      minify_html: true
+  - tags
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Framework:
+    - Overview: framework/overview.md
+    - Architecture: framework/architecture.md
+  - Instructions:
+    - Overview: instructions/index.md
+    - Guidelines: instructions/al-guidelines.instructions.md
+    - Code Style: instructions/al-code-style.instructions.md
+    - Naming Conventions: instructions/al-naming-conventions.instructions.md
+    - Error Handling: instructions/al-error-handling.instructions.md
+    - Performance: instructions/al-performance.instructions.md
+    - Events: instructions/al-events.instructions.md
+    - Testing: instructions/al-testing.instructions.md
+  - Workflows:
+    - Overview: prompts/index.md
+    - Workspace Setup: prompts/al-workspace.prompt.md
+    - Build & Deploy: prompts/al-build.prompt.md
+    - Debugging: prompts/al-debug.prompt.md
+    - Events: prompts/al-events.prompt.md
+    - Pages: prompts/al-pages.prompt.md
+    - Performance: prompts/al-performance.prompt.md
+    - Permissions: prompts/al-permissions.prompt.md
+    - Migration: prompts/al-migrate.prompt.md
+    - Troubleshooting: prompts/al-troubleshoot.prompt.md
+    - Workflow Design: prompts/al-workflow.prompt.md
+    - Spec Creation: prompts/al-spec.create.prompt.md
+    - Performance Triage: prompts/al-performance.triage.prompt.md
+    - PR Preparation: prompts/al-pr.prepare.prompt.md
+  - Chat Modes:
+    - Overview: chatmodes/index.md
+    - Orchestrator: chatmodes/al-orchestrator.chatmode.md
+    - Architect: chatmodes/al-architect.chatmode.md
+    - API Specialist: chatmodes/al-api.chatmode.md
+    - Copilot Expert: chatmodes/al-copilot.chatmode.md
+    - Debugger: chatmodes/al-debugger.chatmode.md
+    - Tester: chatmodes/al-tester.chatmode.md
+  - Contributing: CONTRIBUTING.md
+  - Changelog: CHANGELOG.md
+  - License: LICENSE

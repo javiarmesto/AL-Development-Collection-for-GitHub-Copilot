@@ -58,8 +58,6 @@ Invoke with `@workspace use [prompt-name]`:
 - **al-performance.triage** - Performance bottleneck prioritization
 - **al-pr.prepare** - Pull request preparation with documentation
 
-📖 **See [PROMPTS.md](./PROMPTS.md) for detailed parameter documentation and usage examples.**
-
 > 💡 **Agentic Workflows**: Prompts orchestrate all primitives (instructions, modes, tools) into end-to-end processes with human validation checkpoints.
 
 ### 💬 Chat Modes (6 primitives)

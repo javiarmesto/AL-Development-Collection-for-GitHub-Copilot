@@ -123,10 +123,10 @@ Switch to al-orchestrator mode and ask:
 
 ## Next Steps
 
-- [Explore Instructions](../instructions/) - Learn about auto-applied guidelines
-- [Browse Workflows](../prompts/) - See all available agentic workflows
-- [Discover Chat Modes](../chatmodes/) - Meet the specialist modes
-- [Read Contributing Guide](../CONTRIBUTING) - Help improve the collection
+- [Explore Instructions](instructions/index.md) - Learn about auto-applied guidelines
+- [Browse Workflows](prompts/index.md) - See all available agentic workflows
+- [Discover Chat Modes](chatmodes/index.md) - Meet the specialist modes
+- [Read Contributing Guide](CONTRIBUTING.md) - Help improve the collection
 
 ---
 
@@ -159,4 +159,4 @@ Switch to al-orchestrator mode and ask:
 
 - **Issues**: [GitHub Issues](https://github.com/javiarmesto/AL_Copilot_Collection/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/javiarmesto/AL_Copilot_Collection/discussions)
-- **Documentation**: [Full Documentation](../al-development)
+- **Documentation**: [Full Documentation](al-development.md)

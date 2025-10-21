@@ -1,0 +1,71 @@
+:root {
+  --md-primary-fg-color: #5E35B1;
+  --md-primary-fg-color--light: #7E57C2;
+  --md-primary-fg-color--dark: #4527A0;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+}
+
+.md-typeset code {
+  background-color: var(--md-code-bg-color);
+  border-radius: 0.2rem;
+  padding: 0.1rem 0.3rem;
+}
+
+.md-typeset .admonition {
+  border-left: 0.4rem solid;
+  border-radius: 0.2rem;
+  padding: 0.8rem 1.2rem;
+}
+
+/* Custom callouts */
+.md-typeset .admonition.note {
+  border-color: #448aff;
+}
+
+.md-typeset .admonition.tip {
+  border-color: #00b0ff;
+}
+
+.md-typeset .admonition.warning {
+  border-color: #ff9100;
+}
+
+.md-typeset .admonition.danger {
+  border-color: #ff5252;
+}
+
+/* Stats cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.grid-item {
+  padding: 1.5rem;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.grid-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  margin: 0.2rem;
+  background: var(--md-primary-fg-color);
+  color: white;
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}

@@ -2,11 +2,11 @@
 
 > **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **28 specialized Agent Primitives** across **3 systematic layers**.
 
-[![Validation Status](https://img.shields.io/badge/validation-passing-brightgreen)](./validate-al-collection.js)
-[![Version](https://img.shields.io/badge/version-2.2-blue)](./CHANGELOG.md)
-[![Tools](https://img.shields.io/badge/tools-28-orange)](./al-development.md)
+[![Validation Status](https://img.shields.io/badge/validation-passing-brightgreen)](https://github.com/javiarmesto/AL_Copilot_Collection)
+[![Version](https://img.shields.io/badge/version-2.2-blue)](CHANGELOG.md)
+[![Tools](https://img.shields.io/badge/tools-28-orange)](al-development.md)
 [![Framework](https://img.shields.io/badge/framework-A--Instructions-purple)](https://danielmeppiel.github.io/awesome-ai-native/)
-[![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/javiarmesto/AL_Copilot_Collection)](https://github.com/javiarmesto/AL_Copilot_Collection/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/javiarmesto/AL_Copilot_Collection)](https://github.com/javiarmesto/AL_Copilot_Collection/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/javiarmesto/AL_Copilot_Collection)](https://github.com/javiarmesto/AL_Copilot_Collection/network/members)
@@ -199,7 +199,6 @@ Invoke with `@workspace use [name]`:
 ## 📚 Documentation
 
 ### Framework Documentation
-- **[AI Native-Instructions Architecture Implementation](./references/AI%20Native-INSTRUCTIONS-ARCHITECTURE.md)** - Framework compliance details
 - **[AI Native-Instructions Framework Guide](https://danielmeppiel.github.io/awesome-ai-native/)** - Complete framework reference
 - **[AGENTS.md Standard](https://agents.md)** - Universal context format
 

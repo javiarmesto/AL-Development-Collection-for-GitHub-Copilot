@@ -33,3 +33,7 @@ rad.json
 
 #Archive
 Archive/
+
+# Build outputs
+site/
+_site/

@@ -2,15 +2,15 @@
 
 > **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **28 specialized Agent Primitives** across **3 systematic layers**.
 
-[![Validation Status](https://img.shields.io/badge/validation-passing-brightgreen)](https://github.com/javiarmesto/AL_Copilot_Collection)
+[![Validation Status](https://img.shields.io/badge/validation-passing-brightgreen)](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot)
 [![Version](https://img.shields.io/badge/version-2.2-blue)](CHANGELOG.md)
 [![Tools](https://img.shields.io/badge/tools-28-orange)](al-development.md)
 [![Framework](https://img.shields.io/badge/framework-A--Instructions-purple)](https://danielmeppiel.github.io/awesome-ai-native/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![GitHub Issues](https://img.shields.io/github/issues/javiarmesto/AL_Copilot_Collection)](https://github.com/javiarmesto/AL_Copilot_Collection/issues)
-[![GitHub Stars](https://img.shields.io/github/stars/javiarmesto/AL_Copilot_Collection)](https://github.com/javiarmesto/AL_Copilot_Collection/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/javiarmesto/AL_Copilot_Collection)](https://github.com/javiarmesto/AL_Copilot_Collection/network/members)
-[![Contributors](https://img.shields.io/github/contributors/javiarmesto/AL_Copilot_Collection)](https://github.com/javiarmesto/AL_Copilot_Collection/graphs/contributors)
+[![GitHub Issues](https://img.shields.io/github/issues/javiarmesto/AL-Development-Collection-for-GitHub-Copilot)](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/javiarmesto/AL-Development-Collection-for-GitHub-Copilot)](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/javiarmesto/AL-Development-Collection-for-GitHub-Copilot)](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/network/members)
+[![Contributors](https://img.shields.io/github/contributors/javiarmesto/AL-Development-Collection-for-GitHub-Copilot)](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/graphs/contributors)
 
 ## 🚀 Quick Start
 
@@ -18,7 +18,7 @@
 
 1. **Clone or download this collection**
    ```bash
-   git clone https://github.com/javiarmesto/al-development-collection.git
+   git clone https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot.git
    cd al-development-collection
    ```
 
@@ -297,7 +297,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
 **AI Native-Instructions Architecture** implementation following VSCode Copilot conventions:
 
 ```
-AL_Copilot_Collection/
+AL-Development-Collection-for-GitHub-Copilot/
 ├── .github/                                      # GitHub templates only
 │   ├── ISSUE_TEMPLATE/                          # Issue templates (3)
 │   └── PULL_REQUEST_TEMPLATE.md                 # PR template
@@ -385,8 +385,8 @@ MIT License - see [LICENSE](./LICENSE) file for details.
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/javiarmesto/al-development-collection/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/javiarmesto/al-development-collection/discussions)
+- **Issues**: [GitHub Issues](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/discussions)
 - **Documentation**: [al-development.md](./al-development.md)
 
 ---

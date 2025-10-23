@@ -635,7 +635,7 @@ Question or Task?
 Understanding the folder organization helps you leverage the 4-layer system:
 
 ```
-AL_Copilot_Collection/
+AL-Development-Collection-for-GitHub-Copilot/
 ├── .github/
 │   ├── copilot-instructions.md          # This file - Master guide
 │   ├── instructions/                    # Layer 1 & 2: Auto-applied

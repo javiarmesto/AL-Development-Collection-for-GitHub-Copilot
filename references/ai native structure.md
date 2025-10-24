@@ -5,6 +5,9 @@ display_title: "Getting Started"
 permalink: /docs/getting-started/
 nav_order: 3
 ---
+---
+## This document is a copy from https://danielmeppiel.github.io/awesome-ai-native/docs/concepts/ .
+---
 Now that you understand the [three-layer framework](../concepts/), it's time to build your first Agent Primitives. This hands-on implementation will give you immediate productivity improvements while establishing the foundation for more advanced workflows.
 
 The setup follows a logical progression: start with instructions that guide AI behavior, add chat modes that create safe boundaries, build reusable prompts for common tasks, and create specification templates that bridge planning to implementation.

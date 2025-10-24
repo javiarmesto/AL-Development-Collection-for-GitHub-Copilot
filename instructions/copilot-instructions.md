@@ -3,29 +3,40 @@
 # GitHub Copilot Instructions for AL Development
 
 ## Overview
-This workspace contains AL (Application Language) code for Microsoft Dynamics 365 Business Central. GitHub Copilot is configured with a **comprehensive suite of guidelines, prompts, and specialized modes** to assist with AL development following Microsoft's best practices and this project's specific standards.
+This workspace contains AL (Application Language) code for Microsoft Dynamics 365 Business Central. This is an **AI Native AL Development** toolkit implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. GitHub Copilot is configured with **28 Agent Primitives** across **3 framework layers** to assist with AL development following Microsoft's best practices and this project's specific standards.
+
+### Framework Architecture
+This collection implements the **AI Native-Instructions Architecture** with three systematic layers:
+
+**Layer 1: Markdown Prompt Engineering** - Structured instructions using semantic markdown (headers, lists, links) that guide AI reasoning for predictable, repeatable results.
+
+**Layer 2: Agent Primitives** - 28 configurable tools (7 instructions + 14 workflows + 6 modes + 1 guide) that deploy your prompt engineering systematically.
+
+**Layer 3: Context Engineering** - Strategic management of LLM context windows through modular loading, `applyTo` patterns, and optimized information retrieval.
+
+> 💡 For detailed framework documentation, see [AI Native-Instructions Architecture](../references/AI%20Native-INSTRUCTIONS-ARCHITECTURE.md) and [Core Concepts](../references/ai%20native-concepts.md).
 
 ## 🎯 Complete Toolset Available
 
-This workspace provides **four layers** of Copilot assistance:
+This workspace provides **28 Agent Primitives** organized into **four layers** of Copilot assistance leveraging the AI Native-Instructions Architecture:
 
-### Layer 1: Auto-Applied Guidelines (Always Active)
-Located in `.github/instructions/` - These apply automatically based on file type:
+### Layer 1: Auto-Applied Instructions (Always Active)
+Located in `instructions/` - These **Agent Primitives** apply automatically based on file type via `applyTo` patterns:
 
 - **al-guidelines.instructions.md** - Master hub referencing all guidelines (applies to `*.al`, `*.json`)
 - **al-code-style.instructions.md** - Code formatting & structure (applies to `*.al`)
 - **al-naming-conventions.instructions.md** - Naming rules (applies to `*.al`)
 - **al-performance.instructions.md** - Performance optimization (applies to `*.al`)
 
-### Layer 2: Contextual Guidelines (Auto-Activate When Relevant)
-Located in `.github/instructions/` - These activate based on context:
+### Layer 2: Contextual Instructions (Auto-Activate When Relevant)
+Located in `instructions/` - These **Agent Primitives** activate based on context:
 
 - **al-error-handling.instructions.md** - Error patterns, TryFunctions, telemetry (applies to `*.al`)
 - **al-events.instructions.md** - Event-driven development patterns (applies to `*.al`)
 - **al-testing.instructions.md** - Testing guidelines, AL-Go structure (applies to test files)
 
-### Layer 3: Task-Specific Prompts (Explicit Invocation)
-Located in `.github/prompts/` - Invoke with `@workspace use [prompt-name]`:
+### Layer 3: Agentic Workflows (Explicit Invocation)
+Located in `prompts/` - **Complete systematic processes** invoked with `@workspace use [prompt-name]`:
 
 - `al-workspace` - Project setup & configuration
 - `al-build` - Build & deployment workflows
@@ -38,8 +49,8 @@ Located in `.github/prompts/` - Invoke with `@workspace use [prompt-name]`:
 - `al-pages` - Page designer & UI
 - `al-workflow` - End-to-end guidance
 
-### Layer 4: Role-Based Chat Modes (Strategic Consulting)
-Located in `.github/chatmodes/` - Specialized consultant personalities:
+### Layer 4: Chat Modes (Strategic Consulting)
+Located in `chatmodes/` - **Role-based specialists** with MCP tool boundaries:
 
 - **al-orchestrator** - Smart router, guides you to the right tool (ESSENTIAL)
 - **al-architect** - Solution architecture & design
@@ -57,7 +68,7 @@ Located in `.github/chatmodes/` - Specialized consultant personalities:
    - Example: "I need to build a sales approval workflow"
 
 2. **Let the auto-guidelines work**
-   - As you code, Layer 1 & 2 guidelines apply automatically
+   - As you code, auto-applied instructions (Layer 1 & 2) activate automatically
    - Copilot will suggest code that follows all rules
 
 3. **Use prompts for specific tasks**
@@ -90,12 +101,12 @@ Located in `.github/chatmodes/` - Specialized consultant personalities:
 1. Ensure Copilot is enabled in VS Code (View > Command Palette > GitHub Copilot: Enable)
 2. Open an .al file to start receiving suggestions
 3. Use the chat feature (Ctrl/Cmd + I) for complex queries
-4. The 4-layer system activates automatically as you work
+4. The AI Native-Instructions Architecture activates automatically as you work
 
 ### How the Layers Work Together
 
 **While coding** (no action needed):
-- Layer 1 & 2 (Instructions) apply automatically
+- Auto-applied instructions (Layer 1 & 2) activate automatically
 - Code suggestions follow all standards
 - Performance and naming conventions enforced
 
@@ -529,10 +540,17 @@ Always review Copilot suggestions:
 - [Business Central Development](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/)
 
 ### This Project's Documentation
-- [Instructions Index](../instructions/index.md) - Complete guide to all instruction files
-- [Prompts Index](../prompts/index.md) - Complete guide to all agentic workflows
-- [Chat Modes Index](../chatmodes/index.md) - Complete guide to all chat modes
-- [AL Guidelines](../instructions/al-guidelines.instructions.md) - Master guidelines
+- [AL Development Overview](../al-development.md) - Framework architecture and overview
+- [AI Native-Instructions Architecture](../references/AI%20Native-INSTRUCTIONS-ARCHITECTURE.md) - Implementation details
+- [AI Native Structure](../references/ai%20native%20structure.md) - Getting started guide
+- [AI Native Concepts](../references/ai%20native-concepts.md) - Core concepts and framework layers
+- [Instructions Index](index.md) - Complete guide to all instruction files
+- [AL Guidelines](al-guidelines.instructions.md) - Master guidelines
+
+### Framework & Standards
+- [AI Native-Instructions Architecture Guide](https://danielmeppiel.github.io/awesome-ai-native/)
+- [AGENTS.md Standard](https://agents.md)
+- [Context Engineering Patterns](https://danielmeppiel.github.io/awesome-ai-native/docs/concepts/)
 
 ## 🛠️ Troubleshooting Copilot
 
@@ -632,62 +650,72 @@ Question or Task?
 
 ## � Workspace Structure
 
-Understanding the folder organization helps you leverage the 4-layer system:
+Understanding the folder organization helps you leverage the AI Native-Instructions Architecture:
 
 ```
-AL_Copilot_Collection/
-├── .github/
-│   ├── copilot-instructions.md          # This file - Master guide
-│   ├── instructions/                    # Layer 1 & 2: Auto-applied
-│   │   ├── al-guidelines.instructions.md
-│   │   ├── al-code-style.instructions.md
-│   │   ├── al-naming-conventions.instructions.md
-│   │   ├── al-performance.instructions.md
-│   │   ├── al-error-handling.instructions.md
-│   │   ├── al-events.instructions.md
-│   │   └── al-testing.instructions.md
-│   ├── prompts/                         # Layer 3: Task workflows
-│   │   ├── al-workspace.prompt.md
-│   │   ├── al-build.prompt.md
-│   │   ├── al-events.prompt.md
-│   │   ├── al-debug.prompt.md
-│   │   ├── al-performance.prompt.md
-│   │   ├── al-permissions.prompt.md
-│   │   ├── al-troubleshoot.prompt.md
-│   │   ├── al-migrate.prompt.md
-│   │   ├── al-pages.prompt.md
-│   │   └── al-workflow.prompt.md
-│   └── chatmodes/                       # Layer 4: Strategic modes (6 core)
-│       ├── al-orchestrator.chatmode.md  # Smart router (ESSENTIAL)
-│       ├── al-architect.chatmode.md     # Architecture & design
-│       ├── al-debugger.chatmode.md      # Deep debugging
-│       ├── al-tester.chatmode.md        # Testing strategy
-│       ├── al-api.chatmode.md           # API development
-│       └── al-copilot.chatmode.md       # AI features
-├── src/                                 # Your AL code here
+AL-Development-Collection/
+├── instructions/
+│   ├── copilot-instructions.md          # This file - Master integration guide
+│   ├── al-guidelines.instructions.md    # Master hub (applies to *.al, *.json)
+│   ├── al-code-style.instructions.md    # Code formatting (applies to *.al)
+│   ├── al-naming-conventions.instructions.md
+│   ├── al-performance.instructions.md
+│   ├── al-error-handling.instructions.md
+│   ├── al-events.instructions.md
+│   └── al-testing.instructions.md       # Testing (applies to test files)
+├── prompts/                              # Agentic Workflows (14 primitives)
+│   ├── al-setup.prompt.md
+│   ├── al-workspace.prompt.md
+│   ├── al-build.prompt.md
+│   ├── al-events.prompt.md
+│   ├── al-debug.prompt.md
+│   ├── al-performance.prompt.md
+│   ├── al-permissions.prompt.md
+│   ├── al-troubleshoot.prompt.md
+│   ├── al-migrate.prompt.md
+│   ├── al-pages.prompt.md
+│   ├── al-workflow.prompt.md
+│   ├── al-spec.create.prompt.md
+│   ├── al-performance.triage.prompt.md
+│   └── al-pr.prepare.prompt.md
+├── chatmodes/                            # Chat Modes with MCP tool boundaries
+│   ├── al-orchestrator.chatmode.md      # Smart router (START HERE)
+│   ├── al-architect.chatmode.md         # Architecture & design
+│   ├── al-debugger.chatmode.md          # Deep debugging
+│   ├── al-tester.chatmode.md            # Testing strategy
+│   ├── al-api.chatmode.md               # API development
+│   └── al-copilot.chatmode.md           # AI features
+├── references/                           # Framework documentation
+│   ├── AI Native-INSTRUCTIONS-ARCHITECTURE.md
+│   ├── ai native structure.md
+│   └── ai native-concepts.md
+├── src/                                  # Your AL code here
 │   ├── Tables/
 │   ├── Pages/
 │   ├── Codeunits/
 │   └── ...
+├── al-development.md                     # Framework overview
 ├── app.json
 └── README.md
 ```
 
-### How Files Are Used
+### How Agent Primitives Are Used
 
 **Instructions** (`.instructions.md`):
-- Auto-loaded based on file type or context
-- Apply silently in the background
+- Auto-loaded based on file type via `applyTo` patterns
+- Apply silently in the background (Context Engineering)
 - No explicit invocation needed
+- Form the foundation of Layer 1 & 2
 
-**Prompts** (`.prompt.md`):
+**Agentic Workflows** (`.prompt.md`):
 - Invoked with `@workspace use [name]`
-- Provide step-by-step workflows
+- Provide complete systematic processes (Layer 3)
 - Have access to AL tools
+- Orchestrate multiple primitives into end-to-end solutions
 
 **Chatmodes** (`.chatmode.md`):
 - Switched via "Use [mode-name] mode"
-- 6 core strategic consultant roles
+- 6 role-based strategic specialists with MCP tool boundaries (Layer 4)
 - Can recommend prompts and instructions
 - Orchestrator is essential for routing
 
@@ -698,11 +726,13 @@ This workspace configuration evolves based on usage. If you find:
 - Missing functionality → Suggest new prompts or modes
 - Conflicting guidance → Report for clarification
 
-Remember: **You have 24 specialized tools working together to make AL development easier, faster, and better!**
+Remember: **You have 28 Agent Primitives working together to make AL development easier, faster, and better!**
 
 ---
 
-**Version**: 2.1  
-**Last Updated**: 2025-10-15  
+**Framework**: [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)  
+**Version**: 2.2.0  
+**Last Updated**: 2025-10-23  
 **Workspace**: AL Development for Business Central  
-**Total Tools**: 24 (1 guide + 7 instructions + 10 prompts + 6 chatmodes)
+**Total Primitives**: 28 (7 instructions + 14 workflows + 6 modes + 1 guide)  
+**Status**: ✅ Fully compliant with AI Native-Instructions Architecture

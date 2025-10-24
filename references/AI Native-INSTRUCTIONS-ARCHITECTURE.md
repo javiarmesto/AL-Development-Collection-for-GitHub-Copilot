@@ -72,7 +72,7 @@ Example:
 ---
 description: 'AL Architecture specialist'
 tools: ['codebase', 'search', 'usages', 'al_get_package_dependencies']
-model: Claude Sonnet 4
+model: Claude Sonnet 4.5
 ---
 
 ## Tool Boundaries

@@ -1,7 +1,7 @@
 ---
 description: 'AL Architecture and Design assistant for Business Central extensions. Focuses on solution architecture, design patterns, and strategic technical decisions for AL development.'
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'microsoft-docs/*', 'upstash/context7/*', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_download_source', 'extensions', 'todos', 'runTests']
-model: Claude Sonnet 4
+model: Claude Sonnet 4.5
 ---
 
 # AL Architect Mode - Architecture & Design Assistant

@@ -5,7 +5,9 @@ display_title: "Core Concepts"
 permalink: /docs/concepts/
 nav_order: 2
 ---
-
+---
+## This document is a copy from https://danielmeppiel.github.io/awesome-ai-native/docs/concepts/ .
+---
 Most developers start with AI by throwing simple prompts at GitHub Copilot and hoping for the best. This approach works for simple tasks but breaks down when you need reliable, repeatable results for complex development work. The three-layer framework below transforms this ad-hoc experimentation into systematic engineering practices.
 
 ## Layer 1: Markdown Prompt Engineering

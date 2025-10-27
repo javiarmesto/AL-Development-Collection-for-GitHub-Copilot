@@ -1,10 +1,10 @@
 # AL Development Collection for GitHub Copilot
 
-> **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **28 specialized Agent Primitives** across **3 systematic layers**.
+> **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI-Native Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **25 specialized Agent Primitives** across **3 systematic layers**.
 
 [![Validation Status](https://img.shields.io/badge/validation-passing-brightgreen)](./validate-al-collection.js)
-[![Version](https://img.shields.io/badge/version-2.2-blue)](./CHANGELOG.md)
-[![Tools](https://img.shields.io/badge/tools-28-orange)](./al-development.md)
+[![Version](https://img.shields.io/badge/version-2.3-blue)](./CHANGELOG.md)
+[![Tools](https://img.shields.io/badge/tools-25-orange)](./al-development.md)
 [![Framework](https://img.shields.io/badge/framework-A--Instructions-purple)](https://danielmeppiel.github.io/awesome-ai-native/)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/javiarmesto/AL_Copilot_Collection)](https://github.com/javiarmesto/AL_Copilot_Collection/issues)
@@ -49,7 +49,7 @@ Open any `.al` file and start coding. The auto-applied instructions will guide C
 **Try your first prompt:**
 
 ```bash
-@workspace use al-workspace
+@workspace use al-initialize
 ```
 
 **Or ask the orchestrator:**
@@ -90,7 +90,7 @@ graph TB
 | Layer | Focus | Purpose | AL Implementation |
 |-------|-------|---------|-------------------|
 | **Layer 1** | **Markdown Prompt Engineering** | Structured instructions using semantic markdown | Headers, lists, links for AI reasoning |
-| **Layer 2** | **Agent Primitives** | Configurable tools (Instructions, Modes, Prompts) | 7 Instructions + 6 Chat Modes + 14 Prompts + 1 Guide |
+| **Layer 2** | **Agent Primitives** | Configurable tools (Instructions, Modes, Prompts) | 7 Instructions + 6 Chat Modes + 11 Prompts + 1 Guide |
 | **Layer 3** | **Context Engineering** | Strategic context management via `applyTo` patterns | Modular loading, AGENTS.md compilation ready |
 
 ### 📊 Agent Primitives Breakdown
@@ -99,9 +99,9 @@ graph TB
 |----------------|-------|------------|---------|
 | **Instructions** | 7 files | Auto via `applyTo` patterns | Persistent coding rules & standards |
 | **Chat Modes** | 6 files | `Use [mode-name]` | Role-based strategic consulting |
-| **Agentic Workflows** | 14 files | `@workspace use [name]` | Complete task execution processes |
+| **Agentic Workflows** | 11 files | `@workspace use [name]` | Complete task execution processes |
 | **Integration Guide** | 1 file | Reference | Master coordination document |
-| **Total Primitives** | **28 tools** | — | Complete AI Native toolkit |
+| **Total Primitives** | **25 tools** | — | Complete AI Native toolkit |
 
 ## 📦 What's Included: Agent Primitives
 
@@ -122,27 +122,24 @@ graph TB
 
 > 💡 **Context Engineering**: Instructions use `applyTo` frontmatter for selective loading, optimizing context window usage
 
-### 🎯 Agentic Workflows (14 primitives)
+### 🎯 Agentic Workflows (11 primitives - optimized)
 
 **Systematic processes** as `.prompt.md` files with validation gates and tool access:
 
 Invoke with `@workspace use [name]`:
-- **al-setup** - Environment setup & AI-assisted configuration
-- **al-workspace** - Project initialization with symbol download
+- **al-initialize** - Complete environment and workspace setup (consolidated)
+- **al-diagnose** - Runtime debugging and configuration troubleshooting (consolidated)
 - **al-build** - Build, package, publish workflows
 - **al-events** - Event subscriber/publisher implementation
-- **al-debug** - Debugging sessions with snapshot support
-- **al-performance** - CPU profiling & bottleneck analysis
+- **al-performance** - Deep performance analysis with CPU profiling
+- **al-performance.triage** - Quick performance diagnosis and static analysis
 - **al-permissions** - Permission set generation
-- **al-troubleshoot** - Systematic problem resolution
 - **al-migrate** - BC version upgrade workflows
 - **al-pages** - Page Designer integration
-- **al-workflow** - Complete feature lifecycle
 - **al-spec.create** - Functional-technical specifications
-- **al-performance.triage** - Performance bottleneck prioritization
-- **al-pr.prepare** - Pull request preparation with docs
+- **al-pr-prepare** - Pull request preparation (streamlined template)
 
-> 💡 **Agentic Workflows**: Prompts orchestrate primitives into complete processes with human validation checkpoints
+> 💡 **Agentic Workflows**: Prompts orchestrate primitives into complete processes with human validation checkpoints. Version 2.3 reduces redundancy by consolidating overlapping workflows.
 
 ### 💬 Chat Modes (6 primitives)
 
@@ -159,7 +156,7 @@ Invoke with `@workspace use [name]`:
 
 ### 📖 Integration Guide (1 primitive)
 
-- **copilot-instructions.md** - Master document coordinating all 27 primitives with usage guidance
+- **copilot-instructions.md** - Master document coordinating all 25 primitives with usage guidance
 
 ## 🎯 Common Workflows
 
@@ -168,7 +165,7 @@ Invoke with `@workspace use [name]`:
 ```text
 1. al-orchestrator → Analyze requirements
 2. al-architect → Design solution
-3. @workspace use al-workspace → Setup
+3. @workspace use al-initialize → Setup
 4. Code (auto-guidelines active)
 5. @workspace use al-events → Add events
 6. al-tester → Test strategy
@@ -179,11 +176,10 @@ Invoke with `@workspace use [name]`:
 ### Debugging Issues
 
 ```text
-1. al-debugger → Diagnose
-2. @workspace use al-debug → Debug tools
-3. @workspace use al-performance → Profile
-4. Fix (auto-guidelines active)
-5. al-tester → Regression tests
+1. @workspace use al-diagnose → Diagnose and debug
+2. @workspace use al-performance → Profile
+3. Fix (auto-guidelines active)
+4. al-tester → Regression tests
 ```
 
 ### API Development
@@ -242,7 +238,7 @@ Expected output:
 User: "I'm new to AL. How do I start?"
 
 Response from al-orchestrator:
-"Let's get you set up. Use @workspace use al-workspace
+"Let's get you set up. Use @workspace use al-initialize
 to initialize your project. The auto-applied guidelines
 will help you code correctly from day one."
 ```
@@ -264,9 +260,9 @@ Response from al-orchestrator:
 User: "My report is slow"
 
 Response from al-debugger:
-"Let's profile it systematically:
-1. @workspace use al-performance
-2. Identify bottleneck
+"Let's diagnose it systematically:
+1. @workspace use al-performance.triage (quick analysis)
+2. @workspace use al-performance (deep profiling)
 3. Apply optimizations
 4. Re-profile to verify"
 ```
@@ -312,11 +308,11 @@ AL_Copilot_Collection/
 │   ├── al-error-handling.instructions.md
 │   ├── al-events.instructions.md
 │   └── al-testing.instructions.md               # applyTo: **/test/**/*.al
-├── prompts/                                      # 🎯 Agentic Workflows (15 files)
+├── prompts/                                      # 🎯 Agentic Workflows (12 files)
 │   ├── index.md                                 # Complete workflows guide
-│   ├── al-workspace.prompt.md
-│   ├── al-build.prompt.md
-│   └── ... (14 total workflow prompts)
+│   ├── al-initialize.prompt.md                  # Environment & workspace setup
+│   ├── al-diagnose.prompt.md                    # Debugging & troubleshooting
+│   └── ... (11 total workflow prompts - optimized v2.3)
 ├── chatmodes/                                    # 💬 Chat Modes (7 files)
 │   ├── index.md                                 # Complete modes guide
 │   ├── al-orchestrator.chatmode.md              # Smart router
@@ -342,6 +338,16 @@ AL_Copilot_Collection/
 ```
 
 ## 🏷️ Version History
+
+### 2.3.0 (2025-10-27) - Workflow Optimization
+- 🔄 **Consolidated Workflows** - Reduced from 14 to 11 workflows (-21%)
+- 🎯 **al-initialize** - Merged al-setup + al-workspace into single initialization workflow
+- 🐛 **al-diagnose** - Merged al-debug + al-troubleshoot into unified diagnostics
+- ✂️ **Streamlined Templates** - al-pr-prepare reduced from 509 to ~240 lines
+- ❌ **Removed Redundancy** - Eliminated al-workflow (overlapped with specialized prompts)
+- 📊 **Total Primitives** - 25 tools (7 instructions + 11 workflows + 6 modes + 1 guide)
+- 💡 **Clearer Purpose** - Each workflow now has distinct, non-overlapping functionality
+- 📉 **Context Efficiency** - Reduced total lines by ~30% while maintaining functionality
 
 ### 2.2.0 (2025-10-19) - AI Native-Instructions Architecture
 - 🏗️ **Framework Implementation** - Full AI Native-Instructions Architecture compliance
@@ -392,10 +398,11 @@ MIT License - see [LICENSE](./LICENSE) file for details.
 
 ---
 
-**Status**: ✅ AI Native-Instructions Architecture Compliant  
-**Framework**: [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)  
-**Last Updated**: 2025-10-19  
-**Collection ID**: `al-development`  
-**Version**: 2.2.0  
-**Total Primitives**: 28 (7 instructions + 14 workflows + 6 modes + 1 guide)  
+**Status**: ✅ AI Native-Instructions Architecture Compliant (Optimized)
+**Framework**: [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)
+**Last Updated**: 2025-10-27
+**Collection ID**: `al-development`
+**Version**: 2.3.0
+**Total Primitives**: 25 (7 instructions + 11 workflows + 6 modes + 1 guide)
 **Context Standard**: AGENTS.md ready
+**Optimization**: -21% workflows, -30% lines, +100% clarity

@@ -1,10 +1,10 @@
 # AL Development Collection for GitHub Copilot
 
-> **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **25 specialized Agent Primitives** across **3 systematic layers**.
+> **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **27 specialized Agent Primitives** across **3 systematic layers**, including **Copilot Extensibility** support.
 
 [![Validation Status](https://img.shields.io/badge/validation-passing-brightgreen)](./validate-al-collection.js)
-[![Version](https://img.shields.io/badge/version-2.3-blue)](./CHANGELOG.md)
-[![Tools](https://img.shields.io/badge/tools-25-orange)](./al-development.md)
+[![Version](https://img.shields.io/badge/version-2.3.1-blue)](./CHANGELOG.md)
+[![Tools](https://img.shields.io/badge/tools-27-orange)](./al-development.md)
 [![Framework](https://img.shields.io/badge/framework-A--Instructions-purple)](https://danielmeppiel.github.io/awesome-ai-native/)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/javiarmesto/AL_Copilot_Collection)](https://github.com/javiarmesto/AL_Copilot_Collection/issues)
@@ -90,7 +90,7 @@ graph TB
 | Layer | Focus | Purpose | AL Implementation |
 |-------|-------|---------|-------------------|
 | **Layer 1** | **Markdown Prompt Engineering** | Structured instructions using semantic markdown | Headers, lists, links for AI reasoning |
-| **Layer 2** | **Agent Primitives** | Configurable tools (Instructions, Modes, Prompts) | 7 Instructions + 6 Chat Modes + 11 Prompts + 1 Guide |
+| **Layer 2** | **Agent Primitives** | Configurable tools (Instructions, Modes, Prompts) | 7 Instructions + 6 Chat Modes + 13 Prompts + 1 Guide |
 | **Layer 3** | **Context Engineering** | Strategic context management via `applyTo` patterns | Modular loading, AGENTS.md compilation ready |
 
 ### 📊 Agent Primitives Breakdown
@@ -99,9 +99,9 @@ graph TB
 |----------------|-------|------------|---------|
 | **Instructions** | 7 files | Auto via `applyTo` patterns | Persistent coding rules & standards |
 | **Chat Modes** | 6 files | `Use [mode-name]` | Role-based strategic consulting |
-| **Agentic Workflows** | 11 files | `@workspace use [name]` | Complete task execution processes |
+| **Agentic Workflows** | 13 files | `@workspace use [name]` | Complete task execution processes |
 | **Integration Guide** | 1 file | Reference | Master coordination document |
-| **Total Primitives** | **25 tools** | — | Complete AI Native toolkit |
+| **Total Primitives** | **27 tools** | — | Complete AI Native toolkit + Copilot Extensibility |
 
 ## 📦 What's Included: Agent Primitives
 
@@ -122,7 +122,7 @@ graph TB
 
 > 💡 **Context Engineering**: Instructions use `applyTo` frontmatter for selective loading, optimizing context window usage
 
-### 🎯 Agentic Workflows (11 primitives - optimized)
+### 🎯 Agentic Workflows (13 primitives - optimized + Copilot)
 
 **Systematic processes** as `.prompt.md` files with validation gates and tool access:
 
@@ -131,6 +131,8 @@ Invoke with `@workspace use [name]`:
 - **al-diagnose** - Runtime debugging and configuration troubleshooting (consolidated)
 - **al-build** - Build, package, publish workflows
 - **al-events** - Event subscriber/publisher implementation
+- **al-copilot-scaffold** - Generate complete Copilot extensibility structure (NEW v2.3.1)
+- **al-copilot-test** - Create AI Test Toolkit test suites for Copilot (NEW v2.3.1)
 - **al-performance** - Deep performance analysis with CPU profiling
 - **al-performance.triage** - Quick performance diagnosis and static analysis
 - **al-permissions** - Permission set generation
@@ -139,7 +141,7 @@ Invoke with `@workspace use [name]`:
 - **al-spec.create** - Functional-technical specifications
 - **al-pr-prepare** - Pull request preparation (streamlined template)
 
-> 💡 **Agentic Workflows**: Prompts orchestrate primitives into complete processes with human validation checkpoints. Version 2.3 reduces redundancy by consolidating overlapping workflows.
+> 💡 **Agentic Workflows**: Prompts orchestrate primitives into complete processes with human validation checkpoints. Version 2.3 reduces redundancy by consolidating overlapping workflows. Version 2.3.1 adds Copilot Extensibility support for building AI-powered features in Business Central.
 
 ### 💬 Chat Modes (6 primitives)
 
@@ -156,7 +158,7 @@ Invoke with `@workspace use [name]`:
 
 ### 📖 Integration Guide (1 primitive)
 
-- **copilot-instructions.md** - Master document coordinating all 25 primitives with usage guidance
+- **copilot-instructions.md** - Master document coordinating all 27 primitives with usage guidance
 
 ## 🎯 Common Workflows
 
@@ -339,6 +341,15 @@ AL_Copilot_Collection/
 
 ## 🏷️ Version History
 
+### 2.3.1 (2025-10-27) - Copilot Extensibility Support
+- 🤖 **Copilot Extensibility** - Added comprehensive support for building custom Copilot features
+- ✨ **al-copilot chatmode** - Expanded from 833 to 1,132 lines (+36%) with real-world patterns
+- 🔧 **al-copilot-scaffold prompt** - NEW: Generate complete Copilot experience structure (PromptDialog, Azure OpenAI integration, capability registration, tests)
+- 🧪 **al-copilot-test prompt** - NEW: Create AI Test Toolkit test suites for Copilot features
+- 📚 **Real Code Examples** - All patterns based on functional code from Microsoft BC samples
+- 📊 **Total Primitives** - 27 tools (25 + 2 Copilot workflows)
+- 🎯 **Complete Copilot Stack** - From strategic design (chatmode) to execution (prompts)
+
 ### 2.3.0 (2025-10-27) - Workflow Optimization
 - 🔄 **Consolidated Workflows** - Reduced from 14 to 11 workflows (-21%)
 - 🎯 **al-initialize** - Merged al-setup + al-workspace into single initialization workflow
@@ -398,11 +409,12 @@ MIT License - see [LICENSE](./LICENSE) file for details.
 
 ---
 
-**Status**: ✅ AI Native-Instructions Architecture Compliant (Optimized)
+**Status**: ✅ AI Native-Instructions Architecture Compliant (Optimized + Copilot)
 **Framework**: [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)
 **Last Updated**: 2025-10-27
 **Collection ID**: `al-development`
-**Version**: 2.3.0
-**Total Primitives**: 25 (7 instructions + 11 workflows + 6 modes + 1 guide)
+**Version**: 2.3.1
+**Total Primitives**: 27 (7 instructions + 13 workflows + 6 modes + 1 guide)
+**Copilot Extensibility**: ✅ Full support (chatmode + 2 workflows)
 **Context Standard**: AGENTS.md ready
-**Optimization**: -21% workflows, -30% lines, +100% clarity
+**Optimization**: -21% workflows, -30% lines, +100% clarity, +Copilot stack

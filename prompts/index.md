@@ -22,7 +22,7 @@ Examples:
 @workspace use al-build
 ```
 
-## 📦 Available Workflows (11 files)
+## 📦 Available Workflows (13 files)
 
 ### Environment & Setup
 
@@ -38,6 +38,13 @@ Examples:
 | **al-spec.create.prompt.md** | Create functional specifications | Planning new features |
 | **al-pages.prompt.md** | Design and implement page objects | Creating UI components |
 | **al-events.prompt.md** | Implement event publishers/subscribers | Extending BC without modifying base |
+
+### Copilot Extensibility
+
+| File | Purpose | When to Use |
+|------|---------|-------------|
+| **al-copilot-scaffold.prompt.md** | Generate complete Copilot experience structure | Creating new AI-powered features |
+| **al-copilot-test.prompt.md** | Create AI Test Toolkit test suites | Testing Copilot features |
 
 ### Build & Deployment
 
@@ -159,10 +166,11 @@ This collection has been optimized to reduce redundancy and improve clarity:
 - `al-workflow` - Redundant with specialized prompts and orchestrator mode
 
 **Result:**
-- 14 workflows → 11 workflows (-21%)
+- 14 workflows → 11 workflows (-21%), then +2 Copilot workflows = 13 total
 - Clearer purpose for each workflow
 - Less confusion about which workflow to use
 - Reduced context consumption
+- **New**: Copilot Extensibility support (v2.3.1)
 
 ## 🔗 Related Resources
 
@@ -189,6 +197,8 @@ Run `npm run validate` to verify:
 | Fix performance issues | `al-performance.triage` → `al-performance` |
 | Create new feature | `al-spec.create` → `al-pages` |
 | Add events | `al-events` |
+| **Build Copilot feature** | **`al-copilot-scaffold`** |
+| **Test Copilot feature** | **`al-copilot-test`** |
 | Set up security | `al-permissions` |
 | Migrate data | `al-migrate` |
 | Prepare for review | `al-pr-prepare` |
@@ -197,6 +207,7 @@ Run `npm run validate` to verify:
 
 **Framework Compliance**: These workflows implement **AI Native-Instructions Architecture** - Layer 2 (Agent Primitives) providing systematic execution processes that coordinate Instructions and Chat Modes for complete task fulfillment.
 
-**Version**: 2.3 (Optimized)
-**Total Workflows**: 11
+**Version**: 2.3.1 (Optimized + Copilot Extensibility)
+**Total Workflows**: 13
+**Copilot Workflows**: 2 (new)
 **Last Updated**: 2025-10-27

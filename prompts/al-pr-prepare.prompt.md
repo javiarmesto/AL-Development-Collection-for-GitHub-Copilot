@@ -1,8 +1,9 @@
 ---
-mode: 'agent'
+agent: agent
+model: Claude Sonnet 4.5
 description: 'Prepare a clean, documented pull request draft for AL features or fixes with summary, testing notes, and checklist.'
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'github/*', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'todos', 'runTests']
-model: claude-sonnet-4.5
+
 ---
 
 # AL Pull Request Preparation

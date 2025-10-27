@@ -1,5 +1,6 @@
 ---
-agent: 'agent'
+agent: agent
+model: Claude Sonnet 4.5
 description: 'Analyze AL codebase to identify performance bottlenecks, circular dependencies, or FlowField inefficiencies.'
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'todos', 'runTests']
 ---

@@ -1,5 +1,6 @@
 ---
-agent: 'agent'
+agent: agent
+model: Claude Sonnet 4.5
 description: 'Design and customize Business Central pages using the AL Page Designer for enhanced user experience.'
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'github/github-mcp-server/*', 'microsoft-docs/*', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_incremental_publish', 'extensions', 'todos', 'runTests']
 ---

@@ -1,8 +1,8 @@
 ---
-mode: 'agent'
+agent: 'agent'
 description: 'Diagnose and debug AL issues including runtime debugging, configuration problems, and systematic troubleshooting.'
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_initalize_snapshot_debugging', 'ms-dynamics-smb.al/al_finish_snapshot_debugging', 'ms-dynamics-smb.al/al_incremental_publish', 'ms-dynamics-smb.al/al_debug_without_publish', 'ms-dynamics-smb.al/al_publish', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_download_symbols', 'ms-dynamics-smb.al/al_download_source', 'ms-dynamics-smb.al/al_clear_credentials_cache', 'extensions', 'todos', 'runTests']
-model: claude-sonnet-4.5
+model: Claude Sonnet 4.5
 ---
 
 # AL Diagnostics & Debugging

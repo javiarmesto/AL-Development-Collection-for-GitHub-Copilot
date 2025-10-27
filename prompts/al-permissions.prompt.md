@@ -1,5 +1,6 @@
 ---
-agent: 'agent'
+agent: agent
+model: Claude Sonnet 4.5
 description: 'Generate and manage permission sets for AL extensions.'
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'todos', 'runTests']
 ---

@@ -1,5 +1,6 @@
 ---
 agent: agent
+model: Claude Sonnet 4.5
 description: 'Build, package, and deploy AL extensions to Business Central environments.'
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'Microsoft Docs/microsoft_docs_fetch', 'Azure MCP/search', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_package', 'ms-dynamics-smb.al/al_publish', 'ms-dynamics-smb.al/al_publish_without_debug', 'ms-dynamics-smb.al/al_publish_existing_extension', 'extensions', 'todos', 'runTests']
 

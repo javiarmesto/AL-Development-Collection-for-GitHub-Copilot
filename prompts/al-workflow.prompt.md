@@ -1,8 +1,7 @@
 ---
-mode: 'agent'
+agent: 'agent'
 description: 'Complete end-to-end AL development workflow from setup to deployment.'
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_download_symbols', 'ms-dynamics-smb.al/al_insert_event', 'ms-dynamics-smb.al/al_go', 'ms-dynamics-smb.al/al_new_project', 'ms-dynamics-smb.al/al_incremental_publish', 'ms-dynamics-smb.al/al_generate_manifest', 'ms-dynamics-smb.al/al_package', 'ms-dynamics-smb.al/al_publish', 'extensions', 'todos', 'runTests']
-model: claude-sonnet-4.5
 ---
 
 # Complete AL Development Workflow

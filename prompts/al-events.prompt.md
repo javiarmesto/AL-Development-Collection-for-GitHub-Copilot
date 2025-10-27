@@ -1,8 +1,7 @@
 ---
-mode: 'agent'
+agent: 'agent'
 description: 'Implement AL events, subscribers, and publishers in Business Central extensions.'
 tools: ['al_insert_event', 'al_open_Event_Recorder']
-model: claude-sonnet-4.5
 ---
 
 # Implement AL Events

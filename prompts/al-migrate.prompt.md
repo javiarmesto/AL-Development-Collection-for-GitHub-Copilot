@@ -1,9 +1,7 @@
 ---
-mode: 'agent'
+agent: 'agent'
 description: 'Migrate AL projects between versions or environments.'
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'microsoft-docs/*', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_download_source', 'ms-dynamics-smb.al/al_full_package', 'ms-dynamics-smb.al/al_generate_manifest', 'extensions', 'todos', 'runTests']
-
-model: gpt-4o
 ---
 
 # AL Project Migration

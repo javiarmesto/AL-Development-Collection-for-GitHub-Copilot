@@ -1,8 +1,7 @@
 ---
-mode: 'agent'
+agent: 'agent'
 description: 'Set up and conduct AL debugging sessions including standard, snapshot, and agent debugging.'
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_initalize_snapshot_debugging', 'ms-dynamics-smb.al/al_finish_snapshot_debugging', 'ms-dynamics-smb.al/al_incremental_publish', 'ms-dynamics-smb.al/al_debug_without_publish', 'ms-dynamics-smb.al/al_publish', 'extensions', 'todos', 'runTests']
-model: claude-sonnet-4.5
 ---
 
 # AL Debugging Session

@@ -195,7 +195,7 @@ Run `npm run validate` to verify:
 
 ---
 
-**Framework Compliance**: These workflows implement **AI Native-Instructions Architecture** - Layer 2 (Agent Primitives) providing systematic execution processes that coordinate Instructions and Chat Modes for complete task fulfillment.
+**Framework Compliance**: These workflows implement **AI-Native Instructions Architecture** - Layer 2 (Agent Primitives) providing systematic execution processes that coordinate Instructions and Chat Modes for complete task fulfillment.
 
 **Version**: 2.3 (Optimized)
 **Total Workflows**: 11

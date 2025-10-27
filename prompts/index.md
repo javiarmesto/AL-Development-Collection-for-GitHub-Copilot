@@ -16,52 +16,49 @@ Activate workflows explicitly when needed:
 ```markdown
 @workspace use [workflow-name]
 
-Example:
-@workspace /al-build
-@workspace /al-debug
-@workspace /al-performance
+Examples:
+@workspace use al-initialize
+@workspace use al-diagnose
+@workspace use al-build
 ```
 
-## 📦 Available Workflows (14 files)
+## 📦 Available Workflows (11 files)
 
 ### Environment & Setup
 
 | File | Purpose | When to Use |
 |------|---------|-------------|
-| **al-setup.prompt.md** | Environment setup & configuration | First-time project setup, onboarding |
-| **al-workspace.prompt.md** | Workspace organization & structure | Organizing multi-extension workspaces |
+| **al-initialize.prompt.md** | Complete environment and workspace initialization | First-time setup, new projects, onboarding |
 
-### Development Lifecycle
+### Development & Diagnostics
+
+| File | Purpose | When to Use |
+|------|---------|-------------|
+| **al-diagnose.prompt.md** | Runtime debugging and configuration troubleshooting | Debugging issues, auth problems, symbol errors |
+| **al-spec.create.prompt.md** | Create functional specifications | Planning new features |
+| **al-pages.prompt.md** | Design and implement page objects | Creating UI components |
+| **al-events.prompt.md** | Implement event publishers/subscribers | Extending BC without modifying base |
+
+### Build & Deployment
 
 | File | Purpose | When to Use |
 |------|---------|-------------|
 | **al-build.prompt.md** | Build, package, and deploy extensions | Building for release, deployment |
-| **al-debug.prompt.md** | Attach debugger and diagnose issues | Debugging runtime issues |
-| **al-spec.create.prompt.md** | Create functional specifications | Planning new features |
-| **al-pages.prompt.md** | Design and implement page objects | Creating UI components |
-| **al-workflow.prompt.md** | Implement business workflows | Building approval/processing flows |
-
-### Events & Integration
-
-| File | Purpose | When to Use |
-|------|---------|-------------|
-| **al-events.prompt.md** | Implement event publishers/subscribers | Extending BC without modifying base |
+| **al-permissions.prompt.md** | Generate permission sets | Setting up security |
 | **al-migrate.prompt.md** | Data migration strategies | Moving data between systems/versions |
 
 ### Quality & Performance
 
 | File | Purpose | When to Use |
 |------|---------|-------------|
-| **al-performance.prompt.md** | Analyze and optimize performance | Slow queries, bottlenecks |
-| **al-performance.triage.prompt.md** | Quick performance diagnosis | Rapid performance assessment |
-| **al-troubleshoot.prompt.md** | Systematic issue resolution | General problem-solving |
+| **al-performance.triage.prompt.md** | Quick performance diagnosis (static analysis) | Rapid performance assessment, code review |
+| **al-performance.prompt.md** | Deep performance analysis (runtime profiling) | Slow queries, bottlenecks, optimization |
 
-### Security & Deployment
+### Code Review & Documentation
 
 | File | Purpose | When to Use |
 |------|---------|-------------|
-| **al-permissions.prompt.md** | Generate permission sets | Setting up security |
-| **al-pr.prepare.prompt.md** | Prepare pull request documentation | Before code review/merge |
+| **al-pr-prepare.prompt.md** | Prepare pull request documentation | Before code review/merge |
 
 ## 🏗️ Workflow Structure
 
@@ -95,14 +92,14 @@ Troubleshooting guide
 ```mermaid
 graph TD
     Start[Task to Complete] --> Setup{First Time?}
-    Setup -->|Yes| SetupFlow[al-setup]
+    Setup -->|Yes| InitFlow[al-initialize]
     Setup -->|No| Type{Task Type?}
-    
+
+    Type -->|Issue/Bug| Diagnose[al-diagnose]
     Type -->|Build/Deploy| Build[al-build]
-    Type -->|Debug Issue| Debug[al-debug]
     Type -->|Performance| Perf{Quick or Deep?}
     Type -->|New Feature| Spec[al-spec.create]
-    
+
     Perf -->|Quick Check| Triage[al-performance.triage]
     Perf -->|Deep Analysis| PerfFull[al-performance]
 ```
@@ -113,7 +110,7 @@ Common workflow sequences:
 
 1. **New Feature Development**
    ```
-   al-spec.create → al-pages → al-build → al-debug
+   al-spec.create → al-pages → al-events → al-build → al-diagnose
    ```
 
 2. **Performance Issue**
@@ -123,12 +120,17 @@ Common workflow sequences:
 
 3. **Security Setup**
    ```
-   al-permissions → al-build → al-troubleshoot
+   al-permissions → al-build → al-diagnose
    ```
 
 4. **Integration Work**
    ```
-   al-events → al-migrate → al-build → al-debug
+   al-events → al-migrate → al-build → al-diagnose
+   ```
+
+5. **First-Time Setup**
+   ```
+   al-initialize → al-spec.create → al-build
    ```
 
 ### Integration with Other Primitives
@@ -140,21 +142,27 @@ Workflows complement:
   - Use `al-architect` to design before implementing workflow
   - Use `al-debugger` when workflow execution reveals issues
 
-### Creating Custom Workflows
+## 🔄 Workflow Optimization (v2.3)
 
-1. **Create file** in this directory: `al-[task].prompt.md`
-2. **Add frontmatter**:
-   ```yaml
-   ---
-   mode: 'agent'
-   description: 'Brief task description'
-   tools: ['codebase', 'workspace_search', 'al_build']
-   model: 'claude-3.5-sonnet'
-   ---
-   ```
-3. **Structure workflow** following the pattern above
-4. **Update collection manifest** in `collections/al-development.collection.yml`
-5. **Test execution** with sample tasks
+This collection has been optimized to reduce redundancy and improve clarity:
+
+### What Changed
+
+**Consolidated Workflows:**
+- `al-setup` + `al-workspace` → **al-initialize** (single initialization workflow)
+- `al-debug` + `al-troubleshoot` → **al-diagnose** (unified diagnostics)
+
+**Simplified Workflows:**
+- **al-pr-prepare** - Reduced from 509 to ~240 lines (template streamlined)
+
+**Removed Workflows:**
+- `al-workflow` - Redundant with specialized prompts and orchestrator mode
+
+**Result:**
+- 14 workflows → 11 workflows (-21%)
+- Clearer purpose for each workflow
+- Less confusion about which workflow to use
+- Reduced context consumption
 
 ## 🔗 Related Resources
 
@@ -175,15 +183,20 @@ Run `npm run validate` to verify:
 
 | Need to... | Use Workflow |
 |-----------|--------------|
-| Set up new project | `al-setup` |
+| Set up new project/environment | `al-initialize` |
+| Debug or troubleshoot issues | `al-diagnose` |
 | Build & deploy | `al-build` |
-| Fix a bug | `al-debug` → `al-troubleshoot` |
-| Improve performance | `al-performance.triage` → `al-performance` |
-| Create new feature | `al-spec.create` → `al-pages` → `al-workflow` |
+| Fix performance issues | `al-performance.triage` → `al-performance` |
+| Create new feature | `al-spec.create` → `al-pages` |
 | Add events | `al-events` |
 | Set up security | `al-permissions` |
-| Prepare for review | `al-pr.prepare` |
+| Migrate data | `al-migrate` |
+| Prepare for review | `al-pr-prepare` |
 
 ---
 
-**Framework Compliance**: These workflows implement **A-Instructions Architecture** - Layer 2 (Agent Primitives) providing systematic execution processes that coordinate Instructions and Chat Modes for complete task fulfillment.
+**Framework Compliance**: These workflows implement **AI Native-Instructions Architecture** - Layer 2 (Agent Primitives) providing systematic execution processes that coordinate Instructions and Chat Modes for complete task fulfillment.
+
+**Version**: 2.3 (Optimized)
+**Total Workflows**: 11
+**Last Updated**: 2025-10-27

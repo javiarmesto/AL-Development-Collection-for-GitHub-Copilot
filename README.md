@@ -12,6 +12,8 @@
 [![GitHub Forks](https://img.shields.io/github/forks/javiarmesto/AL_Copilot_Collection)](https://github.com/javiarmesto/AL_Copilot_Collection/network/members)
 [![Contributors](https://img.shields.io/github/contributors/javiarmesto/AL_Copilot_Collection)](https://github.com/javiarmesto/AL_Copilot_Collection/graphs/contributors)
 
+> **📝 Note:** GitHub badges (Issues, Stars, Forks, Contributors) will display "repo not found" while this repository is private. These badges will automatically work once the repository is made public. All other badges are functioning correctly.
+
 ## 🚀 Quick Start
 
 ### Installation

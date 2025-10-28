@@ -31,6 +31,49 @@ You can contribute three types of **Agent Primitives** (Layer 2):
 2. **Agentic Workflows** - Task-specific execution processes (`.prompt.md`)
 3. **Chat Modes** - Role-based strategic consultants (`.chatmode.md`)
 
+### 🔄 Contribution Workflow
+
+The standard contribution process follows the **fork and pull request** model:
+
+```mermaid
+graph LR
+    A[Fork Repository] --> B[Clone Your Fork]
+    B --> C[Create Feature Branch]
+    C --> D[Add Your Files]
+    D --> E[Update Manifest]
+    E --> F[Run Validation]
+    F --> G[Commit & Push]
+    G --> H[Create Pull Request]
+    H --> I[Code Review]
+    I --> J{Approved?}
+    J -->|Yes| K[Merged by Maintainers]
+    J -->|No| L[Address Feedback]
+    L --> G
+```
+
+**Key Points**:
+- ✅ **Fork** the repository (don't request direct write access)
+- ✅ **Add** your instructions, prompts, or chat modes
+- ✅ **Validate** locally before submitting
+- ✅ **Submit** pull request for review
+- ✅ **Maintainers** will validate and merge
+
+### What Makes a Good Contribution?
+
+**Good Contributions** ✅:
+- Solve a real AL development need
+- Don't duplicate existing functionality
+- Follow naming conventions and frontmatter requirements
+- Include clear examples and documentation
+- Pass validation without errors
+
+**What to Avoid** ❌:
+- Overly broad or vague instructions
+- Hardcoded values specific to your project
+- Non-AL-specific general programming advice
+- Missing or incomplete frontmatter
+- Contributions without validation
+
 ### Adding Instructions
 
 Instructions are **Markdown Prompt Engineering** (Layer 1) files that customize GitHub Copilot's behavior using `applyTo` patterns (Layer 3).
@@ -217,39 +260,154 @@ Example manifest entry:
 
 ## 🔄 Pull Request Process
 
-1. **Fork the repository**
+### Step 1: Fork and Clone
+
+1. **Fork the repository** on GitHub
+   - Click the "Fork" button at the top right of the repository page
+   - This creates a copy of the repository in your GitHub account
+
+2. **Clone your fork locally**:
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/AL_Copilot_Collection.git
+   cd AL_Copilot_Collection
+   ```
+
+3. **Add the upstream remote** (to keep your fork in sync):
+   ```bash
+   git remote add upstream https://github.com/javiarmesto/AL_Copilot_Collection.git
+   ```
+
+### Step 2: Create Your Contribution
+
+1. **Keep your fork updated**:
+   ```bash
+   git checkout main
+   git pull upstream main
+   git push origin main
+   ```
 
 2. **Create a feature branch**:
    ```bash
    git checkout -b feature/al-security-instructions
    ```
+   
+   Use descriptive branch names:
+   - `feature/al-security-instructions` - New instruction file
+   - `feature/al-deployment-prompt` - New prompt file
+   - `feature/al-integration-chatmode` - New chat mode
+   - `fix/update-documentation` - Documentation fixes
 
-3. **Make your changes**:
-   - Add your file(s)
-   - Update `collections/al-development.collection.yml`
-   - Update `al-development.md` if adding major features
-   - Run validation
+3. **Add your files** in the appropriate directory:
+   - **Instructions**: Place in `instructions/` with `.instructions.md` extension
+   - **Prompts**: Place in `prompts/` with `.prompt.md` extension
+   - **Chat Modes**: Place in `chatmodes/` with `.chatmode.md` extension
 
-4. **Commit with clear messages**:
-   ```bash
-   git commit -m "Add AL security instructions for authentication patterns"
+4. **Update the collection manifest** (`collections/al-development.collection.yml`):
+   ```yaml
+   - path: instructions/al-security.instructions.md
+     kind: instruction
    ```
 
-5. **Push to your fork**:
+5. **Run validation locally**:
+   ```bash
+   npm install
+   npm run validate
+   ```
+   
+   Fix any errors before proceeding. All errors must be resolved.
+
+6. **Commit your changes** with clear, descriptive messages:
+   ```bash
+   git add .
+   git commit -m "Add AL security instructions for authentication patterns"
+   ```
+   
+   Good commit message examples:
+   - ✅ "Add AL security instructions for OAuth2 authentication"
+   - ✅ "Create deployment automation prompt with AL-Go integration"
+   - ✅ "Fix: Update performance instructions with BC24 patterns"
+   - ❌ "update files"
+   - ❌ "changes"
+
+### Step 3: Submit Pull Request
+
+1. **Push to your fork**:
    ```bash
    git push origin feature/al-security-instructions
    ```
 
-6. **Open a Pull Request**:
-   - Describe what your contribution adds
-   - Explain why it's useful
-   - Include examples if applicable
-   - Reference any related issues
+2. **Create Pull Request on GitHub**:
+   - Go to your fork on GitHub
+   - Click "Compare & pull request" button
+   - Fill in the PR template with:
+     - **What**: Clear description of what you're adding
+     - **Why**: Explain the value and use case
+     - **Examples**: Include usage examples if applicable
+     - **Testing**: Confirm validation passes
+   
+3. **PR Title Format**:
+   - `feat: Add AL security instructions for OAuth2`
+   - `docs: Update CONTRIBUTING guide with fork workflow`
+   - `fix: Correct frontmatter in performance prompt`
 
-7. **Respond to feedback**:
-   - Address review comments
-   - Update as needed
-   - Re-run validation
+4. **Wait for automated validation**:
+   - GitHub Actions will run validation automatically
+   - Ensure all checks pass (green checkmarks)
+
+### Step 4: Code Review Process
+
+1. **Respond to review comments**:
+   - Maintainers will review your contribution
+   - Address feedback promptly and professionally
+   - Make requested changes in your branch
+   - Push updates to the same branch (PR updates automatically)
+
+2. **Update your contribution**:
+   ```bash
+   git add .
+   git commit -m "Address review feedback: Update error handling patterns"
+   git push origin feature/al-security-instructions
+   ```
+
+3. **Keep your branch updated** (if main branch has new commits):
+   ```bash
+   git checkout main
+   git pull upstream main
+   git checkout feature/al-security-instructions
+   git rebase main
+   git push -f origin feature/al-security-instructions
+   ```
+
+### Step 5: Merge and Cleanup
+
+Once approved and merged by maintainers:
+
+1. **Update your local repository**:
+   ```bash
+   git checkout main
+   git pull upstream main
+   git push origin main
+   ```
+
+2. **Delete your feature branch** (optional but recommended):
+   ```bash
+   git branch -d feature/al-security-instructions
+   git push origin --delete feature/al-security-instructions
+   ```
+
+## 🎯 Contribution Quality Checklist
+
+Before submitting your PR, ensure:
+
+- [ ] All files follow naming conventions (`.instructions.md`, `.prompt.md`, `.chatmode.md`)
+- [ ] Frontmatter is complete and correct
+- [ ] `collections/al-development.collection.yml` is updated
+- [ ] Validation passes locally (`npm run validate`)
+- [ ] Documentation is clear and includes examples
+- [ ] No sensitive information (credentials, tokens) included
+- [ ] Code examples use realistic AL patterns
+- [ ] Commit messages are descriptive
+- [ ] PR description explains what, why, and how
 
 ## 📖 Content Guidelines
 

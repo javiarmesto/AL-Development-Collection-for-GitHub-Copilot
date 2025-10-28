@@ -2,7 +2,7 @@
 agent: agent
 model: Claude Sonnet 4.5
 description: 'Analyze and optimize AL code performance using profiling tools and best practices.'
-tools: ['al_generate_cpu_profile_file', 'al_clear_profile_codelenses', 'al_build']
+tools: ['runCommands', 'runTasks', 'edit', 'runNotebooks', 'search', 'new', 'Microsoft Docs/*', 'extensions', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_clear_profile_codelenses', 'ms-dynamics-smb.al/al_generate_cpu_profile_file', 'todos', 'runTests']
 ---
 
 # AL Performance Analysis

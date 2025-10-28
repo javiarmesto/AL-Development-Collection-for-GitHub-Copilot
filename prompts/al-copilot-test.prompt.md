@@ -1,8 +1,9 @@
 ---
-agent: 'workflow'
+agent: agent
+model: Claude Sonnet 4.5
 description: 'Create comprehensive tests for Copilot features using AI Test Toolkit. Tests prompt quality, response accuracy, error handling, and user experience.'
-tools: ['edit', 'new', 'search', 'usages', 'codebase', 'ms-dynamics-smb.al/al_build', 'runTests', 'problems', 'vscodeAPI']
-model: gpt-4
+tools: ['edit', 'search', 'new', 'Microsoft Docs/*', 'Azure MCP/search', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_view_snapshots', 'runTests']
+
 ---
 
 # Copilot Feature Testing Workflow

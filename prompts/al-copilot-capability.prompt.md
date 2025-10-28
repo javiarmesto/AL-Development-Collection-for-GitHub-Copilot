@@ -1,8 +1,8 @@
 ---
-agent: 'workflow'
+agent: agent
 description: 'Register a new Copilot capability in Business Central. Creates enum extension, install codeunit, and isolated storage wrapper for Azure OpenAI integration.'
-tools: ['edit', 'new', 'search', 'usages', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_incremental_publish', 'problems', 'vscodeAPI']
-model: gpt-4
+tools: ['runCommands', 'edit', 'search', 'new', 'Microsoft Docs/*', 'Azure MCP/search', 'usages', 'vscodeAPI', 'problems', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_insert_event', 'ms-dynamics-smb.al/al_incremental_publish', 'todos']
+model: Claude Sonnet 4.5
 ---
 
 # Copilot Capability Registration Workflow

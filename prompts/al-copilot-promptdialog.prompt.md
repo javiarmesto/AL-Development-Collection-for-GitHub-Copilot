@@ -1,8 +1,9 @@
 ---
-agent: 'workflow'
+agent: agent
+model: Claude Sonnet 4.5
 description: 'Create a complete PromptDialog page for Copilot features in Business Central. Includes all areas (PromptOptions, Prompt, Content, PromptGuide), system actions, and Azure OpenAI integration.'
-tools: ['edit', 'new', 'search', 'usages', 'codebase', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_incremental_publish', 'problems', 'vscodeAPI']
-model: gpt-4
+tools: ['microsoft-docs/*', 'edit', 'search', 'new', 'Azure MCP/search', 'usages', 'vscodeAPI', 'problems', 'changes', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_incremental_publish']
+
 ---
 
 # Copilot PromptDialog Page Creation Workflow

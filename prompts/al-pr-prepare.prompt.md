@@ -2,7 +2,7 @@
 agent: agent
 model: Claude Sonnet 4.5
 description: 'Prepare a clean, documented pull request draft for AL features or fixes with summary, testing notes, and checklist.'
-tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'github/*', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'todos', 'runTests']
+tools: ['runCommands', 'runTasks', 'github/*', 'microsoft-docs/*', 'edit', 'runNotebooks', 'search', 'new', 'Azure MCP/search', 'extensions', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_download_symbols', 'ms-dynamics-smb.al/al_go', 'ms-dynamics-smb.al/al_generate_manifest', 'ms-dynamics-smb.al/al_generate_permission_set_for_extension_objects', 'ms-dynamics-smb.al/al_generate_permission_set_for_extension_objects_as_xml', 'todos', 'runTests']
 
 ---
 

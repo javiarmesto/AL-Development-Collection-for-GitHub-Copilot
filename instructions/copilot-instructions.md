@@ -3,7 +3,7 @@
 # GitHub Copilot Instructions for AL Development
 
 ## Overview
-This workspace contains AL (Application Language) code for Microsoft Dynamics 365 Business Central. This is an **AI Native AL Development** toolkit implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. GitHub Copilot is configured with **28 Agent Primitives** across **3 framework layers** to assist with AL development following Microsoft's best practices and this project's specific standards.
+This workspace contains AL (Application Language) code for Microsoft Dynamics 365 Business Central. This is an **AI Native AL Development** toolkit implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. GitHub Copilot is configured with **29 Agent Primitives** across **3 framework layers** to assist with AL development following Microsoft's best practices and this project's specific standards.
 
 ### Framework Architecture
 This collection implements the **AI Native-Instructions Architecture** with three systematic layers:
@@ -18,7 +18,7 @@ This collection implements the **AI Native-Instructions Architecture** with thre
 
 ## 🎯 Complete Toolset Available
 
-This workspace provides **28 Agent Primitives** organized into **four layers** of Copilot assistance leveraging the AI Native-Instructions Architecture:
+This workspace provides **29 Agent Primitives** organized into **four layers** of Copilot assistance leveraging the AI Native-Instructions Architecture:
 
 ### Layer 1: Auto-Applied Instructions (Always Active)
 Located in `instructions/` - These **Agent Primitives** apply automatically based on file type via `applyTo` patterns:
@@ -38,16 +38,21 @@ Located in `instructions/` - These **Agent Primitives** activate based on contex
 ### Layer 3: Agentic Workflows (Explicit Invocation)
 Located in `prompts/` - **Complete systematic processes** invoked with `@workspace use [prompt-name]`:
 
-- `al-workspace` - Project setup & configuration
+- `al-initialize` - Complete environment & workspace setup (consolidated setup + workspace)
+- `al-diagnose` - Runtime debugging & configuration troubleshooting (consolidated debug + troubleshoot)
 - `al-build` - Build & deployment workflows
 - `al-events` - Event implementation
-- `al-debug` - Debugging sessions
-- `al-performance` - Performance analysis
+- `al-performance` - Deep performance analysis with CPU profiling
+- `al-performance.triage` - Quick performance diagnosis and static analysis
 - `al-permissions` - Permission management
-- `al-troubleshoot` - Common problem solving
 - `al-migrate` - Version migration
 - `al-pages` - Page designer & UI
-- `al-workflow` - End-to-end guidance
+- `al-spec.create` - Functional-technical specifications
+- `al-pr-prepare` - Pull request preparation (streamlined template)
+- `al-copilot-capability` - Register Copilot capability
+- `al-copilot-promptdialog` - Create PromptDialog pages
+- `al-copilot-test` - Test with AI Test Toolkit
+- `al-translate` - XLF translation file management
 
 ### Layer 4: Chat Modes (Strategic Consulting)
 Located in `chatmodes/` - **Role-based specialists** with MCP tool boundaries:
@@ -72,8 +77,8 @@ Located in `chatmodes/` - **Role-based specialists** with MCP tool boundaries:
    - Copilot will suggest code that follows all rules
 
 3. **Use prompts for specific tasks**
-   - Setting up a project? → `@workspace use al-workspace`
-   - Debugging? → `@workspace use al-debug`
+   - Setting up a project? → `@workspace use al-initialize`
+   - Debugging? → `@workspace use al-diagnose`
 
 ### For Experienced AL Developers
 
@@ -112,8 +117,8 @@ Located in `chatmodes/` - **Role-based specialists** with MCP tool boundaries:
 
 **For specific tasks** (explicit invocation):
 ```
-@workspace use al-workspace    # Setup project
-@workspace use al-debug        # Debug session
+@workspace use al-initialize   # Setup project
+@workspace use al-diagnose     # Debug session
 @workspace use al-build        # Deploy
 ```
 
@@ -252,8 +257,8 @@ Practical examples of what to ask Copilot:
 
 ```markdown
 Step 1: Use al-orchestrator (if unsure) OR go directly to:
-Step 2: @workspace use al-workspace
-  → Guides through project initialization
+Step 2: @workspace use al-initialize
+  → Guides through complete environment & workspace initialization
   → Downloads symbols
   → Configures dependencies
   
@@ -286,7 +291,7 @@ Step 1: Use al-debugger mode
   → Systematic diagnosis
   → Root cause analysis
 
-Step 2: @workspace use al-debug
+Step 2: @workspace use al-diagnose
   → Attaches debugger
   → Uses snapshot debugging if intermittent
 
@@ -374,9 +379,13 @@ Step 2: Implement tests with guidance
 
 All prompts are invoked with: `@workspace use [prompt-name]`
 
-#### al-workspace
-**When**: Setting up new projects, configuring environments
+#### al-initialize
+**When**: Setting up new projects, configuring environments (consolidated al-setup + al-workspace)
 **Tools**: al_new_project, al_go, al_download_symbols, al_get_package_dependencies
+
+#### al-diagnose
+**When**: Debugging issues, troubleshooting configurations (consolidated al-debug + al-troubleshoot)
+**Tools**: al_debug_without_publish, al_initalize_snapshot_debugging, al_snapshots, al_clear_credentials_cache
 
 #### al-build
 **When**: Building, packaging, deploying extensions
@@ -386,21 +395,17 @@ All prompts are invoked with: `@workspace use [prompt-name]`
 **When**: Implementing event-driven logic
 **Tools**: al_insert_event, al_open_Event_Recorder
 
-#### al-debug
-**When**: Debugging issues
-**Tools**: al_debug_without_publish, al_initalize_snapshot_debugging, al_snapshots
-
 #### al-performance
-**When**: Optimizing code, profiling
+**When**: Deep performance analysis with CPU profiling
 **Tools**: al_generate_cpu_profile_file, al_clear_profile_codelenses
+
+#### al-performance.triage
+**When**: Quick performance diagnosis and static analysis
+**Tools**: Code analysis, FlowField optimization detection
 
 #### al-permissions
 **When**: Generating permission sets
 **Tools**: al_generate_permissionset_for_extension_objects
-
-#### al-troubleshoot
-**When**: Solving authentication, symbol, build issues
-**Tools**: al_clear_credentials_cache, al_download_symbols, al_download_source
 
 #### al-migrate
 **When**: Upgrading BC versions
@@ -410,9 +415,29 @@ All prompts are invoked with: `@workspace use [prompt-name]`
 **When**: Designing pages with Page Designer
 **Tools**: al_open_Page_Designer, al_build, al_incremental_publish
 
-#### al-workflow
-**When**: Need end-to-end guidance for complete features
-**Tools**: Multiple tools across the development lifecycle
+#### al-spec.create
+**When**: Creating functional-technical specifications before development
+**Tools**: Workspace analysis, requirements documentation
+
+#### al-pr-prepare
+**When**: Preparing pull requests with documentation and validation
+**Tools**: Git analysis, test verification, documentation generation
+
+#### al-copilot-capability
+**When**: Registering new Copilot capability in BC
+**Tools**: Enum extension, install codeunit, isolated storage setup
+
+#### al-copilot-promptdialog
+**When**: Creating PromptDialog pages for Copilot features
+**Tools**: Page creation, Azure OpenAI integration
+
+#### al-copilot-test
+**When**: Testing Copilot features with AI Test Toolkit
+**Tools**: Test creation, AI Test Toolkit integration
+
+#### al-translate
+**When**: Managing XLF translation files for multilingual support
+**Tools**: XLF file manipulation, translation management
 
 ### Role-Based Chat Modes
 
@@ -505,7 +530,7 @@ Always review Copilot suggestions:
 ```markdown
 1. al-orchestrator → Analyze requirements
 2. al-architect → Design solution
-3. @workspace use al-workspace → Setup (if needed)
+3. @workspace use al-initialize → Setup (if needed)
 4. Implement (auto-guidelines active)
 5. @workspace use al-events → Add events
 6. al-tester → Design tests
@@ -516,7 +541,7 @@ Always review Copilot suggestions:
 ### Workflow 2: Bug Investigation
 ```markdown
 1. al-debugger → Diagnose issue
-2. @workspace use al-debug → Debug session
+2. @workspace use al-diagnose → Debug session
 3. @workspace use al-performance → Profile (if slow)
 4. Fix with auto-guidelines
 5. al-tester → Regression tests
@@ -620,16 +645,21 @@ Question or Task?
 - "Use al-copilot" - AI features
 
 ### Prompts (Tactical)
-- `@workspace use al-workspace` - Setup project
+- `@workspace use al-initialize` - Setup project & environment
+- `@workspace use al-diagnose` - Debug & troubleshoot
 - `@workspace use al-build` - Build/deploy
 - `@workspace use al-events` - Work with events
-- `@workspace use al-debug` - Debug tools
-- `@workspace use al-performance` - Optimize
+- `@workspace use al-performance` - Deep performance profiling
+- `@workspace use al-performance.triage` - Quick performance check
 - `@workspace use al-permissions` - Security
-- `@workspace use al-troubleshoot` - Fix issues
 - `@workspace use al-migrate` - Upgrade version
 - `@workspace use al-pages` - Design UI
-- `@workspace use al-workflow` - Complete guidance
+- `@workspace use al-spec.create` - Create specifications
+- `@workspace use al-pr-prepare` - Prepare pull request
+- `@workspace use al-copilot-capability` - Register Copilot capability
+- `@workspace use al-copilot-promptdialog` - Create PromptDialog
+- `@workspace use al-copilot-test` - Test Copilot features
+- `@workspace use al-translate` - Manage translations
 
 ### Auto-Active (Background)
 - al-code-style ✅ Always
@@ -663,21 +693,22 @@ AL-Development-Collection/
 │   ├── al-error-handling.instructions.md
 │   ├── al-events.instructions.md
 │   └── al-testing.instructions.md       # Testing (applies to test files)
-├── prompts/                              # Agentic Workflows (14 primitives)
-│   ├── al-setup.prompt.md
-│   ├── al-workspace.prompt.md
+├── prompts/                              # Agentic Workflows (15 primitives)
+│   ├── al-initialize.prompt.md          # Environment & workspace setup (consolidated)
+│   ├── al-diagnose.prompt.md            # Debug & troubleshoot (consolidated)
 │   ├── al-build.prompt.md
 │   ├── al-events.prompt.md
-│   ├── al-debug.prompt.md
 │   ├── al-performance.prompt.md
+│   ├── al-performance.triage.prompt.md
 │   ├── al-permissions.prompt.md
-│   ├── al-troubleshoot.prompt.md
 │   ├── al-migrate.prompt.md
 │   ├── al-pages.prompt.md
-│   ├── al-workflow.prompt.md
 │   ├── al-spec.create.prompt.md
-│   ├── al-performance.triage.prompt.md
-│   └── al-pr.prepare.prompt.md
+│   ├── al-pr-prepare.prompt.md
+│   ├── al-copilot-capability.prompt.md
+│   ├── al-copilot-promptdialog.prompt.md
+│   ├── al-copilot-test.prompt.md
+│   └── al-translate.prompt.md
 ├── chatmodes/                            # Chat Modes with MCP tool boundaries
 │   ├── al-orchestrator.chatmode.md      # Smart router (START HERE)
 │   ├── al-architect.chatmode.md         # Architecture & design
@@ -726,7 +757,7 @@ This workspace configuration evolves based on usage. If you find:
 - Missing functionality → Suggest new prompts or modes
 - Conflicting guidance → Report for clarification
 
-Remember: **You have 28 Agent Primitives working together to make AL development easier, faster, and better!**
+Remember: **You have 29 Agent Primitives working together to make AL development easier, faster, and better!**
 
 ---
 

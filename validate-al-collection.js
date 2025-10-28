@@ -218,8 +218,9 @@ function validateCollectionItems(manifest) {
       }
       
       if (item.kind === 'prompt') {
-        if (!frontmatter.mode) {
-          addWarning(`Item ${itemNum}: Prompt missing 'mode' in frontmatter: ${item.path}`);
+        // Support both 'mode' (legacy) and 'agent' (new GitHub Copilot convention)
+        if (!frontmatter.mode && !frontmatter.agent) {
+          addWarning(`Item ${itemNum}: Prompt missing 'mode' or 'agent' in frontmatter: ${item.path}`);
         }
         if (!frontmatter.tools) {
           addWarning(`Item ${itemNum}: Prompt missing 'tools' in frontmatter: ${item.path}`);

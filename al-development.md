@@ -1,6 +1,6 @@
 # AL Development for Business Central
 
-**AI Native AL Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. Transform ad-hoc AI usage into systematic engineering through **28 Agent Primitives** across **3 framework layers**.
+**AI Native AL Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. Transform ad-hoc AI usage into systematic engineering through **29 Agent Primitives** across **3 framework layers**.
 
 ## Framework Architecture
 
@@ -19,7 +19,7 @@ This collection implements the **AI Native-Instructions Architecture** with thre
 ### Layer 3: Context Engineering
 **Strategic Management** - Optimized LLM context windows through modular loading, `applyTo` patterns, and AGENTS.md compilation readiness.
 
-## What's Included: The 28 Agent Primitives
+## What's Included: The 29 Agent Primitives
 
 ### 📋 Instructions Files (7 primitives)
 
@@ -38,25 +38,26 @@ This collection implements the **AI Native-Instructions Architecture** with thre
 
 > 💡 **Context Engineering in Action**: Instructions load only when relevant via `applyTo` frontmatter, preserving context window space for code understanding.
 
-### 🎯 Agentic Workflows (14 primitives)
+### 🎯 Agentic Workflows (15 primitives)
 
 **Complete systematic processes** as `.prompt.md` files with validation gates:
 
 Invoke with `@workspace use [prompt-name]`:
-- **al-setup** - AI-assisted environment configuration
-- **al-workspace** - Project initialization with symbol download
+- **al-initialize** - Complete environment & workspace setup (consolidated setup + workspace)
+- **al-diagnose** - Runtime debugging & configuration troubleshooting (consolidated debug + troubleshoot)
 - **al-build** - Build, package, publish workflows with AL tools
 - **al-events** - Event subscriber/publisher implementation
-- **al-debug** - Debugging with snapshot support
-- **al-performance** - Profiling and bottleneck analysis
+- **al-performance** - Deep performance analysis with CPU profiling
+- **al-performance.triage** - Quick performance diagnosis and static analysis
 - **al-permissions** - Permission set generation from objects
-- **al-troubleshoot** - Systematic problem resolution workflows
 - **al-migrate** - BC version upgrade assistance
 - **al-pages** - Page Designer integration workflows
-- **al-workflow** - Complete feature lifecycle from design to deploy
 - **al-spec.create** - Functional-technical specification generation
-- **al-performance.triage** - Performance bottleneck prioritization
-- **al-pr.prepare** - Pull request preparation with documentation
+- **al-pr-prepare** - Pull request preparation (streamlined template)
+- **al-copilot-capability** - Register Copilot capability with enum extension
+- **al-copilot-promptdialog** - Create PromptDialog pages with all areas
+- **al-copilot-test** - Comprehensive testing with AI Test Toolkit
+- **al-translate** - XLF translation file management
 
 > 💡 **Agentic Workflows**: Prompts orchestrate all primitives (instructions, modes, tools) into end-to-end processes with human validation checkpoints.
 
@@ -75,7 +76,7 @@ Invoke with `@workspace use [prompt-name]`:
 
 ### 📖 Integration Guide (1 primitive)
 
-- **copilot-instructions.md** - Master document coordinating all 27 primitives with comprehensive usage guidance and workflow examples
+- **copilot-instructions.md** - Master document coordinating all 29 primitives with comprehensive usage guidance and workflow examples
 
 ## Quick Start
 
@@ -95,8 +96,8 @@ Invoke with `@workspace use [prompt-name]`:
 3. **Use prompts for tasks**
 
    ```bash
-   @workspace use al-workspace  # Setup project
-   @workspace use al-build      # Deploy
+   @workspace use al-initialize  # Setup project
+   @workspace use al-build       # Deploy
    ```
 
 ### For Experienced Developers
@@ -133,7 +134,7 @@ Invoke with `@workspace use [prompt-name]`:
 
 ```text
 1. al-debugger → Systematic diagnosis
-2. @workspace use al-debug → Debug tools
+2. @workspace use al-diagnose → Debug & troubleshoot
 3. @workspace use al-performance → Profile (if slow)
 4. Fix (auto-guidelines active)
 5. al-tester → Regression tests
@@ -231,7 +232,7 @@ al-orchestrator responds:
 "Let's get you set up for AL development. Here's your path:
 
 Phase 1: Environment Setup
-- Use @workspace use al-workspace
+- Use @workspace use al-initialize
 - This will initialize your project and download symbols
 
 Phase 2: Learn the Basics

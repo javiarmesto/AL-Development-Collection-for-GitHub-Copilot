@@ -1,6 +1,6 @@
 id: al-development
 name: AL Development for Business Central
-description: AI Native Development toolkit implementing the A-Instructions Architecture framework with 28 Agent Primitives across 3 systematic layers. Provides Markdown Prompt Engineering through Instructions files, Agentic Workflows via prompts, and Context Engineering through applyTo patterns for optimal LLM performance in Business Central development.
+description: AI Native Development toolkit implementing the A-Instructions Architecture framework with 29 Agent Primitives across 3 systematic layers. Provides Markdown Prompt Engineering through Instructions files, Agentic Workflows via prompts, and Context Engineering through applyTo patterns for optimal LLM performance in Business Central development.
 tags: [al, business-central, dynamics365, erp, microsoft, ai-native, a-instructions, agent-primitives, context-engineering, copilot]
 
 items:
@@ -23,33 +23,35 @@ items:
 
   # Layer 2: Agent Primitives - Agentic Workflows (14 files)
   # Complete systematic processes with validation gates and AL tool access
-  - path: prompts/al-setup.prompt.md
+  - path: prompts/al-initialize.prompt.md
     kind: prompt
-  - path: prompts/al-workspace.prompt.md
+  - path: prompts/al-diagnose.prompt.md
     kind: prompt
   - path: prompts/al-build.prompt.md
     kind: prompt
   - path: prompts/al-events.prompt.md
     kind: prompt
-  - path: prompts/al-debug.prompt.md
-    kind: prompt
   - path: prompts/al-performance.prompt.md
     kind: prompt
-  - path: prompts/al-permissions.prompt.md
+  - path: prompts/al-performance.triage.prompt.md
     kind: prompt
-  - path: prompts/al-troubleshoot.prompt.md
+  - path: prompts/al-permissions.prompt.md
     kind: prompt
   - path: prompts/al-migrate.prompt.md
     kind: prompt
   - path: prompts/al-pages.prompt.md
     kind: prompt
-  - path: prompts/al-workflow.prompt.md
-    kind: prompt
   - path: prompts/al-spec.create.prompt.md
     kind: prompt
-  - path: prompts/al-performance.triage.prompt.md
+  - path: prompts/al-pr-prepare.prompt.md
     kind: prompt
-  - path: prompts/al-pr.prepare.prompt.md
+  - path: prompts/al-copilot-capability.prompt.md
+    kind: prompt
+  - path: prompts/al-copilot-promptdialog.prompt.md
+    kind: prompt
+  - path: prompts/al-copilot-test.prompt.md
+    kind: prompt
+  - path: prompts/al-translate.prompt.md
     kind: prompt
 
   # Layer 2: Agent Primitives - Chat Modes (6 files)

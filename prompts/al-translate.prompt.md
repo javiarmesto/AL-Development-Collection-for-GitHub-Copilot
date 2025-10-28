@@ -1,5 +1,6 @@
 ---
 agent: agent
+model: Claude Sonnet 4.5
 description: 'Translate AL extensions using XLF translation files for Business Central multilingual support.'
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'nab-al.al-toolbox/getTextsToTranslate', 'nab-al.al-toolbox/saveTranslatedTexts', 'nab-al.al-toolbox/getTranslatedTextsMap', 'nab-al.al-toolbox/getTranslatedTextsByState', 'nab-al.al-toolbox/getTextsByKeyword', 'nab-al.al-toolbox/refreshXlf', 'nab-al.al-toolbox/createLanguageXlf', 'extensions', 'todos', 'runTests']
 ---

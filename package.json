@@ -1,7 +1,7 @@
 {
   "name": "al-development-collection",
   "version": "2.2.0",
-  "description": "AL Development Collection for GitHub Copilot - AI Native-Instructions Architecture implementation with 28 Agent Primitives",
+  "description": "AL Development Collection for GitHub Copilot - AI Native-Instructions Architecture implementation with 29 Agent Primitives",
   "main": "validate-al-collection.js",
   "scripts": {
     "validate": "node validate-al-collection.js",

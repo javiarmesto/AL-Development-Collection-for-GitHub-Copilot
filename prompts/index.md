@@ -22,43 +22,60 @@ Examples:
 @workspace use al-build
 ```
 
-## 📦 Available Workflows (11 files)
+## 📦 Available Workflows (18 files)
 
 ### Environment & Setup
 
 | File | Purpose | When to Use |
 |------|---------|-------------|
-| **al-initialize.prompt.md** | Complete environment and workspace initialization | First-time setup, new projects, onboarding |
+| **al-initialize** | Complete environment and workspace initialization | First-time setup, new projects, onboarding |
 
 ### Development & Diagnostics
 
 | File | Purpose | When to Use |
 |------|---------|-------------|
-| **al-diagnose.prompt.md** | Runtime debugging and configuration troubleshooting | Debugging issues, auth problems, symbol errors |
-| **al-spec.create.prompt.md** | Create functional specifications | Planning new features |
-| **al-pages.prompt.md** | Design and implement page objects | Creating UI components |
-| **al-events.prompt.md** | Implement event publishers/subscribers | Extending BC without modifying base |
+| **al-diagnose** | Runtime debugging and configuration troubleshooting | Debugging issues, auth problems, symbol errors |
+| **al-spec.create** | Create functional specifications | Planning new features |
+| **al-pages** | Design and implement page objects | Creating UI components |
+| **al-events** | Implement event publishers/subscribers | Extending BC without modifying base |
 
 ### Build & Deployment
 
 | File | Purpose | When to Use |
 |------|---------|-------------|
-| **al-build.prompt.md** | Build, package, and deploy extensions | Building for release, deployment |
-| **al-permissions.prompt.md** | Generate permission sets | Setting up security |
-| **al-migrate.prompt.md** | Data migration strategies | Moving data between systems/versions |
+| **al-build** | Build, package, and deploy extensions | Building for release, deployment |
+| **al-permissions** | Generate permission sets | Setting up security |
+| **al-migrate** | Data migration strategies | Moving data between systems/versions |
 
 ### Quality & Performance
 
 | File | Purpose | When to Use |
 |------|---------|-------------|
-| **al-performance.triage.prompt.md** | Quick performance diagnosis (static analysis) | Rapid performance assessment, code review |
-| **al-performance.prompt.md** | Deep performance analysis (runtime profiling) | Slow queries, bottlenecks, optimization |
+| **al-performance.triage** | Quick performance diagnosis (static analysis) | Rapid performance assessment, code review |
+| **al-performance** | Deep performance analysis (runtime profiling) | Slow queries, bottlenecks, optimization |
 
 ### Code Review & Documentation
 
 | File | Purpose | When to Use |
 |------|---------|-------------|
-| **al-pr-prepare.prompt.md** | Prepare pull request documentation | Before code review/merge |
+| **al-pr-prepare** | Prepare pull request documentation | Before code review/merge |
+| **al-context.create** | Generate project context.md file | Setting up project for AI assistants |
+| **al-memory.create** | Generate/update memory.md file | Maintaining session continuity |
+
+### AI/Copilot Features
+
+| File | Purpose | When to Use |
+|------|---------|-------------|
+| **al-copilot-capability** | Register Copilot capability | Adding AI features to BC |
+| **al-copilot-promptdialog** | Create PromptDialog pages | Building Copilot UI |
+| **al-copilot-test** | Test Copilot features | Validating AI functionality |
+| **al-copilot-generate** | Generate Copilot code from natural language | Creating AI-powered features |
+
+### Translation & Localization
+
+| File | Purpose | When to Use |
+|------|---------|-------------|
+| **al-translate** | XLF translation file management | Localization workflows |
 
 ## 🏗️ Workflow Structure
 

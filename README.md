@@ -18,10 +18,11 @@
 ### Installation
 
 **Option 1: NPM Package (Recommended)**
-Run:
+```bash
+# Run:
 npm install github:javiarmesto/AL-Development-Collection-for-GitHub-Copilot
 npx al-collection install
-
+```
 
 **Option 2: Clone Repository**
 

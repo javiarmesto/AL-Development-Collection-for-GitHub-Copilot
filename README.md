@@ -1,10 +1,10 @@
 # AL Development Collection for GitHub Copilot
 
-> **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI-Native Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **29 specialized Agent Primitives** across **3 systematic layers**.
+> **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI-Native Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **32 specialized Agent Primitives** across **3 systematic layers**.
 
 [![Validation Status](https://img.shields.io/badge/validation-passing-brightgreen)](./validate-al-collection.js)
-[![Version](https://img.shields.io/badge/version-2.4-blue)](./CHANGELOG.md)
-[![Tools](https://img.shields.io/badge/tools-29-orange)](./al-development.md)
+[![Version](https://img.shields.io/badge/version-2.5-blue)](./CHANGELOG.md)
+[![Tools](https://img.shields.io/badge/tools-32-orange)](./al-development.md)
 [![Framework](https://img.shields.io/badge/framework-A--Instructions-purple)](https://danielmeppiel.github.io/awesome-ai-native/)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/javiarmesto/AL-Development-Collection-for-GitHub-Copilot)](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/issues)
@@ -32,9 +32,9 @@ npm install github:javiarmesto/AL-Development-Collection-for-GitHub-Copilot
 npx al-collection install
 
 # This will copy to .github/:
-# - agents/ (6 strategic modes)
+# - agents/ (7 strategic + tactical modes)
 # - instructions/ (7 auto-applied guidelines)
-# - prompts/ (16 agentic workflows)
+# - prompts/ (18 agentic workflows)
 # - getting-started.md (quick reference)
 #
 # Existing files are preserved - only new files are added
@@ -129,20 +129,18 @@ graph TB
 | Layer | Focus | Purpose | AL Implementation |
 |-------|-------|---------|-------------------|
 | **Layer 1** | **Markdown Prompt Engineering** | Structured instructions using semantic markdown | Headers, lists, links for AI reasoning |
-| **Layer 2** | **Agent Primitives** | Configurable tools (Instructions, Modes, Prompts) | 7 Instructions + 6 Chat Modes + 14 Prompts + 1 Guide |
+| **Layer 2** | **Agent Primitives** | Configurable tools (Instructions, Modes, Prompts) | 7 Instructions + 7 Chat Modes + 18 Workflows + 1 Guide |
 | **Layer 3** | **Context Engineering** | Strategic context management via `applyTo` patterns | Modular loading, AGENTS.md compilation ready |
 
 ### 📊 Agent Primitives Breakdown
 
 | Primitive Type | Count | Activation | Purpose |
-|----------------|-------|------------|---------|
+|----------------|-------|------------|---------|  
 | **Instructions** | 7 files | Auto via `applyTo` patterns | Persistent coding rules & standards |
-| **Chat Modes** | 6 files | `Use [mode-name]` | Role-based strategic consulting |
-| **Agentic Workflows** | 14 files | `@workspace use [name]` | Complete task execution processes |
+| **Chat Modes** | 7 files | `Use [mode-name]` | Role-based strategic/tactical specialists |
+| **Agentic Workflows** | 18 files | `@workspace use [name]` | Complete task execution processes |
 | **Integration Guide** | 1 file | Reference | Master coordination document |
-| **Total Primitives** | **29 tools** | — | Complete AI Native toolkit |
-
-## 📦 What's Included: Agent Primitives
+| **Total Primitives** | **32 tools** | — | Complete AI Native toolkit |## 📦 What's Included: Agent Primitives
 
 ### � Instructions Files (7 primitives)
 
@@ -161,7 +159,7 @@ graph TB
 
 > 💡 **Context Engineering**: Instructions use `applyTo` frontmatter for selective loading, optimizing context window usage
 
-### 🎯 Agentic Workflows (15 primitives)
+### 🎯 Agentic Workflows (18 primitives)
 
 **Systematic processes** as `.prompt.md` files with validation gates and tool access:
 
@@ -179,23 +177,32 @@ graph TB
 - **al-pr-prepare** - Pull request preparation (streamlined template)
 - **al-translate** - XLF translation file management
 
+**Context & Memory Workflows** - AI assistant continuity:
+- **al-context.create** - Generate project context.md file for AI assistants
+- **al-memory.create** - Generate/update memory.md for session continuity
+
 **Copilot Workflows** - Specialized for AI-powered features:
 - **al-copilot-capability** - Register new Copilot capability with enum extension and setup
 - **al-copilot-promptdialog** - Create complete PromptDialog page with all areas
 - **al-copilot-test** - Comprehensive testing with AI Test Toolkit
+- **al-copilot-generate** - Generate Copilot code from natural language
 
 > 💡 **Agentic Workflows**: Prompts orchestrate primitives into complete processes with human validation checkpoints.
 
-### 💬 Chat Modes (6 primitives)
+### 💬 Chat Modes (7 primitives)
 
 **Role-based specialists** with MCP tool boundaries (like professional licensing):
 
+**Strategic Specialists** (design & analyze):
 - **al-orchestrator** 📚 - GUIDE/EXAMPLE: Reference for creating complex agents
 - **al-architect** 🏗️ - Solution architecture, cannot execute builds
 - **al-debugger** 🐛 - Deep diagnosis, systematic troubleshooting
 - **al-tester** ✅ - Testing strategy, TDD methodology
 - **al-api** 🌐 - RESTful API design & implementation
 - **al-copilot** 🤖 - AI-powered Copilot features development
+
+**Tactical Specialist** (implement & execute):
+- **al-developer** 💻 - Code implementation with full build tool access
 
 > 💡 **Tool Boundaries**: Each mode has explicit CAN/CANNOT lists preventing cross-domain security breaches
 
@@ -387,6 +394,25 @@ AL-Development-Collection-for-GitHub-Copilot/
 
 ## 🏷️ Version History
 
+### 2.5.0 (2025-10-31) - Developer Mode & Context Management
+- 💻 **al-developer Mode** - NEW tactical implementation specialist
+  - Full MCP tool access (al_build, al_publish, al_incrementalpublish)
+  - Executes code changes, builds, and tests
+  - Bridges gap between strategic modes and implementation
+  - Delegates architectural decisions to specialized modes
+- 📄 **al-context.create Workflow** - Generate project context.md files
+  - 16-section comprehensive project documentation
+  - AI assistant onboarding in <2 minutes
+  - Architecture, decisions, navigation guide
+- 🧠 **al-memory.create Workflow** - Session continuity tracking
+  - 12-section development memory log
+  - Decision tracking with rationale
+  - Problem/solution patterns documentation
+  - TODO and learning journal
+- 📊 **Total Primitives** - 32 tools (7 instructions + 18 workflows + 7 modes + 1 guide)
+- 🎯 **Cognitive Focus** - Complete separation: Think (architect) → Do (developer) → Validate (tester)
+- 🏗️ **Enhanced Workflows** - Better integration between strategic and tactical work
+
 ### 2.4.0 (2025-10-28) - Copilot Development Expansion
 - 🤖 **AL Copilot Mode** - Complete rewrite with 3x more content (1,280 lines)
   - Quick Start guide (5-minute first Copilot)
@@ -464,9 +490,9 @@ MIT License - see [LICENSE](./LICENSE) file for details.
 
 **Status**: ✅ AI Native-Instructions Architecture Compliant
 **Framework**: [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)
-**Last Updated**: 2025-10-28
+**Last Updated**: 2025-10-31
 **Collection ID**: `al-development`
-**Version**: 2.4.0
-**Total Primitives**: 29 (7 instructions + 15 workflows + 6 modes + 1 guide)
+**Version**: 2.5.0
+**Total Primitives**: 32 (7 instructions + 18 workflows + 7 modes + 1 guide)
 **Context Standard**: AGENTS.md ready
-**Latest**: Copilot development expansion with 3 new workflows and enhanced mode
+**Latest**: Developer mode + context/memory management for complete cognitive workflow

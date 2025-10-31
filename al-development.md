@@ -1,6 +1,6 @@
 # AL Development for Business Central
 
-**AI Native AL Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. Transform ad-hoc AI usage into systematic engineering through **29 Agent Primitives** across **3 framework layers**.
+**AI Native AL Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. Transform ad-hoc AI usage into systematic engineering through **32 Agent Primitives** across **3 framework layers**.
 
 ## Framework Architecture
 
@@ -10,10 +10,10 @@ This collection implements the **AI Native-Instructions Architecture** with thre
 **Foundation** - Structured instructions using semantic markdown (headers, lists, links) that guide AI reasoning for predictable, repeatable results.
 
 ### Layer 2: Agent Primitives  
-**Implementation** - 28 configurable tools that deploy your prompt engineering systematically:
+**Implementation** - 31 configurable tools that deploy your prompt engineering systematically:
 - **📋 Instructions** (7) - Auto-applied coding rules via `applyTo` patterns
-- **🎯 Agentic Workflows** (14) - Complete task execution processes
-- **💬 Chat Modes** (6) - Role-based specialists with tool boundaries
+- **🎯 Agentic Workflows** (18) - Complete task execution processes
+- **💬 Chat Modes** (7) - Role-based specialists with tool boundaries
 - **📖 Integration Guide** (1) - Master coordination document
 
 ### Layer 3: Context Engineering
@@ -38,7 +38,7 @@ This collection implements the **AI Native-Instructions Architecture** with thre
 
 > 💡 **Context Engineering in Action**: Instructions load only when relevant via `applyTo` frontmatter, preserving context window space for code understanding.
 
-### 🎯 Agentic Workflows (15 primitives)
+### 🎯 Agentic Workflows (18 primitives)
 
 **Complete systematic processes** as `.prompt.md` files with validation gates:
 
@@ -54,19 +54,23 @@ Invoke with `@workspace use [prompt-name]`:
 - **al-pages** - Page Designer integration workflows
 - **al-spec.create** - Functional-technical specification generation
 - **al-pr-prepare** - Pull request preparation (streamlined template)
+- **al-translate** - XLF translation file management
+- **al-context.create** - Generate project context.md file for AI assistants
+- **al-memory.create** - Generate/update memory.md for session continuity
 - **al-copilot-capability** - Register Copilot capability with enum extension
 - **al-copilot-promptdialog** - Create PromptDialog pages with all areas
 - **al-copilot-test** - Comprehensive testing with AI Test Toolkit
-- **al-translate** - XLF translation file management
+- **al-copilot-generate** - Generate Copilot code from natural language
 
 > 💡 **Agentic Workflows**: Prompts orchestrate all primitives (instructions, modes, tools) into end-to-end processes with human validation checkpoints.
 
-### 💬 Chat Modes (6 primitives)
+### 💬 Chat Modes (7 primitives)
 
 **Role-based specialists** with MCP tool boundaries preventing cross-domain security breaches:
 
 - **al-orchestrator** 🎯 - Smart router, workflow coordinator (START HERE)
 - **al-architect** 🏗️ - Solution architecture design (cannot execute builds)
+- **al-developer** 💻 - Tactical implementation with full build tool access (NEW)
 - **al-debugger** 🐛 - Deep systematic diagnosis and troubleshooting
 - **al-tester** ✅ - Testing strategy, TDD methodology, quality assurance
 - **al-api** 🌐 - RESTful API design and implementation
@@ -76,7 +80,7 @@ Invoke with `@workspace use [prompt-name]`:
 
 ### 📖 Integration Guide (1 primitive)
 
-- **copilot-instructions.md** - Master document coordinating all 29 primitives with comprehensive usage guidance and workflow examples
+- **copilot-instructions.md** - Master document coordinating all 32 primitives with comprehensive usage guidance and workflow examples
 
 ## Quick Start
 
@@ -122,12 +126,10 @@ Invoke with `@workspace use [prompt-name]`:
 ```text
 1. al-orchestrator → Analyze requirements
 2. al-architect → Design architecture
-3. @workspace use al-workspace → Setup (if needed)
-4. Code (auto-guidelines active)
-5. @workspace use al-events → Add events
-6. al-tester → Test strategy
-7. @workspace use al-permissions → Security
-8. @workspace use al-build → Deploy
+3. al-developer → Implement code (NEW)
+4. al-tester → Test strategy
+5. @workspace use al-permissions → Security
+6. @workspace use al-build → Deploy
 ```
 
 ### Debugging Issues
@@ -135,9 +137,8 @@ Invoke with `@workspace use [prompt-name]`:
 ```text
 1. al-debugger → Systematic diagnosis
 2. @workspace use al-diagnose → Debug & troubleshoot
-3. @workspace use al-performance → Profile (if slow)
-4. Fix (auto-guidelines active)
-5. al-tester → Regression tests
+3. al-developer → Fix implementation (NEW)
+4. al-tester → Regression tests
 ```
 
 ### API Development
@@ -336,10 +337,10 @@ Found an issue or have a suggestion? This collection improves through use:
 ## Framework Compliance
 
 **Framework**: [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)  
-**Version**: 2.2.0  
-**Last Updated**: 2025-10-19  
+**Version**: 2.5.0  
+**Last Updated**: 2025-10-31  
 **Author**: javiarmesto  
-**Total Primitives**: 28 (7 instructions + 14 workflows + 6 modes + 1 guide)  
+**Total Primitives**: 32 (7 instructions + 18 workflows + 7 modes + 1 guide)  
 **Status**: ✅ Fully compliant with AI Native-Instructions Architecture
 
 ### Framework Implementation

@@ -15,6 +15,12 @@
 
 ## 🚀 Quick Start
 
+### Prerequisites
+
+- **Node.js** (v14.0.0 or higher) - [Download here](https://nodejs.org/en/download)
+- **Visual Studio Code** with GitHub Copilot extension
+- **AL Language extension** for VS Code
+
 ### Installation
 
 **Option 1: NPM Package (Recommended)**

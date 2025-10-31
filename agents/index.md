@@ -32,7 +32,7 @@ title: Complex feature planning
 I need to build a sales forecasting system...
 ```
 
-## 📦 Available Chat Modes (6 files)
+## 📦 Available Chat Modes (7 files)
 
 ### 🎯 Entry Point (Use This First)
 
@@ -45,6 +45,7 @@ I need to build a sales forecasting system...
 | Mode | Role | Best For |
 |------|------|----------|
 | **al-architect** | Solution Architecture & Design | Planning features, designing data models, architectural decisions |
+| **al-developer** | Tactical Implementation Specialist | **Executing** code changes, building features, implementing from specs |
 | **al-debugger** | Systematic Debugging Specialist | Diagnosing bugs, root cause analysis, understanding execution flow |
 | **al-tester** | Testing Strategy & TDD Expert | Test design, TDD implementation, coverage planning |
 | **al-api** | RESTful API Design Specialist | API contracts, endpoint design, external integrations |
@@ -153,7 +154,54 @@ Should work across companies, support delegation, send emails.
 
 ---
 
-### 🐛 al-debugger
+### � al-developer (★ New)
+
+**Role**: Tactical implementation specialist with full MCP tool access
+
+**Use when**:
+- Implementing features from specifications
+- Creating AL objects (tables, pages, codeunits)
+- Extending base BC objects
+- Implementing event subscribers
+- Refactoring existing code
+- Fixing bugs
+- Building and publishing extensions
+
+**Full AL MCP Tool Access**:
+- `al_build`, `al_buildall`, `al_package`, `al_publish`
+- `al_incrementalpublish` (fast iteration)
+- `al_downloadsymbols`, `al_downloadsource`
+- `al_generatepermissionset`, `al_generatemanifest`
+- Debugging and performance tools
+
+**Auto-loads Instructions**:
+- `al-code-style.instructions.md`
+- `al-naming-conventions.instructions.md`
+- `al-performance.instructions.md`
+- `al-error-handling.instructions.md`
+- `al-events.instructions.md`
+
+**Example**:
+```markdown
+Use al-developer
+
+#file: src/Sales/Customer.TableExt.al
+
+Implement email validation on Customer table extension:
+- Add event subscriber for OnBeforeValidateEvent on Email field
+- Validate format using regex
+- Show error if invalid
+- Build and test
+```
+
+**Delegates to**:
+- `al-architect` (strategic decisions)
+- `al-tester` (test strategy)
+- `al-debugger` (complex diagnosis)
+
+---
+
+### �🐛 al-debugger
 
 **Role**: Systematic debugging specialist
 
@@ -212,25 +260,30 @@ What test scenarios should I cover for sales posting logic?
 **Use when**:
 - Designing API endpoints
 - Implementing API pages (v2.0)
-- Setting up authentication
-- API versioning strategies
-- External system integrations
+1. **New Feature Development**
+   ```
+   al-orchestrator → al-architect (design) → al-developer (implement) → al-tester (validate)
+   ```
 
-**Auto-loads Instructions**:
-- `al-error-handling.instructions.md`
-- `al-performance.instructions.md`
+2. **Bug Fix**
+   ```
+   al-debugger (diagnose) → al-developer (fix) → al-tester (verify)
+   ```
 
-**Example**:
-```markdown
-Use al-api
+3. **Performance Optimization**
+   ```
+   al-debugger (profile) → al-architect (redesign) → al-developer (implement)
+   ```
 
-Design API for mobile app to access sales orders.
-Need: list by customer, get details, create orders, update status.
-```
+4. **Testing Implementation**
+   ```
+   al-tester (strategy) → al-developer (create tests) → al-debugger (fix failures)
+   ```
 
----
-
-### 🤖 al-copilot
+5. **API Development**
+   ```
+   al-architect (design) → al-api (contract) → al-developer (implement)
+   ``` al-copilot
 
 **Role**: AI-powered features specialist
 

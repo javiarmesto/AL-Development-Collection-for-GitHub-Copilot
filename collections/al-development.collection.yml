@@ -1,6 +1,6 @@
 id: al-development
 name: AL Development for Business Central
-description: AI Native Development toolkit implementing the A-Instructions Architecture framework with 30 Agent Primitives across 3 systematic layers. Provides Markdown Prompt Engineering through Instructions files, Agentic Workflows via prompts, and Context Engineering through applyTo patterns for optimal LLM performance in Business Central development.
+description: AI Native Development toolkit implementing the A-Instructions Architecture framework with 32 Agent Primitives across 3 systematic layers. Provides Markdown Prompt Engineering through Instructions files, Agentic Workflows via prompts, and Context Engineering through applyTo patterns for optimal LLM performance in Business Central development.
 tags: [al, business-central, dynamics365, erp, microsoft, ai-native, a-instructions, agent-primitives, context-engineering, copilot]
 
 items:
@@ -21,7 +21,7 @@ items:
   - path: instructions/al-testing.instructions.md
     kind: instruction
 
-  # Layer 2: Agent Primitives - Agentic Workflows (16 files)
+  # Layer 2: Agent Primitives - Agentic Workflows (18 files)
   # Complete systematic processes with validation gates and AL tool access
   - path: prompts/al-initialize.prompt.md
     kind: prompt
@@ -55,8 +55,12 @@ items:
     kind: prompt
   - path: prompts/al-translate.prompt.md
     kind: prompt
+  - path: prompts/al-context.create.prompt.md
+    kind: prompt
+  - path: prompts/al-memory.create.prompt.md
+    kind: prompt
 
-  # Layer 2: Agent Primitives - Agents (6 files)
+  # Layer 2: Agent Primitives - Agents (7 files)
   # Role-based specialists with MCP tool boundaries preventing cross-domain operations
   - path: agents/al-orchestrator.agent.md
     kind: agent
@@ -311,6 +315,69 @@ items:
       - Mention desired output format
       - Include any responsible AI considerations
       - Ask about prompt engineering best practices
+
+  - path: agents/al-developer.agent.md
+    kind: agent
+    usage: recommended
+    description: |
+      Tactical implementation specialist with full MCP tool access for executing code changes. Focuses on clean execution within established patterns without making strategic architectural decisions.
+
+      Tool Boundaries (professional licensing model):
+      - CAN: Create/edit files, build, publish, test, refactor, fix bugs
+      - CANNOT: Design architectures, test strategies, API contracts (delegates to specialized modes)
+
+      Full AL MCP Tool Access:
+      - Build tools: al_build, al_buildall, al_package, al_publish, al_incrementalpublish
+      - Environment: al_downloadsymbols, al_downloadsource
+      - Code generation: al_generatepermissionset, al_generatemanifest
+      - Debugging: al_debugWithoutpublish, snapshot debugging tools
+      - Performance: al_generatecpuprofile
+
+      Auto-loads Instructions for quality:
+      - al-code-style.instructions.md (2-space indent, feature folders)
+      - al-naming-conventions.instructions.md (26-char limits)
+      - al-performance.instructions.md (SetLoadFields patterns)
+      - al-error-handling.instructions.md (TryFunctions)
+      - al-events.instructions.md (event patterns)
+
+      Implements systematic workflow:
+      1. Load context (search, usages, problems)
+      2. Implement following auto-instructions
+      3. Build and validate continuously
+      4. Test integration
+      5. Delegate strategic decisions to specialized modes
+
+      Ideal for (tactical execution):
+      - Implementing features from specifications
+      - Creating AL objects (tables, pages, codeunits)
+      - Extending base BC objects (table/page extensions)
+      - Implementing event subscribers
+      - Refactoring existing code
+      - Fixing bugs and errors
+      - Building and publishing extensions
+
+      Example usage:
+      ```markdown
+      ---
+      mode: al-developer
+      title: Implement customer email validation
+      ---
+      
+      #file: src/Sales/Customer.TableExt.al
+      
+      Implement email validation on the Customer table extension:
+      - Add event subscriber for OnBeforeValidateEvent on Email field
+      - Validate email format using regex
+      - Show error if invalid
+      - Build and test
+      ```
+
+      To get the best results:
+      - Provide clear specifications or reference existing patterns
+      - Include relevant files in context
+      - Specify if you need builds/tests run
+      - Mention any specific business rules
+      - Let the mode delegate if architectural decisions arise
 
 display:
   ordering: manual

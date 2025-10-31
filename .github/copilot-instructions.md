@@ -9,10 +9,10 @@ This is a **meta-collection** for AL (Application Language) development targetin
 ### Layer 1: Markdown Prompt Engineering
 Structured instructions using semantic markdown (headers, lists, links) that guide AI reasoning predictably. All files use precise language patterns that LLMs parse effectively.
 
-### Layer 2: Agent Primitives (29 tools)
+### Layer 2: Agent Primitives (32 tools)
 - **Instructions** (7): Auto-applied via `applyTo` patterns - coding standards that activate based on file type
-- **Agentic Workflows** (15): Complete processes invoked via `@workspace use [name]` - systematic execution with validation gates
-- **Chat Modes** (6): Role-based specialists switched via `Use [mode]` - strategic consulting with MCP tool boundaries
+- **Agentic Workflows** (18): Complete processes invoked via `@workspace use [name]` - systematic execution with validation gates
+- **Chat Modes** (7): Role-based specialists switched via `Use [mode]` - strategic consulting and tactical execution with MCP tool boundaries
 - **Integration Guide** (1): Master coordination document (`instructions/copilot-instructions.md`)
 
 ### Layer 3: Context Engineering
@@ -149,12 +149,16 @@ Invoked via `@workspace use [name]`:
 - **al-copilot-capability**: Register Copilot capability (enum extension, install codeunit)
 - **al-copilot-promptdialog**: Create PromptDialog pages for AI features
 - **al-copilot-test**: Test Copilot features with AI Test Toolkit
+- **al-context.create**: Generate project context.md file for AI assistants (NEW)
+- **al-memory.create**: Generate/update memory.md file for session continuity (NEW)
 
 ### Chat Modes
 Strategic specialists (not executors):
 - **al-orchestrator**: Entry point - analyzes requests and routes to appropriate tools (GUIDE/EXAMPLE for creating complex modes)
 - **al-architect**: Solution design - **cannot** execute builds, only designs
+- **al-developer**: Tactical implementation - **can** execute builds, edit code, run tests (NEW - fills execution gap)
 - **al-debugger**: Diagnosis - **cannot** run debugger, only analyzes and recommends al-diagnose workflow
+- **al-tester**: Test strategy - **cannot** run tests, only designs test approach
 - **al-api**: API design/implementation - REST, OData, authentication
 - **al-copilot**: AI feature design - Azure OpenAI integration, prompt engineering, responsible AI
 
@@ -327,8 +331,6 @@ Expected output:
 
 ## Why This Architecture Matters
 
-Traditional AI assistance treats every interaction as isolated. This collection uses systematic **Context Engineering**:
-
 **Without this collection**: "Create a table" → Generic AL code, possibly wrong patterns, no error handling, mixed standards
 
 **With this collection**: "Create a table" → 
@@ -338,9 +340,9 @@ Traditional AI assistance treats every interaction as isolated. This collection 
 4. `al-error-handling` activates if validation added
 5. Result: Production-ready code following all BC best practices automatically
 
-**For complex tasks**: al-orchestrator analyzes → routes to al-architect (design) → recommends al-build workflow (execute) → al-tester designs tests → auto-instructions maintain quality throughout.
+**For complex tasks**: al-orchestrator analyzes → routes to al-architect (design) → **al-developer executes** (NEW - with full build tools) → al-tester designs tests → auto-instructions maintain quality throughout.
 
-## Quick Reference
+**For complex tasks**: al-orchestrator analyzes → routes to al-architect (design) → recommends al-build workflow (execute) → al-tester designs tests → auto-instructions maintain quality throughout.
 
 **Starting point when unsure**: `Use al-orchestrator mode`
 **Setup new project**: `@workspace use al-initialize`
@@ -348,13 +350,16 @@ Traditional AI assistance treats every interaction as isolated. This collection 
 **Performance problem**: `@workspace use al-performance` or `al-performance.triage`
 **Build & deploy**: `@workspace use al-build`
 **Design architecture**: `Use al-architect mode`
+**Implement features**: `Use al-developer mode` (NEW - full tool access)
 **Test strategy**: `Use al-tester mode`
 **API work**: `Use al-api mode`
 **AI features**: `Use al-copilot mode`
 
----
-
 **Framework**: [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)  
-**Version**: 2.4.0  
+**Version**: 2.5.0  
+**Total Primitives**: 32 (7 instructions + 18 workflows + 7 modes + 1 guide)  
+**Validation**: Run `npm run validate` before committing
+**Total Primitives**: 30 (7 instructions + 16 workflows + 7 modes + 1 guide)  
+**Validation**: Run `npm run validate` before committing
 **Total Primitives**: 29 (7 instructions + 15 workflows + 6 modes + 1 guide)  
 **Validation**: Run `npm run validate` before committing

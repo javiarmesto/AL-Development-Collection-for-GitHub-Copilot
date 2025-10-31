@@ -18,7 +18,7 @@ This collection implements the **AI Native-Instructions Architecture** with thre
 
 ## 🎯 Complete Toolset Available
 
-This workspace provides **29 Agent Primitives** organized into **four layers** of Copilot assistance leveraging the AI Native-Instructions Architecture:
+This workspace provides **32 Agent Primitives** organized into **four layers** of Copilot assistance leveraging the AI Native-Instructions Architecture:
 
 ### Layer 1: Auto-Applied Instructions (Always Active)
 Located in `instructions/` - These **Agent Primitives** apply automatically based on file type via `applyTo` patterns:
@@ -54,15 +54,16 @@ Located in `prompts/` - **Complete systematic processes** invoked with `@workspa
 - `al-copilot-test` - Test with AI Test Toolkit
 - `al-translate` - XLF translation file management
 
-### Layer 4: Chat Modes (Strategic Consulting)
+### Layer 4: Chat Modes (Strategic Consulting & Tactical Execution)
 Located in `agents/` - **Role-based specialists** with MCP tool boundaries:
 
 - **al-orchestrator** - Smart router, guides you to the right tool (ESSENTIAL)
-- **al-architect** - Solution architecture & design
-- **al-debugger** - Deep debugging & diagnosis
-- **al-tester** - Testing strategy & TDD
-- **al-api** - API development
-- **al-copilot** - AI/Copilot feature development
+- **al-architect** - Solution architecture & design (strategic only)
+- **al-developer** - Tactical implementation with full build tools (NEW - executes code)
+- **al-debugger** - Deep debugging & diagnosis (strategic only)
+- **al-tester** - Testing strategy & TDD (strategic only)
+- **al-api** - API development (strategic + implementation)
+- **al-copilot** - AI/Copilot feature development (strategic only)
 
 ## 🚀 Quick Start Guide
 

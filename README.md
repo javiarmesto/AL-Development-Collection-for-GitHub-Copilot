@@ -18,20 +18,10 @@
 ### Installation
 
 **Option 1: NPM Package (Recommended)**
-
-```bash
-# Install globally or in your project
-npm install -g al-development-collection
-
-# Or install as dev dependency
-npm install --save-dev al-development-collection
-
-# Run the installer
+Run:
+npm install github:javiarmesto/AL-Development-Collection-for-GitHub-Copilot
 npx al-collection install
 
-# This will copy agents, instructions, and prompts to .github/
-# Existing files are preserved - only new files are added
-```
 
 **Option 2: Clone Repository**
 

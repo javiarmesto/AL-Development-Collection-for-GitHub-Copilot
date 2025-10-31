@@ -9,6 +9,7 @@ archive/
 
 # Build and config
 node_modules/
+package-lock.json
 .git/
 .gitignore
 mkdocs.yml

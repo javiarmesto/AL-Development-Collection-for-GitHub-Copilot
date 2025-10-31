@@ -21,16 +21,18 @@
 **Option 1: NPM Package (Recommended)**
 
 ```bash
-# Install globally or in your project
-npm install -g al-development-collection
-
-# Or install as dev dependency
-npm install --save-dev al-development-collection
+# Install from GitHub (no npm registry needed)
+npm install github:javiarmesto/AL-Development-Collection-for-GitHub-Copilot
 
 # Run the installer
 npx al-collection install
 
-# This will copy agents, instructions, and prompts to .github/
+# This will copy to .github/:
+# - agents/ (6 strategic modes)
+# - instructions/ (7 auto-applied guidelines)
+# - prompts/ (16 agentic workflows)
+# - getting-started.md (quick reference)
+#
 # Existing files are preserved - only new files are added
 ```
 

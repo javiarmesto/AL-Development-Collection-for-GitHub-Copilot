@@ -50,6 +50,7 @@ function header(message) {
 /**
  * Copy directory recursively with merge support
  * Does not overwrite existing files, only adds new ones
+ * Excludes npm-related files and directories
  */
 function copyDirectory(source, destination, merge = false) {
   if (!fs.existsSync(destination)) {
@@ -60,7 +61,24 @@ function copyDirectory(source, destination, merge = false) {
   let copiedCount = 0;
   let skippedCount = 0;
 
+  // Files and directories to exclude from copying
+  const excludeList = [
+    'node_modules',
+    'package.json',
+    'package-lock.json',
+    '.git',
+    '.gitignore',
+    '.npmignore',
+    'validate-al-collection.js',
+    'install.js'
+  ];
+
   items.forEach(item => {
+    // Skip excluded items
+    if (excludeList.includes(item)) {
+      return;
+    }
+
     const sourcePath = path.join(source, item);
     const destPath = path.join(destination, item);
     const stat = fs.statSync(sourcePath);

@@ -12,14 +12,12 @@
 [![GitHub Forks](https://img.shields.io/github/forks/javiarmesto/AL-Development-Collection-for-GitHub-Copilot)](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/network/members)
 [![Contributors](https://img.shields.io/github/contributors/javiarmesto/AL-Development-Collection-for-GitHub-Copilot)](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/graphs/contributors)
 
-> **📝 Note:** GitHub badges (Issues, Stars, Forks, Contributors) will display "repo not found" while this repository is private. These badges will automatically work once the repository is made public. All other badges are functioning correctly.
 
 ## 🚀 Quick Start
 
 ### Installation
 
 **Option 1: NPM Package (Recommended)**
-
 ```bash
 # Install from GitHub (no npm registry needed)
 npm install github:javiarmesto/AL-Development-Collection-for-GitHub-Copilot

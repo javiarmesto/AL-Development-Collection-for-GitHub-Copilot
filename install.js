@@ -215,9 +215,9 @@ src/
 - Check \`instructions/index.md\` for coding guidelines
 
 **Online resources:**
-- GitHub: https://github.com/javiarmesto/AL_Copilot_Collection
-- Issues: https://github.com/javiarmesto/AL_Copilot_Collection/issues
-- Documentation: https://javiarmesto.github.io/AL_Copilot_Collection/
+- GitHub: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot
+- Issues: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/issues
+- Documentation: https://javiarmesto.github.io/AL-Development-Collection-for-GitHub-Copilot/
 
 ### 8. Validation
 
@@ -455,8 +455,8 @@ async function install() {
   
   console.log('');
   log('📚 Documentation:', 'bright');
-  log('  GitHub: https://github.com/javiarmesto/AL_Copilot_Collection', 'blue');
-  log('  Docs: https://javiarmesto.github.io/AL_Copilot_Collection/', 'blue');
+  log('  GitHub: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot', 'blue');
+  log('  Docs: https://javiarmesto.github.io/AL-Development-Collection-for-GitHub-Copilot/', 'blue');
   
   console.log('');
   if (isMerge) {
@@ -507,8 +507,8 @@ ${colors.cyan}Merge behavior:${colors.reset}
   - Show summary of copied vs skipped files
 
 ${colors.cyan}More info:${colors.reset}
-  GitHub: https://github.com/javiarmesto/AL_Copilot_Collection
-  Docs: https://javiarmesto.github.io/AL_Copilot_Collection/
+  GitHub: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot
+  Docs: https://javiarmesto.github.io/AL-Development-Collection-for-GitHub-Copilot/
 `);
 }
 

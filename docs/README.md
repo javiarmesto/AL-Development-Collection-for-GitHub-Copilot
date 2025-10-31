@@ -116,4 +116,4 @@ Documentation is licensed under [MIT License](../LICENSE).
 
 ---
 
-*For questions or suggestions about documentation, please [open an issue](https://github.com/javiarmesto/AL_Copilot_Collection/issues).*
+*For questions or suggestions about documentation, please [open an issue](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/issues).*

@@ -169,12 +169,12 @@ This project follows [Semantic Versioning](https://semver.org/):
 ### Links
 
 - [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)
-- [Repository](https://github.com/javiarmesto/AL_Copilot_Collection)
-- [Issues](https://github.com/javiarmesto/AL_Copilot_Collection/issues)
-- [Discussions](https://github.com/javiarmesto/AL_Copilot_Collection/discussions)
+- [Repository](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot)
+- [Issues](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/issues)
+- [Discussions](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/discussions)
 
-[Unreleased]: https://github.com/javiarmesto/AL_Copilot_Collection/compare/v2.2.0...HEAD
-[2.2.0]: https://github.com/javiarmesto/AL_Copilot_Collection/compare/v2.1.0...v2.2.0
-[2.1.0]: https://github.com/javiarmesto/AL_Copilot_Collection/compare/v2.0.0...v2.1.0
-[2.0.0]: https://github.com/javiarmesto/AL_Copilot_Collection/compare/v1.0.0...v2.0.0
-[1.0.0]: https://github.com/javiarmesto/AL_Copilot_Collection/releases/tag/v1.0.0
+[Unreleased]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.2.0...HEAD
+[2.2.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.1.0...v2.2.0
+[2.1.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.0.0...v2.1.0
+[2.0.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v1.0.0...v2.0.0
+[1.0.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/releases/tag/v1.0.0

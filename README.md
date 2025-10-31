@@ -7,10 +7,10 @@
 [![Tools](https://img.shields.io/badge/tools-29-orange)](./al-development.md)
 [![Framework](https://img.shields.io/badge/framework-A--Instructions-purple)](https://danielmeppiel.github.io/awesome-ai-native/)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
-[![GitHub Issues](https://img.shields.io/github/issues/javiarmesto/AL_Copilot_Collection)](https://github.com/javiarmesto/AL_Copilot_Collection/issues)
-[![GitHub Stars](https://img.shields.io/github/stars/javiarmesto/AL_Copilot_Collection)](https://github.com/javiarmesto/AL_Copilot_Collection/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/javiarmesto/AL_Copilot_Collection)](https://github.com/javiarmesto/AL_Copilot_Collection/network/members)
-[![Contributors](https://img.shields.io/github/contributors/javiarmesto/AL_Copilot_Collection)](https://github.com/javiarmesto/AL_Copilot_Collection/graphs/contributors)
+[![GitHub Issues](https://img.shields.io/github/issues/javiarmesto/AL-Development-Collection-for-GitHub-Copilot)](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/javiarmesto/AL-Development-Collection-for-GitHub-Copilot)](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/javiarmesto/AL-Development-Collection-for-GitHub-Copilot)](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/network/members)
+[![Contributors](https://img.shields.io/github/contributors/javiarmesto/AL-Development-Collection-for-GitHub-Copilot)](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/graphs/contributors)
 
 > **📝 Note:** GitHub badges (Issues, Stars, Forks, Contributors) will display "repo not found" while this repository is private. These badges will automatically work once the repository is made public. All other badges are functioning correctly.
 
@@ -52,7 +52,7 @@ cp -r prompts your-al-project/.github/
 
 **Option 3: Direct Download**
 
-1. Download the [latest release](https://github.com/javiarmesto/AL_Copilot_Collection/releases)
+1. Download the [latest release](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/releases)
 2. Extract to your project's `.github/copilot/` directory
 3. Reload VS Code
 
@@ -333,9 +333,9 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
 **AI Native-Instructions Architecture** implementation following VSCode Copilot conventions:
 
 ```
-AL_Copilot_Collection/
+AL-Development-Collection-for-GitHub-Copilot/
 ├── .github/                                      # GitHub templates only
-│   ├── ISSUE_TEMPLATE/                          # Issue templates (3)
+├   ├── ISSUE_TEMPLATE/                          # Issue templates (3)
 │   └── PULL_REQUEST_TEMPLATE.md                 # PR template
 ├── instructions/                                 # 📋 Instructions (8 files)
 │   ├── index.md                                 # Complete instructions guide

@@ -45,12 +45,12 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/javiarmesto/AL_Copilot_Collection"
+    "url": "https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot"
   },
   "bugs": {
-    "url": "https://github.com/javiarmesto/AL_Copilot_Collection/issues"
+    "url": "https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/issues"
   },
-  "homepage": "https://github.com/javiarmesto/AL_Copilot_Collection#readme",
+  "homepage": "https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot#readme",
   "engines": {
     "node": ">=14.0.0"
   }

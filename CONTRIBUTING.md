@@ -268,13 +268,13 @@ Example manifest entry:
 
 2. **Clone your fork locally**:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/AL_Copilot_Collection.git
-   cd AL_Copilot_Collection
+   git clone https://github.com/YOUR-USERNAME/AL-Development-Collection-for-GitHub-Copilot.git
+   cd AL-Development-Collection-for-GitHub-Copilot
    ```
 
 3. **Add the upstream remote** (to keep your fork in sync):
    ```bash
-   git remote add upstream https://github.com/javiarmesto/AL_Copilot_Collection.git
+   git remote add upstream https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot.git
    ```
 
 ### Step 2: Create Your Contribution

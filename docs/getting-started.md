@@ -28,7 +28,7 @@ Before starting, ensure you have:
 
 ```bash
 git clone https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot.git
-cd AL_Copilot_Collection
+cd AL-Development-Collection-for-GitHub-Copilot
 ```
 
 ### Step 2: Copy to Your AL Project

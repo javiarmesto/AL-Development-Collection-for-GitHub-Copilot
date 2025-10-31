@@ -1,12 +1,27 @@
 {
   "name": "al-development-collection",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "AL Development Collection for GitHub Copilot - AI Native-Instructions Architecture implementation with 29 Agent Primitives",
-  "main": "validate-al-collection.js",
+  "main": "install.js",
+  "bin": {
+    "al-collection": "./install.js"
+  },
   "scripts": {
     "validate": "node validate-al-collection.js",
-    "test": "node validate-al-collection.js"
+    "test": "node validate-al-collection.js",
+    "install-toolkit": "node install.js install",
+    "postinstall": "echo '\n✨ AL Development Collection installed! Run: npx al-collection install\n'"
   },
+  "files": [
+    "agents",
+    "instructions",
+    "prompts",
+    "install.js",
+    "validate-al-collection.js",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
   "keywords": [
     "al",
     "business-central",

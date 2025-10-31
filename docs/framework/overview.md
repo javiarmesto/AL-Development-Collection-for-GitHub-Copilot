@@ -11,7 +11,7 @@ graph TB
     Layer2 --> |Context Optimization| Layer3[Layer 3: Context Engineering]
     
     Layer2 --> Instructions[📋 Instructions Files<br/>Auto-applied guidelines]
-    Layer2 --> ChatModes[💬 Chat Modes<br/>Role-based specialists]
+    Layer2 --> Agents[💬 Agents<br/>Role-based specialists]
     Layer2 --> Prompts[🎯 Prompts-Agentic Workflows<br/>Task execution]
     
     Layer3 --> Modular[Modular Loading<br/>applyTo patterns]

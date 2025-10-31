@@ -27,7 +27,7 @@
    # Copy files to your AL project
    cp -r instructions your-al-project/
    cp -r prompts your-al-project/
-   cp -r chatmodes your-al-project/
+   cp -r agents your-al-project/
    cp -r collections your-al-project/
    cp -r .github your-al-project/  # Templates only
    ```
@@ -69,14 +69,14 @@ graph TB
     Layer2 --> |Context Optimization| Layer3[Layer 3: Context Engineering]
     
     Layer2 --> Instructions[📋 Instructions Files<br/>Auto-applied guidelines]
-    Layer2 --> ChatModes[💬 Chat Modes<br/>Role-based specialists]
+    Layer2 --> Agents[💬 Agents<br/>Role-based specialists]
     Layer2 --> Prompts[🎯 Prompts-Agentic Workflows<br/>Task execution]
     
     Layer3 --> Modular[Modular Loading<br/>applyTo patterns]
     Layer3 --> AGENTSMD[AGENTS.md Standard<br/>Universal portability]
     
     Instructions --> Copilot[🤖 GitHub Copilot]
-    ChatModes --> Copilot
+    Agents --> Copilot
     Prompts --> Copilot
     
     style Layer1 fill:#9C27B0
@@ -206,7 +206,7 @@ Invoke with `@workspace use [name]`:
 - **[Collection Overview](./al-development.md)** - User-facing guide
 - **[Instructions Index](./instructions/index.md)** - Complete guide to all instruction files
 - **[Prompts Index](./prompts/index.md)** - Complete guide to all agentic workflows
-- **[Chat Modes Index](./chatmodes/index.md)** - Complete guide to all chat modes
+- **[Agents Index](./agents/index.md)** - Complete guide to all agents
 - **[Integration Guide](./instructions/copilot-instructions.md)** - Master coordination document
 
 ## 🛠️ Requirements
@@ -316,10 +316,10 @@ AL-Development-Collection-for-GitHub-Copilot/
 │   ├── al-workspace.prompt.md
 │   ├── al-build.prompt.md
 │   └── ... (14 total workflow prompts)
-├── chatmodes/                                    # 💬 Chat Modes (7 files)
-│   ├── index.md                                 # Complete modes guide
-│   ├── al-orchestrator.chatmode.md              # Smart router
-│   ├── al-architect.chatmode.md                 # Architecture specialist
+├── agents/                                       # 💬 Agents (7 files)
+│   ├── index.md                                  # Complete guide
+│   ├── al-orchestrator.agent.md                 # Smart router
+│   ├── al-architect.agent.md                    # Architecture specialist
 │   └── ... (6 total strategic modes)
 ├── collections/                                  # Collection manifests
 │   └── al-development.collection.yml            # Main collection definition
@@ -353,7 +353,7 @@ AL-Development-Collection-for-GitHub-Copilot/
 
 ### 2.1.0 (2025-10-15)
 - ✨ Streamlined chat modes - Archived 5 duplicate modes
-- 🎯 Focused toolkit - 6 core strategic chatmodes
+- 🎯 Focused toolkit - 6 core strategic agents
 - 📊 Updated to 24 tools - Clearer separation of concerns
 - 📚 Enhanced documentation - Practical examples integrated
 

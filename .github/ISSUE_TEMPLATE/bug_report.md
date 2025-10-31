@@ -14,7 +14,7 @@ A clear and concise description of what the bug is.
 
 - [ ] Instruction (`.instructions.md`)
 - [ ] Agentic Workflow (`.prompt.md`)
-- [ ] Chat Mode (`.chatmode.md`)
+- [ ] Agent (`.agent.md`)
 - [ ] Collection Manifest
 - [ ] Validation Script
 

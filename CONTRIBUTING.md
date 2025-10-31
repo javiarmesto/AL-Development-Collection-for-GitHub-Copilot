@@ -29,7 +29,7 @@ You can contribute three types of **Agent Primitives** (Layer 2):
 
 1. **Instructions** - Auto-applied coding guidelines (`.instructions.md`)
 2. **Agentic Workflows** - Task-specific execution processes (`.prompt.md`)
-3. **Chat Modes** - Role-based strategic consultants (`.chatmode.md`)
+3. **Agents** - Role-based strategic consultants (`.agent.md`)
 
 ### 🔄 Contribution Workflow
 
@@ -135,10 +135,10 @@ Instructions are **Markdown Prompt Engineering** (Layer 1) files that customize 
 
 **Chat Modes** are role-based strategic consultants with defined **Tool Boundaries** (MCP constraints) for specialized AL guidance.
 
-📖 **See [chatmodes/index.md](./chatmodes/index.md) for complete guide to existing modes.**
+📖 **See [agents/index.md](./agents/index.md) for complete guide to existing modes.**
 
-1. **Create your file** in `chatmodes/`
-2. **Use naming convention**: `al-[role].chatmode.md`
+1. **Create your file** in `agents/`
+2. **Use naming convention**: `al-[role].agent.md`
 3. **Include frontmatter**:
    ```markdown
    ---
@@ -183,13 +183,13 @@ Instructions are **Markdown Prompt Engineering** (Layer 1) files that customize 
   - ❌ `deploy.md` (missing prefix and suffix)
   - ❌ `al-deploy.md` (missing .prompt)
 
-### Chat Modes
-- Format: `al-[role].chatmode.md`
+### Agents
+- Format: `al-[role].agent.md`
 - Examples:
-  - ✅ `al-security-expert.chatmode.md`
-  - ✅ `al-integration-specialist.chatmode.md`
+  - ✅ `al-security-expert.agent.md`
+  - ✅ `al-integration-specialist.agent.md`
   - ❌ `security.md` (missing prefix and suffix)
-  - ❌ `al-security.md` (missing .chatmode)
+  - ❌ `al-security.md` (missing .agent)
 
 ## 🎨 Frontmatter Requirements
 
@@ -250,8 +250,8 @@ Example manifest entry:
 - path: prompts/al-deploy.prompt.md
   kind: prompt
 
-- path: chatmodes/al-security-expert.chatmode.md
-  kind: chat-mode
+- path: agents/al-security-expert.agent.md
+  kind: agent
   usage: optional
   description: |
     Specializes in AL security patterns and best practices.
@@ -294,13 +294,13 @@ Example manifest entry:
    Use descriptive branch names:
    - `feature/al-security-instructions` - New instruction file
    - `feature/al-deployment-prompt` - New prompt file
-   - `feature/al-integration-chatmode` - New chat mode
+   - `feature/al-integration-agent` - New agent mode
    - `fix/update-documentation` - Documentation fixes
 
 3. **Add your files** in the appropriate directory:
    - **Instructions**: Place in `instructions/` with `.instructions.md` extension
    - **Prompts**: Place in `prompts/` with `.prompt.md` extension
-   - **Chat Modes**: Place in `chatmodes/` with `.chatmode.md` extension
+   - **Agents**: Place in `agents/` with `.agent.md` extension
 
 4. **Update the collection manifest** (`collections/al-development.collection.yml`):
    ```yaml
@@ -399,7 +399,7 @@ Once approved and merged by maintainers:
 
 Before submitting your PR, ensure:
 
-- [ ] All files follow naming conventions (`.instructions.md`, `.prompt.md`, `.chatmode.md`)
+- [ ] All files follow naming conventions (`.instructions.md`, `.prompt.md`, `.agent.md`)
 - [ ] Frontmatter is complete and correct
 - [ ] `collections/al-development.collection.yml` is updated
 - [ ] Validation passes locally (`npm run validate`)

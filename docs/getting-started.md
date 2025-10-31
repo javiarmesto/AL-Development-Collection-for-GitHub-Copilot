@@ -41,7 +41,7 @@ cp -r instructions your-al-project/.github/copilot/
 cp -r prompts your-al-project/.github/copilot/
 
 # Copy chat mode files
-cp -r chatmodes your-al-project/.github/copilot/
+cp -r agents your-al-project/.github/copilot/
 
 # Copy collection manifest
 cp -r collections your-al-project/.github/copilot/
@@ -125,7 +125,7 @@ Switch to al-orchestrator mode and ask:
 
 - [Explore Instructions](instructions/index.md) - Learn about auto-applied guidelines
 - [Browse Workflows](prompts/index.md) - See all available agentic workflows
-- [Discover Chat Modes](chatmodes/index.md) - Meet the specialist modes
+- [Discover Agents](agents/index.md) - Meet the specialist modes
 - [Read Contributing Guide](CONTRIBUTING.md) - Help improve the collection
 
 ---
@@ -148,7 +148,7 @@ Switch to al-orchestrator mode and ask:
 
 ### Chat Modes Not Appearing
 
-1. Ensure files end with `.chatmode.md`
+1. Ensure files end with `.agent.md`
 2. Verify frontmatter includes `description` and `tools`
 3. Reload VS Code
 4. Check Copilot settings

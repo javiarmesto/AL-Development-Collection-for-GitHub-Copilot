@@ -14,4 +14,4 @@ For detailed information, see:
 
 - [Instructions](instructions/index.md)
 - [Workflows](prompts/index.md)
-- [Chat Modes](chatmodes/index.md)
+- [Agents](agents/index.md)

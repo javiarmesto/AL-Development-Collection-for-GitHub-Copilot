@@ -29,7 +29,7 @@ You can contribute three types of **Agent Primitives** (Layer 2):
 
 1. **Instructions** - Auto-applied coding guidelines (`.instructions.md`)
 2. **Agentic Workflows** - Task-specific execution processes (`.prompt.md`)
-3. **Chat Modes** - Role-based strategic consultants (`.chatmode.md`)
+3. **Agents** - Role-based strategic consultants (`.agent.md`)
 
 ### Adding Instructions
 
@@ -92,10 +92,10 @@ Instructions are **Markdown Prompt Engineering** (Layer 1) files that customize 
 
 **Chat Modes** are role-based strategic consultants with defined **Tool Boundaries** (MCP constraints) for specialized AL guidance.
 
-📖 **See [chatmodes/index.md](./chatmodes/index.md) for complete guide to existing modes.**
+📖 **See [agents/index.md](./agents/index.md) for complete guide to existing modes.**
 
-1. **Create your file** in `chatmodes/`
-2. **Use naming convention**: `al-[role].chatmode.md`
+1. **Create your file** in `agents/`
+2. **Use naming convention**: `al-[role].agent.md`
 3. **Include frontmatter**:
    ```markdown
    ---
@@ -140,13 +140,13 @@ Instructions are **Markdown Prompt Engineering** (Layer 1) files that customize 
   - ❌ `deploy.md` (missing prefix and suffix)
   - ❌ `al-deploy.md` (missing .prompt)
 
-### Chat Modes
-- Format: `al-[role].chatmode.md`
+### Agents
+- Format: `al-[role].agent.md`
 - Examples:
-  - ✅ `al-security-expert.chatmode.md`
-  - ✅ `al-integration-specialist.chatmode.md`
+  - ✅ `al-security-expert.agent.md`
+  - ✅ `al-integration-specialist.agent.md`
   - ❌ `security.md` (missing prefix and suffix)
-  - ❌ `al-security.md` (missing .chatmode)
+  - ❌ `al-security.md` (missing .agent)
 
 ## 🎨 Frontmatter Requirements
 
@@ -207,8 +207,8 @@ Example manifest entry:
 - path: prompts/al-deploy.prompt.md
   kind: prompt
 
-- path: chatmodes/al-security-expert.chatmode.md
-  kind: chat-mode
+- path: agents/al-security-expert.agent.md
+  kind: agent
   usage: optional
   description: |
     Specializes in AL security patterns and best practices.

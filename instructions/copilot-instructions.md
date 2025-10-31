@@ -55,7 +55,7 @@ Located in `prompts/` - **Complete systematic processes** invoked with `@workspa
 - `al-translate` - XLF translation file management
 
 ### Layer 4: Chat Modes (Strategic Consulting)
-Located in `chatmodes/` - **Role-based specialists** with MCP tool boundaries:
+Located in `agents/` - **Role-based specialists** with MCP tool boundaries:
 
 - **al-orchestrator** - Smart router, guides you to the right tool (ESSENTIAL)
 - **al-architect** - Solution architecture & design
@@ -709,13 +709,13 @@ AL-Development-Collection/
 │   ├── al-copilot-promptdialog.prompt.md
 │   ├── al-copilot-test.prompt.md
 │   └── al-translate.prompt.md
-├── chatmodes/                            # Chat Modes with MCP tool boundaries
-│   ├── al-orchestrator.chatmode.md      # Smart router (START HERE)
-│   ├── al-architect.chatmode.md         # Architecture & design
-│   ├── al-debugger.chatmode.md          # Deep debugging
-│   ├── al-tester.chatmode.md            # Testing strategy
-│   ├── al-api.chatmode.md               # API development
-│   └── al-copilot.chatmode.md           # AI features
+├── agents/                            # Agents with MCP tool boundaries
+│   ├── al-orchestrator.agent.md      # Smart router (START HERE)
+│   ├── al-architect.agent.md         # Architecture & design
+│   ├── al-debugger.agent.md          # Deep debugging
+│   ├── al-tester.agent.md            # Testing strategy
+│   ├── al-api.agent.md               # API development
+│   └── al-copilot.agent.md           # AI features
 ├── references/                           # Framework documentation
 │   ├── AI Native-INSTRUCTIONS-ARCHITECTURE.md
 │   ├── ai native structure.md
@@ -744,7 +744,7 @@ AL-Development-Collection/
 - Have access to AL tools
 - Orchestrate multiple primitives into end-to-end solutions
 
-**Chatmodes** (`.chatmode.md`):
+**Agents** (`.agent.md`):
 - Switched via "Use [mode-name] mode"
 - 6 role-based strategic specialists with MCP tool boundaries (Layer 4)
 - Can recommend prompts and instructions

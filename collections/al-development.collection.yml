@@ -1,6 +1,6 @@
 id: al-development
 name: AL Development for Business Central
-description: AI Native Development toolkit implementing the A-Instructions Architecture framework with 29 Agent Primitives across 3 systematic layers. Provides Markdown Prompt Engineering through Instructions files, Agentic Workflows via prompts, and Context Engineering through applyTo patterns for optimal LLM performance in Business Central development.
+description: AI Native Development toolkit implementing the A-Instructions Architecture framework with 30 Agent Primitives across 3 systematic layers. Provides Markdown Prompt Engineering through Instructions files, Agentic Workflows via prompts, and Context Engineering through applyTo patterns for optimal LLM performance in Business Central development.
 tags: [al, business-central, dynamics365, erp, microsoft, ai-native, a-instructions, agent-primitives, context-engineering, copilot]
 
 items:
@@ -21,7 +21,7 @@ items:
   - path: instructions/al-testing.instructions.md
     kind: instruction
 
-  # Layer 2: Agent Primitives - Agentic Workflows (14 files)
+  # Layer 2: Agent Primitives - Agentic Workflows (16 files)
   # Complete systematic processes with validation gates and AL tool access
   - path: prompts/al-initialize.prompt.md
     kind: prompt
@@ -51,13 +51,15 @@ items:
     kind: prompt
   - path: prompts/al-copilot-test.prompt.md
     kind: prompt
+  - path: prompts/al-copilot-generate.prompt.md
+    kind: prompt
   - path: prompts/al-translate.prompt.md
     kind: prompt
 
-  # Layer 2: Agent Primitives - Chat Modes (6 files)
+  # Layer 2: Agent Primitives - Agents (6 files)
   # Role-based specialists with MCP tool boundaries preventing cross-domain operations
-  - path: chatmodes/al-orchestrator.chatmode.md
-    kind: chat-mode
+  - path: agents/al-orchestrator.agent.md
+    kind: agent
     usage: recommended
     description: |
       Strategic router and workflow coordinator implementing Markdown Prompt Engineering principles. This is your entry point for complex tasks - it analyzes requirements and orchestrates the right combination of Agent Primitives (Instructions, Workflows, Chat Modes) for optimal results.
@@ -89,8 +91,8 @@ items:
       - Mention any constraints (timeline, existing code, team size)
       - Let the orchestrator analyze before jumping into implementation
 
-  - path: chatmodes/al-architect.chatmode.md
-    kind: chat-mode
+  - path: agents/al-architect.agent.md
+    kind: agent
     usage: recommended
     description: |
       Solution architecture and design specialist applying Markdown Prompt Engineering for structured technical decision-making. Uses semantic markdown (headers, lists, links) to create clear architectural documentation and design rationale.
@@ -134,8 +136,8 @@ items:
       - Mention scalability and data volume expectations
       - Ask about alternatives and trade-offs
 
-  - path: chatmodes/al-debugger.chatmode.md
-    kind: chat-mode
+  - path: agents/al-debugger.agent.md
+    kind: agent
     usage: optional
     description: |
       Systematic debugging specialist applying Markdown Prompt Engineering for structured problem diagnosis. Uses semantic markdown to create clear diagnostic trees and root cause analysis documentation.
@@ -175,8 +177,8 @@ items:
       - Describe steps to reproduce
       - Mention what you've already tried
 
-  - path: chatmodes/al-tester.chatmode.md
-    kind: chat-mode
+  - path: agents/al-tester.agent.md
+    kind: agent
     usage: optional
     description: |
       Testing strategy and TDD specialist applying Markdown Prompt Engineering for structured test planning. Uses semantic markdown to create clear test scenarios and coverage matrices.
@@ -218,8 +220,8 @@ items:
       - Mention any specific edge cases to cover
       - Indicate your test coverage goals
 
-  - path: chatmodes/al-api.chatmode.md
-    kind: chat-mode
+  - path: agents/al-api.agent.md
+    kind: agent
     usage: optional
     description: |
       RESTful API design specialist applying Markdown Prompt Engineering for structured API contracts. Uses semantic markdown to create clear endpoint documentation and integration patterns.
@@ -264,8 +266,8 @@ items:
       - Mention authentication requirements
       - Include performance expectations
 
-  - path: chatmodes/al-copilot.chatmode.md
-    kind: chat-mode
+  - path: agents/al-copilot.agent.md
+    kind: agent
     usage: optional
     description: |
       AI-powered feature specialist applying advanced Markdown Prompt Engineering for Copilot experiences. Expert in prompt engineering patterns, context loading strategies, and responsible AI implementation.
@@ -275,7 +277,7 @@ items:
       - CANNOT: Execute code, deploy services (recommends workflows)
 
       Coordinates with other Agent Primitives:
-      - al-architect.chatmode.md (for AI integration architecture)
+      - al-architect.agent.md (for AI integration architecture)
       - al-error-handling.instructions.md (for AI service failures)
 
       Implements meta-level Context Engineering:

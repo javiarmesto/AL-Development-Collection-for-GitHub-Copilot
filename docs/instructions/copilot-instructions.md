@@ -39,7 +39,7 @@ Located in `.github/prompts/` - Invoke with `@workspace use [prompt-name]`:
 - `al-workflow` - End-to-end guidance
 
 ### Layer 4: Role-Based Chat Modes (Strategic Consulting)
-Located in `.github/chatmodes/` - Specialized consultant personalities:
+Located in `.github/agents/` - Specialized consultant personalities:
 
 - **al-orchestrator** - Smart router, guides you to the right tool (ESSENTIAL)
 - **al-architect** - Solution architecture & design
@@ -531,7 +531,7 @@ Always review Copilot suggestions:
 ### This Project's Documentation
 - [Instructions Index](../instructions/index.md) - Complete guide to all instruction files
 - [Prompts Index](../prompts/index.md) - Complete guide to all agentic workflows
-- [Chat Modes Index](../chatmodes/index.md) - Complete guide to all chat modes
+- [Agents Index](../agents/index.md) - Complete guide to all agents
 - [AL Guidelines](../instructions/al-guidelines.instructions.md) - Master guidelines
 
 ## 🛠️ Troubleshooting Copilot
@@ -657,13 +657,13 @@ AL-Development-Collection-for-GitHub-Copilot/
 │   │   ├── al-migrate.prompt.md
 │   │   ├── al-pages.prompt.md
 │   │   └── al-workflow.prompt.md
-│   └── chatmodes/                       # Layer 4: Strategic modes (6 core)
-│       ├── al-orchestrator.chatmode.md  # Smart router (ESSENTIAL)
-│       ├── al-architect.chatmode.md     # Architecture & design
-│       ├── al-debugger.chatmode.md      # Deep debugging
-│       ├── al-tester.chatmode.md        # Testing strategy
-│       ├── al-api.chatmode.md           # API development
-│       └── al-copilot.chatmode.md       # AI features
+│   └── agents/                       # Layer 4: Strategic modes (6 core)
+│       ├── al-orchestrator.agent.md  # Smart router (ESSENTIAL)
+│       ├── al-architect.agent.md     # Architecture & design
+│       ├── al-debugger.agent.md      # Deep debugging
+│       ├── al-tester.agent.md        # Testing strategy
+│       ├── al-api.agent.md           # API development
+│       └── al-copilot.agent.md       # AI features
 ├── src/                                 # Your AL code here
 │   ├── Tables/
 │   ├── Pages/
@@ -685,7 +685,7 @@ AL-Development-Collection-for-GitHub-Copilot/
 - Provide step-by-step workflows
 - Have access to AL tools
 
-**Chatmodes** (`.chatmode.md`):
+**Agents** (`.agent.md`):
 - Switched via "Use [mode-name] mode"
 - 6 core strategic consultant roles
 - Can recommend prompts and instructions
@@ -705,4 +705,4 @@ Remember: **You have 24 specialized tools working together to make AL developmen
 **Version**: 2.1  
 **Last Updated**: 2025-10-15  
 **Workspace**: AL Development for Business Central  
-**Total Tools**: 24 (1 guide + 7 instructions + 10 prompts + 6 chatmodes)
+**Total Tools**: 24 (1 guide + 7 instructions + 10 prompts + 6 agents)

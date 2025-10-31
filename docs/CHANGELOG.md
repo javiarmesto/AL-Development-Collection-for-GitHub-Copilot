@@ -53,13 +53,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improved mode descriptions and use cases
 
 ### Removed
-- 5 duplicate/overlapping chat modes (moved to archive)
+- 5 duplicate/overlapping agents (moved to archive)
   - al-build-deploy-workflow.md
-  - al-debugging-assistant.chatmode.md
-  - al-event-manager.chatmode.md
-  - al-performance-optimizer.chatmode.md
-  - al-test-automator.chatmode.md
-  - al-troubleshooter.chatmode.md
+  - al-debugging-assistant.agent.md
+  - al-event-manager.agent.md
+  - al-performance-optimizer.agent.md
+  - al-test-automator.agent.md
+  - al-troubleshooter.agent.md
 
 ## [2.0.0] - 2025-01-15
 
@@ -74,7 +74,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **BREAKING**: All files renamed to proper extensions
   - `.instructions.md` for instruction files
   - `.prompt.md` for agentic workflow files
-  - `.chatmode.md` for chat mode files
+  - `.agent.md` for agent files
 - Reorganized documentation structure
 - Updated README with new structure
 
@@ -109,13 +109,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - al-spec.create.prompt.md
   - al-performance.triage.prompt.md
   - al-pr.prepare.prompt.md
-- 6 chat mode specialists
-  - al-orchestrator.chatmode.md (smart router)
-  - al-architect.chatmode.md
-  - al-debugger.chatmode.md
-  - al-tester.chatmode.md
-  - al-api.chatmode.md
-  - al-copilot.chatmode.md
+- 6 agent specialists
+  - al-orchestrator.agent.md (smart router)
+  - al-architect.agent.md
+  - al-debugger.agent.md
+  - al-tester.agent.md
+  - al-api.agent.md
+  - al-copilot.agent.md
 - Integration guide (copilot-instructions.md)
 - Comprehensive documentation
   - README.md

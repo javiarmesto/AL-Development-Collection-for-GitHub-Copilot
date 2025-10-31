@@ -133,7 +133,7 @@ Include a review checklist:
 
 ## Output
 
-Create the file `/specs/${input:FeatureName}.spec.md` with all sections completed.
+Create the file `.github/specs/${input:FeatureName}.spec.md` with all sections completed.
 
 Include a "Next Steps" section at the end:
 

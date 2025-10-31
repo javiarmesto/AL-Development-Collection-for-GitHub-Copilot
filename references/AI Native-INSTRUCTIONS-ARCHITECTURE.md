@@ -7,7 +7,7 @@ This document describes the implementation of the AI Native-Instructions Archite
 This repository has been refactored to follow the **AI Native-Instructions Architecture** principles, which provides a systematic approach to building AI Native Development workflows through:
 
 1. **Markdown Prompt Engineering** - Structured instructions using semantic markdown
-2. **Agent Primitives** - Configurable tools (instructions, chatmodes, prompts)
+2. **Agent Primitives** - Configurable tools (instructions, agents, prompts)
 3. **Context Engineering** - Strategic management of LLM context windows
 
 ## Repository Structure
@@ -36,13 +36,13 @@ AL-Development-Collection-for-GitHub-Copilot
 │   ├── al-migrate.prompt.md
 │   ├── al-pages.prompt.md
 │   └── al-workflow.prompt.md
-└── chatmodes/                           # Role-based specialists
-    ├── al-orchestrator.chatmode.md
-    ├── al-architect.chatmode.md
-    ├── al-debugger.chatmode.md
-    ├── al-tester.chatmode.md
-    ├── al-api.chatmode.md
-    └── al-copilot.chatmode.md
+└── agents/                           # Role-based specialists
+    ├── al-orchestrator.agent.md
+    ├── al-architect.agent.md
+    ├── al-debugger.agent.md
+    ├── al-tester.agent.md
+    ├── al-api.agent.md
+    └── al-copilot.agent.md
 ```
 
 ## Key Improvements
@@ -167,7 +167,7 @@ Use al-architect mode
 
 When adding new files:
 1. Place in appropriate `.github/` subdirectory
-2. Use proper file extensions (`.instructions.md`, `.prompt.md`, `.chatmode.md`)
+2. Use proper file extensions (`.instructions.md`, `.prompt.md`, `.agent.md`)
 3. Include required frontmatter fields
 4. Run `npm run validate` to verify compliance
 

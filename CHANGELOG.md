@@ -8,11 +8,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Frontmatter validation improvements for Windows line endings
-- Model field to all prompt files for better AI routing
+- **NPM Package Distribution** - Install via `npm install al-development-collection`
+- **Interactive Installer** - `npx al-collection install` with guided setup
+- **Smart Merge Mode** - Preserves existing files, only adds new ones (no overwriting)
+- **Auto-generated Quick Start Guide** - Created during installation with version-specific content
+- **Package Configuration** - Added `bin`, `files`, and `postinstall` to package.json
+- `.npmignore` for optimal package size (excludes docs, references, archive)
 
 ### Changed
-- Updated validator to support both Unix and Windows line endings
+- **Installation Method** - Now supports npm install instead of manual file copying
+- **Installation Location** - Changed from `.github/copilot/` to `.github/` for consistency
+- **Merge Behavior** - Installer now preserves existing files and only adds new content
+- **README** - Updated with three installation options (npm, clone, download)
+- **Terminology** - Renamed all `chatmode` references to `agent` throughout documentation
+- **Folder Structure** - `chatmodes/` → `agents/` for consistency with industry standards
+- **File Extensions** - `*.chatmode.md` → `*.agent.md` for clarity
+- **Collection Manifest** - Updated `kind: chat-mode` to `kind: agent`
+- **Validator** - Updated to recognize `.agent.md` as valid extension
+
+### Fixed
+- File naming inconsistency (al-testeragent.md → al-tester.agent.md)
+- All documentation references updated to use new agent terminology
 
 ## [2.2.0] - 2025-10-19
 
@@ -55,11 +71,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - 5 duplicate/overlapping chat modes (moved to archive)
   - al-build-deploy-workflow.md
-  - al-debugging-assistant.chatmode.md
-  - al-event-manager.chatmode.md
-  - al-performance-optimizer.chatmode.md
-  - al-test-automator.chatmode.md
-  - al-troubleshooter.chatmode.md
+  - al-debugging-assistant.agent.md
+  - al-event-manager.agent.md
+  - al-performance-optimizer.agent.md
+  - al-test-automator.agent.md
+  - al-troubleshooter.agent.md
 
 ## [2.0.0] - 2025-01-15
 
@@ -74,7 +90,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **BREAKING**: All files renamed to proper extensions
   - `.instructions.md` for instruction files
   - `.prompt.md` for agentic workflow files
-  - `.chatmode.md` for chat mode files
+  - `.agent.md` for agent files
 - Reorganized documentation structure
 - Updated README with new structure
 
@@ -110,12 +126,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - al-performance.triage.prompt.md
   - al-pr.prepare.prompt.md
 - 6 chat mode specialists
-  - al-orchestrator.chatmode.md (smart router)
-  - al-architect.chatmode.md
-  - al-debugger.chatmode.md
-  - al-tester.chatmode.md
-  - al-api.chatmode.md
-  - al-copilot.chatmode.md
+  - al-orchestrator.agent.md (smart router)
+  - al-architect.agent.md
+  - al-debugger.agent.md
+  - al-tester.agent.md
+  - al-api.agent.md
+  - al-copilot.agent.md
 - Integration guide (copilot-instructions.md)
 - Comprehensive documentation
   - README.md

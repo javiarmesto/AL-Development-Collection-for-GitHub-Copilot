@@ -1,6 +1,6 @@
 # Chat Modes - Layer 2: Agent Primitives
 
-**Role-based strategic consultants** implemented as `.chatmode.md` files with **MCP Tool Boundaries** for specialized AL development guidance in Business Central.
+**Role-based strategic consultants** implemented as `.agent.md` files with **MCP Tool Boundaries** for specialized AL development guidance in Business Central.
 
 ## 📋 What Are Chat Modes?
 
@@ -307,7 +307,7 @@ Debugger: "Root cause identified. Switch to al-architect to redesign this compon
 
 ### Creating Custom Chat Modes
 
-1. **Create file** in this directory: `al-[role].chatmode.md`
+1. **Create file** in this directory: `al-[role].agent.md`
 2. **Add frontmatter**:
    ```yaml
    ---

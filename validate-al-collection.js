@@ -145,11 +145,11 @@ function validateCollectionManifest(manifest, manifestPath) {
 function validateCollectionItems(manifest) {
   log('\n📁 Validating Collection Items...', 'cyan');
   
-  const validKinds = ['instruction', 'prompt', 'chat-mode'];
+  const validKinds = ['instruction', 'prompt', 'agent'];
   const itemsByKind = {
     'instruction': 0,
     'prompt': 0,
-    'chat-mode': 0
+    'agent': 0
   };
   
   manifest.items.forEach((item, index) => {
@@ -193,9 +193,9 @@ function validateCollectionItems(manifest) {
           addWarning(`Item ${itemNum}: Prompt file should end with .prompt.md: ${item.path}`);
         }
         break;
-      case 'chat-mode':
-        if (!item.path.endsWith('.chatmode.md')) {
-          addWarning(`Item ${itemNum}: Chat mode file should end with .chatmode.md: ${item.path}`);
+      case 'agent':
+        if (!item.path.endsWith('.agent.md')) {
+          addWarning(`Item ${itemNum}: Agent file should end with .agent.md: ${item.path}`);
         }
         break;
     }
@@ -230,22 +230,22 @@ function validateCollectionItems(manifest) {
         }
       }
       
-      if (item.kind === 'chat-mode') {
+      if (item.kind === 'agent') {
         if (!frontmatter.tools) {
-          addWarning(`Item ${itemNum}: Chat mode missing 'tools' in frontmatter: ${item.path}`);
+          addWarning(`Item ${itemNum}: Agent missing 'tools' in frontmatter: ${item.path}`);
         }
         if (!frontmatter.model) {
-          addWarning(`Item ${itemNum}: Chat mode missing 'model' in frontmatter: ${item.path}`);
+          addWarning(`Item ${itemNum}: Agent missing 'model' in frontmatter: ${item.path}`);
         }
       }
       
       addSuccess(`Item ${itemNum}: ${path.basename(item.path)} validated`);
     }
     
-    // Validate chat-mode usage field
-    if (item.kind === 'chat-mode') {
+    // Validate agent usage field
+    if (item.kind === 'agent') {
       if (item.usage && !['recommended', 'optional'].includes(item.usage)) {
-        addWarning(`Item ${itemNum}: Chat mode usage should be 'recommended' or 'optional': ${item.usage}`);
+        addWarning(`Item ${itemNum}: Agent usage should be 'recommended' or 'optional': ${item.usage}`);
       }
     }
   });
@@ -267,7 +267,7 @@ function validateFileNaming(manifest) {
     const filename = path.basename(item.path);
     
     // Check for lowercase with hyphens
-    const nameWithoutExt = filename.replace(/\.(instructions|prompt|chatmode)\.md$/, '');
+    const nameWithoutExt = filename.replace(/\.(instructions|prompt|agent)\.md$/, '');
     if (!/^[a-z0-9-]+$/.test(nameWithoutExt)) {
       addWarning(`Item ${index + 1}: Filename should be lowercase with hyphens: ${filename}`);
     }
@@ -344,7 +344,7 @@ function validateDirectoryStructure() {
   const requiredDirs = [
     'instructions',
     'prompts',
-    'chatmodes',
+    'agents',
     'collections'
   ];
   

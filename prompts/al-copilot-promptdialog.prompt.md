@@ -19,7 +19,8 @@ Create a fully functional PromptDialog page that allows users to interact with A
 Before starting, review:
 - [Existing PromptDialog pages in codebase]
 - [Microsoft Docs: Build Copilot Experience](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/ai-build-experience)
-- [Real Example: Item Substitution](https://github.com/javiarmesto/Lab1_3_Ejemplo_Explicativo/blob/main/PromptDialog/ItemSubstAIProposal.Page.al)
+- [Real Example: Item Substitution](https://github.com/microsoft/BCTech/blob/master/samples/AzureOpenAI/2-ItemSubstitution/PromptDialog/ItemSubstAIProposal.Page.al)
+- [Real Example: SuggestJob - Proposal](https://github.com/microsoft/BCTech/blob/master/samples/AzureOpenAI/4-SuggestJob%20with%20Tools/src/Pages/SuggestJobProposal.Page.al)
 - [Registered Copilot capabilities]
 - [app.json for object ID ranges]
 

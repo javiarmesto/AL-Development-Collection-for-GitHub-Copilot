@@ -82,7 +82,7 @@ tools:
 |:-----|:--------|:--------|
 | **Instruction** | `*.instructions.md` | `al-guidelines.instructions.md` |
 | **Prompt** | `*.prompt.md` | `al-workspace.prompt.md` |
-| **Chat Mode** | `*.chatmode.md` | `al-orchestrator.chatmode.md` |
+| **Agent** | `*.agent.md` | `al-orchestrator.agent.md` |
 
 ## Directory Structure
 
@@ -96,9 +96,9 @@ AL-Development-Collection-for-GitHub-Copilot/
 │   ├── al-workspace.prompt.md
 │   ├── al-build.prompt.md
 │   └── ...
-├── chatmodes/             # Role-based specialists
-│   ├── al-orchestrator.chatmode.md
-│   ├── al-architect.chatmode.md
+├── agents/             # Role-based specialists
+│   ├── al-orchestrator.agent.md
+│   ├── al-architect.agent.md
 │   └── ...
 └── collections/           # Collection manifest
     └── al-development.collection.yml
@@ -189,7 +189,7 @@ npm run validate
 
 ### Adding New Chat Modes
 
-1. Create file: `your-name.chatmode.md`
+1. Create file: `your-name.agent.md`
 2. Add frontmatter with description and tools
 3. Define role and capabilities
 4. Validate and test

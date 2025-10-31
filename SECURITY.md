@@ -60,7 +60,7 @@ When using this collection:
 This security policy applies to:
 - All instruction files (`.instructions.md`)
 - All agentic workflows (`.prompt.md`)
-- All chat modes (`.chatmode.md`)
+- All agents (`.agent.md`)
 - Collection manifest files
 - Validation scripts
 

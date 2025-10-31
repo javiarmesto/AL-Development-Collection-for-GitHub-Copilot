@@ -1,0 +1,32 @@
+# AL Development Collection - npm package exclusions
+
+# Development and documentation (not needed in package)
+docs/
+references/
+archive/
+.github/
+.vscode/
+
+# Build and config
+node_modules/
+.git/
+.gitignore
+mkdocs.yml
+requirements.txt
+.markdownlint.json
+
+# Keep only essential documentation
+# README.md, LICENSE, CHANGELOG.md are included via package.json files array
+
+# Collections (used for GitHub Copilot Collections feature, not needed in npm package)
+collections/
+
+# Additional documentation files (users get getting-started.md via install script)
+CONTRIBUTING.md
+SECURITY.md
+al-development.md
+
+# Test files
+*.test.js
+test/
+tests/

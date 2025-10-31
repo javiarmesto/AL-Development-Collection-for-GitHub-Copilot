@@ -14,7 +14,7 @@ assignees: ''
 **Type**: 
 - [ ] Instruction (`.instructions.md`)
 - [ ] Agentic Workflow (`.prompt.md`)
-- [ ] Chat Mode (`.chatmode.md`)
+- [ ] Agent (`.agent.md`)
 
 **Category**: (e.g., Testing, Performance, Integration, Architecture)
 

@@ -77,20 +77,20 @@ With your instruction architecture in place, you need a way to enforce domain bo
 - Define the most appropriate [LLM model](https://code.visualstudio.com/docs/copilot/chat/chat-modes#_chat-mode-file-example) for your chat mode like `Claude Sonnet 4`
 - Configure secure [MCP tool access](https://code.visualstudio.com/docs/copilot/chat/chat-modes#_chat-mode-file-example) to prevent cross-domain security breaches
 
-> 💡 **Security Through MCP Tool Boundaries**: Each chat mode receives only the specific MCP tools needed for their domain - preventing dangerous access escalation and cross-contamination. Like professional licensing, a planning mode can't execute destructive commands, and a frontend mode can't access backend databases.
+> 💡 **Security Through MCP Tool Boundaries**: Each agent receives only the specific MCP tools needed for their domain - preventing dangerous access escalation and cross-contamination. Like professional licensing, a planning mode can't execute destructive commands, and a frontend mode can't access backend databases.
 
 ### 🔧 Tools & Files:
 ```
 .github/
-└── chatmodes/
-    ├── architect.chatmode.md             # Planning specialist - designs, cannot execute
-    ├── frontend-engineer.chatmode.md     # UI specialist - builds interfaces, no backend access
-    ├── backend-engineer.chatmode.md      # API specialist - builds services, no UI modification
-    └── technical-writer.chatmode.md      # Documentation specialist - writes docs, cannot run code
+└── agents/
+    ├── architect.agent.md                # Planning specialist - designs, cannot execute
+    ├── frontend-engineer.agent.md        # UI specialist - builds interfaces, no backend access
+    ├── backend-engineer.agent.md         # API specialist - builds services, no UI modification
+    └── technical-writer.agent.md         # Documentation specialist - writes docs, cannot run code
 ```
 
 ### Example: MCP Tool Boundary Implementation
-Create your `.github/chatmodes/backend-engineer.chatmode.md` file:
+Create your `.github/agents/backend-engineer.agent.md` file:
 
 ```yaml
 ---

@@ -1,7 +1,7 @@
 ---
 agent: agent
 description: 'Register a new Copilot capability in Business Central. Creates enum extension, install codeunit, and isolated storage wrapper for Azure OpenAI integration.'
-tools: ['runCommands', 'edit', 'search', 'new', 'Microsoft Docs/*', 'Azure MCP/search', 'usages', 'vscodeAPI', 'problems', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_insert_event', 'ms-dynamics-smb.al/al_incremental_publish', 'todos']
+tools: ['runCommands', 'runTasks', 'edit', 'runNotebooks', 'search', 'new', 'Microsoft Docs/*', 'Azure MCP/search', 'extensions', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_insert_event', 'ms-dynamics-smb.al/al_incremental_publish', 'ms-vscode.vscode-websearchforcopilot/websearch', 'todos', 'runTests']
 model: Claude Sonnet 4.5
 ---
 
@@ -18,6 +18,7 @@ Create all necessary components to register a custom Copilot capability that can
 Before starting, review:
 - [Existing Copilot implementations in codebase]
 - [Microsoft Docs: Build Copilot Capability](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/ai-build-capability-in-al)
+- [Registered Copilot capabilities](https://github.com/microsoft/BCTech/blob/master/samples/AzureOpenAI/2-ItemSubstitution/CopilotCodeunits/CapabilitiesSetup.Codeunit.al)
 - [app.json for object ID ranges]
 - [Existing enum extensions]
 
@@ -338,6 +339,36 @@ After capability registration:
 - [ ] Capability visible in BC admin interface
 - [ ] Documentation provided
 
+### Solution example
+namespace CopilotToolkitDemo.ItemSubstitution;
+
+using System.AI;
+
+codeunit 54310 "Capabilities Setup"
+{
+    Subtype = Install;
+    InherentEntitlements = X;
+    InherentPermissions = X;
+    Access = Internal;
+
+    trigger OnInstallAppPerDatabase()
+    begin
+        RegisterCapability();
+    end;
+
+    local procedure RegisterCapability()
+    var
+        CopilotCapability: Codeunit "Copilot Capability";
+        LearnMoreUrlTxt: Label 'https://example.com/CopilotToolkit', Locked = true;
+    begin
+        if not CopilotCapability.IsCapabilityRegistered(Enum::"Copilot Capability"::"Find Item Substitutions") then
+            CopilotCapability.RegisterCapability(Enum::"Copilot Capability"::"Find Item Substitutions",
+                Enum::"Copilot Availability"::Preview,
+                Enum::"Copilot Billing Type"::"Microsoft Billed",
+                'https://about:none');
+    end;
+}
+###
 ---
 
 **Framework Compliance**: This workflow implements AI-Native Instructions Architecture Layer 2 (Agent Primitives - Agentic Workflows) with Context Loading, Human Validation Gates, and Structured Output Requirements.

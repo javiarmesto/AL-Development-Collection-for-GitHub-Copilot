@@ -123,7 +123,7 @@ Files must reference this when generating tests - create/modify test files only 
 Node.js script checking:
 - All manifest items exist
 - Frontmatter completeness (`applyTo`, `description`, `tools`, `model`)
-- File naming conventions (`.instructions.md`, `.prompt.md`, `.chatmode.md`)
+- File naming conventions (`.instructions.md`, `.prompt.md`, `.agent.md`)
 - No orphaned files
 
 **Run before committing**: `npm install && npm run validate`
@@ -274,7 +274,7 @@ Files reference:
 5. Add to collection manifest and validate
 
 ### Adding New Chat Modes
-1. Create in `chatmodes/` as `al-[role].chatmode.md`
+1. Create in `agents/` as `al-[role].agent.md`
 2. Add frontmatter:
    ```yaml
    ---

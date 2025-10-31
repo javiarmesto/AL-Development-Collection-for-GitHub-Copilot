@@ -18,37 +18,68 @@
 
 ### Installation
 
-1. **Clone or download this collection**
-   ```bash
-   git clone https://github.com/javiarmesto/al-development-collection.git
-   cd al-development-collection
-   ```
+**Option 1: NPM Package (Recommended)**
 
-2. **Install the collection in your AL workspace**
-   ```bash
-   # Copy files to your AL project
-   cp -r instructions your-al-project/
-   cp -r prompts your-al-project/
-   cp -r chatmodes your-al-project/
-   cp -r collections your-al-project/
-   cp -r .github your-al-project/  # Templates only
-   ```
+```bash
+# Install globally or in your project
+npm install -g al-development-collection
 
-3. **Reload VS Code**
+# Or install as dev dependency
+npm install --save-dev al-development-collection
+
+# Run the installer
+npx al-collection install
+
+# This will copy agents, instructions, and prompts to .github/
+# Existing files are preserved - only new files are added
+```
+
+**Option 2: Clone Repository**
+
+```bash
+# Clone the repository
+git clone https://github.com/javiarmesto/AL_Copilot_Collection.git
+cd AL_Copilot_Collection
+
+# Run the installer
+node install.js install [target-directory]
+
+# Or manually copy to your project
+cp -r agents your-al-project/.github/
+cp -r instructions your-al-project/.github/
+cp -r prompts your-al-project/.github/
+```
+
+**Option 3: Direct Download**
+
+1. Download the [latest release](https://github.com/javiarmesto/AL_Copilot_Collection/releases)
+2. Extract to your project's `.github/copilot/` directory
+3. Reload VS Code
+
+### Post-Installation
+
+1. **Reload VS Code**
    - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
    - Run: `Developer: Reload Window`
 
-4. **Verify installation**
-   ```bash
-   npm install
-   npm run validate
-   ```
+2. **Read the Quick Start Guide**
+   - Open `.github/getting-started.md`
+   - This contains all essential information to get started
+
+3. **Verify installation**
+   - Open any `.al` file - instructions should auto-apply
+   - Try: `Use al-orchestrator mode` - should switch context
+   - Try: `@workspace use al-initialize` - should execute
 
 ### First Use
 
-Open any `.al` file and start coding. The auto-applied instructions will guide Copilot automatically.
+**Start here if unsure:**
+```markdown
+Use al-orchestrator mode
+```
+Then describe what you want to accomplish. The orchestrator will analyze and guide you.
 
-**Try your first prompt:**
+**Try your first workflow:**
 
 ```bash
 @workspace use al-initialize
@@ -71,14 +102,14 @@ graph TB
     Layer2 --> |Context Optimization| Layer3[Layer 3: Context Engineering]
     
     Layer2 --> Instructions[📋 Instructions Files<br/>Auto-applied guidelines]
-    Layer2 --> ChatModes[💬 Chat Modes<br/>Role-based specialists]
+    Layer2 --> Agents[💬 Agents<br/>Role-based specialists]
     Layer2 --> Prompts[🎯 Prompts-Agentic Workflows<br/>Task execution]
     
     Layer3 --> Modular[Modular Loading<br/>applyTo patterns]
     Layer3 --> AGENTSMD[AGENTS.md Standard<br/>Universal portability]
     
     Instructions --> Copilot[🤖 GitHub Copilot]
-    ChatModes --> Copilot
+    Agents --> Copilot
     Prompts --> Copilot
     
     style Layer1 fill:#9C27B0
@@ -153,7 +184,7 @@ graph TB
 
 **Role-based specialists** with MCP tool boundaries (like professional licensing):
 
-- **al-orchestrator** 📚 - GUIDE/EXAMPLE: Reference for creating complex chatmodes
+- **al-orchestrator** 📚 - GUIDE/EXAMPLE: Reference for creating complex agents
 - **al-architect** 🏗️ - Solution architecture, cannot execute builds
 - **al-debugger** 🐛 - Deep diagnosis, systematic troubleshooting
 - **al-tester** ✅ - Testing strategy, TDD methodology
@@ -211,7 +242,7 @@ graph TB
 - **[Collection Overview](./al-development.md)** - User-facing guide
 - **[Instructions Index](./instructions/index.md)** - Complete guide to all instruction files
 - **[Prompts Index](./prompts/index.md)** - Complete guide to all agentic workflows
-- **[Chat Modes Index](./chatmodes/index.md)** - Complete guide to all chat modes
+- **[Agents Index](./agents/index.md)** - Complete guide to all agents
 - **[Integration Guide](./instructions/copilot-instructions.md)** - Master coordination document
 
 ## 🛠️ Requirements
@@ -324,10 +355,10 @@ AL_Copilot_Collection/
 │   ├── al-copilot-promptdialog.prompt.md        # PromptDialog page creation
 │   ├── al-copilot-test.prompt.md                # Copilot testing with AI Test Toolkit
 │   └── ... (14 total workflow prompts)
-├── chatmodes/                                    # 💬 Chat Modes (7 files)
-│   ├── index.md                                 # Complete modes guide
-│   ├── al-orchestrator.chatmode.md              # Smart router
-│   ├── al-architect.chatmode.md                 # Architecture specialist
+├── agents/                                       # 💬 Agents (7 files)
+│   ├── index.md                                  # Complete guide
+│   ├── al-orchestrator.agent.md                 # Smart router
+│   ├── al-architect.agent.md                    # Architecture specialist
 │   └── ... (6 total strategic modes)
 ├── collections/                                  # Collection manifests
 │   └── al-development.collection.yml            # Main collection definition
@@ -362,7 +393,7 @@ AL_Copilot_Collection/
   - al-copilot-capability: Register Copilot capability
   - al-copilot-promptdialog: Create PromptDialog pages
   - al-copilot-test: Test with AI Test Toolkit
-- 📚 **al-orchestrator** - Converted to GUIDE/EXAMPLE for chatmode creation
+- 📚 **al-orchestrator** - Converted to GUIDE/EXAMPLE for agent creation
 - 📊 **Total Primitives** - 29 tools (7 instructions + 15 workflows + 6 modes + 1 guide)
 - 🏗️ **AI Native Development** - Full compliance maintained across all new content
 
@@ -387,7 +418,7 @@ AL_Copilot_Collection/
 
 ### 2.1.0 (2025-10-15)
 - ✨ Streamlined chat modes - Archived 5 duplicate modes
-- 🎯 Focused toolkit - 6 core strategic chatmodes
+- 🎯 Focused toolkit - 6 core strategic agents
 - 📊 Updated to 24 tools - Clearer separation of concerns
 - 📚 Enhanced documentation - Practical examples integrated
 

@@ -25,7 +25,7 @@ Describe your proposed solution:
 
 - [ ] New Instruction (`.instructions.md`)
 - [ ] New Agentic Workflow (`.prompt.md`)
-- [ ] New Chat Mode (`.chatmode.md`)
+- [ ] New Agent (`.agent.md`)
 - [ ] Enhancement to existing primitive
 - [ ] Other (please specify)
 

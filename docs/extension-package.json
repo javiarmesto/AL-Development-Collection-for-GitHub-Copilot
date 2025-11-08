@@ -1,0 +1,241 @@
+{
+  "name": "al-development-collection",
+  "displayName": "AL Development Collection for GitHub Copilot",
+  "description": "AI Native Development toolkit for Microsoft Dynamics 365 Business Central with 32 Agent Primitives implementing the A-Instructions Architecture framework",
+  "version": "2.5.0",
+  "publisher": "javiarmesto",
+  "icon": "resources/icon.png",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other",
+    "Snippets",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "AL",
+    "Business Central",
+    "Dynamics 365",
+    "GitHub Copilot",
+    "AI Native",
+    "Agent Primitives",
+    "A-Instructions",
+    "ERP",
+    "Microsoft",
+    "Copilot Collection"
+  ],
+  "activationEvents": [
+    "workspaceContains:**/app.json",
+    "onCommand:al-collection.install",
+    "onCommand:al-collection.update",
+    "onCommand:al-collection.validate",
+    "onCommand:al-collection.showDocs"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "al-collection.install",
+        "title": "Install Collection",
+        "category": "AL Collection",
+        "icon": "$(cloud-download)"
+      },
+      {
+        "command": "al-collection.update",
+        "title": "Update Collection",
+        "category": "AL Collection",
+        "icon": "$(sync)"
+      },
+      {
+        "command": "al-collection.validate",
+        "title": "Validate Installation",
+        "category": "AL Collection",
+        "icon": "$(check)"
+      },
+      {
+        "command": "al-collection.showDocs",
+        "title": "Show Documentation",
+        "category": "AL Collection",
+        "icon": "$(book)"
+      },
+      {
+        "command": "al-collection.showStatus",
+        "title": "Show Status",
+        "category": "AL Collection",
+        "icon": "$(info)"
+      },
+      {
+        "command": "al-collection.openSettings",
+        "title": "Open Settings",
+        "category": "AL Collection",
+        "icon": "$(gear)"
+      }
+    ],
+    "configuration": {
+      "title": "AL Development Collection",
+      "properties": {
+        "al-collection.installLocation": {
+          "type": "string",
+          "default": ".github/copilot",
+          "description": "Installation directory for the collection (relative to workspace root)",
+          "scope": "resource"
+        },
+        "al-collection.autoUpdate": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically update collection when a new version is detected",
+          "scope": "resource"
+        },
+        "al-collection.notifyUpdates": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show notification when updates are available",
+          "scope": "resource"
+        },
+        "al-collection.validateOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Validate collection files when .md files are saved in .github/copilot/",
+          "scope": "resource"
+        },
+        "al-collection.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show AL Collection status in the status bar",
+          "scope": "resource"
+        },
+        "al-collection.telemetry": {
+          "type": "boolean",
+          "default": false,
+          "description": "Send anonymous usage telemetry to help improve the extension",
+          "scope": "resource"
+        },
+        "al-collection.preserveCustomizations": {
+          "type": "boolean",
+          "default": true,
+          "description": "Preserve local customizations when updating the collection",
+          "scope": "resource"
+        },
+        "al-collection.backupBeforeUpdate": {
+          "type": "boolean",
+          "default": true,
+          "description": "Create backup of existing files before updating",
+          "scope": "resource"
+        }
+      }
+    },
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "al-collection.install",
+          "when": "workspaceContains:**/app.json"
+        },
+        {
+          "command": "al-collection.update",
+          "when": "workspaceContains:**/app.json"
+        },
+        {
+          "command": "al-collection.validate",
+          "when": "workspaceContains:**/app.json"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "al-collection.install",
+          "when": "workspaceContains:**/app.json && explorerResourceIsFolder",
+          "group": "al-collection@1"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "al-collection-explorer",
+          "title": "AL Collection",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "al-collection-explorer": [
+        {
+          "id": "al-collection-status",
+          "name": "Status",
+          "type": "tree"
+        },
+        {
+          "id": "al-collection-primitives",
+          "name": "Available Primitives",
+          "type": "tree"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "deploy": "vsce publish --pat $VSCE_TOKEN"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.80.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vscode/test-electron": "^2.3.0",
+    "eslint": "^8.45.0",
+    "glob": "^10.3.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.0",
+    "@vscode/vsce": "^2.19.0"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "extensionDependencies": [
+    "ms-dynamics-smb.al"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot"
+  },
+  "bugs": {
+    "url": "https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/issues"
+  },
+  "homepage": "https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot#readme",
+  "license": "MIT",
+  "badges": [
+    {
+      "url": "https://img.shields.io/badge/validation-passing-brightgreen",
+      "href": "https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot",
+      "description": "Validation Status"
+    },
+    {
+      "url": "https://img.shields.io/badge/framework-A--Instructions-purple",
+      "href": "https://danielmeppiel.github.io/awesome-ai-native/",
+      "description": "AI Native Framework"
+    },
+    {
+      "url": "https://img.shields.io/badge/primitives-32-orange",
+      "href": "https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot",
+      "description": "Agent Primitives"
+    }
+  ],
+  "galleryBanner": {
+    "color": "#2196F3",
+    "theme": "dark"
+  },
+  "preview": false,
+  "qna": "marketplace",
+  "sponsor": {
+    "url": "https://github.com/sponsors/javiarmesto"
+  }
+}

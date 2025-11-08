@@ -1,7 +1,7 @@
 id: al-development
 name: AL Development for Business Central
-description: AI Native Development toolkit implementing the A-Instructions Architecture framework with 32 Agent Primitives across 3 systematic layers. Provides Markdown Prompt Engineering through Instructions files, Agentic Workflows via prompts, and Context Engineering through applyTo patterns for optimal LLM performance in Business Central development.
-tags: [al, business-central, dynamics365, erp, microsoft, ai-native, a-instructions, agent-primitives, context-engineering, copilot]
+description: AI Native Development toolkit implementing the A-Instructions Architecture framework with 36 Agent Primitives across 3 systematic layers. Provides Markdown Prompt Engineering through Instructions files, Agentic Workflows via prompts, and Context Engineering through applyTo patterns for optimal LLM performance in Business Central development. Includes multi-agent TDD orchestration system.
+tags: [al, business-central, dynamics365, erp, microsoft, ai-native, a-instructions, agent-primitives, context-engineering, copilot, tdd, orchestration]
 
 items:
     # Layer 2: Agent Primitives - Instructions (7 files)
@@ -378,6 +378,138 @@ items:
       - Specify if you need builds/tests run
       - Mention any specific business rules
       - Let the mode delegate if architectural decisions arise
+
+  # Layer 2: Agent Primitives - Orchestration System (4 files)
+  # Multi-agent TDD workflow coordination following GitHub Copilot Orchestra pattern
+  # Adapted for AL development with Business Central best practices
+  - path: agents/orchestration/al-conductor.agent.md
+    kind: agent
+    usage: recommended
+    description: |
+      Main orchestration agent managing Planning → Implementation → Review → Commit cycle for AL development.
+      Delegates to specialized subagents (planning, implementation, review) for structured TDD workflow.
+      Enforces Test-Driven Development and quality gates for Business Central extensions.
+      
+      Use for complex multi-phase features requiring structured workflow with quality enforcement.
+      Creates plan files in .github/plans/ with complete documentation trail.
+      
+      Key Features:
+      - Multi-phase planning with AL-specific context (base objects, events, AL-Go structure)
+      - TDD enforcement: Red (failing tests) → Green (minimal code) → Refactor
+      - Quality gates: Automated code review before each commit
+      - Documentation: Auto-generates plan, phase completion, and final summary files
+      - AL best practices: Event-driven, naming conventions, performance patterns
+      
+      Example usage:
+      ```markdown
+      Use al-conductor mode
+      
+      I need to add email validation to the Customer table using event subscribers.
+      The validation should:
+      - Use regex pattern matching
+      - Allow empty emails (Email is optional in BC)
+      - Normalize to lowercase
+      - Show user-friendly error message
+      ```
+      
+      Workflow:
+      1. User describes feature → Conductor delegates to planning subagent
+      2. Planning returns AL context → Conductor creates multi-phase plan
+      3. User approves plan → Conductor orchestrates implementation phases
+      4. Each phase: Implement → Review → Commit (with user approval)
+      5. Plan completion → Documentation summary generated
+      
+      To get the best results:
+      - Provide clear business requirements and constraints
+      - Review and approve the plan before implementation starts
+      - Answer open questions during planning phase
+      - Commit after each phase (don't skip commit gates)
+      - Trust the TDD process (tests first, then minimal code)
+      
+  - path: agents/orchestration/al-planning.subagent.md
+    kind: agent
+    usage: subagent
+    description: |
+      AL-aware research and context gathering subagent for Business Central development.
+      Analyzes codebase structure, dependencies, AL objects, event architecture, and AL-Go structure.
+      Returns structured findings to Conductor for plan creation.
+      
+      Called automatically by al-conductor. Not for direct use by developers.
+      
+      Responsibilities:
+      - Identify relevant AL objects (Tables, Pages, Codeunits, etc.)
+      - Map event architecture (subscribers, publishers, integration points)
+      - Verify AL-Go structure (app/ vs test/ separation)
+      - Analyze dependencies (.alpackages/, app.json, symbols)
+      - Document performance considerations (large tables, SetLoadFields)
+      - Suggest 2-3 implementation options with pros/cons
+      
+      Returns structured findings with:
+      - Base BC objects and existing extensions
+      - Event subscribers/publishers available
+      - AL-Go project structure
+      - Naming and organizational patterns
+      - Performance context
+      - Implementation recommendations
+      
+  - path: agents/orchestration/al-implement.subagent.md
+    kind: agent
+    usage: subagent
+    description: |
+      TDD-focused implementation subagent with full AL MCP tool access for Business Central.
+      Executes implementation tasks following strict Test-Driven Development with AL patterns.
+      Works autonomously within phase boundaries set by Conductor.
+      
+      Called automatically by al-conductor. Not for direct use by developers.
+      
+      TDD Workflow:
+      1. RED: Write failing tests in /test project → Verify failure
+      2. GREEN: Write minimal AL code in /app project → Verify tests pass
+      3. REFACTOR: Apply AL patterns, optimize, document
+      4. VALIDATE: Run full test suite, check for regressions
+      
+      AL Patterns Enforced:
+      - Event-driven architecture (TableExtension, PageExtension, Event Subscribers)
+      - AL-Go structure (app/ and test/ separation)
+      - Naming conventions (26-char limit, PascalCase)
+      - Performance patterns (SetLoadFields, early filtering, temporary tables)
+      - Error handling (TryFunctions, error labels, telemetry)
+      
+      Full AL MCP Tool Access:
+      - al_build, al_publish, al_incremental_publish (compilation & deployment)
+      - al_debug_without_publish (quick debugging)
+      - runCommands, runTasks (test execution, linting)
+      
+      Uses Claude Haiku 4.5 for cost-efficient execution.
+      
+  - path: agents/orchestration/al-review.subagent.md
+    kind: agent
+    usage: subagent
+    description: |
+      AL code review subagent validating implementation quality for Business Central.
+      Checks test coverage, AL patterns, performance, and BC best practices.
+      Returns structured review: APPROVED / NEEDS_REVISION / FAILED.
+      
+      Called automatically by al-conductor. Not for direct use by developers.
+      
+      AL-Specific Review Checklist:
+      - Event-Driven Architecture: No base object modifications (CRITICAL)
+      - Naming Conventions: 26-character limit respected (MAJOR if violated)
+      - AL-Go Structure: App and test code properly separated (MAJOR if mixed)
+      - Performance Patterns: SetLoadFields, early filtering applied (MAJOR for large tables)
+      - Error Handling: TryFunctions for external calls, error labels used
+      - Test Coverage: Happy path, error cases, edge cases covered (MAJOR if missing)
+      - Feature Organization: Code organized by capability, not object type
+      
+      Review Output:
+      - Status: APPROVED / NEEDS_REVISION / FAILED
+      - Issues: CRITICAL / MAJOR / MINOR with file/line references
+      - AL Best Practices Compliance: Checklist results
+      - Test Results: Pass/fail status for all tests
+      - Recommendations: Specific improvements (even when approved)
+      - Next Steps: What Conductor should do next
+      
+      Uses Claude Sonnet 4.5 for thorough analysis.
 
 display:
   ordering: manual

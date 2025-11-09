@@ -81,23 +81,23 @@ cp -r prompts your-al-project/.github/
 
 ### First Use
 
-**Start here if unsure:**
-```markdown
-Use al-orchestrator mode
-```
-Then describe what you want to accomplish. The orchestrator will analyze and guide you.
-
-**Try your first workflow:**
-
+**New to AL development?** Start with environment setup:
 ```bash
 @workspace use al-initialize
 ```
 
-**Or ask the orchestrator:**
-
+**Need to design a solution?** Get architectural guidance:
 ```markdown
-Switch to al-orchestrator mode and ask: "I need to build a sales approval workflow"
+Use al-architect mode
+
+I need to build a sales approval workflow with email notifications
 ```
+
+**Ready to implement?** Choose your approach:
+- **Complex features** (3+ objects, needs TDD): `Use al-conductor mode`
+- **Simple changes** (1-2 objects): `Use al-developer mode`
+
+**Unsure which path?** Check the [Complete Development Flow Guide](./docs/workflows/complete-development-flow.md) with decision tree
 
 ## 🏗️ AI Native-Instructions Architecture Framework
 
@@ -109,12 +109,12 @@ graph TB
     Layer1 --> |Structured Instructions| Layer2[Layer 2: Agent Primitives]
     Layer2 --> |Context Optimization| Layer3[Layer 3: Context Engineering]
     
-    Layer2 --> Instructions[📋 Instructions Files<br/>Auto-applied guidelines]
-    Layer2 --> Agents[💬 Agents<br/>Role-based specialists]
-    Layer2 --> Prompts[🎯 Prompts-Agentic Workflows<br/>Task execution]
+    Layer2 --> Instructions["📋 Instructions Files (Auto-applied guidelines)"]
+    Layer2 --> Agents["💬 Agents (Role-based specialists)"]
+    Layer2 --> Prompts["🎯 Prompts-Agentic Workflows (Task execution)"]
     
-    Layer3 --> Modular[Modular Loading<br/>applyTo patterns]
-    Layer3 --> AGENTSMD[AGENTS.md Standard<br/>Universal portability]
+    Layer3 --> Modular["Modular Loading (applyTo patterns)"]
+    Layer3 --> AGENTSMD["AGENTS.md Standard (Universal portability)"]
     
     Instructions --> Copilot[🤖 GitHub Copilot]
     Agents --> Copilot

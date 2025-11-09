@@ -10,12 +10,12 @@ graph TB
     Layer1 --> |Structured Instructions| Layer2[Layer 2: Agent Primitives]
     Layer2 --> |Context Optimization| Layer3[Layer 3: Context Engineering]
     
-    Layer2 --> Instructions[📋 Instructions Files<br/>Auto-applied guidelines]
-    Layer2 --> Agents[💬 Agents<br/>Role-based specialists]
-    Layer2 --> Prompts[🎯 Prompts-Agentic Workflows<br/>Task execution]
+    Layer2 --> Instructions["📋 Instructions Files (Auto-applied guidelines)"]
+    Layer2 --> Agents["💬 Agents (Role-based specialists)"]
+    Layer2 --> Prompts["🎯 Prompts-Agentic Workflows (Task execution)"]
     
-    Layer3 --> Modular[Modular Loading<br/>applyTo patterns]
-    Layer3 --> AGENTSMD[AGENTS.md Standard<br/>Universal portability]
+    Layer3 --> Modular["Modular Loading (applyTo patterns)"]
+    Layer3 --> AGENTSMD["AGENTS.md Standard (Universal portability)"]
     
     style Layer1 fill:#9C27B0
     style Layer2 fill:#2196F3

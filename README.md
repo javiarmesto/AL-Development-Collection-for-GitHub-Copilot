@@ -95,18 +95,22 @@ cp -r prompts your-al-project/.github/
 
 ## 🚦 Routing Matrix by Confirmed Complexity
 
-> ⚠️ **Experimental Classification**: This routing system is an **experimental approach** that should be **adapted to your context**. Complexity is assessed by scope, integration depth, and architectural impact—not by counting AL objects. Adjust based on team experience and project requirements.
+> ⚠️ **Experimental & Customizable Classification**: This routing system is an **experimental approach** that you can customize by editing framework files (`README.md`, `agents/index.md`, `instructions/copilot-instructions.md`) in your repository. Complexity is assessed by scope, integration depth, and architectural impact—not by counting AL objects. **Modify the criteria, thresholds, and routing paths** to match your team's expertise and project requirements.
 
-| Complexity | Specialization | Route | Notes |
-|------------|----------------|-------|-------|
-| 🟢 **LOW** | None | `al-developer` mode | Direct implementation, optional TDD |
-| 🟢 **LOW** | Debug needed | `al-debugger` → `al-developer` | Diagnose first, then fix |
-| 🟡 **MEDIUM** | 3-5 | Standard feature | `al-conductor` mode | TDD Orchestra, 2-3 phases |
-| 🟡 **MEDIUM** | 3-5 | API integration | `al-api` → `al-conductor` | Design endpoints first |
-| 🟡 **MEDIUM** | 3-5 | AI/Copilot feature | `al-copilot` → `al-conductor` | Design UX first |
-| 🔴 **HIGH** | 6+ | Standard complex | `al-architect` → `al-conductor` | Architecture + TDD, 4+ phases |
-| 🔴 **HIGH** | 6+ | Complex API system | `al-api` → `al-architect` → `al-conductor` | API design → Architecture → Implement |
-| 🔴 **HIGH** | 6+ | Complex AI system | `al-copilot` → `al-architect` → `al-conductor` | AI design → Architecture → Implement |
+| Complexity | Domain | Scenario Description | Agent Route | Why This Path |
+|------------|--------|----------------------|-------------|---------------|
+| 🟢 **LOW** | 🎯 **Standard** | Simple field addition, basic validation, single UI change | `al-developer` | Direct implementation - scope is clear, no design needed |
+| 🟢 **LOW** | 🐛 **Bug Fix** | Known issue with clear reproduction steps | `al-debugger` → `al-developer` | Diagnose root cause first, then implement fix with tests |
+| 🟢 **LOW** | ✅ **Test Addition** | Adding tests to existing well-structured code | `al-tester` → `al-developer` | Design test strategy, then implement test cases |
+| 🟡 **MEDIUM** | 🏗️ **Feature** | Business logic with data flow, internal integrations | `al-conductor` | TDD orchestration ensures quality across 2-3 phases |
+| 🟡 **MEDIUM** | 🌐 **API** | RESTful endpoints, OData pages, internal API exposure | `al-api` → `al-conductor` | Design API contract first, then implement with TDD |
+| 🟡 **MEDIUM** | 🤖 **AI Feature** | Copilot capability, PromptDialog, basic AI integration | `al-copilot` → `al-conductor` | Design AI UX and prompts, then build with quality gates |
+| 🟡 **MEDIUM** | 🐛 **Complex Bug** | Intermittent issue requiring systematic investigation | `al-debugger` → `al-conductor` | Diagnose with profiling, then fix with comprehensive tests |
+| 🔴 **HIGH** | 🏛️ **Architecture** | Multi-module feature, new patterns, broad impact | `al-architect` → `al-conductor` | Design architecture first, then orchestrate TDD implementation |
+| 🔴 **HIGH** | 🌐 **Integration** | External APIs, OAuth, Azure services, webhooks | `al-api` → `al-architect` → `al-conductor` | API design → System architecture → Secure TDD implementation |
+| 🔴 **HIGH** | 🤖 **AI System** | Multi-capability AI system, complex prompt chains | `al-copilot` → `al-architect` → `al-conductor` | AI strategy → Scalable architecture → Reliable TDD build |
+| 🔴 **HIGH** | ⚡ **Performance** | System-wide optimization, data migration, bottlenecks | `al-architect` → `al-conductor` | Analyze architecture impact, design optimization strategy |
+| 🔴 **HIGH** | 🔄 **Migration** | BC version upgrade, refactoring legacy code | `al-debugger` → `al-architect` → `al-conductor` | Understand current state → Design target → Migrate with tests |
 
 **Quick examples:**
 - 🟢 LOW: "Add Priority field to Sales Header" → `al-developer`

@@ -605,7 +605,7 @@ Always review Copilot suggestions:
 
 ## 📊 Complexity-Based Tool Selection with Validation Gate
 
-> ⚠️ **Experimental Protocol**: This classification system is an **experimental heuristic** that should be **adapted based on context**. Consider team expertise, organizational standards, and project requirements when applying these criteria. Use as guidance, not rigid rules.
+> ⚠️ **Experimental & Customizable Protocol**: This classification system is an **experimental heuristic** that you can customize. **To adapt it to your needs, edit this file** (`instructions/copilot-instructions.md`) in your repository fork. Modify thresholds, criteria, routing paths, or complexity levels to match your team's expertise, organizational standards, and project context. The framework is designed to be tailored to your specific development environment.
 
 **NEW PROTOCOL**: All feature requests now follow automatic complexity classification with mandatory validation gate.
 
@@ -694,21 +694,22 @@ Recommended Path:
 
 **Complete Routing Matrix** (after user confirms complexity):
 
-| Complexity | Specialization | Route | When to Use |
-|------------|----------------|-------|-------------|
-| 🟢 LOW | Standard | `al-developer` | Simple change, clear spec |
-| 🟢 LOW | Debug | `al-debugger` → `al-developer` | Bug fix, need diagnosis |
-| 🟢 LOW | Test focus | `al-tester` → `al-developer` | Need test strategy first |
-| 🟢 LOW | Quick task | `@workspace use al-[task]` | One-off workflow |
-| 🟡 MEDIUM | Standard | `al-conductor` | Multi-object feature, needs TDD |
-| 🟡 MEDIUM | API | `al-api` → `al-conductor` | REST/OData integration |
-| 🟡 MEDIUM | AI/Copilot | `al-copilot` → `al-conductor` | Copilot experience |
-| 🟡 MEDIUM | Test focus | `al-tester` → `al-conductor` | Complex test strategy |
-| 🔴 HIGH | Standard | `al-architect` → `al-conductor` | Complex feature, architecture needed |
-| 🔴 HIGH | Complex API | `al-api` → `al-architect` → `al-conductor` | API design → Architecture → Implement |
-| 🔴 HIGH | Complex AI | `al-copilot` → `al-architect` → `al-conductor` | AI design → Architecture → Implement |
-| 🔴 HIGH | Performance | `al-architect` → `al-conductor` | Performance-critical design |
-| 🔴 HIGH | Refactoring | `al-debugger` → `al-architect` → `al-conductor` | Understand → Redesign → Implement |
+| Complexity | Domain | Scenario Description | Agent Route | Rationale |
+|------------|--------|----------------------|-------------|-----------|
+| 🟢 LOW | 🎯 Standard | Field addition, simple validation, isolated UI change | `al-developer` | Scope is clear, no architectural design needed |
+| 🟢 LOW | 🐛 Bug Fix | Known issue with clear reproduction steps | `al-debugger` → `al-developer` | Diagnose root cause systematically, then fix |
+| 🟢 LOW | ✅ Testing | Add tests to existing well-structured functionality | `al-tester` → `al-developer` | Design test approach, then implement tests |
+| 🟢 LOW | ⚡ Quick Task | One-off operation (build, permission gen, etc.) | `@workspace use al-[task]` | Direct workflow execution for specific task |
+| 🟡 MEDIUM | 🏗️ Feature | Business logic with internal data flow, event subscribers | `al-conductor` | TDD orchestration ensures quality across phases |
+| 🟡 MEDIUM | 🌐 API | RESTful endpoints, OData exposure, API pages | `al-api` → `al-conductor` | Design API contract first, implement with TDD |
+| 🟡 MEDIUM | 🤖 AI Feature | Copilot capability, PromptDialog, basic AI integration | `al-copilot` → `al-conductor` | Design AI UX/prompts, build with quality gates |
+| 🟡 MEDIUM | 🐛 Complex Bug | Intermittent/performance issue needing investigation | `al-debugger` → `al-conductor` | Profile and diagnose, then fix with tests |
+| 🟡 MEDIUM | ✅ Test Strategy | Complex test scenarios, integration test design | `al-tester` → `al-conductor` | Design comprehensive test strategy first |
+| 🔴 HIGH | 🏛️ Architecture | Multi-module feature, new patterns, enterprise impact | `al-architect` → `al-conductor` | Design scalable architecture before implementation |
+| 🔴 HIGH | 🌐 Integration | External APIs, OAuth, Azure services, webhooks | `al-api` → `al-architect` → `al-conductor` | API contract → System design → Secure implementation |
+| 🔴 HIGH | 🤖 AI System | Multi-capability AI, complex prompt chains, training | `al-copilot` → `al-architect` → `al-conductor` | AI strategy → Scalable design → Reliable build |
+| 🔴 HIGH | ⚡ Performance | System-wide optimization, architectural bottlenecks | `al-architect` → `al-conductor` | Analyze impact, design optimization strategy |
+| 🔴 HIGH | 🔄 Migration | BC version upgrade, legacy refactoring, data migration | `al-debugger` → `al-architect` → `al-conductor` | Understand current → Design target → Migrate safely |
 
 **Decision logic after confirmation:**
 - **If confirmed**: Follow routing matrix based on complexity + specialization
@@ -723,19 +724,20 @@ Recommended Path:
 ```markdown
 🔍 Complexity Analysis:
 
-Detected Elements:
-- AL Objects: 2 (Customer.TableExt for field, CustomerValidator.Codeunit for logic)
-- Integrations: None (internal validation only)
-- Business Logic: Simple (regex pattern matching)
-- Estimated Phases: 1 (add field + validation)
+Scope Assessment:
+- Scope: Limited - isolated field validation on single table
+- Integrations: None (self-contained validation logic)
+- Business Logic: Simple (regex pattern matching, error handling)
+- Estimated Phases: 1 (implement validation + basic tests)
+- Architectural Impact: Low (standard validation pattern)
 
 📊 Inferred Complexity: 🟢 LOW
 
 Reasoning:
-- Only 2 objects needed
-- No external dependencies
-- Straightforward validation logic
-- Can complete in single implementation
+- Limited scope - isolated change to single functional area
+- No external dependencies or integrations
+- Well-established validation pattern
+- Single-phase implementation sufficient
 
 Recommended Path: al-developer mode (direct implementation)
 ```

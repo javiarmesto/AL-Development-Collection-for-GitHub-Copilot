@@ -34,15 +34,21 @@ I need to build a sales forecasting system...
 
 ## 📊 Complexity-Based Agent Selection
 
+> ⚠️ **Experimental & Customizable Framework**: The complexity classification system is an **experimental heuristic** that provides initial guidance. **You can modify these criteria** by editing the framework files in your repository (`agents/index.md`, `instructions/copilot-instructions.md`) to match your team's expertise, organizational standards, and project requirements. Adapt thresholds, add custom criteria, or redefine complexity levels based on your context.
+
 **All agents use automatic complexity inference with mandatory validation gate** - the system analyzes your requirements and suggests the appropriate complexity level, then you confirm before proceeding.
 
 ### Complexity Classification Matrix
 
-| Complejidad | Objetos AL | Fases | TDD | Agente Recomendado | Tiempo Estimado |
-|-------------|-----------|-------|-----|-------------------|------------------|
-| 🟢 **LOW** | 1-2 objetos | 1 fase | Opcional | **al-developer** | 15-30 min |
-| 🟡 **MEDIUM** | 3-5 objetos | 2-3 fases | Recomendado | **al-conductor** | 1-3 horas |
-| 🔴 **HIGH** | 6+ objetos | 4+ fases | Obligatorio | **al-architect** → **al-conductor** | 3+ horas |
+| Complexity | Scope | Phases | TDD | Recommended Agent | Estimated Time |
+|-------------|-------|-------|-----|-------------------|----------------|
+| 🟢 **LOW** | Limited scope - isolated change | 1 phase | Optional | **al-developer** | 15-30 min |
+| 🟡 **MEDIUM** | Moderate scope - internal integrations | 2-3 phases | Recommended | **al-conductor** | 1-3 hours |
+| 🔴 **HIGH** | Extensive scope - complex architecture | 4+ phases | Mandatory | **al-architect** → **al-conductor** | 3+ hours |
+
+**Note**: Scope refers to the breadth and depth of functionality, not the count of AL objects. Focus on integration complexity, business logic depth, and architectural impact.
+
+**Customization Tip**: You can adjust these complexity definitions by editing this file in your repository. For example, if your team typically works with smaller changes, you might redefine MEDIUM as "1-2 phases" instead of "2-3 phases". The framework adapts to your workflow.
 
 ### 📦 Available Agents (7 files)
 

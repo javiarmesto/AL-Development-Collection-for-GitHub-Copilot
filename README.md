@@ -1,6 +1,8 @@
 # AL Development Collection for GitHub Copilot
 
-> **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI-Native Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **38 specialized Agent Primitives** across **3 systematic layers**. Now includes **AL Orchestra** multi-agent TDD system for structured Test-Driven Development.
+> **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI-Native Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **38 specialized Agent Primitives** across **3 systematic layers**. Features **AL Orchestra** multi-agent TDD system that transforms feature requests into production-ready code following BC best practices.
+
+> 🎉 **v2.6.0 Production Ready** - Complete workflow validated: Architecture → TDD Implementation → PR Documentation. [See test results](./docs/workflows/complete-development-flow.md).
 
 [![Validation Status](https://img.shields.io/badge/validation-passing-brightgreen)](./validate-al-collection.js)
 [![Version](https://img.shields.io/badge/version-2.6.0-blue)](./CHANGELOG.md)
@@ -140,8 +142,7 @@ graph TB
 | **Chat Modes** | 7 files | `Use [mode-name]` | Role-based strategic/tactical specialists |
 | **Orchestra System** | 4 files | `Use al-conductor` | Multi-agent TDD orchestration |
 | **Agentic Workflows** | 18 files | `@workspace use [name]` | Complete task execution processes |
-| **Integration Guide** | 1 file | Reference | Master coordination document |
-| **Total Primitives** | **39 tools** | — | Complete AI Native toolkit with TDD |## 📦 What's Included: Agent Primitives
+| **Total Primitives** | **38 tools** | — | Complete AI Native toolkit with TDD |## 📦 What's Included: Agent Primitives
 
 ### � Instructions Files (7 primitives)
 
@@ -242,43 +243,90 @@ Add email validation to Customer table with these requirements:
 
 > 💡 **When to Use**: Complex features (3+ phases), production code requiring quality gates, bug fixes with TDD proof, or learning AL through guided implementation
 
+### 📊 Complete Development Flow Guide
+
+**NEW**: Visual guide for choosing the right workflow based on task complexity:
+
+**[📖 Complete Development Flow Documentation](./docs/workflows/complete-development-flow.md)**
+
+This comprehensive guide includes:
+- **Decision Tree** - Automated routing based on complexity level (Simple/Moderate/Complex/Specialized)
+- **3 Development Patterns** with Mermaid diagrams:
+  - Pattern 1: Simple Features (direct implementation)
+  - Pattern 2: Moderate Features (TDD with multi-phase planning)
+  - Pattern 3: Complex Features (architecture + specialized design)
+- **Specialized Flows** for specific scenarios:
+  - Flow A: API Development (REST/OData)
+  - Flow B: AI/Copilot Features (prompt engineering)
+  - Flow C: Performance Optimization (profiling + refactoring)
+- **Real Examples** from Customer Loyalty Points test case
+
+> 💡 **Quick Start**: Unsure which agent or workflow to use? Check the decision tree in the complete flow guide!
+
 ### 📖 Integration Guide (1 primitive)
 
 - **copilot-instructions.md** - Master document coordinating all 38 primitives with usage guidance
 
 ## 🎯 Common Workflows
 
-### Building a New Feature
+> **📖 New to the collection?** Check the **[Complete Development Flow Guide](./docs/workflows/complete-development-flow.md)** for visual decision trees and pattern selection!
 
+### Building a New Feature (Pattern-Based)
+
+**Simple Feature** (1-2 objects, quick changes):
 ```text
-1. al-orchestrator → Analyze requirements
-2. al-architect → Design solution
-3. @workspace use al-initialize → Setup
-4. Code (auto-guidelines active)
-5. @workspace use al-events → Add events
-6. al-tester → Test strategy
-7. @workspace use al-permissions → Security
-8. @workspace use al-build → Deploy
+1. Use al-developer mode
+2. Implement directly (auto-guidelines active)
+3. @workspace use al-build
 ```
+
+**Moderate Feature** (3-5 objects, needs tests):
+```text
+1. Use al-conductor mode
+2. Multi-phase TDD implementation
+3. Quality gates + documentation
+```
+
+**Complex Feature** (5+ objects, needs architecture):
+```text
+1. Use al-architect mode → Design
+2. Use al-conductor mode → Implement with TDD
+3. @workspace use al-pr-prepare
+```
+
+**[📊 See decision tree in Complete Flow Guide](./docs/workflows/complete-development-flow.md)**
 
 ### Debugging Issues
 
 ```text
 1. @workspace use al-diagnose → Diagnose and debug
-2. @workspace use al-performance → Profile
+2. @workspace use al-performance → Profile (if needed)
 3. Fix (auto-guidelines active)
-4. al-tester → Regression tests
+4. Use al-tester mode → Test strategy
 ```
 
-### API Development
+### API Development (Specialized Flow)
 
 ```text
-1. al-architect → Design API
-2. al-api → Implement
+1. Use al-architect mode → Design API contract
+2. Use al-api mode → Implement REST/OData
 3. @workspace use al-permissions → Security
-4. al-tester → API tests
+4. Use al-tester mode → API test suite
 5. @workspace use al-build → Deploy
 ```
+
+**[📖 Complete API Flow with examples](./docs/workflows/complete-development-flow.md#flow-a-api-development)**
+
+### AI/Copilot Features (Specialized Flow)
+
+```text
+1. Use al-copilot mode → Design AI capability
+2. @workspace use al-copilot-capability → Register
+3. @workspace use al-copilot-promptdialog → UI
+4. @workspace use al-copilot-test → Validate
+```
+
+**[📖 Complete Copilot Flow with examples](./docs/workflows/complete-development-flow.md#flow-b-aicopilot-features)**
 
 ## 📚 Documentation
 

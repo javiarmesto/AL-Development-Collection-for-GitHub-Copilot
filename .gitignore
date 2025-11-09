@@ -30,6 +30,7 @@ coverage/
 .alcache/
 .snapshots/
 rad.json
+.vscode/
 
 #Archive
 Archive/

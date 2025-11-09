@@ -101,7 +101,7 @@ Each mode follows **professional licensing** constraints:
 graph TD
     Start[📄 Task/Requirements] --> Analyze[🔍 Automatic Complexity Analysis]
     
-    Analyze --> Infer[💭 System infers complexity based on:<br/>- Number of AL objects<br/>- Integration points<br/>- Business logic complexity<br/>- Test requirements]
+    Analyze --> Infer[💭 System infers complexity based on:<br/>- Scope and scale<br/>- Integration depth<br/>- Business logic complexity<br/>- Implementation phases]
     
     Infer --> Present[📊 Present Classification]
     Present --> Gate{🚦 VALIDATION GATE<br/>User confirms complexity?}
@@ -147,28 +147,28 @@ graph TD
 The system analyzes these factors to suggest complexity:
 
 #### 🟢 LOW (Low) - Indicators:
-- ✅ 1-2 AL objects (table extension + page extension)
-- ✅ Single feature/change
+- ✅ Limited scope - single feature/change
 - ✅ No external integrations
-- ✅ Clear implementation path
+- ✅ Clear, straightforward implementation path
 - ✅ Minimal business logic
+- ✅ Single implementation phase
 - **Example**: "Add Priority field to Sales Header"
 
 #### 🟡 MEDIUM (Medium) - Indicators:
-- ✅ 3-5 AL objects
+- ✅ Moderate scope - multiple interrelated components
 - ✅ 2-3 implementation phases
-- ✅ Some integration points (internal)
-- ✅ Moderate business logic
-- ✅ Requires tests
+- ✅ Internal integration points (events, interfaces)
+- ✅ Moderate business logic with some complexity
+- ✅ Comprehensive testing required
 - **Example**: "Customer loyalty points with automatic calculation"
 
 #### 🔴 HIGH (High) - Indicators:
-- ✅ 6+ AL objects
-- ✅ 4+ implementation phases
-- ✅ External integrations (APIs, web services)
-- ✅ Complex business rules
-- ✅ Multi-company/multi-user scenarios
-- ✅ Performance considerations
+- ✅ Extensive scope - complex system with many interconnected parts
+- ✅ 4+ implementation phases required
+- ✅ External integrations (REST APIs, OAuth, web services)
+- ✅ Complex business rules and workflows
+- ✅ Multi-company/multi-user/multi-tenant scenarios
+- ✅ Performance optimization critical
 - **Example**: "Multi-company approval workflow with email notifications and delegation"
 
 ### 🚦 Validation Gate Protocol

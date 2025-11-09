@@ -23,7 +23,7 @@ graph TD
     Doc1 --> Analyze
     Doc2 --> Analyze
     
-    Analyze --> Infer["📊 System infers complexity:<br/>- Count AL objects<br/>- Analyze integrations<br/>- Evaluate business logic<br/>- Assess phases needed"]
+    Analyze --> Infer["📊 System infers complexity:<br/>- Scope and scale<br/>- Integration complexity<br/>- Business logic depth<br/>- Implementation effort"]
     
     Infer --> Present["📋 Present Classification<br/>with justification"]
     
@@ -32,9 +32,9 @@ graph TD
     Gate -->|"❌ Incorrect"| UserCorrect["👤 User provides<br/>correct complexity"]
     UserCorrect --> Present
     
-    Gate -->|"✅ LOW (1-2 obj)"| Low["🟢 LOW Complexity<br/>Direct implementation"]
-    Gate -->|"✅ MEDIUM (3-5 obj)"| Med["🟡 MEDIUM Complexity<br/>TDD with Orchestra"]
-    Gate -->|"✅ HIGH (6+ obj)"| High["🔴 HIGH Complexity<br/>Architecture first"]
+    Gate -->|"✅ LOW"| Low["🟢 LOW Complexity<br/>Direct implementation"]
+    Gate -->|"✅ MEDIUM"| Med["🟡 MEDIUM Complexity<br/>TDD with Orchestra"]
+    Gate -->|"✅ HIGH"| High["🔴 HIGH Complexity<br/>Architecture first"]
     
     Low --> LowOpt{Implementation<br/>approach?}
     LowOpt -->|Workflows| LowWork["@workspace use<br/>al-events, al-pages, etc."]
@@ -87,7 +87,7 @@ graph TD
    📊 Inferred Complexity: 🟡 MEDIUM
    
    Reasoning:
-   - Object count (4) falls in MEDIUM range (3-5 objects)
+   - Scope indicates MEDIUM complexity (multiple interrelated components)
    - Limited scope, internal dependencies only
    - Moderate business logic, manageable complexity
    - Can be structured in 2-3 TDD phases
@@ -118,12 +118,12 @@ graph TD
 #### 🟢 LOW (Low Complexity)
 
 **Characteristics:**
-- 1-2 AL objects maximum
-- Single feature/change
+- Limited scope - isolated change or single feature
+- Single implementation phase
 - No external integrations
 - Clear, straightforward implementation
 - Minimal or no business logic
-- Can be completed in 1 phase
+- Quick turnaround (hours, not days)
 
 **Examples:**
 - ✅ Add single field to existing table
@@ -142,11 +142,11 @@ graph TD
 #### 🟡 MEDIUM (Medium Complexity)
 
 **Characteristics:**
-- 3-5 AL objects
+- Moderate scope - multiple related components
 - 2-3 implementation phases
-- Internal integrations (event subscribers)
-- Moderate business logic
-- Requires comprehensive tests
+- Internal integrations (event subscribers, interfaces)
+- Moderate business logic with interdependencies
+- Requires comprehensive testing strategy
 - Some architectural decisions needed
 
 **Examples:**
@@ -167,13 +167,13 @@ graph TD
 #### 🔴 HIGH (High Complexity)
 
 **Characteristics:**
-- 6+ AL objects
+- Extensive scope - complex system architecture
 - 4+ implementation phases
-- External integrations (APIs, web services, OAuth)
-- Complex business rules and workflows
-- Multi-company or multi-user scenarios
-- Performance optimization required
-- Significant architectural decisions
+- External integrations (REST APIs, OAuth, web services)
+- Complex business rules and multi-step workflows
+- Multi-company, multi-user, or multi-tenant scenarios
+- Performance optimization critical
+- Significant architectural and design decisions
 
 **Examples:**
 - ✅ Multi-company approval workflow with delegation and email

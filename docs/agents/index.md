@@ -178,11 +178,11 @@ When you provide requirements, agents will:
 1. **Analyze Requirements**
    ```markdown
    📊 Complexity Analysis:
-   - Detected: 4 AL objects (Customer.TableExt, CustomerCard.PageExt, 
-                CustomerMgmt.Codeunit, CustomerValidator.Codeunit)
+   - Scope: Customer management enhancement (validation + UI integration)
    - Integration: Internal event subscribers only
    - Business logic: Email validation + address formatting
-   - Phases: 2 (validation + UI)
+   - Phases: 2 (validation logic + UI updates)
+   - Architectural Impact: Moderate (extends existing patterns)
    
    💭 Inferred Complexity: 🟡 MEDIUM
    ```
@@ -190,10 +190,10 @@ When you provide requirements, agents will:
 2. **Present Justification**
    ```markdown
    Reasoning:
-   - 4 objects falls in MEDIUM range (3-5)
-   - Limited scope, no external dependencies
-   - Moderate logic, manageable in 2 phases
-   - Good candidate for al-conductor with TDD
+   - Moderate scope with internal integration points
+   - No external dependencies
+   - Manageable in 2-phase implementation
+   - Benefits from structured TDD approach via al-conductor
    ```
 
 3. **Request Confirmation (GATE)**

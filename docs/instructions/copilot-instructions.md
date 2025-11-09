@@ -605,6 +605,8 @@ Always review Copilot suggestions:
 
 ## 📊 Complexity-Based Tool Selection with Validation Gate
 
+> ⚠️ **Experimental Protocol**: This classification system is an **experimental heuristic** that should be **adapted based on context**. Consider team expertise, organizational standards, and project requirements when applying these criteria. Use as guidance, not rigid rules.
+
 **NEW PROTOCOL**: All feature requests now follow automatic complexity classification with mandatory validation gate.
 
 ### Complexity Classification System
@@ -612,17 +614,18 @@ Always review Copilot suggestions:
 When user provides requirements, **ALWAYS** follow this protocol:
 
 #### Step 1: Automatic Analysis
-Analyze requirements and count:
-- **AL Objects**: How many tables, pages, codeunits, reports needed?
-- **Integrations**: Internal events only vs external APIs?
-- **Business Logic**: Simple validation vs complex calculations?
-- **Phases**: Can complete in 1 step vs needs multiple phases?
+Analyze requirements focusing on:
+- **Scope**: Limited/isolated vs moderate/broad vs extensive/enterprise-level
+- **Integrations**: None vs internal only vs external APIs/services
+- **Business Logic**: Simple/straightforward vs moderate vs complex workflows
+- **Phases**: Single step vs 2-3 phases vs 4+ phases
+- **Architectural Impact**: Low (extends patterns) vs medium vs high (new paradigms)
 
 #### Step 2: Infer Complexity
 Based on analysis, classify as:
 
 **🟢 LOW (Low)**:
-- 1-2 AL objects
+- Limited scope - isolated change
 - Single phase
 - No external integrations
 - Simple/clear logic
@@ -632,10 +635,10 @@ Based on analysis, classify as:
   - Test focus: `al-tester` → `al-developer`
 
 **🟡 MEDIUM (Medium)**:
-- 3-5 AL objects
+- Moderate scope - affects 2-3 functional areas
 - 2-3 phases
-- Internal integrations (events)
-- Moderate logic
+- Internal integrations (event subscribers, data flow)
+- Moderate logic with conditional workflows
 - **Route to** (by specialization):
   - Standard feature: `al-conductor` mode (TDD Orchestra)
   - API integration: `al-api` → `al-conductor`
@@ -643,10 +646,10 @@ Based on analysis, classify as:
   - Testing focus: `al-tester` → `al-conductor`
 
 **🔴 HIGH (High)**:
-- 6+ AL objects
+- Extensive scope - enterprise-level with broad impact
 - 4+ phases
-- External integrations (APIs, OAuth)
-- Complex business rules
+- External integrations (REST APIs, OAuth, Azure services)
+- Complex business rules and workflows
 - **Route to** (by specialization):
   - Standard complex: `al-architect` → `al-conductor`
   - Complex APIs: `al-api` → `al-architect` → `al-conductor`
@@ -658,16 +661,17 @@ Based on analysis, classify as:
 ```markdown
 🔍 Complexity Analysis:
 
-Detected Elements:
-- AL Objects: [count] ([list objects])
-- Integrations: [internal/external/none]
+Scope Assessment:
+- Scope: [limited/moderate/extensive]
+- Integrations: [none/internal/external]
 - Business Logic: [simple/moderate/complex]
 - Estimated Phases: [number]
+- Architectural Impact: [low/medium/high]
 
 📊 Inferred Complexity: [🟢 LOW / 🟡 MEDIUM / 🔴 HIGH]
 
 Reasoning:
-[Explain why this classification]
+[Explain classification based on scope, integration depth, and architectural impact]
 
 Recommended Path:
 [Suggest agent/workflow]

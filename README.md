@@ -93,12 +93,14 @@ cp -r prompts your-al-project/.github/
 3. **You confirm** the classification (🚦 VALIDATION GATE - mandatory)
 4. **Auto-routes** to the appropriate agent/workflow
 
-**Routing Matrix by Confirmed Complexity:**
+## 🚦 Routing Matrix by Confirmed Complexity
 
-| Complexity | Objects | Specialization | Route | Notes |
-|------------|---------|----------------|-------|-------|
-| 🟢 **LOW** | 1-2 | None | `al-developer` mode | Direct implementation, optional TDD |
-| 🟢 **LOW** | 1-2 | Debug needed | `al-debugger` → `al-developer` | Diagnose first, then fix |
+> ⚠️ **Experimental Classification**: This routing system is an **experimental approach** that should be **adapted to your context**. Complexity is assessed by scope, integration depth, and architectural impact—not by counting AL objects. Adjust based on team experience and project requirements.
+
+| Complexity | Specialization | Route | Notes |
+|------------|----------------|-------|-------|
+| 🟢 **LOW** | None | `al-developer` mode | Direct implementation, optional TDD |
+| 🟢 **LOW** | Debug needed | `al-debugger` → `al-developer` | Diagnose first, then fix |
 | 🟡 **MEDIUM** | 3-5 | Standard feature | `al-conductor` mode | TDD Orchestra, 2-3 phases |
 | 🟡 **MEDIUM** | 3-5 | API integration | `al-api` → `al-conductor` | Design endpoints first |
 | 🟡 **MEDIUM** | 3-5 | AI/Copilot feature | `al-copilot` → `al-conductor` | Design UX first |

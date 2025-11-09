@@ -2,7 +2,7 @@
 
 > **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI-Native Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **38 specialized Agent Primitives** across **3 systematic layers**. Features **AL Orchestra** multi-agent TDD system that transforms feature requests into code following BC best practices.
 
-> **v2.6.0 ** - Complete workflow validated: Architecture → TDD Implementation → PR Documentation.
+> **v2.6.0** - Complete workflow validated: Architecture → TDD Implementation → PR Documentation.
 
 [![Validation Status](https://img.shields.io/badge/validation-passing-brightgreen)](./validate-al-collection.js)
 [![Version](https://img.shields.io/badge/version-2.6.0-blue)](./CHANGELOG.md)
@@ -86,45 +86,7 @@ cp -r prompts your-al-project/.github/
 @workspace use al-initialize
 ```
 
-**Have a feature to implement?** The collection uses **automatic complexity classification** with validation gates:
 
-1. **Describe your requirements** (document, specs, or plain description)
-2. **System analyzes** and infers complexity: 🟢 LOW / 🟡 MEDIUM / 🔴 HIGH
-3. **You confirm** the classification (🚦 VALIDATION GATE - mandatory)
-4. **Auto-routes** to the appropriate agent/workflow
-
-## 🚦 Routing Matrix by Confirmed Complexity
-
-> ⚠️ **Experimental & Customizable Classification**: This routing system is an **experimental approach** that you can customize by editing framework files (`README.md`, `agents/index.md`, `instructions/copilot-instructions.md`) in your repository. Complexity is assessed by scope, integration depth, and architectural impact—not by counting AL objects. **Modify the criteria, thresholds, and routing paths** to match your team's expertise and project requirements.
-
-| Complexity | Domain | Scenario Description | Agent Route | Why This Path |
-|------------|--------|----------------------|-------------|---------------|
-| 🟢 **LOW** | 🎯 **Standard** | Simple field addition, basic validation, single UI change | `al-developer` | Direct implementation - scope is clear, no design needed |
-| 🟢 **LOW** | 🐛 **Bug Fix** | Known issue with clear reproduction steps | `al-debugger` → `al-developer` | Diagnose root cause first, then implement fix with tests |
-| 🟢 **LOW** | ✅ **Test Addition** | Adding tests to existing well-structured code | `al-tester` → `al-developer` | Design test strategy, then implement test cases |
-| 🟡 **MEDIUM** | 🏗️ **Feature** | Business logic with data flow, internal integrations | `al-conductor` | TDD orchestration ensures quality across 2-3 phases |
-| 🟡 **MEDIUM** | 🌐 **API** | RESTful endpoints, OData pages, internal API exposure | `al-api` → `al-conductor` | Design API contract first, then implement with TDD |
-| 🟡 **MEDIUM** | 🤖 **Copilot Feature** | Copilot capability, PromptDialog, basic AI integration | `al-copilot` → `al-conductor` | Design AI UX and prompts, then build with quality gates |
-| 🟡 **MEDIUM** | 🐛 **Complex Bug** | Intermittent issue requiring systematic investigation | `al-debugger` → `al-conductor` | Diagnose with profiling, then fix with comprehensive tests |
-| 🔴 **HIGH** | 🏛️ **Architecture** | Multi-module feature, new patterns, broad impact | `al-architect` → `al-conductor` | Design architecture first, then orchestrate TDD implementation |
-| 🔴 **HIGH** | 🌐 **Integration** | External APIs, OAuth, Azure services, webhooks | `al-api` → `al-architect` → `al-conductor` | API design → System architecture → Secure TDD implementation |
-| 🔴 **HIGH** | ⚡ **Performance** | System-wide optimization, architectural bottlenecks | `al-architect` → `al-conductor` | Analyze architecture impact, design optimization strategy |
-
-**Quick examples:**
-- 🟢 LOW: "Add Priority field to Sales Header" → `al-developer`
-- 🟡 MEDIUM: "Customer loyalty points with calculation" → `al-conductor`
-- 🔴 HIGH: "External API integration with OAuth and retry logic" → `al-api` → `al-architect` → `al-conductor`
-
-**Start here if unsure:**
-```markdown
-Use al-orchestrator mode
-
-I need to [describe your requirement]
-```
-
-The orchestrator will analyze, present complexity classification, wait for your confirmation, and route accordingly.
-
-**See full decision flow:** [Complete Development Flow Guide](./docs/workflows/complete-development-flow.md)
 
 ## 🏗️ AI Native-Instructions Architecture Framework
 
@@ -169,22 +131,28 @@ graph TB
 | **Agents** | 7 files | `Use [mode-name]` | Role-based strategic/tactical specialists |
 | **Orchestra System** | 4 files | `Use al-conductor` | Multi-agent TDD orchestration |
 | **Agentic Workflows** | 18 files | `@workspace use [name]` | Complete task execution processes |
-| **Total Primitives** | **38 tools** | — | Complete AI Native toolkit with TDD |## 📦 What's Included: Agent Primitives
+| **Total Primitives** | **38 tools** | — | Complete AI Native toolkit with TDD |
 
-### � Instructions Files (7 primitives)
+## 📦 What's Included: Agent Primitives
+
+### 📋 Instructions Files (9 primitives)
 
 **Markdown Prompt Engineering** implemented as modular `.instructions.md` files with `applyTo` patterns:
 
 **Always Active** (apply to `**/*.al`):
+- **al-guidelines** - Master hub referencing all patterns
 - **al-code-style** - Code formatting & feature-based structure
 - **al-naming-conventions** - PascalCase standards & 26-char limits
 - **al-performance** - SetLoadFields, early filtering, temporary tables
-- **al-guidelines** - Master hub referencing all patterns
 
 **Context-Activated** (apply based on context):
 - **al-error-handling** - TryFunctions, error labels, telemetry (`applyTo: **/*.al`)
 - **al-events** - Event subscribers, integration events (`applyTo: **/*.al`)
 - **al-testing** - AL-Go structure, test generation (`applyTo: **/test/**/*.al`)
+
+**Integration & Coordination**:
+- **copilot-instructions** - Master coordination document (auto-loaded as `.github/copilot-instructions.md`)
+- **index** - Complete instructions catalog and usage guide
 
 > 💡 **Context Engineering**: Instructions use `applyTo` frontmatter for selective loading, optimizing context window usage
 
@@ -223,7 +191,7 @@ graph TB
 **Role-based specialists** with MCP tool boundaries (like professional licensing):
 
 **Strategic Specialists** (design & analyze):
-- **al-orchestrator** 📚 - GUIDE/EXAMPLE: Reference for creating complex agents
+- **al-orchestrator** 🎯 - Smart router & workflow coordinator (GUIDE/EXAMPLE for agent creation)
 - **al-architect** 🏗️ - Solution architecture, cannot execute builds
 - **al-debugger** 🐛 - Deep diagnosis, systematic troubleshooting
 - **al-tester** ✅ - Testing strategy, TDD methodology
@@ -298,30 +266,45 @@ This comprehensive guide includes:
 
 > **📖 New to the collection?** Check the **[Complete Development Flow Guide](./docs/workflows/complete-development-flow.md)** for visual decision trees and pattern selection!
 
-### Building a New Feature (Pattern-Based)
+**Have a feature to implement?** The collection uses **automatic complexity classification** with validation gates:
 
-**Simple Feature** (1-2 objects, quick changes):
-```text
-1. Use al-developer mode
-2. Implement directly (auto-guidelines active)
-3. @workspace use al-build
+1. **Describe your requirements** (document, specs, or plain description)
+2. **System analyzes** and infers complexity: 🟢 LOW / 🟡 MEDIUM / 🔴 HIGH
+3. **You confirm** the classification (🚦 VALIDATION GATE - mandatory)
+4. **Auto-routes** to the appropriate agent/workflow
+
+## 🚦 Routing Matrix by Confirmed Complexity
+
+> ⚠️ **Experimental & Customizable Classification**: This routing system is an **experimental approach** that you can customize by editing framework files (`README.md`, `agents/index.md`, `instructions/copilot-instructions.md`) in your repository. Complexity is assessed by scope, integration depth, and architectural impact—not by counting AL objects. **Modify the criteria, thresholds, and routing paths** to match your team's expertise and project requirements.
+
+| Complexity | Domain | Scenario Description | Agent Route | Why This Path |
+|------------|--------|----------------------|-------------|---------------|
+| 🟢 **LOW** | 🎯 **Standard** | Simple field addition, basic validation, single UI change | `al-developer` | Direct implementation - scope is clear, no design needed |
+| 🟢 **LOW** | 🐛 **Bug Fix** | Known issue with clear reproduction steps | `al-debugger` → `al-developer` | Diagnose root cause first, then implement fix with tests |
+| 🟢 **LOW** | ✅ **Test Addition** | Adding tests to existing well-structured code | `al-tester` → `al-developer` | Design test strategy, then implement test cases |
+| 🟡 **MEDIUM** | 🏗️ **Feature** | Business logic with data flow, internal integrations | `al-conductor` | TDD orchestration ensures quality across 2-3 phases |
+| 🟡 **MEDIUM** | 🌐 **API** | RESTful endpoints, OData pages, internal API exposure | `al-api` → `al-conductor` | Design API contract first, then implement with TDD |
+| 🟡 **MEDIUM** | 🤖 **Copilot Feature** | Copilot capability, PromptDialog, basic AI integration | `al-copilot` → `al-conductor` | Design AI UX and prompts, then build with quality gates |
+| 🟡 **MEDIUM** | 🐛 **Complex Bug** | Intermittent issue requiring systematic investigation | `al-debugger` → `al-conductor` | Diagnose with profiling, then fix with comprehensive tests |
+| 🔴 **HIGH** | 🏛️ **Architecture** | Multi-module feature, new patterns, broad impact | `al-architect` → `al-conductor` | Design architecture first, then orchestrate TDD implementation |
+| 🔴 **HIGH** | 🌐 **Integration** | External APIs, OAuth, Azure services, webhooks | `al-api` → `al-architect` → `al-conductor` | API design → System architecture → Secure TDD implementation |
+| 🔴 **HIGH** | ⚡ **Performance** | System-wide optimization, architectural bottlenecks | `al-architect` → `al-conductor` | Analyze architecture impact, design optimization strategy |
+
+**Quick examples:**
+- 🟢 LOW: "Add Priority field to Sales Header" → `al-developer`
+- 🟡 MEDIUM: "Customer loyalty points with calculation" → `al-conductor`
+- 🔴 HIGH: "External API integration with OAuth and retry logic" → `al-api` → `al-architect` → `al-conductor`
+
+**Start here if unsure:**
+```markdown
+Use al-orchestrator mode
+
+I need to [describe your requirement]
 ```
 
-**Moderate Feature** (3-5 objects, needs tests):
-```text
-1. Use al-conductor mode
-2. Multi-phase TDD implementation
-3. Quality gates + documentation
-```
+The orchestrator will analyze, present complexity classification, wait for your confirmation, and route accordingly.
 
-**Complex Feature** (5+ objects, needs architecture):
-```text
-1. Use al-architect mode → Design
-2. Use al-conductor mode → Implement with TDD
-3. @workspace use al-pr-prepare
-```
-
-**[📊 See decision tree in Complete Flow Guide](./docs/workflows/complete-development-flow.md)**
+**[📊 See complete routing matrix and decision tree](./docs/workflows/complete-development-flow.md)**
 
 ### Debugging Issues
 
@@ -371,7 +354,7 @@ This comprehensive guide includes:
 
 ## 🛠️ Requirements
 
-- Visual Studio Code (latest version)
+- Visual Studio Code Insiders
 - AL Language extension for Business Central
 - GitHub Copilot extension (active subscription)
 - Business Central development environment (sandbox recommended)
@@ -628,7 +611,7 @@ MIT License - see [LICENSE](./LICENSE) file for details.
 **Last Updated**: 2025-11-08
 **Collection ID**: `al-development`
 **Version**: 2.6.0
-**Total Primitives**: 36 (7 instructions + 18 workflows + 11 agents + 1 guide)
+**Total Primitives**: 38 (9 instructions + 18 workflows + 11 agents)
 **Context Standard**: AGENTS.md ready
 **Latest**: AL Orchestra multi-agent TDD system with automated quality gates and documentation
 

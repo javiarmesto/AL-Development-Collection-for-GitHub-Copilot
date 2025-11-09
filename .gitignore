@@ -48,3 +48,5 @@ docs/prompts/al-pr.prepare.prompt.md
 # Build outputs
 site/
 _site/
+# Local test files and temporary work
+.local/

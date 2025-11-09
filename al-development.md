@@ -1,10 +1,10 @@
 # AL Development for Business Central
 
-**AI Native AL Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. Transform ad-hoc AI usage into systematic engineering through **38 Agent Primitives** across **4 framework layers**.
+**AI Native AL Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. Transform ad-hoc AI usage into systematic engineering through **38 Agent Primitives** across **3 framework layers**.
 
 ## Framework Architecture
 
-This collection implements the **AI Native-Instructions Architecture** with four systematic layers:
+This collection implements the **AI Native-Instructions Architecture** with three systematic layers:
 
 ### Layer 1: Markdown Prompt Engineering
 **Foundation** - Structured instructions using semantic markdown (headers, lists, links) that guide AI reasoning for predictable, repeatable results.
@@ -16,14 +16,13 @@ This collection implements the **AI Native-Instructions Architecture** with four
 - **💬 Agents** (7) - Role-based specialists with tool boundaries
 - **📖 Integration Guide** (1) - Master coordination document
 
-### Layer 3: Orchestra System
-**Multi-Agent TDD** - Specialized orchestration for complex features:
-- **🎭 Orchestra Agents** (4) - Conductor + 3 subagents (planning, implement, review)
-- **TDD Enforcement** - Strict RED → GREEN → REFACTOR cycle
-- **Quality Gates** - Automated validation before commits
-- **Cost Optimization** - Haiku 4.5 for implementation, Sonnet for strategy
+**🎭 Orchestra System** (4 agents) - Multi-agent TDD orchestration for MEDIUM/HIGH complexity:
+- **al-conductor** - Main orchestration agent coordinating Planning → Implementation → Review
+- **al-planning-subagent** - AL-aware research specialist
+- **al-implement-subagent** - TDD-focused implementation (Haiku 4.5 for cost optimization)
+- **al-review-subagent** - Code review validation
 
-### Layer 4: Context Engineering
+### Layer 3: Context Engineering
 **Strategic Management** - Optimized LLM context windows through modular loading, `applyTo` patterns, and AGENTS.md compilation readiness.
 
 ## What's Included: The 38 Agent Primitives
@@ -89,9 +88,9 @@ Invoke with `@workspace use [prompt-name]`:
 
 > 💡 **Tool Boundaries**: Like professional licensing, each mode has explicit CAN/CANNOT lists preventing dangerous cross-domain operations.
 
-### 🎭 Orchestra System (4 primitives - Layer 3)
+### 🎭 Orchestra System (4 primitives - Layer 2)
 
-**Multi-agent TDD orchestration** for MEDIUM/HIGH complexity features:
+**Multi-agent TDD orchestration** for MEDIUM/HIGH complexity features (specialized feature of this repository):
 
 - **al-conductor** 🎭 - Main orchestration agent coordinating Planning → Implementation → Review
 - **al-planning-subagent** 🔍 - AL-aware research specialist (BC objects, events, patterns)
@@ -403,10 +402,10 @@ Found an issue or have a suggestion? This collection improves through use:
 
 ### Framework Implementation
 - ✅ **Layer 1: Markdown Prompt Engineering** - Structured semantic markdown
-- ✅ **Layer 2: Agent Primitives** - 34 configurable tools (instructions + workflows + agents)
-- ✅ **Layer 3: Orchestra System** - Multi-agent TDD orchestration (4 agents)
-- ✅ **Layer 4: Context Engineering** - Modular `applyTo` patterns
+- ✅ **Layer 2: Agent Primitives** - 38 configurable tools (9 instructions + 18 workflows + 7 agents + 4 orchestra + 1 guide)
+- ✅ **Layer 3: Context Engineering** - Modular `applyTo` patterns
 - ✅ **AGENTS.md Ready** - Prepared for universal context compilation
+- ✅ **Orchestra System** - Multi-agent TDD orchestration (specialized feature)
 - ✅ **Validation Passing** - All compliance checks (47 successes, 13 warnings)
 - ✅ **Test Validated** - Customer Loyalty Points test (24/24 validations passed)
 

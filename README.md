@@ -487,7 +487,7 @@ AL-Development-Collection-for-GitHub-Copilot/
 │   ├── al-copilot-promptdialog.prompt.md        # PromptDialog creation
 │   ├── al-copilot-test.prompt.md                # AI Test Toolkit integration
 │   └── al-copilot-generate.prompt.md            # Natural language to code
-├── agents/                                       # 💬 Layer 3: Agents (7 + 4 files)
+├── agents/                                       # 💬 Layer 2: Agents (7 + 4 files)
 │   ├── index.md                                 # Complete agent guide
 │   ├── al-orchestrator.agent.md                 # 🎯 Smart router (START HERE)
 │   ├── al-architect.agent.md                    # 🏗️ Solution architecture
@@ -496,7 +496,7 @@ AL-Development-Collection-for-GitHub-Copilot/
 │   ├── al-tester.agent.md                       # ✅ Testing strategy
 │   ├── al-api.agent.md                          # 🌐 API development
 │   ├── al-copilot.agent.md                      # 🤖 AI features
-│   └── orchestration/                           # 🎭 Layer 4: Orchestra System (4 files)
+│   └── orchestration/                           # 🎭 Layer 2: Orchestra System (4 files) - Specialized feature
 │       ├── README.md                            # Complete Orchestra docs (23k chars)
 │       ├── index.md                             # Quick reference
 │       ├── al-conductor.agent.md                # Main orchestration agent

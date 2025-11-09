@@ -1,10 +1,10 @@
 # AL Development for Business Central
 
-**AI Native AL Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. Transform ad-hoc AI usage into systematic engineering through **38 Agent Primitives** across **3 framework layers**.
+**AI Native AL Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. Transform ad-hoc AI usage into systematic engineering through **38 Agent Primitives** across **4 framework layers**.
 
 ## Framework Architecture
 
-This collection implements the **AI Native-Instructions Architecture** with three systematic layers:
+This collection implements the **AI Native-Instructions Architecture** with four systematic layers:
 
 ### Layer 1: Markdown Prompt Engineering
 **Foundation** - Structured instructions using semantic markdown (headers, lists, links) that guide AI reasoning for predictable, repeatable results.
@@ -14,15 +14,21 @@ This collection implements the **AI Native-Instructions Architecture** with thre
 - **📋 Instructions** (9) - Auto-applied coding rules via `applyTo` patterns
 - **🎯 Agentic Workflows** (18) - Complete task execution processes
 - **💬 Agents** (7) - Role-based specialists with tool boundaries
-- **🎭 Orchestra System** (4) - Multi-agent TDD orchestration
 - **📖 Integration Guide** (1) - Master coordination document
 
-### Layer 3: Context Engineering
+### Layer 3: Orchestra System
+**Multi-Agent TDD** - Specialized orchestration for complex features:
+- **🎭 Orchestra Agents** (4) - Conductor + 3 subagents (planning, implement, review)
+- **TDD Enforcement** - Strict RED → GREEN → REFACTOR cycle
+- **Quality Gates** - Automated validation before commits
+- **Cost Optimization** - Haiku 4.5 for implementation, Sonnet for strategy
+
+### Layer 4: Context Engineering
 **Strategic Management** - Optimized LLM context windows through modular loading, `applyTo` patterns, and AGENTS.md compilation readiness.
 
 ## What's Included: The 38 Agent Primitives
 
-### 📋 Instructions Files (9 primitives)
+### 📋 Instructions Files (9 primitives - Layer 2)
 
 **Auto-applied persistent rules** via `applyTo` patterns for optimal **Context Engineering**:
 
@@ -43,7 +49,7 @@ This collection implements the **AI Native-Instructions Architecture** with thre
 
 > 💡 **Context Engineering in Action**: Instructions load only when relevant via `applyTo` frontmatter, preserving context window space for code understanding.
 
-### 🎯 Agentic Workflows (18 primitives)
+### 🎯 Agentic Workflows (18 primitives - Layer 2)
 
 **Complete systematic processes** as `.prompt.md` files with validation gates:
 
@@ -69,7 +75,7 @@ Invoke with `@workspace use [prompt-name]`:
 
 > 💡 **Agentic Workflows**: Prompts orchestrate all primitives (instructions, modes, tools) into end-to-end processes with human validation checkpoints.
 
-### 💬 Agents (7 primitives)
+### 💬 Agents (7 primitives - Layer 2)
 
 **Role-based specialists** with MCP tool boundaries preventing cross-domain security breaches:
 
@@ -83,7 +89,25 @@ Invoke with `@workspace use [prompt-name]`:
 
 > 💡 **Tool Boundaries**: Like professional licensing, each mode has explicit CAN/CANNOT lists preventing dangerous cross-domain operations.
 
-### 📖 Integration Guide (1 primitive)
+### 🎭 Orchestra System (4 primitives - Layer 3)
+
+**Multi-agent TDD orchestration** for MEDIUM/HIGH complexity features:
+
+- **al-conductor** 🎭 - Main orchestration agent coordinating Planning → Implementation → Review
+- **al-planning-subagent** 🔍 - AL-aware research specialist (BC objects, events, patterns)
+- **al-implement-subagent** 💻 - TDD-focused implementation with full AL MCP tools (Haiku 4.5)
+- **al-review-subagent** ✅ - Code review validation against AL best practices
+
+**Key Features**:
+- Strict TDD cycle enforcement (RED → GREEN → REFACTOR)
+- Event-driven validation (prevents base object modifications)
+- Auto-documentation in `.github/plans/`
+- Quality gates before each commit
+- Cost-optimized (30-40% reduction vs full Sonnet)
+
+> 💡 **When to Use**: MEDIUM complexity (2-3 phases) or HIGH complexity (4+ phases) features requiring systematic TDD approach.
+
+### 📖 Integration Guide (1 primitive - Layer 2)
 
 - **copilot-instructions.md** - Master document coordinating all 38 primitives with comprehensive usage guidance and workflow examples
 
@@ -128,12 +152,29 @@ Invoke with `@workspace use [prompt-name]`:
 
 ### Building a New Feature
 
+**Simple (🟢 LOW)**:
 ```text
-1. al-orchestrator → Analyze requirements
+1. al-orchestrator → Analyze & classify
+2. al-developer → Direct implementation
+3. @workspace use al-build → Deploy
+```
+
+**Moderate (🟡 MEDIUM)**:
+```text
+1. al-orchestrator → Analyze & classify
 2. al-architect → Design architecture
-3. al-developer → Implement code (NEW)
-4. al-tester → Test strategy
-5. @workspace use al-permissions → Security
+3. al-conductor → TDD orchestration (Planning → Implement → Review)
+4. @workspace use al-permissions → Security
+5. @workspace use al-build → Deploy
+```
+
+**Complex (🔴 HIGH)**:
+```text
+1. al-orchestrator → Analyze & classify
+2. al-architect → Complete architecture design
+3. al-api/al-copilot → Specialized design (if needed)
+4. al-conductor → Multi-phase TDD implementation
+5. @workspace use al-performance → Validation
 6. @workspace use al-build → Deploy
 ```
 
@@ -254,34 +295,46 @@ Phase 3: First Feature
 Would you like to start with Phase 1?"
 ```
 
-### Example 2: Experienced Developer with Complex Task
+### Example 2: Experienced Developer with MEDIUM Complexity Task
 
 ```markdown
-User: "Build AI-powered API for sales forecasting"
+User: "Build customer loyalty points system"
 
 al-orchestrator analyzes:
-"This is a complex multi-domain project requiring:
-- Architecture planning
-- API development
-- AI integration
-- Testing
+"Let me assess the complexity:
 
-Recommended 4-phase approach:
+Scope Assessment:
+- Scope: Moderate (Customer + Sales + Loyalty domains)
+- Integration: Internal (OnAfterPostSalesDoc event)
+- Logic: Moderate (calculations, redemptions)
+- Phases: 6-7
+- Impact: Medium
 
-Phase 1: Architecture (al-architect mode)
-- Design how AI and API layers interact
-- Data flow and caching strategy
-- Duration: 3-4 hours
+🚦 VALIDATION GATE:
+📊 Inferred Complexity: 🟡 MEDIUM
+Recommended Path: al-architect → al-conductor
 
-Phase 2A & 2B: Parallel Development
-- 2A: al-api mode (API endpoints)
-- 2B: al-copilot mode (AI features)
-- Duration: 1 day each
+Confirm classification? [Yes/Adjust]"
 
-Phase 3: Integration (@workspace use al-build)
-Phase 4: Testing (al-tester mode)
+User confirms, then workflow:
 
-Ready to start with Phase 1 architecture?"
+Phase 1: Architecture (al-architect mode - 20 min)
+- Event-driven design
+- Data model (2 tables + extensions)
+- Integration points
+
+Phase 2: TDD Implementation (al-conductor mode - 90 min)
+- Planning subagent: Researches BC objects
+- Creates 6-phase plan
+- Implement subagent executes each phase:
+  * Phase 1: Core tables (RED → GREEN → REFACTOR)
+  * Phase 2-6: Customer integration, calculations, UI
+- Review subagent validates quality gates
+- Auto-generates documentation
+
+Result: 10 AL objects, 63 tests (100% passing), production-ready
+
+Total time: 2 hours (vs 2 days manual)"
 ```
 
 ### Example 3: Debugging Performance Issue
@@ -342,18 +395,20 @@ Found an issue or have a suggestion? This collection improves through use:
 ## Framework Compliance
 
 **Framework**: [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)  
-**Version**: 2.5.0  
-**Last Updated**: 2025-10-31  
+**Version**: 2.6.0  
+**Last Updated**: 2025-11-09  
 **Author**: javiarmesto  
-**Total Primitives**: 32 (7 instructions + 18 workflows + 7 modes + 1 guide)  
+**Total Primitives**: 38 (9 instructions + 18 workflows + 7 agents + 4 orchestra)  
 **Status**: ✅ Fully compliant with AI Native-Instructions Architecture
 
 ### Framework Implementation
 - ✅ **Layer 1: Markdown Prompt Engineering** - Structured semantic markdown
-- ✅ **Layer 2: Agent Primitives** - 28 configurable tools
-- ✅ **Layer 3: Context Engineering** - Modular `applyTo` patterns
+- ✅ **Layer 2: Agent Primitives** - 34 configurable tools (instructions + workflows + agents)
+- ✅ **Layer 3: Orchestra System** - Multi-agent TDD orchestration (4 agents)
+- ✅ **Layer 4: Context Engineering** - Modular `applyTo` patterns
 - ✅ **AGENTS.md Ready** - Prepared for universal context compilation
-- ✅ **Validation Passing** - All 34 compliance checks
+- ✅ **Validation Passing** - All compliance checks (47 successes, 13 warnings)
+- ✅ **Test Validated** - Customer Loyalty Points test (24/24 validations passed)
 
 ## Related Resources
 

@@ -379,38 +379,50 @@ Expected output:
 
 ## 📖 Usage Examples
 
-### Example 1: New Developer
+### Example 1: Simple Feature (🟢 LOW Complexity)
 ```markdown
-User: "I'm new to AL. How do I start?"
+User: "Add email validation to Customer table"
 
-Response from al-orchestrator:
-"Let's get you set up. Use @workspace use al-initialize
-to initialize your project. The auto-applied guidelines
-will help you code correctly from day one."
+Classification: 🟢 LOW
+- Scope: Limited (single table)
+- Integration: None
+- Route: al-developer mode
+
+Result: Field + validation implemented in ~5 minutes
 ```
 
-### Example 2: Complex Task
+### Example 2: Feature Development (🟡 MEDIUM Complexity)
 ```markdown
-User: "Build AI-powered API for sales forecasting"
+User: "Build customer loyalty points system"
 
-Response from al-orchestrator:
-"This needs 4 phases:
-1. al-architect - Design architecture (3-4 hours)
-2. al-api + al-copilot - Build in parallel (1 day)
-3. Integration - Connect layers (1-2 days)
-4. al-tester - Comprehensive testing (1 day)"
+Classification: 🟡 MEDIUM
+- Scope: Moderate (Customer + Sales + Loyalty)
+- Integration: Internal (event subscribers)
+- Route: al-architect → al-conductor (TDD Orchestra)
+
+Workflow:
+1. al-architect designs architecture (20 min)
+2. al-conductor orchestrates implementation:
+   - Planning subagent researches BC objects
+   - Implement subagent executes 7 TDD phases
+   - Review subagent validates quality gates
+3. Result: 10 AL objects, 63 tests, 100% passing (90 min)
 ```
 
-### Example 3: Performance Issue
+### Example 3: Complex Integration (🔴 HIGH Complexity)
 ```markdown
-User: "My report is slow"
+User: "Integrate with external payment gateway (OAuth + webhooks)"
 
-Response from al-debugger:
-"Let's diagnose it systematically:
-1. @workspace use al-performance.triage (quick analysis)
-2. @workspace use al-performance (deep profiling)
-3. Apply optimizations
-4. Re-profile to verify"
+Classification: 🔴 HIGH
+- Scope: Extensive (Sales + Finance + Security + API)
+- Integration: External (REST API, OAuth 2.0)
+- Route: al-api → al-architect → al-conductor
+
+Workflow:
+1. al-api designs API contract (1 hour)
+2. al-architect plans system architecture (2 hours)
+3. al-conductor implements with TDD (1-2 days)
+4. Security review + performance profiling
 ```
 
 ## 🤝 Contributing
@@ -437,65 +449,112 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
 
 ## 📋 File Structure
 
-**AI Native-Instructions Architecture** implementation following VSCode Copilot conventions:
+**AI Native-Instructions Architecture** with **38 Agent Primitives** across **4 layers**:
 
 ```
 AL-Development-Collection-for-GitHub-Copilot/
-├── .github/                                      # GitHub templates only
-├   ├── ISSUE_TEMPLATE/                          # Issue templates (3)
-│   └── PULL_REQUEST_TEMPLATE.md                 # PR template
-├── instructions/                                 # 📋 Instructions (8 files)
-│   ├── index.md                                 # Complete instructions guide
+├── .github/                                      # GitHub integration
+│   ├── ISSUE_TEMPLATE/                          # Issue templates
+│   ├── PULL_REQUEST_TEMPLATE.md                 # PR template
+│   └── copilot-instructions.md                  # Master coordination (symlink)
+├── instructions/                                 # 📋 Layer 1: Instructions (9 files)
+│   ├── index.md                                 # Complete guide
 │   ├── copilot-instructions.md                  # Master integration guide
-│   ├── al-guidelines.instructions.md            # applyTo: **/*.{al,json}
-│   ├── al-code-style.instructions.md            # applyTo: **/*.al
-│   ├── al-naming-conventions.instructions.md
-│   ├── al-performance.instructions.md
-│   ├── al-error-handling.instructions.md
-│   ├── al-events.instructions.md
-│   └── al-testing.instructions.md               # applyTo: **/test/**/*.al
-├── prompts/                                      # 🎯 Agentic Workflows (15 files)
+│   ├── al-guidelines.instructions.md            # Master hub (applyTo: **/*.{al,json})
+│   ├── al-code-style.instructions.md            # Code style (applyTo: **/*.al)
+│   ├── al-naming-conventions.instructions.md    # Naming rules
+│   ├── al-performance.instructions.md           # Performance patterns
+│   ├── al-error-handling.instructions.md        # Error handling
+│   ├── al-events.instructions.md                # Event-driven patterns
+│   └── al-testing.instructions.md               # Testing (applyTo: **/test/**/*.al)
+├── prompts/                                      # 🎯 Layer 2: Agentic Workflows (18 files)
 │   ├── index.md                                 # Complete workflows guide
 │   ├── al-initialize.prompt.md                  # Environment & workspace setup
-│   ├── al-diagnose.prompt.md                    # Debugging & troubleshooting
+│   ├── al-diagnose.prompt.md                    # Debug & troubleshoot
+│   ├── al-build.prompt.md                       # Build & deployment
+│   ├── al-events.prompt.md                      # Event implementation
+│   ├── al-performance.prompt.md                 # Deep profiling
+│   ├── al-performance.triage.prompt.md          # Quick analysis
+│   ├── al-permissions.prompt.md                 # Permission generation
+│   ├── al-migrate.prompt.md                     # Version migration
+│   ├── al-pages.prompt.md                       # Page Designer
+│   ├── al-spec.create.prompt.md                 # Specifications
+│   ├── al-pr-prepare.prompt.md                  # Pull request prep
+│   ├── al-translate.prompt.md                   # XLF translation
+│   ├── al-context.create.prompt.md              # Context file generation
+│   ├── al-memory.create.prompt.md               # Memory file generation
 │   ├── al-copilot-capability.prompt.md          # Copilot capability registration
-│   ├── al-copilot-promptdialog.prompt.md        # PromptDialog page creation
-│   ├── al-copilot-test.prompt.md                # Copilot testing with AI Test Toolkit
-│   └── ... (14 total workflow prompts)
-├── agents/                                       # 💬 Agents (11 files)
-│   ├── index.md                                  # Complete guide
-│   ├── al-orchestrator.agent.md                 # Smart router (guide/example)
-│   ├── al-architect.agent.md                    # Architecture specialist
-│   ├── ... (6 more strategic/tactical modes)
-│   └── orchestration/                           # 🎭 AL Orchestra System (4 files)
-│       ├── README.md                            # Complete Orchestra documentation
+│   ├── al-copilot-promptdialog.prompt.md        # PromptDialog creation
+│   ├── al-copilot-test.prompt.md                # AI Test Toolkit integration
+│   └── al-copilot-generate.prompt.md            # Natural language to code
+├── agents/                                       # 💬 Layer 3: Agents (7 + 4 files)
+│   ├── index.md                                 # Complete agent guide
+│   ├── al-orchestrator.agent.md                 # 🎯 Smart router (START HERE)
+│   ├── al-architect.agent.md                    # 🏗️ Solution architecture
+│   ├── al-developer.agent.md                    # 💻 Tactical implementation
+│   ├── al-debugger.agent.md                     # 🐛 Deep debugging
+│   ├── al-tester.agent.md                       # ✅ Testing strategy
+│   ├── al-api.agent.md                          # 🌐 API development
+│   ├── al-copilot.agent.md                      # 🤖 AI features
+│   └── orchestration/                           # 🎭 Layer 4: Orchestra System (4 files)
+│       ├── README.md                            # Complete Orchestra docs (23k chars)
 │       ├── index.md                             # Quick reference
 │       ├── al-conductor.agent.md                # Main orchestration agent
-│       ├── al-planning-subagent.agent.md              # Research specialist
-│       ├── al-implement-subagent.agent.md             # TDD implementation
-│       └── al-review-subagent.agent.md                # Code review validation
+│       ├── al-planning-subagent.agent.md        # AL-aware research
+│       ├── al-implement-subagent.agent.md       # TDD implementation (Haiku 4.5)
+│       └── al-review-subagent.agent.md          # Quality validation
+├── docs/                                         # Documentation mirrors
+│   ├── agents/                                  # Agent documentation
+│   ├── instructions/                            # Instructions documentation
+│   ├── prompts/                                 # Prompts documentation
+│   └── workflows/
+│       └── complete-development-flow.md         # Visual workflow guide
 ├── collections/                                  # Collection manifests
-│   └── al-development.collection.yml            # Main collection definition
+│   └── al-development.collection.yml            # Main collection (38 primitives)
 ├── references/                                   # Framework documentation
-│   ├── AI Native-INSTRUCTIONS-ARCHITECTURE.md   # Framework implementation
-│   ├── ai native-concepts.md                    # Framework concepts
-│   └── ai native structure.md                   # Framework structure
+│   ├── AI Native-INSTRUCTIONS-ARCHITECTURE.md   # Framework compliance
+│   ├── ai native-concepts.md                    # Core concepts
+│   └── ai native structure.md                   # Structure guide
 ├── archive/                                      # Historical files
-├── al-development.md                            # User documentation
+├── al-development.md                            # Framework overview
 ├── CONTRIBUTING.md                              # Contribution guidelines
+├── CHANGELOG.md                                 # Version history
 ├── LICENSE                                      # MIT License
 ├── SECURITY.md                                  # Security policy
 ├── validate-al-collection.js                    # Compliance validation
 ├── package.json                                 # Dependencies
 └── README.md                                    # This file
 
-# Ready for AGENTS.md compilation (Layer 3: Context Engineering)
+# Total: 38 Agent Primitives (9 + 18 + 7 + 4)
+# AGENTS.md compilation ready (Layer 3: Context Engineering)
 # All primitives use applyTo patterns for modular context loading
 ```
 
 ## 🏷️ Version History
 
-### 2.6.0 (2025-11-08) - AL Orchestra Multi-Agent TDD System
+### 2.6.0 (2025-11-09) - Routing Matrix Optimization & Complexity Classification
+- 🎯 **Routing Matrix Optimization** - Streamlined from 14 to 10 essential paths
+  - Removed edge cases (AI System, Migration) for clarity
+  - Enhanced with 5-column format: Domain | Scenario | Route | Rationale
+  - Added domain icons for visual identification (🎯🐛✅🏗️🌐🤖⚡)
+- 📊 **Complexity Classification System** - Scope-based assessment framework
+  - 5-question framework (Scope, Integration, Logic, Phases, Impact)
+  - Removed all object count references (conceptual purity)
+  - 🚦 **Validation Gate Protocol** - Mandatory user confirmation before routing
+  - Experimental & customizable by teams (documented adaptation process)
+- 🧪 **Test Validation** - Complete framework testing with Customer Loyalty Points
+  - 24/24 validations passed (100% success rate)
+  - 7-phase TDD workflow validated
+  - Test execution documented in `.local/test-execution-results-2025-11-09.md`
+- 📚 **Workshop Materials Updated** - Complete workshop v2.0 ready
+  - Added complexity assessment module (30 min)
+  - Added customization workshop module (30 min)
+  - 6 practice classification exercises with solutions
+  - Updated to 7 parts, 4h 45min total duration
+- 📊 **Total Primitives** - 38 tools unchanged (9 + 18 + 7 + 4)
+- 🎓 **Framework Maturity** - Production-ready with test validation
+
+### 2.6.0-beta (2025-11-08) - AL Orchestra Multi-Agent TDD System
 - 🎭 **AL Orchestra System** - NEW multi-agent TDD orchestration (4 agents)
   - **al-conductor**: Main orchestration agent for Planning → Implementation → Review → Commit cycle
   - **al-planning-subagent**: AL-aware research and context gathering

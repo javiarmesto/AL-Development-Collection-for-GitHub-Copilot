@@ -20,7 +20,7 @@
 ### Prerequisites
 
 - **Node.js** (v14.0.0 or higher) - [Download here](https://nodejs.org/en/download)
-- **Visual Studio Code** with GitHub Copilot extension
+- **Visual Studio Code Insiders** with GitHub Copilot extension
 - **AL Language extension** for VS Code
 
 ### Installation

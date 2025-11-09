@@ -1,6 +1,6 @@
 id: al-development
 name: AL Development for Business Central
-description: AI Native Development toolkit implementing the A-Instructions Architecture framework with 36 Agent Primitives across 3 systematic layers. Provides Markdown Prompt Engineering through Instructions files, Agentic Workflows via prompts, and Context Engineering through applyTo patterns for optimal LLM performance in Business Central development. Includes multi-agent TDD orchestration system.
+description: AI Native Development toolkit implementing the A-Instructions Architecture framework with 38 Agent Primitives across 3 systematic layers. Provides Markdown Prompt Engineering through Instructions (9), Agentic Workflows (18), Chat Modes (7), Orchestra System (4) and Context Engineering via applyTo patterns for optimal LLM performance in Business Central development. Includes multi-agent TDD orchestration and complete workflow documentation.
 tags: [al, business-central, dynamics365, erp, microsoft, ai-native, a-instructions, agent-primitives, context-engineering, copilot, tdd, orchestration]
 
 items:
@@ -60,11 +60,32 @@ items:
   - path: prompts/al-memory.create.prompt.md
     kind: prompt
 
-  # Layer 2: Agent Primitives - Agents (7 files)
+  # Layer 3: Integration Guide & Documentation (2 files)
+  # Master coordination documents linking all Agent Primitives
+  - path: instructions/copilot-instructions.md
+    kind: instruction
+    description: |
+      Master integration document for GitHub Copilot. This is the collection's main coordination hub,
+      linking all 37 Agent Primitives and providing usage patterns for the complete AL Development Collection.
+      
+      Auto-loaded as .github/copilot-instructions.md per GitHub Copilot conventions.
+      Contains architecture overview, agent coordination, workflow examples, and critical AL patterns.
+  
+  - path: docs/workflows/complete-development-flow.md
+    kind: instruction
+    description: |
+      Complete visual guide for development workflows from requirements to deployment.
+      Includes decision tree, flow patterns (Simple/Moderate/Complex), specialized flows (API/Copilot/Performance),
+      end-to-end examples, and agent interaction matrix.
+      
+      Use as reference to understand when to use workflows vs Orchestra, how agents interact,
+      and complete workflow patterns for different feature complexities.
+
+  # Layer 2: Agent Primitives - Chat Modes (7 files)
   # Role-based specialists with MCP tool boundaries preventing cross-domain operations
   - path: agents/al-orchestrator.agent.md
     kind: agent
-    usage: recommended
+    usage: deprecated
     description: |
       Strategic router and workflow coordinator implementing Markdown Prompt Engineering principles. This is your entry point for complex tasks - it analyzes requirements and orchestrates the right combination of Agent Primitives (Instructions, Workflows, Chat Modes) for optimal results.
 
@@ -379,7 +400,7 @@ items:
       - Mention any specific business rules
       - Let the mode delegate if architectural decisions arise
 
-  # Layer 2: Agent Primitives - Orchestration System (4 files)
+  # Layer 2: Agent Primitives - Orchestra System (4 files)
   # Multi-agent TDD workflow coordination following GitHub Copilot Orchestra pattern
   # Adapted for AL development with Business Central best practices
   - path: agents/orchestration/al-conductor.agent.md
@@ -426,9 +447,9 @@ items:
       - Commit after each phase (don't skip commit gates)
       - Trust the TDD process (tests first, then minimal code)
       
-  - path: agents/orchestration/al-planning.subagent.md
+  - path: agents/orchestration/al-planning-subagent.agent.md
     kind: agent
-    usage: subagent
+    usage: optional
     description: |
       AL-aware research and context gathering subagent for Business Central development.
       Analyzes codebase structure, dependencies, AL objects, event architecture, and AL-Go structure.
@@ -452,9 +473,9 @@ items:
       - Performance context
       - Implementation recommendations
       
-  - path: agents/orchestration/al-implement.subagent.md
+  - path: agents/orchestration/al-implement-subagent.agent.md
     kind: agent
-    usage: subagent
+    usage: optional
     description: |
       TDD-focused implementation subagent with full AL MCP tool access for Business Central.
       Executes implementation tasks following strict Test-Driven Development with AL patterns.
@@ -482,9 +503,9 @@ items:
       
       Uses Claude Haiku 4.5 for cost-efficient execution.
       
-  - path: agents/orchestration/al-review.subagent.md
+  - path: agents/orchestration/al-review-subagent.agent.md
     kind: agent
-    usage: subagent
+    usage: optional
     description: |
       AL code review subagent validating implementation quality for Business Central.
       Checks test coverage, AL patterns, performance, and BC best practices.

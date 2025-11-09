@@ -9,10 +9,11 @@ This is a **meta-collection** for AL (Application Language) development targetin
 ### Layer 1: Markdown Prompt Engineering
 Structured instructions using semantic markdown (headers, lists, links) that guide AI reasoning predictably. All files use precise language patterns that LLMs parse effectively.
 
-### Layer 2: Agent Primitives (32 tools)
+### Layer 2: Agent Primitives (37 tools)
 - **Instructions** (7): Auto-applied via `applyTo` patterns - coding standards that activate based on file type
 - **Agentic Workflows** (18): Complete processes invoked via `@workspace use [name]` - systematic execution with validation gates
 - **Chat Modes** (7): Role-based specialists switched via `Use [mode]` - strategic consulting and tactical execution with MCP tool boundaries
+- **Orchestra System** (4): Multi-agent TDD orchestration (al-conductor + 3 subagents) for structured Planning → Implementation → Review → Commit cycles
 - **Integration Guide** (1): Master coordination document (`instructions/copilot-instructions.md`)
 
 ### Layer 3: Context Engineering
@@ -154,15 +155,27 @@ Invoked via `@workspace use [name]`:
 
 ### Chat Modes
 Strategic specialists (not executors):
-- **al-orchestrator**: Entry point - analyzes requests and routes to appropriate tools (GUIDE/EXAMPLE for creating complex modes)
-- **al-architect**: Solution design - **cannot** execute builds, only designs
-- **al-developer**: Tactical implementation - **can** execute builds, edit code, run tests (NEW - fills execution gap)
+- **al-orchestrator**: ⚠️ DEPRECATED - Use al-conductor instead. Retained as educational reference for creating complex agents.
+- **al-architect**: Solution design - **cannot** execute builds, only designs. Use before al-conductor for architecture planning.
+- **al-developer**: Tactical implementation - **can** execute builds, edit code, run tests. For simple changes outside Orchestra.
 - **al-debugger**: Diagnosis - **cannot** run debugger, only analyzes and recommends al-diagnose workflow
 - **al-tester**: Test strategy - **cannot** run tests, only designs test approach
 - **al-api**: API design/implementation - REST, OData, authentication
 - **al-copilot**: AI feature design - Azure OpenAI integration, prompt engineering, responsible AI
 
 **Tool Boundaries**: Each mode has explicit CAN/CANNOT lists preventing scope creep (like professional licensing).
+
+### Orchestra System (Multi-Agent TDD)
+Structured Test-Driven Development with automatic planning, implementation, and review:
+- **al-conductor**: Main orchestrator - coordinates Planning → Implementation → Review → Commit cycles
+- **al-planning-subagent**: AL-aware research - gathers context about base objects, events, AL-Go structure (called by conductor)
+- **al-implement-subagent**: TDD implementation - executes RED (tests) → GREEN (code) → REFACTOR (called by conductor)
+- **al-review-subagent**: Quality assurance - validates against AL best practices, checks test coverage (called by conductor)
+
+**Use Orchestra when**: Complex features (3+ objects), need TDD enforcement, require quality gates, want documentation trail.
+**Use Workflows when**: Simple tasks (1-2 files), quick operations, no comprehensive tests needed.
+
+See [`agents/orchestration/README.md`](../agents/orchestration/README.md) for complete Orchestra documentation.
 
 ## Common Commands/Workflows
 
@@ -340,26 +353,23 @@ Expected output:
 4. `al-error-handling` activates if validation added
 5. Result: Production-ready code following all BC best practices automatically
 
-**For complex tasks**: al-orchestrator analyzes → routes to al-architect (design) → **al-developer executes** (NEW - with full build tools) → al-tester designs tests → auto-instructions maintain quality throughout.
+**For simple tasks**: Use direct workflows or chat modes (al-developer, al-tester, etc.)
 
-**For complex tasks**: al-orchestrator analyzes → routes to al-architect (design) → recommends al-build workflow (execute) → al-tester designs tests → auto-instructions maintain quality throughout.
+**For complex tasks with TDD**: al-conductor orchestrates → al-planning-subagent researches → al-implement-subagent executes TDD → al-review-subagent validates → documentation generated
 
-**Starting point when unsure**: `Use al-orchestrator mode`
+**Starting point when unsure**: `Use al-conductor mode` (for complex features) or direct workflows (for simple tasks)
 **Setup new project**: `@workspace use al-initialize`
 **Debug runtime issue**: `@workspace use al-diagnose`
 **Performance problem**: `@workspace use al-performance` or `al-performance.triage`
 **Build & deploy**: `@workspace use al-build`
-**Design architecture**: `Use al-architect mode`
-**Implement features**: `Use al-developer mode` (NEW - full tool access)
+**Design architecture**: `Use al-architect mode` → then `Use al-conductor mode` for implementation
+**Implement simple features**: `Use al-developer mode` or direct workflows
+**Implement complex features with TDD**: `Use al-conductor mode`
 **Test strategy**: `Use al-tester mode`
 **API work**: `Use al-api mode`
 **AI features**: `Use al-copilot mode`
 
 **Framework**: [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)  
-**Version**: 2.5.0  
-**Total Primitives**: 32 (7 instructions + 18 workflows + 7 modes + 1 guide)  
-**Validation**: Run `npm run validate` before committing
-**Total Primitives**: 30 (7 instructions + 16 workflows + 7 modes + 1 guide)  
-**Validation**: Run `npm run validate` before committing
-**Total Primitives**: 29 (7 instructions + 15 workflows + 6 modes + 1 guide)  
+**Version**: 2.6.0  
+**Total Primitives**: 37 (7 instructions + 18 workflows + 7 modes + 4 Orchestra agents + 1 guide)  
 **Validation**: Run `npm run validate` before committing

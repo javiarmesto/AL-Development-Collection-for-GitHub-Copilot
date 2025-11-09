@@ -46,7 +46,7 @@ I need to add email validation to the Customer table
 
 **Model**: Claude Sonnet 4.5
 
-### al-planning.subagent.md
+### al-planning-subagent.agent.md
 **AL-aware research specialist** that gathers context for plan creation.
 
 **Invoked by**: al-conductor (not for direct use)
@@ -62,7 +62,7 @@ I need to add email validation to the Customer table
 
 **Model**: Claude Sonnet 4.5
 
-### al-implement.subagent.md
+### al-implement-subagent.agent.md
 **TDD-focused implementation specialist** with full AL MCP tool access.
 
 **Invoked by**: al-conductor (not for direct use)
@@ -79,7 +79,7 @@ I need to add email validation to the Customer table
 
 **Model**: Claude Haiku 4.5 (cost-optimized for execution)
 
-### al-review.subagent.md
+### al-review-subagent.agent.md
 **Quality assurance specialist** for AL code validation.
 
 **Invoked by**: al-conductor (not for direct use)
@@ -101,7 +101,7 @@ I need to add email validation to the Customer table
 ### Phase 1: Planning
 
 1. **User describes feature**: "Add email validation to Customer"
-2. **Conductor delegates research** → al-planning.subagent analyzes AL codebase
+2. **Conductor delegates research** → al-planning-subagent analyzes AL codebase
 3. **Planning returns findings**: Base objects, extensions, event architecture, AL-Go structure
 4. **Conductor creates multi-phase plan** (typically 3-10 phases)
 5. **User reviews and approves plan** → **MANDATORY STOP**
@@ -368,9 +368,9 @@ Default models are optimized for cost/quality balance:
 
 ```yaml
 al-conductor.agent.md: Claude Sonnet 4.5  # Strategic decisions
-al-planning.subagent.md: Claude Sonnet 4.5  # Complex analysis
-al-implement.subagent.md: Claude Haiku 4.5  # Cost-efficient execution
-al-review.subagent.md: Claude Sonnet 4.5  # Thorough review
+al-planning-subagent.agent.md: Claude Sonnet 4.5  # Complex analysis
+al-implement-subagent.agent.md: Claude Haiku 4.5  # Cost-efficient execution
+al-review-subagent.agent.md: Claude Sonnet 4.5  # Thorough review
 ```
 
 To change models, edit the `model:` field in frontmatter.
@@ -455,9 +455,9 @@ Orchestra **complements** existing AL Development Collection agents:
 ```
 al-architect (design) → al-conductor (orchestrate) → al-developer (execute)
                               ↓
-                       al-planning.subagent (research)
-                       al-implement.subagent (TDD)
-                       al-review.subagent (validate)
+                       al-planning-subagent (research)
+                       al-implement-subagent (TDD)
+                       al-review-subagent (validate)
 ```
 
 **Workflow**:

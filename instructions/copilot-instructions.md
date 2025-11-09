@@ -3,7 +3,7 @@
 # GitHub Copilot Instructions for AL Development
 
 ## Overview
-This workspace contains AL (Application Language) code for Microsoft Dynamics 365 Business Central. This is an **AI Native AL Development** toolkit implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. GitHub Copilot is configured with **29 Agent Primitives** across **3 framework layers** to assist with AL development following Microsoft's best practices and this project's specific standards.
+This workspace contains AL (Application Language) code for Microsoft Dynamics 365 Business Central. This is an **AI Native AL Development** toolkit implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. GitHub Copilot is configured with **38 Agent Primitives** across **3 framework layers** to assist with AL development following Microsoft's best practices and this project's specific standards.
 
 ### Framework Architecture
 This collection implements the **AI Native-Instructions Architecture** with three systematic layers:
@@ -18,7 +18,7 @@ This collection implements the **AI Native-Instructions Architecture** with thre
 
 ## 🎯 Complete Toolset Available
 
-This workspace provides **32 Agent Primitives** organized into **four layers** of Copilot assistance leveraging the AI Native-Instructions Architecture:
+This workspace provides **38 Agent Primitives** organized across **3 framework layers** of Copilot assistance leveraging the AI Native-Instructions Architecture:
 
 ### Layer 1: Auto-Applied Instructions (Always Active)
 Located in `instructions/` - These **Agent Primitives** apply automatically based on file type via `applyTo` patterns:
@@ -758,7 +758,7 @@ This workspace configuration evolves based on usage. If you find:
 - Missing functionality → Suggest new prompts or modes
 - Conflicting guidance → Report for clarification
 
-Remember: **You have 29 Agent Primitives working together to make AL development easier, faster, and better!**
+Remember: **You have 38 Agent Primitives working together to make AL development easier, faster, and better!**
 
 ---
 

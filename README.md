@@ -1,10 +1,10 @@
 # AL Development Collection for GitHub Copilot
 
-> **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI-Native Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **36 specialized Agent Primitives** across **3 systematic layers**. Now includes **AL Orchestra** multi-agent TDD system.
+> **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI-Native Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **38 specialized Agent Primitives** across **3 systematic layers**. Now includes **AL Orchestra** multi-agent TDD system for structured Test-Driven Development.
 
 [![Validation Status](https://img.shields.io/badge/validation-passing-brightgreen)](./validate-al-collection.js)
-[![Version](https://img.shields.io/badge/version-2.6-blue)](./CHANGELOG.md)
-[![Tools](https://img.shields.io/badge/tools-36-orange)](./al-development.md)
+[![Version](https://img.shields.io/badge/version-2.6.0-blue)](./CHANGELOG.md)
+[![Tools](https://img.shields.io/badge/tools-38-orange)](./al-development.md)
 [![Framework](https://img.shields.io/badge/framework-A--Instructions-purple)](https://danielmeppiel.github.io/awesome-ai-native/)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/javiarmesto/AL-Development-Collection-for-GitHub-Copilot)](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/issues)
@@ -136,12 +136,12 @@ graph TB
 
 | Primitive Type | Count | Activation | Purpose |
 |----------------|-------|------------|---------|  
-| **Instructions** | 7 files | Auto via `applyTo` patterns | Persistent coding rules & standards |
+| **Instructions** | 9 files | Auto via `applyTo` patterns | Persistent coding rules & standards |
 | **Chat Modes** | 7 files | `Use [mode-name]` | Role-based strategic/tactical specialists |
-| **Orchestra System** | 4 files | `Use al-conductor` | Multi-agent TDD orchestration (NEW) |
+| **Orchestra System** | 4 files | `Use al-conductor` | Multi-agent TDD orchestration |
 | **Agentic Workflows** | 18 files | `@workspace use [name]` | Complete task execution processes |
 | **Integration Guide** | 1 file | Reference | Master coordination document |
-| **Total Primitives** | **36 tools** | — | Complete AI Native toolkit with TDD |## 📦 What's Included: Agent Primitives
+| **Total Primitives** | **39 tools** | — | Complete AI Native toolkit with TDD |## 📦 What's Included: Agent Primitives
 
 ### � Instructions Files (7 primitives)
 
@@ -215,9 +215,9 @@ graph TB
 - **al-conductor** 🎯 - Orchestrates Planning → Implementation → Review → Commit cycle
 
 **Specialized Subagents** (called automatically by conductor):
-- **al-planning.subagent** 🔍 - AL-aware research and context gathering
-- **al-implement.subagent** ⚙️ - TDD-focused implementation (RED → GREEN → REFACTOR)
-- **al-review.subagent** ✅ - Code review against AL best practices
+- **al-planning-subagent** 🔍 - AL-aware research and context gathering
+- **al-implement-subagent** ⚙️ - TDD-focused implementation (RED → GREEN → REFACTOR)
+- **al-review-subagent** ✅ - Code review against AL best practices
 
 **Key Features**:
 - 🧪 **TDD Enforcement**: Failing tests first, then minimal code, then refactor
@@ -244,7 +244,7 @@ Add email validation to Customer table with these requirements:
 
 ### 📖 Integration Guide (1 primitive)
 
-- **copilot-instructions.md** - Master document coordinating all 36 primitives with usage guidance
+- **copilot-instructions.md** - Master document coordinating all 38 primitives with usage guidance
 
 ## 🎯 Common Workflows
 
@@ -413,9 +413,9 @@ AL-Development-Collection-for-GitHub-Copilot/
 │       ├── README.md                            # Complete Orchestra documentation
 │       ├── index.md                             # Quick reference
 │       ├── al-conductor.agent.md                # Main orchestration agent
-│       ├── al-planning.subagent.md              # Research specialist
-│       ├── al-implement.subagent.md             # TDD implementation
-│       └── al-review.subagent.md                # Code review validation
+│       ├── al-planning-subagent.agent.md              # Research specialist
+│       ├── al-implement-subagent.agent.md             # TDD implementation
+│       └── al-review-subagent.agent.md                # Code review validation
 ├── collections/                                  # Collection manifests
 │   └── al-development.collection.yml            # Main collection definition
 ├── references/                                   # Framework documentation
@@ -440,15 +440,15 @@ AL-Development-Collection-for-GitHub-Copilot/
 ### 2.6.0 (2025-11-08) - AL Orchestra Multi-Agent TDD System
 - 🎭 **AL Orchestra System** - NEW multi-agent TDD orchestration (4 agents)
   - **al-conductor**: Main orchestration agent for Planning → Implementation → Review → Commit cycle
-  - **al-planning.subagent**: AL-aware research and context gathering
-  - **al-implement.subagent**: TDD-focused implementation with full AL MCP tools (uses Haiku 4.5 for cost optimization)
-  - **al-review.subagent**: Code review against AL best practices with CRITICAL/MAJOR/MINOR severity levels
+  - **al-planning-subagent**: AL-aware research and context gathering
+  - **al-implement-subagent**: TDD-focused implementation with full AL MCP tools (uses Haiku 4.5 for cost optimization)
+  - **al-review-subagent**: Code review against AL best practices with CRITICAL/MAJOR/MINOR severity levels
 - 🧪 **TDD Enforcement** - Strict RED (failing tests) → GREEN (minimal code) → REFACTOR cycle
 - 🎨 **Event-Driven Validation** - Prevents base BC object modifications (extension patterns only)
 - 📋 **Auto-Documentation** - Generates plan files in `.github/plans/` with complete audit trail
 - 🚦 **Quality Gates** - Automated review before each commit with AL-specific checks
 - 💰 **Cost-Optimized** - Uses Haiku for implementation, Sonnet for strategic work (30-40% cost reduction)
-- 📊 **Total Primitives** - 36 tools (7 instructions + 18 workflows + 11 agents + 1 guide)
+- 📊 **Total Primitives** - 38 tools (9 instructions + 18 workflows + 11 agents)
 - 📖 **Complete Documentation** - 23k-character adaptability analysis, 15k-character Orchestra guide
 - 🔄 **Backward Compatible** - All existing agents work unchanged, Orchestra is additive
 - 🎯 **Framework Alignment** - Implements GitHub Copilot Orchestra pattern adapted for AL development
@@ -556,3 +556,4 @@ MIT License - see [LICENSE](./LICENSE) file for details.
 **Total Primitives**: 36 (7 instructions + 18 workflows + 11 agents + 1 guide)
 **Context Standard**: AGENTS.md ready
 **Latest**: AL Orchestra multi-agent TDD system with automated quality gates and documentation
+

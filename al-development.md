@@ -1,6 +1,6 @@
 # AL Development for Business Central
 
-**AI Native AL Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. Transform ad-hoc AI usage into systematic engineering through **32 Agent Primitives** across **3 framework layers**.
+**AI Native AL Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. Transform ad-hoc AI usage into systematic engineering through **38 Agent Primitives** across **3 framework layers**.
 
 ## Framework Architecture
 
@@ -10,18 +10,19 @@ This collection implements the **AI Native-Instructions Architecture** with thre
 **Foundation** - Structured instructions using semantic markdown (headers, lists, links) that guide AI reasoning for predictable, repeatable results.
 
 ### Layer 2: Agent Primitives  
-**Implementation** - 31 configurable tools that deploy your prompt engineering systematically:
-- **📋 Instructions** (7) - Auto-applied coding rules via `applyTo` patterns
+**Implementation** - 38 configurable tools that deploy your prompt engineering systematically:
+- **📋 Instructions** (9) - Auto-applied coding rules via `applyTo` patterns
 - **🎯 Agentic Workflows** (18) - Complete task execution processes
 - **💬 Chat Modes** (7) - Role-based specialists with tool boundaries
+- **🎭 Orchestra System** (4) - Multi-agent TDD orchestration
 - **📖 Integration Guide** (1) - Master coordination document
 
 ### Layer 3: Context Engineering
 **Strategic Management** - Optimized LLM context windows through modular loading, `applyTo` patterns, and AGENTS.md compilation readiness.
 
-## What's Included: The 29 Agent Primitives
+## What's Included: The 38 Agent Primitives
 
-### 📋 Instructions Files (7 primitives)
+### 📋 Instructions Files (9 primitives)
 
 **Auto-applied persistent rules** via `applyTo` patterns for optimal **Context Engineering**:
 
@@ -35,6 +36,10 @@ This collection implements the **AI Native-Instructions Architecture** with thre
 - **al-error-handling** - TryFunctions, error labels, telemetry patterns
 - **al-events** - Event subscribers, integration events, handled patterns
 - **al-testing** - AL-Go structure, test generation rules, Given/When/Then
+
+**Integration & Documentation**:
+- **copilot-instructions** - Master coordination document (auto-loaded as .github/copilot-instructions.md)
+- **complete-development-flow** - Visual workflow guide with Mermaid diagrams
 
 > 💡 **Context Engineering in Action**: Instructions load only when relevant via `applyTo` frontmatter, preserving context window space for code understanding.
 
@@ -80,7 +85,7 @@ Invoke with `@workspace use [prompt-name]`:
 
 ### 📖 Integration Guide (1 primitive)
 
-- **copilot-instructions.md** - Master document coordinating all 32 primitives with comprehensive usage guidance and workflow examples
+- **copilot-instructions.md** - Master document coordinating all 38 primitives with comprehensive usage guidance and workflow examples
 
 ## Quick Start
 

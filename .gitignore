@@ -34,6 +34,17 @@ rad.json
 #Archive
 Archive/
 
+# Internal analysis and design documents (not for public repo)
+docs/analysis/
+
+# Obsolete/deprecated documentation files (consolidated into current collection)
+docs/prompts/al-debug.prompt.md
+docs/prompts/al-setup.prompt.md
+docs/prompts/al-troubleshoot.prompt.md
+docs/prompts/al-workflow.prompt.md
+docs/prompts/al-workspace.prompt.md
+docs/prompts/al-pr.prepare.prompt.md
+
 # Build outputs
 site/
 _site/

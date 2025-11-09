@@ -12,9 +12,9 @@
 | Agent | Type | Model | Purpose |
 |-------|------|-------|---------|
 | **[al-conductor](./al-conductor.agent.md)** | Orchestrator | Sonnet 4.5 | Main coordination agent for Planning → Implementation → Review → Commit cycle |
-| **[al-planning](./al-planning.subagent.md)** | Subagent | Sonnet 4.5 | AL-aware research and context gathering |
-| **[al-implement](./al-implement.subagent.md)** | Subagent | Haiku 4.5 | TDD-focused implementation with AL MCP tools |
-| **[al-review](./al-review.subagent.md)** | Subagent | Sonnet 4.5 | Code review against AL best practices |
+| **[al-planning](./al-planning-subagent.agent.md)** | Subagent | Sonnet 4.5 | AL-aware research and context gathering |
+| **[al-implement](./al-implement-subagent.agent.md)** | Subagent | Haiku 4.5 | TDD-focused implementation with AL MCP tools |
+| **[al-review](./al-review-subagent.agent.md)** | Subagent | Sonnet 4.5 | Code review against AL best practices |
 
 ## When to Use
 
@@ -49,11 +49,11 @@ The validation should:
 
 ```
 al-conductor (Orchestrator)
-├── Delegates research → al-planning.subagent
+├── Delegates research → al-planning-subagent
 │   └── Returns AL context (objects, events, AL-Go structure)
-├── Coordinates implementation → al-implement.subagent
+├── Coordinates implementation → al-implement-subagent
 │   └── Executes TDD: RED (tests) → GREEN (code) → REFACTOR
-└── Enforces quality → al-review.subagent
+└── Enforces quality → al-review-subagent
     └── Returns APPROVED / NEEDS_REVISION / FAILED
 ```
 
@@ -81,10 +81,10 @@ end;
 
 ### 2. Event-Driven Architecture Validation
 ```al
-// ❌ REJECTED by al-review.subagent
+// ❌ REJECTED by al-review-subagent
 table 18 Customer { /* Cannot modify base objects */ }
 
-// ✅ APPROVED by al-review.subagent
+// ✅ APPROVED by al-review-subagent
 tableextension 50100 "Customer Ext" extends Customer
 {
     fields { field(50100; "Custom Field"; Text[50]) { } }
@@ -155,9 +155,9 @@ al-architect → Design solution architecture
 
 Implementation Phase:
 al-conductor → Orchestrate TDD implementation
-  ├── al-planning.subagent → Research AL context
-  ├── al-implement.subagent → Execute TDD cycle
-  └── al-review.subagent → Validate quality
+  ├── al-planning-subagent → Research AL context
+  ├── al-implement-subagent → Execute TDD cycle
+  └── al-review-subagent → Validate quality
 
 Optional Refinements:
 al-developer → Manual adjustments outside Orchestra
@@ -207,3 +207,4 @@ MIT License - See [repository LICENSE](../../LICENSE) for details.
 **Collection**: AL Development Collection v2.6.0  
 **Primitives**: 36 total (32 existing + 4 Orchestra agents)  
 **Status**: ✅ Production Ready
+

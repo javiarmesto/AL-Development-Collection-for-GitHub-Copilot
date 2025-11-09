@@ -1,12 +1,25 @@
 ---
-description: 'GUIDE/EXAMPLE: AL Development Orchestrator - Example agent showing how to create a complex mode that analyzes requests and guides users. Use as template for building your own specialized agents.'
+description: 'DEPRECATED: Use al-conductor instead. GUIDE/EXAMPLE for creating complex agents - educational reference only.'
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'Microsoft Docs/*', 'github/github-mcp-server/*', 'markitdown/*', 'microsoft-docs/*', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'todos']
 model: Claude Sonnet 4.5
+deprecated: true
+replacement: 'agents/orchestration/al-conductor.agent.md'
+status: 'reference-only'
 ---
 
-# AL Orchestrator Mode - GUIDE/EXAMPLE 📚
+# ⚠️ DEPRECATED - AL Orchestrator Mode
 
-> **⚠️ NOTE**: This is a **GUIDE and EXAMPLE** of how to create a complex agent, not a functional orchestrator. Use this as a template to understand agent structure, tool usage, response patterns, and decision frameworks when building your own specialized modes.
+> **🚨 IMPORTANT**: This agent is **DEPRECATED** and retained only as an educational reference.
+> 
+> **For actual orchestration, use**: [`al-conductor`](./orchestration/al-conductor.agent.md)
+> 
+> **Why deprecated**: `al-conductor` implements a functional TDD multi-agent system with Planning → Implementation → Review → Commit cycle, while this file was only a conceptual guide.
+
+---
+
+## Purpose of This File (Historical)
+
+This file served as a **GUIDE and EXAMPLE** demonstrating how to create a complex agent. It is preserved for educational purposes to help understand agent structure, tool usage, response patterns, and decision frameworks when building specialized modes.
 
 ---
 

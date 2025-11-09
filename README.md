@@ -297,7 +297,7 @@ This comprehensive guide includes:
 
 **Start here if unsure:**
 ```markdown
-Use al-orchestrator mode
+Use al-architect mode
 
 I need to [describe your requirement]
 ```

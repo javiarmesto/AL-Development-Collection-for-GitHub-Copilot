@@ -104,18 +104,16 @@ cp -r prompts your-al-project/.github/
 | 🟢 **LOW** | ✅ **Test Addition** | Adding tests to existing well-structured code | `al-tester` → `al-developer` | Design test strategy, then implement test cases |
 | 🟡 **MEDIUM** | 🏗️ **Feature** | Business logic with data flow, internal integrations | `al-conductor` | TDD orchestration ensures quality across 2-3 phases |
 | 🟡 **MEDIUM** | 🌐 **API** | RESTful endpoints, OData pages, internal API exposure | `al-api` → `al-conductor` | Design API contract first, then implement with TDD |
-| 🟡 **MEDIUM** | 🤖 **AI Feature** | Copilot capability, PromptDialog, basic AI integration | `al-copilot` → `al-conductor` | Design AI UX and prompts, then build with quality gates |
+| 🟡 **MEDIUM** | 🤖 **Copilot Feature** | Copilot capability, PromptDialog, basic AI integration | `al-copilot` → `al-conductor` | Design AI UX and prompts, then build with quality gates |
 | 🟡 **MEDIUM** | 🐛 **Complex Bug** | Intermittent issue requiring systematic investigation | `al-debugger` → `al-conductor` | Diagnose with profiling, then fix with comprehensive tests |
 | 🔴 **HIGH** | 🏛️ **Architecture** | Multi-module feature, new patterns, broad impact | `al-architect` → `al-conductor` | Design architecture first, then orchestrate TDD implementation |
 | 🔴 **HIGH** | 🌐 **Integration** | External APIs, OAuth, Azure services, webhooks | `al-api` → `al-architect` → `al-conductor` | API design → System architecture → Secure TDD implementation |
-| 🔴 **HIGH** | 🤖 **AI System** | Multi-capability AI system, complex prompt chains | `al-copilot` → `al-architect` → `al-conductor` | AI strategy → Scalable architecture → Reliable TDD build |
-| 🔴 **HIGH** | ⚡ **Performance** | System-wide optimization, data migration, bottlenecks | `al-architect` → `al-conductor` | Analyze architecture impact, design optimization strategy |
-| 🔴 **HIGH** | 🔄 **Migration** | BC version upgrade, refactoring legacy code | `al-debugger` → `al-architect` → `al-conductor` | Understand current state → Design target → Migrate with tests |
+| 🔴 **HIGH** | ⚡ **Performance** | System-wide optimization, architectural bottlenecks | `al-architect` → `al-conductor` | Analyze architecture impact, design optimization strategy |
 
 **Quick examples:**
 - 🟢 LOW: "Add Priority field to Sales Header" → `al-developer`
 - 🟡 MEDIUM: "Customer loyalty points with calculation" → `al-conductor`
-- 🔴 HIGH: "Multi-company approval with email notifications" → `al-architect` → `al-conductor`
+- 🔴 HIGH: "External API integration with OAuth and retry logic" → `al-api` → `al-architect` → `al-conductor`
 
 **Start here if unsure:**
 ```markdown

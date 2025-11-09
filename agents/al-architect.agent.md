@@ -211,7 +211,7 @@ Based on requirements, create comprehensive architectural design following secti
 - **Complex testing needs** → Recommend `Use al-tester mode` for test strategy
 - **Simple implementations** → Recommend `Use al-developer mode` for direct coding
 
-**Typical workflow**:
+**Typical workflow** (see routing matrix in README.md):
 ```
 requirements.md → al-architect (design) → al-conductor (TDD implementation)
                                         ↓

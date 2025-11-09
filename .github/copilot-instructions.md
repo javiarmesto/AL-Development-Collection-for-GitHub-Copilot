@@ -707,9 +707,7 @@ Recommended Path:
 | 🟡 MEDIUM | ✅ Test Strategy | Complex test scenarios, integration test design | `al-tester` → `al-conductor` | Design comprehensive test strategy first |
 | 🔴 HIGH | 🏛️ Architecture | Multi-module feature, new patterns, enterprise impact | `al-architect` → `al-conductor` | Design scalable architecture before implementation |
 | 🔴 HIGH | 🌐 Integration | External APIs, OAuth, Azure services, webhooks | `al-api` → `al-architect` → `al-conductor` | API contract → System design → Secure implementation |
-| 🔴 HIGH | 🤖 AI System | Multi-capability AI, complex prompt chains, training | `al-copilot` → `al-architect` → `al-conductor` | AI strategy → Scalable design → Reliable build |
 | 🔴 HIGH | ⚡ Performance | System-wide optimization, architectural bottlenecks | `al-architect` → `al-conductor` | Analyze impact, design optimization strategy |
-| 🔴 HIGH | 🔄 Migration | BC version upgrade, legacy refactoring, data migration | `al-debugger` → `al-architect` → `al-conductor` | Understand current → Design target → Migrate safely |
 
 **Decision logic after confirmation:**
 - **If confirmed**: Follow routing matrix based on complexity + specialization

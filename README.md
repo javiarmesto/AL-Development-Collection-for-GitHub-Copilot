@@ -2,7 +2,7 @@
 
 > **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI-Native Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **38 specialized Agent Primitives** across **3 systematic layers**. Features **AL Orchestra** multi-agent TDD system that transforms feature requests into code following BC best practices.
 
-> 🎉 **v2.6.0 Production Ready** - Complete workflow validated: Architecture → TDD Implementation → PR Documentation. [See test results](./docs/workflows/complete-development-flow.md).
+> **v2.6.0 ** - Complete workflow validated: Architecture → TDD Implementation → PR Documentation.
 
 [![Validation Status](https://img.shields.io/badge/validation-passing-brightgreen)](./validate-al-collection.js)
 [![Version](https://img.shields.io/badge/version-2.6.0-blue)](./CHANGELOG.md)

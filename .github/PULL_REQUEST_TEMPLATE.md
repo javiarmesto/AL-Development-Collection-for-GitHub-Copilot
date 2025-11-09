@@ -6,7 +6,7 @@ Provide a clear description of what this PR accomplishes.
 
 ## 🎯 Type of Change
 
-- [ ] New Agent Primitive (Instruction, Workflow, or Chat Mode)
+- [ ] New Agent Primitive (Instruction, Workflow, or Agent)
 - [ ] Enhancement to existing primitive
 - [ ] Bug fix
 - [ ] Documentation update
@@ -24,7 +24,7 @@ Relates to #(issue number)
 ### Layer Impact
 
 - [ ] **Layer 1**: Markdown Prompt Engineering changes
-- [ ] **Layer 2**: Agent Primitives changes (Instructions/Workflows/Chat Modes)
+- [ ] **Layer 2**: Agent Primitives changes (Instructions/Workflows/Agents)
 - [ ] **Layer 3**: Context Engineering changes (applyTo patterns, AGENTS.md)
 
 ### Changes Made
@@ -33,7 +33,7 @@ Relates to #(issue number)
 
 | File | Type | Change Type |
 |------|------|-------------|
-| `file-name.md` | Instruction/Workflow/Chat Mode | New/Modified/Fixed |
+| `file-name.md` | Instruction/Workflow/Agent | New/Modified/Fixed |
 
 #### Frontmatter Details
 
@@ -134,7 +134,7 @@ If applicable, add screenshots or code examples showing the change in action.
 - [ ] Proper grammar and spelling
 - [ ] Consistent terminology (Agent Primitives, Agentic Workflows, etc.)
 - [ ] Examples are clear and correct
-- [ ] Tool boundaries defined (for chat modes)
+- [ ] Tool boundaries defined (for agents)
 
 ### Framework Compliance
 

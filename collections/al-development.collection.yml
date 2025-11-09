@@ -1,6 +1,6 @@
 id: al-development
 name: AL Development for Business Central
-description: AI Native Development toolkit implementing the A-Instructions Architecture framework with 38 Agent Primitives across 3 systematic layers. Provides Markdown Prompt Engineering through Instructions (9), Agentic Workflows (18), Chat Modes (7), Orchestra System (4) and Context Engineering via applyTo patterns for optimal LLM performance in Business Central development. Includes multi-agent TDD orchestration and complete workflow documentation.
+description: AI Native Development toolkit implementing the A-Instructions Architecture framework with 38 Agent Primitives across 3 systematic layers. Provides Markdown Prompt Engineering through Instructions (9), Agentic Workflows (18), Agents (7), Orchestra System (4) and Context Engineering via applyTo patterns for optimal LLM performance in Business Central development. Includes multi-agent TDD orchestration and complete workflow documentation.
 tags: [al, business-central, dynamics365, erp, microsoft, ai-native, a-instructions, agent-primitives, context-engineering, copilot, tdd, orchestration]
 
 items:
@@ -81,18 +81,18 @@ items:
       Use as reference to understand when to use workflows vs Orchestra, how agents interact,
       and complete workflow patterns for different feature complexities.
 
-  # Layer 2: Agent Primitives - Chat Modes (7 files)
+  # Layer 2: Agent Primitives - Agents (7 files)
   # Role-based specialists with MCP tool boundaries preventing cross-domain operations
   - path: agents/al-orchestrator.agent.md
     kind: agent
     usage: deprecated
     description: |
-      Strategic router and workflow coordinator implementing Markdown Prompt Engineering principles. This is your entry point for complex tasks - it analyzes requirements and orchestrates the right combination of Agent Primitives (Instructions, Workflows, Chat Modes) for optimal results.
+      Strategic router and workflow coordinator implementing Markdown Prompt Engineering principles. This is your entry point for complex tasks - it analyzes requirements and orchestrates the right combination of Agent Primitives (Instructions, Workflows, Agents) for optimal results.
 
       Orchestrates Agent Primitives through:
       - Context Loading - Analyzes requirements and loads relevant Instructions
       - Workflow Routing - Recommends appropriate Agentic Workflows for execution
-      - Mode Coordination - Routes to specialized Chat Modes for strategic work
+      - Mode Coordination - Routes to specialized Agents for strategic work
       - Multi-Phase Planning - Creates systematic workflows for complex features
 
       Implements Context Engineering by:

@@ -12,7 +12,7 @@ Structured instructions using semantic markdown (headers, lists, links) that gui
 ### Layer 2: Agent Primitives (37 tools)
 - **Instructions** (7): Auto-applied via `applyTo` patterns - coding standards that activate based on file type
 - **Agentic Workflows** (18): Complete processes invoked via `@workspace use [name]` - systematic execution with validation gates
-- **Chat Modes** (7): Role-based specialists switched via `Use [mode]` - strategic consulting and tactical execution with MCP tool boundaries
+- **Agents** (7): Role-based specialists switched via `Use [mode]` - strategic consulting and tactical execution with MCP tool boundaries
 - **Orchestra System** (4): Multi-agent TDD orchestration (al-conductor + 3 subagents) for structured Planning → Implementation → Review → Commit cycles
 - **Integration Guide** (1): Master coordination document (`instructions/copilot-instructions.md`)
 
@@ -153,7 +153,7 @@ Invoked via `@workspace use [name]`:
 - **al-context.create**: Generate project context.md file for AI assistants (NEW)
 - **al-memory.create**: Generate/update memory.md file for session continuity (NEW)
 
-### Chat Modes
+### Agents
 Strategic specialists (not executors):
 - **al-orchestrator**: ⚠️ DEPRECATED - Use al-conductor instead. Retained as educational reference for creating complex agents.
 - **al-architect**: Solution design - **cannot** execute builds, only designs. Use before al-conductor for architecture planning.
@@ -240,7 +240,7 @@ Use al-tester mode
 All files designed for VS Code Copilot following [official customization docs](https://code.visualstudio.com/docs/copilot/copilot-customization):
 - Instructions load via `applyTo` frontmatter (glob patterns)
 - Prompts invoked via `@workspace use [name]`
-- Chat modes switched via `Use [mode-name] mode`
+- Agents switched via `Use [mode-name] mode`
 
 ### AL Language Extension Tools
 Workflows access AL extension via MCP tools:
@@ -251,7 +251,7 @@ Workflows access AL extension via MCP tools:
 - `al_open_Page_Designer`: UI design assistance
 - `al_generate_permissionset_for_extension_objects`: Security
 
-**Tool boundaries in chat modes**: Modes like `al-architect` **cannot** call build tools (only analyze/design). Enforcement via explicit tool lists in frontmatter.
+**Tool boundaries in agents**: Modes like `al-architect` **cannot** call build tools (only analyze/design). Enforcement via explicit tool lists in frontmatter.
 
 ### External Documentation References
 Files reference:
@@ -290,7 +290,7 @@ Files reference:
 4. Include links to relevant instructions for context
 5. Add to collection manifest and validate
 
-### Adding New Chat Modes
+### Adding New Agents
 1. Create in `agents/` as `al-[role].agent.md`
 2. Add frontmatter:
    ```yaml
@@ -315,7 +315,7 @@ Files reference:
 - `description`: Task summary
 - `tools`: Array of available tools
 
-**Chat Modes**:
+**Agents**:
 - `description`: Role summary
 - `tools`: Array (strategic modes should exclude build tools)
 - `model`: LLM name
@@ -353,7 +353,7 @@ Expected output:
 4. `al-error-handling` activates if validation added
 5. Result: Production-ready code following all BC best practices automatically
 
-**For simple tasks**: Use direct workflows or chat modes (al-developer, al-tester, etc.)
+**For simple tasks**: Use direct workflows or agents (al-developer, al-tester, etc.)
 
 **For complex tasks with TDD**: al-conductor orchestrates → al-planning-subagent researches → al-implement-subagent executes TDD → al-review-subagent validates → documentation generated
 

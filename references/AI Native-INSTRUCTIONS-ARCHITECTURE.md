@@ -60,9 +60,9 @@ description: "AL Code structure, formatting, and folder organization guidelines"
 
 This enables **Context Engineering** by loading only relevant instructions for the current file type.
 
-### 2. Chat Modes with Tool Boundaries
+### 2. Agents with Tool Boundaries
 
-All chat mode files now include:
+All agent files now include:
 - **Explicit tool lists** - Security through MCP tool boundaries
 - **Model specification** - Claude Sonnet 4 for strategic modes
 - **Tool Boundaries section** - Clear CAN/CANNOT lists
@@ -194,7 +194,7 @@ Expected output:
 - [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/docs/getting-started/)
 - [VSCode Copilot Customization](https://code.visualstudio.com/docs/copilot/copilot-customization)
 - [AGENTS.md Standard](https://agents.md)
-- [GitHub Copilot Chat Modes](https://code.visualstudio.com/docs/copilot/chat/chat-modes)
+- [GitHub Copilot Agents (Chat Modes)](https://code.visualstudio.com/docs/copilot/chat/chat-modes)
 
 ## Version History
 

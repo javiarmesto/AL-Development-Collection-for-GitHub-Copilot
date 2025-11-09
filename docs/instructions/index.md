@@ -79,7 +79,7 @@ applyTo: ['**/*.al']
 ### Combining with Other Primitives
 Instructions work alongside:
 - **Agentic Workflows** (`@workspace use [prompt]`) - For specific tasks
-- **Chat Modes** (`Use [mode-name]`) - For strategic consultation
+- **Agents** (`Use [mode-name]`) - For strategic consultation
 - Both can reference instruction rules in their guidance
 
 ### Creating Custom Instructions

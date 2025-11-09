@@ -38,7 +38,7 @@ Located in `.github/prompts/` - Invoke with `@workspace use [prompt-name]`:
 - `al-pages` - Page designer & UI
 - `al-workflow` - End-to-end guidance
 
-### Layer 4: Role-Based Chat Modes (Strategic Consulting)
+### Layer 4: Role-Based Agents (Strategic Consulting)
 Located in `.github/agents/` - Specialized consultant personalities:
 
 - **al-orchestrator** - Smart router, guides you to the right tool (ESSENTIAL)
@@ -403,7 +403,7 @@ All prompts are invoked with: `@workspace use [prompt-name]`
 **When**: Need end-to-end guidance for complete features
 **Tools**: Multiple tools across the development lifecycle
 
-### Role-Based Chat Modes
+### Role-Based Agents
 
 #### al-orchestrator 🎯
 **Your starting point when unsure**

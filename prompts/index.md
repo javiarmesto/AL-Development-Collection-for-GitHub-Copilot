@@ -154,7 +154,7 @@ Common workflow sequences:
 
 Workflows complement:
 - **Instructions** - Automatically loaded context during workflow execution
-- **Chat Modes** - Strategic consultation before/after workflow execution
+- **Agents** - Strategic consultation before/after workflow execution
   - Use `al-orchestrator` to choose right workflow
   - Use `al-architect` to design before implementing workflow
   - Use `al-debugger` when workflow execution reveals issues
@@ -212,7 +212,7 @@ Run `npm run validate` to verify:
 
 ---
 
-**Framework Compliance**: These workflows implement **AI-Native Instructions Architecture** - Layer 2 (Agent Primitives) providing systematic execution processes that coordinate Instructions and Chat Modes for complete task fulfillment.
+**Framework Compliance**: These workflows implement **AI-Native Instructions Architecture** - Layer 2 (Agent Primitives) providing systematic execution processes that coordinate Instructions and Agents for complete task fulfillment.
 
 **Version**: 2.3 (Optimized)
 **Total Workflows**: 11

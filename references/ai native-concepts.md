@@ -64,7 +64,7 @@ Agent Primitives are the core configurable elements that AI Native Developers it
 
 **Example Transformation:**
 - **Technique**: "Implement secure user authentication system" (Markdown Prompt Engineering)
-- **Primitives**: Developer selects `backend-dev` chat mode → Auto-triggers `security.instructions.md` via `applyTo: "auth/**"` → Loads context from `[Previous auth patterns](.memory.md#security)` and `[API Security Standards](api-security.context.md#rest)` → Generates `user-auth.spec.md` using structured templates → Executes `implement-from-spec.prompt.md` workflow with validation gates (Agent Primitives)
+- **Primitives**: Developer selects `backend-dev` agent → Auto-triggers `security.instructions.md` via `applyTo: "auth/**"` → Loads context from `[Previous auth patterns](.memory.md#security)` and `[API Security Standards](api-security.context.md#rest)` → Generates `user-auth.spec.md` using structured templates → Executes `implement-from-spec.prompt.md` workflow with validation gates (Agent Primitives)
 - **Outcome**: Developer-driven knowledge accumulation where you capture implementation failures in `.memory.md`, document successful patterns in `.instructions.md`, and refine workflows in `.prompt.md` files—creating compound intelligence that improves through your iterative refinement (Context Engineering)
 
 This transformation might seem complex, but notice the pattern: what started as an ad-hoc request became a systematic workflow with clear handoff points, automatic context loading, and built-in validation. Each primitive file becomes a knowledge asset that improves with use, creating compound intelligence that serves your entire team.
@@ -145,7 +145,7 @@ flowchart TD
     subgraph B ["⚙️ Agent Primitives"]
         subgraph B_ROW1 [" "]
             B1["📝 Instructions"]
-            B2["💬 Chat Modes"] 
+            B2["💬 Agents"] 
             B3["⚡ Workflows"]
         end
         subgraph B_ROW2 [" "]

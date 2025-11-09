@@ -1,6 +1,6 @@
 ---
 name: New Agent Primitive
-about: Propose a new Instruction, Agentic Workflow, or Chat Mode
+about: Propose a new Instruction, Agentic Workflow, or Agent
 title: '[NEW PRIMITIVE] '
 labels: new-primitive, enhancement
 assignees: ''
@@ -28,7 +28,7 @@ Provide a clear, concise description of what this primitive does and why it's ne
 ---
 description: 'Your one-line description (max 100 chars)'
 applyTo: ['**/*.al']  # Or specific pattern for instructions
-# For chat modes, include:
+# For agents, include:
 # tools: [files, workspace_search, etc.]
 # mcp: { allowed: [...], forbidden: [...] }
 ---
@@ -94,7 +94,7 @@ How to verify success.
 Troubleshooting guide.
 ```
 
-### For Chat Modes
+### For Agents
 
 ```markdown
 # [Mode Name]

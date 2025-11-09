@@ -44,7 +44,7 @@ applyTo: ['**/*.al']  # Or other pattern
 ## Purpose
 What this primitive does...
 
-## Tool Boundaries (if chat mode)
+## Tool Boundaries (if agent)
 CAN:
 - Action 1
 - Action 2

@@ -7,7 +7,7 @@ Thank you for your interest in contributing to the AL Development Collection! Th
 This collection implements the AI Native-Instructions Architecture with 3 layers:
 
 - **Layer 1: Markdown Prompt Engineering** - Structured instructions using semantic markdown
-- **Layer 2: Agent Primitives** - Configurable tools (Instructions, Agentic Workflows, Chat Modes)
+- **Layer 2: Agent Primitives** - Configurable tools (Instructions, Agentic Workflows, Agents)
 - **Layer 3: Context Engineering** - Strategic context management via `applyTo` patterns
 
 ## 📋 Table of Contents
@@ -88,9 +88,9 @@ Instructions are **Markdown Prompt Engineering** (Layer 1) files that customize 
    Clear instructions...
    ```
 
-### Adding Chat Modes
+### Adding Agents
 
-**Chat Modes** are role-based strategic consultants with defined **Tool Boundaries** (MCP constraints) for specialized AL guidance.
+**Agents** are role-based strategic consultants with defined **Tool Boundaries** (MCP constraints) for specialized AL guidance.
 
 📖 **See [agents/index.md](./agents/index.md) for complete guide to existing modes.**
 
@@ -99,7 +99,7 @@ Instructions are **Markdown Prompt Engineering** (Layer 1) files that customize 
 3. **Include frontmatter**:
    ```markdown
    ---
-   description: 'Brief description of the chat mode role'
+   description: 'Brief description of the agent role'
    tools: ['codebase', 'search', 'usages']
    ---
    ```
@@ -168,10 +168,10 @@ tools: ['tool1', 'tool2', 'tool3']  # AL tools or VS Code tools used
 ---
 ```
 
-### Chat Modes
+### Agents
 ```yaml
 ---
-description: 'Clear description of the chat mode expertise and role'
+description: 'Clear description of the agent expertise and role'
 tools: ['codebase', 'search', 'usages']  # Tools this mode uses
 ---
 ```
@@ -197,7 +197,7 @@ Before submitting a pull request:
 4. **Update the collection manifest**:
    - Add your file to `collections/al-development.collection.yml`
    - Use correct `kind`: `instruction`, `prompt`, or `chat-mode`
-   - For chat modes, add `usage` guidance
+   - For agents, add `usage` guidance
 
 Example manifest entry:
 ```yaml
@@ -269,7 +269,7 @@ Example manifest entry:
 1. Copy your file(s) to a test AL project
 2. Open relevant AL files
 3. Verify Copilot suggestions follow your instructions
-4. Test prompts or chat modes work as expected
+4. Test prompts or agents work as expected
 5. Ensure no conflicts with existing files
 
 ## 🎯 What Makes a Good Contribution
@@ -286,7 +286,7 @@ Example manifest entry:
 - ✅ Provide step-by-step workflow
 - ✅ Include error handling guidance
 
-### Good Chat Modes
+### Good Agents
 - ✅ Fill a gap in existing modes
 - ✅ Have clear, focused expertise
 - ✅ Provide strategic (not tactical) guidance

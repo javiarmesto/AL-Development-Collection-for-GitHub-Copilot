@@ -1,16 +1,16 @@
-# Chat Modes - Layer 2: Agent Primitives
+# Agents - Layer 2: Agent Primitives
 
 **Role-based strategic consultants** implemented as `.agent.md` files with **MCP Tool Boundaries** for specialized AL development guidance in Business Central.
 
-## 📋 What Are Chat Modes?
+## 📋 What Are Agents?
 
-Chat Modes are:
+Agents are:
 - **Specialized consultant personas** with domain expertise
 - **Strategic advisors** (not executors - they recommend workflows)
 - **Context-aware specialists** that auto-load relevant Instructions
 - **Boundary-constrained agents** with clear CAN/CANNOT rules (MCP model)
 
-## 🎯 How to Use Chat Modes
+## 🎯 How to Use Agents
 
 Activate modes explicitly for strategic consultation:
 ```markdown
@@ -32,7 +32,7 @@ title: Complex feature planning
 I need to build a sales forecasting system...
 ```
 
-## 📦 Available Chat Modes (7 files)
+## 📦 Available Agents (7 files)
 
 ### 🎯 Entry Point (Use This First)
 
@@ -123,7 +123,7 @@ I'm not sure where to start.
 1. Analyze requirements
 2. Load relevant Instructions
 3. Recommend appropriate Workflows
-4. Route to specialized Chat Modes
+4. Route to specialized Agents
 5. Create multi-phase plan
 
 ---
@@ -358,7 +358,7 @@ Debugger: "Root cause identified. Switch to al-architect to redesign this compon
 - Expect implementation without using recommended workflows
 - Forget to include relevant code context
 
-### Creating Custom Chat Modes
+### Creating Custom Agents
 
 1. **Create file** in this directory: `al-[role].agent.md`
 2. **Add frontmatter**:
@@ -387,13 +387,13 @@ Debugger: "Root cause identified. Switch to al-architect to redesign this compon
 ## 📊 Validation
 
 Run `npm run validate` to verify:
-- All chat mode files exist
+- All agent files exist
 - Frontmatter is properly formatted
 - File naming conventions are followed
 - Descriptions are clear and complete
 
 ---
 
-**Framework Compliance**: These chat modes implement **A-Instructions Architecture** - Layer 2 (Agent Primitives) with clear Tool Boundaries (MCP model), auto-loading Instructions (Layer 1), and strategic Context Engineering (Layer 3).
+**Framework Compliance**: These agents implement **A-Instructions Architecture** - Layer 2 (Agent Primitives) with clear Tool Boundaries (MCP model), auto-loading Instructions (Layer 1), and strategic Context Engineering (Layer 3).
 
-**Usage Philosophy**: Chat modes are **strategic consultants**, not **code executors**. They analyze, design, and recommend. For execution, they delegate to **Agentic Workflows**.
+**Usage Philosophy**: Agents are **strategic consultants**, not **code executors**. They analyze, design, and recommend. For execution, they delegate to **Agentic Workflows**.

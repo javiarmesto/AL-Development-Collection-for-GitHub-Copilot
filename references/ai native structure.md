@@ -10,7 +10,7 @@ nav_order: 3
 ---
 Now that you understand the [three-layer framework](../concepts/), it's time to build your first Agent Primitives. This hands-on implementation will give you immediate productivity improvements while establishing the foundation for more advanced workflows.
 
-The setup follows a logical progression: start with instructions that guide AI behavior, add chat modes that create safe boundaries, build reusable prompts for common tasks, and create specification templates that bridge planning to implementation.
+The setup follows a logical progression: start with instructions that guide AI behavior, add agents that create safe boundaries, build reusable prompts for common tasks, and create specification templates that bridge planning to implementation.
 
 ## Instructions Architecture
 
@@ -67,14 +67,14 @@ Generate code with:
 
 **⚠️ Checkpoint:** Instructions are modular, targeted, and ready to compile
 
-## Chat Modes Configuration
+## Agents Configuration
 
-With your instruction architecture in place, you need a way to enforce domain boundaries and prevent AI agents from overstepping their expertise. Chat modes solve this by creating professional boundaries similar to real-world licensing—architects plan but don't build, engineers execute but don't set strategy.
+With your instruction architecture in place, you need a way to enforce domain boundaries and prevent AI agents from overstepping their expertise. Agents solve this by creating professional boundaries similar to real-world licensing—architects plan but don’t build, engineers execute but don’t set strategy.
 
 **✅ Quick Actions:**
-- Define domain-specific [custom chat modes](https://code.visualstudio.com/docs/copilot/chat/chat-modes) with MCP tool boundaries
+- Define domain-specific [custom agents](https://code.visualstudio.com/docs/copilot/chat/chat-modes) with MCP tool boundaries
 - Encapsulate tech stack knowledge and guidelines per mode
-- Define the most appropriate [LLM model](https://code.visualstudio.com/docs/copilot/chat/chat-modes#_chat-mode-file-example) for your chat mode like `Claude Sonnet 4`
+- Define the most appropriate [LLM model](https://code.visualstudio.com/docs/copilot/chat/chat-modes#_chat-mode-file-example) for your agent like `Claude Sonnet 4`
 - Configure secure [MCP tool access](https://code.visualstudio.com/docs/copilot/chat/chat-modes#_chat-mode-file-example) to prevent cross-domain security breaches
 
 > 💡 **Security Through MCP Tool Boundaries**: Each agent receives only the specific MCP tools needed for their domain - preventing dangerous access escalation and cross-contamination. Like professional licensing, a planning mode can't execute destructive commands, and a frontend mode can't access backend databases.
@@ -127,7 +127,7 @@ You master the backend of this project thanks to you having read all [the backen
 
 ## Agentic Workflows
 
-Chat modes create the safety boundaries, but you still need efficient ways to execute complete development processes. **Agentic Workflows** are implemented as reusable `.prompt.md` files that orchestrate all your primitives into systematic, end-to-end processes.
+Agents create the safety boundaries, but you still need efficient ways to execute complete development processes. **Agentic Workflows** are implemented as reusable `.prompt.md` files that orchestrate all your primitives into systematic, end-to-end processes.
 
 **✅ Quick Actions:**
 - Create [`.prompt.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental) for complete development processes
@@ -252,7 +252,7 @@ With all primitives in place, you now have a complete foundation for systematic 
 4. **[ ]** Create [`.github/copilot-instructions.md`](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilot-instructionsmd-file) with basic project guidelines (Context Engineering: global rules)
 5. **[ ]** Set up domain-specific [`.instructions.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-instructionsmd-files) with `applyTo` patterns (Context Engineering: selective loading)
 6. **[ ]** Compile instructions to `AGENTS.md` standard for universal portability—see [Tooling](../tooling/)
-7. **[ ]** Configure [chat modes](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-chat-modes) for your tech stack domains (Context Engineering: domain boundaries)
+7. **[ ]** Configure [agents](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-chat-modes) for your tech stack domains (Context Engineering: domain boundaries)
 8. **[ ]** Create your first [`.prompt.md` Agentic Workflow](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental)
 9. **[ ]** Build your first `.spec.md` template for feature specifications (Agent Primitive: deterministic planning-to-implementation bridge)
 10. **[ ]** Practice a spec-first approach with two Agentic Workflows (session splitting): plan first, implement second

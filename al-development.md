@@ -13,7 +13,7 @@ This collection implements the **AI Native-Instructions Architecture** with thre
 **Implementation** - 38 configurable tools that deploy your prompt engineering systematically:
 - **📋 Instructions** (9) - Auto-applied coding rules via `applyTo` patterns
 - **🎯 Agentic Workflows** (18) - Complete task execution processes
-- **💬 Chat Modes** (7) - Role-based specialists with tool boundaries
+- **💬 Agents** (7) - Role-based specialists with tool boundaries
 - **🎭 Orchestra System** (4) - Multi-agent TDD orchestration
 - **📖 Integration Guide** (1) - Master coordination document
 
@@ -69,7 +69,7 @@ Invoke with `@workspace use [prompt-name]`:
 
 > 💡 **Agentic Workflows**: Prompts orchestrate all primitives (instructions, modes, tools) into end-to-end processes with human validation checkpoints.
 
-### 💬 Chat Modes (7 primitives)
+### 💬 Agents (7 primitives)
 
 **Role-based specialists** with MCP tool boundaries preventing cross-domain security breaches:
 
@@ -207,7 +207,7 @@ The **al-orchestrator** mode analyzes your request and provides:
 - Step-by-step systematic processes
 - Built-in human validation checkpoints
 
-💬 **Chat Modes** (strategic consulting):
+💬 **Agents** (strategic consulting):
 - Switch for architecture and design work
 - Complex problem diagnosis and analysis
 - Expert consultation on approaches

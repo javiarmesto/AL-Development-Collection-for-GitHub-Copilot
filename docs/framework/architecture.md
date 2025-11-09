@@ -51,7 +51,7 @@ model: claude-sonnet-4.5
 - Multi-step validation gates
 - Structured output requirements
 
-### Chat Mode Files
+### Agent Files
 
 **Purpose**: Role-based specialist modes
 
@@ -127,7 +127,7 @@ Prompts are invoked explicitly:
 
 ### Mode Switching
 
-Chat modes are activated via mode selection:
+Agents are activated via mode selection:
 
 ```bash
 Switch to al-orchestrator mode
@@ -187,7 +187,7 @@ npm run validate
 3. Define workflow steps
 4. Validate and test
 
-### Adding New Chat Modes
+### Adding New Agents
 
 1. Create file: `your-name.agent.md`
 2. Add frontmatter with description and tools

@@ -45,7 +45,7 @@ Auto-applied persistent rules via `applyTo` patterns.
 
 Complete task execution processes as `.prompt.md` files.
 
-### 💬 Chat Modes (6 primitives)
+### 💬 Agents (6 primitives)
 
 Role-based specialists with defined tool boundaries.
 
@@ -73,7 +73,7 @@ Optimization strategies:
 | **Total Primitives** | 28 |
 | **Instructions** | 7 |
 | **Agentic Workflows** | 14 |
-| **Chat Modes** | 6 |
+| **Agents** | 6 |
 | **Framework Version** | 2.2.0 |
 
 ## Learn More

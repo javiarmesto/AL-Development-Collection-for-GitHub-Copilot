@@ -54,7 +54,7 @@ Located in `prompts/` - **Complete systematic processes** invoked with `@workspa
 - `al-copilot-test` - Test with AI Test Toolkit
 - `al-translate` - XLF translation file management
 
-### Layer 4: Chat Modes (Strategic Consulting & Tactical Execution)
+### Layer 4: Agents (Strategic Consulting & Tactical Execution)
 Located in `agents/` - **Role-based specialists** with MCP tool boundaries:
 
 - **al-orchestrator** - Smart router, guides you to the right tool (ESSENTIAL)
@@ -440,7 +440,7 @@ All prompts are invoked with: `@workspace use [prompt-name]`
 **When**: Managing XLF translation files for multilingual support
 **Tools**: XLF file manipulation, translation management
 
-### Role-Based Chat Modes
+### Role-Based Agents
 
 #### al-orchestrator 🎯
 **Your starting point when unsure**

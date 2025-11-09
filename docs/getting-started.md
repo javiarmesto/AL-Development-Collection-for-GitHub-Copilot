@@ -40,7 +40,7 @@ cp -r instructions your-al-project/.github/copilot/
 # Copy prompt files
 cp -r prompts your-al-project/.github/copilot/
 
-# Copy chat mode files
+# Copy agent files
 cp -r agents your-al-project/.github/copilot/
 
 # Copy collection manifest
@@ -146,7 +146,7 @@ Switch to al-orchestrator mode and ask:
 3. Verify frontmatter in all files
 4. Review validation output for specific errors
 
-### Chat Modes Not Appearing
+### Agents Not Appearing
 
 1. Ensure files end with `.agent.md`
 2. Verify frontmatter includes `description` and `tools`

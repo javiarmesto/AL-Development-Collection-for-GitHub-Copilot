@@ -131,7 +131,7 @@ graph TB
 | Layer | Focus | Purpose | AL Implementation |
 |-------|-------|---------|-------------------|
 | **Layer 1** | **Markdown Prompt Engineering** | Structured instructions using semantic markdown | Headers, lists, links for AI reasoning |
-| **Layer 2** | **Agent Primitives** | Configurable tools (Instructions, Modes, Prompts) | 7 Instructions + 11 Chat Modes + 18 Workflows + 1 Guide |
+| **Layer 2** | **Agent Primitives** | Configurable tools (Instructions, Modes, Prompts) | 7 Instructions + 11 Agents + 18 Workflows + 1 Guide |
 | **Layer 3** | **Context Engineering** | Strategic context management via `applyTo` patterns | Modular loading, AGENTS.md compilation ready |
 
 ### 📊 Agent Primitives Breakdown
@@ -139,7 +139,7 @@ graph TB
 | Primitive Type | Count | Activation | Purpose |
 |----------------|-------|------------|---------|  
 | **Instructions** | 9 files | Auto via `applyTo` patterns | Persistent coding rules & standards |
-| **Chat Modes** | 7 files | `Use [mode-name]` | Role-based strategic/tactical specialists |
+| **Agents** | 7 files | `Use [mode-name]` | Role-based strategic/tactical specialists |
 | **Orchestra System** | 4 files | `Use al-conductor` | Multi-agent TDD orchestration |
 | **Agentic Workflows** | 18 files | `@workspace use [name]` | Complete task execution processes |
 | **Total Primitives** | **38 tools** | — | Complete AI Native toolkit with TDD |## 📦 What's Included: Agent Primitives
@@ -191,7 +191,7 @@ graph TB
 
 > 💡 **Agentic Workflows**: Prompts orchestrate primitives into complete processes with human validation checkpoints.
 
-### 💬 Chat Modes (7 primitives)
+### 💬 Agents (7 primitives)
 
 **Role-based specialists** with MCP tool boundaries (like professional licensing):
 
@@ -552,11 +552,11 @@ AL-Development-Collection-for-GitHub-Copilot/
 - 🔧 **Layer 2: Agent Primitives** - 28 configurable tools (Instructions, Modes, Prompts)
 - 🎯 **Layer 3: Context Engineering** - `applyTo` patterns for modular context loading
 - 📖 **AGENTS.md Ready** - Prepared for universal context compilation
-- 🔒 **Tool Boundaries** - Chat modes with explicit CAN/CANNOT security lists
+- 🔒 **Tool Boundaries** - Agents with explicit CAN/CANNOT security lists
 - ✅ **Validation Passing** - All 34 framework compliance checks passing
 
 ### 2.1.0 (2025-10-15)
-- ✨ Streamlined chat modes - Archived 5 duplicate modes
+- ✨ Streamlined agents - Archived 5 duplicate modes
 - 🎯 Focused toolkit - 6 core strategic agents
 - 📊 Updated to 24 tools - Clearer separation of concerns
 - 📚 Enhanced documentation - Practical examples integrated

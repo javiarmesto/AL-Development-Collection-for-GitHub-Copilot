@@ -262,7 +262,7 @@ Orchestra **applies and validates** BC performance patterns:
 
 - **SetLoadFields**: For large tables (Customer, Item, G/L Entry)
 - **Early Filtering**: SetRange before FindSet
-- **Temporary Tables**: For intermediate processing
+- **Temporary Tables**: For interMEDIUMte processing
 - **TryFunctions**: For error-prone operations
 
 Review subagent **checks these patterns** and fails review if violated on large tables.

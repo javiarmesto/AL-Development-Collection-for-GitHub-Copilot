@@ -99,7 +99,7 @@ end;
 ## Rule 3: Code Compilation and Correctness Priority
 
 ### Intent
-Generated AL code should prioritize correctness over immediate compilation. Code can fail to compile if AI suggests base functions or events that don't exist, or if variables in event subscriptions are incorrect. When this happens, leave space for manual fixes rather than changing the intended behavior. If you're confident the logic should work as suggested but there are naming or parameter issues, leave it for user correction rather than altering the business logic.
+Generated AL code should prioritize correctness over imMEDIUMte compilation. Code can fail to compile if AI suggests base functions or events that don't exist, or if variables in event subscriptions are incorrect. When this happens, leave space for manual fixes rather than changing the intended behavior. If you're confident the logic should work as suggested but there are naming or parameter issues, leave it for user correction rather than altering the business logic.
 
 ### Examples
 

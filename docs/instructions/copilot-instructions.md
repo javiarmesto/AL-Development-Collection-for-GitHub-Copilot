@@ -3,50 +3,67 @@
 # GitHub Copilot Instructions for AL Development
 
 ## Overview
-This workspace contains AL (Application Language) code for Microsoft Dynamics 365 Business Central. GitHub Copilot is configured with a **comprehensive suite of guidelines, prompts, and specialized modes** to assist with AL development following Microsoft's best practices and this project's specific standards.
+This workspace contains AL (Application Language) code for Microsoft Dynamics 365 Business Central. This is an **AI Native AL Development** toolkit implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. GitHub Copilot is configured with **38 Agent Primitives** across **3 framework layers** to assist with AL development following Microsoft's best practices and this project's specific standards.
+
+### Framework Architecture
+This collection implements the **AI Native-Instructions Architecture** with three systematic layers:
+
+**Layer 1: Markdown Prompt Engineering** - Structured instructions using semantic markdown (headers, lists, links) that guide AI reasoning for predictable, repeatable results.
+
+**Layer 2: Agent Primitives** - 28 configurable tools (7 instructions + 14 workflows + 6 modes + 1 guide) that deploy your prompt engineering systematically.
+
+**Layer 3: Context Engineering** - Strategic management of LLM context windows through modular loading, `applyTo` patterns, and optimized information retrieval.
+
+> 💡 For detailed framework documentation, see [AI Native-Instructions Architecture](../references/AI%20Native-INSTRUCTIONS-ARCHITECTURE.md) and [Core Concepts](../references/ai%20native-concepts.md).
 
 ## 🎯 Complete Toolset Available
 
-This workspace provides **four layers** of Copilot assistance:
+This workspace provides **38 Agent Primitives** organized across **3 framework layers** of Copilot assistance leveraging the AI Native-Instructions Architecture:
 
-### Layer 1: Auto-Applied Guidelines (Always Active)
-Located in `.github/instructions/` - These apply automatically based on file type:
+### Layer 1: Auto-Applied Instructions (Always Active)
+Located in `instructions/` - These **Agent Primitives** apply automatically based on file type via `applyTo` patterns:
 
 - **al-guidelines.instructions.md** - Master hub referencing all guidelines (applies to `*.al`, `*.json`)
 - **al-code-style.instructions.md** - Code formatting & structure (applies to `*.al`)
 - **al-naming-conventions.instructions.md** - Naming rules (applies to `*.al`)
 - **al-performance.instructions.md** - Performance optimization (applies to `*.al`)
 
-### Layer 2: Contextual Guidelines (Auto-Activate When Relevant)
-Located in `.github/instructions/` - These activate based on context:
+### Layer 2: Contextual Instructions (Auto-Activate When Relevant)
+Located in `instructions/` - These **Agent Primitives** activate based on context:
 
 - **al-error-handling.instructions.md** - Error patterns, TryFunctions, telemetry (applies to `*.al`)
 - **al-events.instructions.md** - Event-driven development patterns (applies to `*.al`)
 - **al-testing.instructions.md** - Testing guidelines, AL-Go structure (applies to test files)
 
-### Layer 3: Task-Specific Prompts (Explicit Invocation)
-Located in `.github/prompts/` - Invoke with `@workspace use [prompt-name]`:
+### Layer 3: Agentic Workflows (Explicit Invocation)
+Located in `prompts/` - **Complete systematic processes** invoked with `@workspace use [prompt-name]`:
 
-- `al-workspace` - Project setup & configuration
+- `al-initialize` - Complete environment & workspace setup (consolidated setup + workspace)
+- `al-diagnose` - Runtime debugging & configuration troubleshooting (consolidated debug + troubleshoot)
 - `al-build` - Build & deployment workflows
 - `al-events` - Event implementation
-- `al-debug` - Debugging sessions
-- `al-performance` - Performance analysis
+- `al-performance` - Deep performance analysis with CPU profiling
+- `al-performance.triage` - Quick performance diagnosis and static analysis
 - `al-permissions` - Permission management
-- `al-troubleshoot` - Common problem solving
 - `al-migrate` - Version migration
 - `al-pages` - Page designer & UI
-- `al-workflow` - End-to-end guidance
+- `al-spec.create` - Functional-technical specifications
+- `al-pr-prepare` - Pull request preparation (streamlined template)
+- `al-copilot-capability` - Register Copilot capability
+- `al-copilot-promptdialog` - Create PromptDialog pages
+- `al-copilot-test` - Test with AI Test Toolkit
+- `al-translate` - XLF translation file management
 
-### Layer 4: Role-Based Agents (Strategic Consulting)
-Located in `.github/agents/` - Specialized consultant personalities:
+### Layer 4: Agents (Strategic Consulting & Tactical Execution)
+Located in `agents/` - **Role-based specialists** with MCP tool boundaries:
 
 - **al-orchestrator** - Smart router, guides you to the right tool (ESSENTIAL)
-- **al-architect** - Solution architecture & design
-- **al-debugger** - Deep debugging & diagnosis
-- **al-tester** - Testing strategy & TDD
-- **al-api** - API development
-- **al-copilot** - AI/Copilot feature development
+- **al-architect** - Solution architecture & design (strategic only)
+- **al-developer** - Tactical implementation with full build tools (NEW - executes code)
+- **al-debugger** - Deep debugging & diagnosis (strategic only)
+- **al-tester** - Testing strategy & TDD (strategic only)
+- **al-api** - API development (strategic + implementation)
+- **al-copilot** - AI/Copilot feature development (strategic only)
 
 ## 🚀 Quick Start Guide
 
@@ -57,12 +74,12 @@ Located in `.github/agents/` - Specialized consultant personalities:
    - Example: "I need to build a sales approval workflow"
 
 2. **Let the auto-guidelines work**
-   - As you code, Layer 1 & 2 guidelines apply automatically
+   - As you code, auto-applied instructions (Layer 1 & 2) activate automatically
    - Copilot will suggest code that follows all rules
 
 3. **Use prompts for specific tasks**
-   - Setting up a project? → `@workspace use al-workspace`
-   - Debugging? → `@workspace use al-debug`
+   - Setting up a project? → `@workspace use al-initialize`
+   - Debugging? → `@workspace use al-diagnose`
 
 ### For Experienced AL Developers
 
@@ -90,19 +107,19 @@ Located in `.github/agents/` - Specialized consultant personalities:
 1. Ensure Copilot is enabled in VS Code (View > Command Palette > GitHub Copilot: Enable)
 2. Open an .al file to start receiving suggestions
 3. Use the chat feature (Ctrl/Cmd + I) for complex queries
-4. The 4-layer system activates automatically as you work
+4. The AI Native-Instructions Architecture activates automatically as you work
 
 ### How the Layers Work Together
 
 **While coding** (no action needed):
-- Layer 1 & 2 (Instructions) apply automatically
+- Auto-applied instructions (Layer 1 & 2) activate automatically
 - Code suggestions follow all standards
 - Performance and naming conventions enforced
 
 **For specific tasks** (explicit invocation):
 ```
-@workspace use al-workspace    # Setup project
-@workspace use al-debug        # Debug session
+@workspace use al-initialize   # Setup project
+@workspace use al-diagnose     # Debug session
 @workspace use al-build        # Deploy
 ```
 
@@ -241,8 +258,8 @@ Practical examples of what to ask Copilot:
 
 ```markdown
 Step 1: Use al-orchestrator (if unsure) OR go directly to:
-Step 2: @workspace use al-workspace
-  → Guides through project initialization
+Step 2: @workspace use al-initialize
+  → Guides through complete environment & workspace initialization
   → Downloads symbols
   → Configures dependencies
   
@@ -275,7 +292,7 @@ Step 1: Use al-debugger mode
   → Systematic diagnosis
   → Root cause analysis
 
-Step 2: @workspace use al-debug
+Step 2: @workspace use al-diagnose
   → Attaches debugger
   → Uses snapshot debugging if intermittent
 
@@ -363,9 +380,13 @@ Step 2: Implement tests with guidance
 
 All prompts are invoked with: `@workspace use [prompt-name]`
 
-#### al-workspace
-**When**: Setting up new projects, configuring environments
+#### al-initialize
+**When**: Setting up new projects, configuring environments (consolidated al-setup + al-workspace)
 **Tools**: al_new_project, al_go, al_download_symbols, al_get_package_dependencies
+
+#### al-diagnose
+**When**: Debugging issues, troubleshooting configurations (consolidated al-debug + al-troubleshoot)
+**Tools**: al_debug_without_publish, al_initalize_snapshot_debugging, al_snapshots, al_clear_credentials_cache
 
 #### al-build
 **When**: Building, packaging, deploying extensions
@@ -375,21 +396,17 @@ All prompts are invoked with: `@workspace use [prompt-name]`
 **When**: Implementing event-driven logic
 **Tools**: al_insert_event, al_open_Event_Recorder
 
-#### al-debug
-**When**: Debugging issues
-**Tools**: al_debug_without_publish, al_initalize_snapshot_debugging, al_snapshots
-
 #### al-performance
-**When**: Optimizing code, profiling
+**When**: Deep performance analysis with CPU profiling
 **Tools**: al_generate_cpu_profile_file, al_clear_profile_codelenses
+
+#### al-performance.triage
+**When**: Quick performance diagnosis and static analysis
+**Tools**: Code analysis, FlowField optimization detection
 
 #### al-permissions
 **When**: Generating permission sets
 **Tools**: al_generate_permissionset_for_extension_objects
-
-#### al-troubleshoot
-**When**: Solving authentication, symbol, build issues
-**Tools**: al_clear_credentials_cache, al_download_symbols, al_download_source
 
 #### al-migrate
 **When**: Upgrading BC versions
@@ -399,9 +416,29 @@ All prompts are invoked with: `@workspace use [prompt-name]`
 **When**: Designing pages with Page Designer
 **Tools**: al_open_Page_Designer, al_build, al_incremental_publish
 
-#### al-workflow
-**When**: Need end-to-end guidance for complete features
-**Tools**: Multiple tools across the development lifecycle
+#### al-spec.create
+**When**: Creating functional-technical specifications before development
+**Tools**: Workspace analysis, requirements documentation
+
+#### al-pr-prepare
+**When**: Preparing pull requests with documentation and validation
+**Tools**: Git analysis, test verification, documentation generation
+
+#### al-copilot-capability
+**When**: Registering new Copilot capability in BC
+**Tools**: Enum extension, install codeunit, isolated storage setup
+
+#### al-copilot-promptdialog
+**When**: Creating PromptDialog pages for Copilot features
+**Tools**: Page creation, Azure OpenAI integration
+
+#### al-copilot-test
+**When**: Testing Copilot features with AI Test Toolkit
+**Tools**: Test creation, AI Test Toolkit integration
+
+#### al-translate
+**When**: Managing XLF translation files for multilingual support
+**Tools**: XLF file manipulation, translation management
 
 ### Role-Based Agents
 
@@ -494,7 +531,7 @@ Always review Copilot suggestions:
 ```markdown
 1. al-orchestrator → Analyze requirements
 2. al-architect → Design solution
-3. @workspace use al-workspace → Setup (if needed)
+3. @workspace use al-initialize → Setup (if needed)
 4. Implement (auto-guidelines active)
 5. @workspace use al-events → Add events
 6. al-tester → Design tests
@@ -505,7 +542,7 @@ Always review Copilot suggestions:
 ### Workflow 2: Bug Investigation
 ```markdown
 1. al-debugger → Diagnose issue
-2. @workspace use al-debug → Debug session
+2. @workspace use al-diagnose → Debug session
 3. @workspace use al-performance → Profile (if slow)
 4. Fix with auto-guidelines
 5. al-tester → Regression tests
@@ -529,10 +566,17 @@ Always review Copilot suggestions:
 - [Business Central Development](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/)
 
 ### This Project's Documentation
-- [Instructions Index](../instructions/index.md) - Complete guide to all instruction files
-- [Prompts Index](../prompts/index.md) - Complete guide to all agentic workflows
-- [Agents Index](../agents/index.md) - Complete guide to all agents
-- [AL Guidelines](../instructions/al-guidelines.instructions.md) - Master guidelines
+- [AL Development Overview](../al-development.md) - Framework architecture and overview
+- [AI Native-Instructions Architecture](../references/AI%20Native-INSTRUCTIONS-ARCHITECTURE.md) - Implementation details
+- [AI Native Structure](../references/ai%20native%20structure.md) - Getting started guide
+- [AI Native Concepts](../references/ai%20native-concepts.md) - Core concepts and framework layers
+- [Instructions Index](index.md) - Complete guide to all instruction files
+- [AL Guidelines](al-guidelines.instructions.md) - Master guidelines
+
+### Framework & Standards
+- [AI Native-Instructions Architecture Guide](https://danielmeppiel.github.io/awesome-ai-native/)
+- [AGENTS.md Standard](https://agents.md)
+- [Context Engineering Patterns](https://danielmeppiel.github.io/awesome-ai-native/docs/concepts/)
 
 ## 🛠️ Troubleshooting Copilot
 
@@ -559,35 +603,178 @@ Always review Copilot suggestions:
 - Be explicit: "Use al-architect mode for this"
 - Reference prompts explicitly: "@workspace use al-debug"
 
-## 📊 Tool Selection Decision Tree
+## 📊 Complexity-Based Tool Selection with Validation Gate
+
+**NEW PROTOCOL**: All feature requests now follow automatic complexity classification with mandatory validation gate.
+
+### Complexity Classification System
+
+When user provides requirements, **ALWAYS** follow this protocol:
+
+#### Step 1: Automatic Analysis
+Analyze requirements and count:
+- **AL Objects**: How many tables, pages, codeunits, reports needed?
+- **Integrations**: Internal events only vs external APIs?
+- **Business Logic**: Simple validation vs complex calculations?
+- **Phases**: Can complete in 1 step vs needs multiple phases?
+
+#### Step 2: Infer Complexity
+Based on analysis, classify as:
+
+**🟢 LOW (Low)**:
+- 1-2 AL objects
+- Single phase
+- No external integrations
+- Simple/clear logic
+- **Route to**:
+  - Standard: `al-developer` mode OR direct workflows (`@workspace use al-events`, etc.)
+  - Debug needed: `al-debugger` → `al-developer`
+  - Test focus: `al-tester` → `al-developer`
+
+**🟡 MEDIUM (Medium)**:
+- 3-5 AL objects
+- 2-3 phases
+- Internal integrations (events)
+- Moderate logic
+- **Route to** (by specialization):
+  - Standard feature: `al-conductor` mode (TDD Orchestra)
+  - API integration: `al-api` → `al-conductor`
+  - AI/Copilot feature: `al-copilot` → `al-conductor`
+  - Testing focus: `al-tester` → `al-conductor`
+
+**🔴 HIGH (High)**:
+- 6+ AL objects
+- 4+ phases
+- External integrations (APIs, OAuth)
+- Complex business rules
+- **Route to** (by specialization):
+  - Standard complex: `al-architect` → `al-conductor`
+  - Complex APIs: `al-api` → `al-architect` → `al-conductor`
+  - Complex AI system: `al-copilot` → `al-architect` → `al-conductor`
+  - Performance-critical: `al-architect` (with perf analysis) → `al-conductor`
+  - Legacy refactoring: `al-debugger` → `al-architect` → `al-conductor`
+
+#### Step 3: Present Classification (MANDATORY)
+```markdown
+🔍 Complexity Analysis:
+
+Detected Elements:
+- AL Objects: [count] ([list objects])
+- Integrations: [internal/external/none]
+- Business Logic: [simple/moderate/complex]
+- Estimated Phases: [number]
+
+📊 Inferred Complexity: [🟢 LOW / 🟡 MEDIUM / 🔴 HIGH]
+
+Reasoning:
+[Explain why this classification]
+
+Recommended Path:
+[Suggest agent/workflow]
+```
+
+#### Step 4: Validation Gate (MANDATORY - MUST WAIT)
+```markdown
+🚦 VALIDATION GATE - Please confirm complexity classification:
+
+✅ [1] Confirm [🟢/🟡/🔴] complexity - Proceed as recommended
+❌ [2] This is actually LOW (simpler than detected)
+❌ [3] This is actually MEDIUM (moderate complexity)
+❌ [4] This is actually HIGH (more complex than detected)
+📝 [5] Let me explain the actual scope
+
+**YOU MUST WAIT FOR USER RESPONSE** - Do not proceed until confirmed
+```
+
+#### Step 5: Route Based on Confirmation
+
+**Complete Routing Matrix** (after user confirms complexity):
+
+| Complexity | Specialization | Route | When to Use |
+|------------|----------------|-------|-------------|
+| 🟢 LOW | Standard | `al-developer` | Simple change, clear spec |
+| 🟢 LOW | Debug | `al-debugger` → `al-developer` | Bug fix, need diagnosis |
+| 🟢 LOW | Test focus | `al-tester` → `al-developer` | Need test strategy first |
+| 🟢 LOW | Quick task | `@workspace use al-[task]` | One-off workflow |
+| 🟡 MEDIUM | Standard | `al-conductor` | Multi-object feature, needs TDD |
+| 🟡 MEDIUM | API | `al-api` → `al-conductor` | REST/OData integration |
+| 🟡 MEDIUM | AI/Copilot | `al-copilot` → `al-conductor` | Copilot experience |
+| 🟡 MEDIUM | Test focus | `al-tester` → `al-conductor` | Complex test strategy |
+| 🔴 HIGH | Standard | `al-architect` → `al-conductor` | Complex feature, architecture needed |
+| 🔴 HIGH | Complex API | `al-api` → `al-architect` → `al-conductor` | API design → Architecture → Implement |
+| 🔴 HIGH | Complex AI | `al-copilot` → `al-architect` → `al-conductor` | AI design → Architecture → Implement |
+| 🔴 HIGH | Performance | `al-architect` → `al-conductor` | Performance-critical design |
+| 🔴 HIGH | Refactoring | `al-debugger` → `al-architect` → `al-conductor` | Understand → Redesign → Implement |
+
+**Decision logic after confirmation:**
+- **If confirmed**: Follow routing matrix based on complexity + specialization
+- **If corrected**: Acknowledge correction, use corrected complexity row from matrix
+- **If explained**: Re-analyze with new information, present updated classification and routing
+
+### Example: Complexity Classification Flow
+
+**User Request**: "Add email validation to Customer table"
+
+**Your Analysis**:
+```markdown
+🔍 Complexity Analysis:
+
+Detected Elements:
+- AL Objects: 2 (Customer.TableExt for field, CustomerValidator.Codeunit for logic)
+- Integrations: None (internal validation only)
+- Business Logic: Simple (regex pattern matching)
+- Estimated Phases: 1 (add field + validation)
+
+📊 Inferred Complexity: 🟢 LOW
+
+Reasoning:
+- Only 2 objects needed
+- No external dependencies
+- Straightforward validation logic
+- Can complete in single implementation
+
+Recommended Path: al-developer mode (direct implementation)
+```
+
+**Validation Gate**:
+```markdown
+🚦 VALIDATION GATE - Please confirm:
+
+Proposed: 🟢 LOW complexity → al-developer mode
+
+✅ Confirm and proceed with direct implementation?
+❌ Actually more complex than this? (explain why)
+```
+
+**If user confirms**: Proceed with al-developer
+**If user says "Actually need TDD"**: Adjust to 🟡 MEDIUM → al-conductor
+
+### Decision Tree (OLD - For Reference Only)
 
 ```
 Question or Task?
 │
-├─ Don't know where to start?
-│  └─ al-orchestrator mode ✅
+├─ Don't know complexity?
+│  └─ Run complexity analysis ✅ (NEW)
 │
-├─ Need to design/plan?
-│  └─ al-architect mode
+├─ Complexity confirmed: 🟢 LOW
+│  ├─ al-developer mode
+│  └─ OR @workspace use al-[specific-task]
 │
-├─ Have a bug/error?
-│  ├─ al-debugger mode (diagnosis)
-│  └─ @workspace use al-debug (tools)
+├─ Complexity confirmed: 🟡 MEDIUM
+│  └─ al-conductor mode (TDD Orchestra)
 │
-├─ Need tests?
-│  ├─ al-tester mode (strategy)
-│  └─ Auto: al-testing.instructions.md
+├─ Complexity confirmed: 🔴 HIGH
+│  ├─ al-architect mode (design first)
+│  └─ Then al-conductor mode (implement)
 │
-├─ Building API?
-│  └─ al-api mode
+├─ Specialized domains (any complexity):
+│  ├─ APIs → al-api mode
+│  ├─ AI/Copilot → al-copilot mode
+│  ├─ Debugging → al-debugger mode
+│  └─ Testing → al-tester mode
 │
-├─ Adding AI features?
-│  └─ al-copilot mode
-│
-├─ Specific task?
-│  └─ @workspace use al-[task]
-│
-└─ Just coding?
+└─ Just coding with specs?
    └─ Auto-guidelines handle it ✨
 ```
 
@@ -602,16 +789,21 @@ Question or Task?
 - "Use al-copilot" - AI features
 
 ### Prompts (Tactical)
-- `@workspace use al-workspace` - Setup project
+- `@workspace use al-initialize` - Setup project & environment
+- `@workspace use al-diagnose` - Debug & troubleshoot
 - `@workspace use al-build` - Build/deploy
 - `@workspace use al-events` - Work with events
-- `@workspace use al-debug` - Debug tools
-- `@workspace use al-performance` - Optimize
+- `@workspace use al-performance` - Deep performance profiling
+- `@workspace use al-performance.triage` - Quick performance check
 - `@workspace use al-permissions` - Security
-- `@workspace use al-troubleshoot` - Fix issues
 - `@workspace use al-migrate` - Upgrade version
 - `@workspace use al-pages` - Design UI
-- `@workspace use al-workflow` - Complete guidance
+- `@workspace use al-spec.create` - Create specifications
+- `@workspace use al-pr-prepare` - Prepare pull request
+- `@workspace use al-copilot-capability` - Register Copilot capability
+- `@workspace use al-copilot-promptdialog` - Create PromptDialog
+- `@workspace use al-copilot-test` - Test Copilot features
+- `@workspace use al-translate` - Manage translations
 
 ### Auto-Active (Background)
 - al-code-style ✅ Always
@@ -632,62 +824,73 @@ Question or Task?
 
 ## � Workspace Structure
 
-Understanding the folder organization helps you leverage the 4-layer system:
+Understanding the folder organization helps you leverage the AI Native-Instructions Architecture:
 
 ```
-AL-Development-Collection-for-GitHub-Copilot/
-├── .github/
-│   ├── copilot-instructions.md          # This file - Master guide
-│   ├── instructions/                    # Layer 1 & 2: Auto-applied
-│   │   ├── al-guidelines.instructions.md
-│   │   ├── al-code-style.instructions.md
-│   │   ├── al-naming-conventions.instructions.md
-│   │   ├── al-performance.instructions.md
-│   │   ├── al-error-handling.instructions.md
-│   │   ├── al-events.instructions.md
-│   │   └── al-testing.instructions.md
-│   ├── prompts/                         # Layer 3: Task workflows
-│   │   ├── al-workspace.prompt.md
-│   │   ├── al-build.prompt.md
-│   │   ├── al-events.prompt.md
-│   │   ├── al-debug.prompt.md
-│   │   ├── al-performance.prompt.md
-│   │   ├── al-permissions.prompt.md
-│   │   ├── al-troubleshoot.prompt.md
-│   │   ├── al-migrate.prompt.md
-│   │   ├── al-pages.prompt.md
-│   │   └── al-workflow.prompt.md
-│   └── agents/                       # Layer 4: Strategic modes (6 core)
-│       ├── al-orchestrator.agent.md  # Smart router (ESSENTIAL)
-│       ├── al-architect.agent.md     # Architecture & design
-│       ├── al-debugger.agent.md      # Deep debugging
-│       ├── al-tester.agent.md        # Testing strategy
-│       ├── al-api.agent.md           # API development
-│       └── al-copilot.agent.md       # AI features
-├── src/                                 # Your AL code here
+AL-Development-Collection/
+├── instructions/
+│   ├── copilot-instructions.md          # This file - Master integration guide
+│   ├── al-guidelines.instructions.md    # Master hub (applies to *.al, *.json)
+│   ├── al-code-style.instructions.md    # Code formatting (applies to *.al)
+│   ├── al-naming-conventions.instructions.md
+│   ├── al-performance.instructions.md
+│   ├── al-error-handling.instructions.md
+│   ├── al-events.instructions.md
+│   └── al-testing.instructions.md       # Testing (applies to test files)
+├── prompts/                              # Agentic Workflows (15 primitives)
+│   ├── al-initialize.prompt.md          # Environment & workspace setup (consolidated)
+│   ├── al-diagnose.prompt.md            # Debug & troubleshoot (consolidated)
+│   ├── al-build.prompt.md
+│   ├── al-events.prompt.md
+│   ├── al-performance.prompt.md
+│   ├── al-performance.triage.prompt.md
+│   ├── al-permissions.prompt.md
+│   ├── al-migrate.prompt.md
+│   ├── al-pages.prompt.md
+│   ├── al-spec.create.prompt.md
+│   ├── al-pr-prepare.prompt.md
+│   ├── al-copilot-capability.prompt.md
+│   ├── al-copilot-promptdialog.prompt.md
+│   ├── al-copilot-test.prompt.md
+│   └── al-translate.prompt.md
+├── agents/                            # Agents with MCP tool boundaries
+│   ├── al-orchestrator.agent.md      # Smart router (START HERE)
+│   ├── al-architect.agent.md         # Architecture & design
+│   ├── al-debugger.agent.md          # Deep debugging
+│   ├── al-tester.agent.md            # Testing strategy
+│   ├── al-api.agent.md               # API development
+│   └── al-copilot.agent.md           # AI features
+├── references/                           # Framework documentation
+│   ├── AI Native-INSTRUCTIONS-ARCHITECTURE.md
+│   ├── ai native structure.md
+│   └── ai native-concepts.md
+├── src/                                  # Your AL code here
 │   ├── Tables/
 │   ├── Pages/
 │   ├── Codeunits/
 │   └── ...
+├── al-development.md                     # Framework overview
 ├── app.json
 └── README.md
 ```
 
-### How Files Are Used
+### How Agent Primitives Are Used
 
 **Instructions** (`.instructions.md`):
-- Auto-loaded based on file type or context
-- Apply silently in the background
+- Auto-loaded based on file type via `applyTo` patterns
+- Apply silently in the background (Context Engineering)
 - No explicit invocation needed
+- Form the foundation of Layer 1 & 2
 
-**Prompts** (`.prompt.md`):
+**Agentic Workflows** (`.prompt.md`):
 - Invoked with `@workspace use [name]`
-- Provide step-by-step workflows
+- Provide complete systematic processes (Layer 3)
 - Have access to AL tools
+- Orchestrate multiple primitives into end-to-end solutions
 
 **Agents** (`.agent.md`):
 - Switched via "Use [mode-name] mode"
-- 6 core strategic consultant roles
+- 6 role-based strategic specialists with MCP tool boundaries (Layer 4)
 - Can recommend prompts and instructions
 - Orchestrator is essential for routing
 
@@ -698,11 +901,13 @@ This workspace configuration evolves based on usage. If you find:
 - Missing functionality → Suggest new prompts or modes
 - Conflicting guidance → Report for clarification
 
-Remember: **You have 24 specialized tools working together to make AL development easier, faster, and better!**
+Remember: **You have 38 Agent Primitives working together to make AL development easier, faster, and better!**
 
 ---
 
-**Version**: 2.1  
-**Last Updated**: 2025-10-15  
+**Framework**: [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)  
+**Version**: 2.2.0  
+**Last Updated**: 2025-10-23  
 **Workspace**: AL Development for Business Central  
-**Total Tools**: 24 (1 guide + 7 instructions + 10 prompts + 6 agents)
+**Total Primitives**: 28 (7 instructions + 14 workflows + 6 modes + 1 guide)  
+**Status**: ✅ Fully compliant with AI Native-Instructions Architecture

@@ -43,7 +43,7 @@ Ask the user for:
 2. **Interaction Model**:
    - User provides text input → AI generates response
    - User selects options → AI generates structured suggestions
-   - Auto-generate on open → AI provides immediate insights
+   - Auto-generate on open → AI provides imMEDIUMte insights
 
 3. **PromptMode**: How should the dialog behave?
    - `Prompt` (default): Ask user for input first

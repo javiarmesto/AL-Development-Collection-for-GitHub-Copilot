@@ -8,42 +8,187 @@ The AL Development Collection provides multiple pathways from requirements to pr
 
 ---
 
-## 🎯 Decision Tree: Where to Start?
+## 🎯 Decision Tree with Complexity Validation Gate
+
+**NEW**: All workflows now include automatic complexity classification with mandatory user confirmation.
 
 ```mermaid
 graph TD
-    A[Start: New Feature] --> B{Have requirements document?}
-    B -->|YES| C{Feature Complexity?}
-    B -->|NO| D[Create Documentation]
-    D --> D1["@workspace use al-context.create"]
-    D --> D2["@workspace use al-spec.create"]
-    D1 --> C
-    D2 --> C
+    A[📄 Start: Requirements/Task] --> B{Have requirements<br/>document?}
+    B -->|NO| CreateDoc[Create Documentation]
+    CreateDoc --> Doc1["@workspace use al-context.create"]
+    CreateDoc --> Doc2["@workspace use al-spec.create"]
     
-    C -->|"SIMPLE (1-2 objects)"| E[Direct Implementation]
-    C -->|"MODERATE (3-5 objects)"| F[Spec + Orchestra]
-    C -->|"COMPLEX (5+ objects)"| G[Architecture + Orchestra]
-    C -->|SPECIALIZED| H[See Specialized Flows]
+    B -->|YES| Analyze[🔍 Automatic Complexity Analysis]
+    Doc1 --> Analyze
+    Doc2 --> Analyze
     
-    E --> E1["Option A: Workflows (al-events, al-pages, etc.)"]
-    E --> E2["Option B: Use al-developer mode"]
+    Analyze --> Infer["📊 System infers complexity:<br/>- Count AL objects<br/>- Analyze integrations<br/>- Evaluate business logic<br/>- Assess phases needed"]
     
-    F --> F1["@workspace use al-spec.create"]
-    F1 --> F2[Use al-conductor mode]
+    Infer --> Present["📋 Present Classification<br/>with justification"]
     
-    G --> G1[Use al-architect mode]
-    G1 --> G2[Use al-conductor mode]
+    Present --> Gate{"🚦 VALIDATION GATE<br/>Confirm complexity?"}
     
-    H --> H1[al-api mode]
-    H --> H2[al-copilot mode]
-    H --> H3[al-debugger mode]
+    Gate -->|"❌ Incorrect"| UserCorrect["👤 User provides<br/>correct complexity"]
+    UserCorrect --> Present
     
-    style A fill:#e1f5ff
-    style E fill:#d4edda
-    style F fill:#fff3cd
-    style G fill:#f8d7da
-    style H fill:#e7e7ff
+    Gate -->|"✅ LOW (1-2 obj)"| Low["🟢 LOW Complexity<br/>Direct implementation"]
+    Gate -->|"✅ MEDIUM (3-5 obj)"| Med["🟡 MEDIUM Complexity<br/>TDD with Orchestra"]
+    Gate -->|"✅ HIGH (6+ obj)"| High["🔴 HIGH Complexity<br/>Architecture first"]
+    
+    Low --> LowOpt{Implementation<br/>approach?}
+    LowOpt -->|Workflows| LowWork["@workspace use<br/>al-events, al-pages, etc."]
+    LowOpt -->|Direct code| LowDev["Use al-developer mode<br/>Direct implementation"]
+    
+    Med --> MedSpec{Specialized<br/>domain?}
+    MedSpec -->|No| MedCond["Use al-conductor mode<br/>TDD Orchestra"]
+    MedSpec -->|Yes| MedSpecAgent["al-api / al-copilot<br/>Then al-conductor"]
+    
+    High --> HighArch["Use al-architect mode<br/>Design solution"]
+    HighArch --> HighSpec{Specialized<br/>design?}
+    HighSpec -->|APIs| HighAPI["al-api mode<br/>Design contracts"]
+    HighSpec -->|AI/Copilot| HighCopilot["al-copilot mode<br/>Design experience"]
+    HighSpec -->|Standard| HighStd["Complete architecture"]
+    
+    HighAPI --> HighCond1["Use al-conductor mode"]
+    HighCopilot --> HighCond2["Use al-conductor mode"]
+    HighStd --> HighCond3["Use al-conductor mode"]
+    
+    style Gate fill:#FF6B6B,stroke:#C92A2A,stroke-width:4px,color:#fff
+    style Low fill:#51CF66,stroke:#2F9E44,color:#fff
+    style Med fill:#FFD43B,stroke:#F59F00,color:#000
+    style High fill:#FF8787,stroke:#C92A2A,color:#fff
+    style Analyze fill:#E3FAFC,stroke:#0CA678
+    style Present fill:#FFF4E6,stroke:#FD7E14
 ```
+
+### 🚦 Validation Gate Protocol
+
+**MANDATORY STEP**: Before any implementation begins, the system:
+
+1. **📊 Analyzes Requirements**
+   - Counts AL objects mentioned/needed
+   - Identifies integration points
+   - Evaluates business logic complexity
+   - Estimates implementation phases
+
+2. **📋 Presents Classification**
+   ```
+   🔍 Complexity Analysis Results:
+   
+   Detected Elements:
+   - AL Objects: 4 (Customer.TableExt, CustomerCard.PageExt, 
+                    CustomerValidator.Codeunit, CustomerEvents.Codeunit)
+   - Integrations: Internal event subscribers only
+   - Business Logic: Email validation, address formatting
+   - Estimated Phases: 2 phases
+   - External Dependencies: None
+   
+   📊 Inferred Complexity: 🟡 MEDIUM
+   
+   Reasoning:
+   - Object count (4) falls in MEDIUM range (3-5 objects)
+   - Limited scope, internal dependencies only
+   - Moderate business logic, manageable complexity
+   - Can be structured in 2-3 TDD phases
+   
+   Recommended: al-conductor mode with TDD orchestration
+   ```
+
+3. **🚦 Waits for Confirmation (GATE)**
+   ```
+   🚦 VALIDATION GATE - Please confirm:
+   
+   Proposed Complexity: 🟡 MEDIUM
+   
+   Options:
+   ✅ [1] Confirm MEDIUM - Proceed with al-conductor
+   ❌ [2] Actually LOW - This is simpler than analyzed
+   ❌ [3] Actually HIGH - This is more complex than analyzed
+   📝 [4] Explain your reasoning
+   ```
+
+4. **➡️ Routes Based on Confirmation**
+   - **If confirmed**: Proceeds with recommended workflow
+   - **If corrected**: Re-analyzes with user input and presents new recommendation
+   - **If explained**: Incorporates reasoning into complexity assessment
+
+### 📊 Complexity Classification Criteria
+
+#### 🟢 LOW (Low Complexity)
+
+**Characteristics:**
+- 1-2 AL objects maximum
+- Single feature/change
+- No external integrations
+- Clear, straightforward implementation
+- Minimal or no business logic
+- Can be completed in 1 phase
+
+**Examples:**
+- ✅ Add single field to existing table
+- ✅ Modify page layout (add/remove fields)
+- ✅ Simple validation rule (one condition)
+- ✅ Caption/label changes
+- ✅ Add single report column
+
+**Recommended Path:**
+→ `al-developer` mode (direct implementation)
+→ OR workflows (`@workspace use al-events`, `@workspace use al-pages`, etc.)
+→ OR if debugging needed: `al-debugger` → `al-developer`
+
+---
+
+#### 🟡 MEDIUM (Medium Complexity)
+
+**Characteristics:**
+- 3-5 AL objects
+- 2-3 implementation phases
+- Internal integrations (event subscribers)
+- Moderate business logic
+- Requires comprehensive tests
+- Some architectural decisions needed
+
+**Examples:**
+- ✅ Customer loyalty points calculation system
+- ✅ Sales order validation with multiple rules
+- ✅ Automated email notifications (internal)
+- ✅ Custom report with data transformation
+- ✅ Approval workflow (basic, single-level)
+
+**Recommended Path (by specialization):**
+→ Standard feature: `al-conductor` mode (TDD Orchestra)
+→ API integration: `al-api` mode → `al-conductor` mode
+→ AI/Copilot feature: `al-copilot` mode → `al-conductor` mode
+→ Testing focus: `al-tester` mode → `al-conductor` mode
+
+---
+
+#### 🔴 HIGH (High Complexity)
+
+**Characteristics:**
+- 6+ AL objects
+- 4+ implementation phases
+- External integrations (APIs, web services, OAuth)
+- Complex business rules and workflows
+- Multi-company or multi-user scenarios
+- Performance optimization required
+- Significant architectural decisions
+
+**Examples:**
+- ✅ Multi-company approval workflow with delegation and email
+- ✅ External API integration (REST/OAuth/retry logic)
+- ✅ AI-powered forecasting system
+- ✅ Real-time inventory synchronization
+- ✅ Complex pricing engine with multiple factors
+- ✅ Document management system with Azure Blob Storage
+
+**Recommended Path (by specialization):**
+→ Standard complex: `al-architect` → `al-conductor`
+→ Complex APIs: `al-api` → `al-architect` → `al-conductor`
+→ Complex AI system: `al-copilot` → `al-architect` → `al-conductor`
+→ Performance-critical: `al-architect` (with perf analysis) → `al-conductor`
+→ Legacy refactoring: `al-debugger` (understand) → `al-architect` (redesign) → `al-conductor`
 
 ---
 

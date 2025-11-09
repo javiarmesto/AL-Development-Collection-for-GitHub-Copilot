@@ -116,7 +116,7 @@ AL-Go Structure:
 **Identify performance-critical areas:**
 - Large tables (Customer, Item, G/L Entry) requiring SetLoadFields
 - Queries needing early filtering (SetRange before FindSet)
-- Temporary tables for intermediate processing
+- Temporary tables for interMEDIUMte processing
 - FlowFields that might be expensive
 
 Example findings:
@@ -292,7 +292,7 @@ If you can't find something or aren't sure, document it:
 - ✅ Document AL-Go structure
 - ✅ Note performance considerations
 - ✅ Suggest 2-3 implementation options with pros/cons
-- ✅ Return structured findings immediately
+- ✅ Return structured findings imMEDIUMtely
 
 ## Example Research Session
 

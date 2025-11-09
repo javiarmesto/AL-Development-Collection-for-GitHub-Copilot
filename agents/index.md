@@ -32,24 +32,42 @@ title: Complex feature planning
 I need to build a sales forecasting system...
 ```
 
-## 📦 Available Agents (7 files)
+## 📊 Complexity-Based Agent Selection
 
-### 🎯 Entry Point (Use This First)
+**All agents use automatic complexity inference with mandatory validation gate** - the system analyzes your requirements and suggests the appropriate complexity level, then you confirm before proceeding.
 
-| Mode | Role | When to Use |
-|------|------|-------------|
-| **al-orchestrator** | Strategic Router & Workflow Coordinator | **Start here** for complex tasks, multi-phase projects, when unsure which tools to use |
+### Complexity Classification Matrix
 
-### 🏗️ Strategic Specialists
+| Complejidad | Objetos AL | Fases | TDD | Agente Recomendado | Tiempo Estimado |
+|-------------|-----------|-------|-----|-------------------|------------------|
+| 🟢 **LOW** | 1-2 objetos | 1 fase | Opcional | **al-developer** | 15-30 min |
+| 🟡 **MEDIUM** | 3-5 objetos | 2-3 fases | Recomendado | **al-conductor** | 1-3 horas |
+| 🔴 **HIGH** | 6+ objetos | 4+ fases | Obligatorio | **al-architect** → **al-conductor** | 3+ horas |
 
-| Mode | Role | Best For |
-|------|------|----------|
-| **al-architect** | Solution Architecture & Design | Planning features, designing data models, architectural decisions |
-| **al-developer** | Tactical Implementation Specialist | **Executing** code changes, building features, implementing from specs |
-| **al-debugger** | Systematic Debugging Specialist | Diagnosing bugs, root cause analysis, understanding execution flow |
-| **al-tester** | Testing Strategy & TDD Expert | Test design, TDD implementation, coverage planning |
-| **al-api** | RESTful API Design Specialist | API contracts, endpoint design, external integrations |
-| **al-copilot** | AI-Powered Features Expert | Copilot experiences, prompt engineering, Azure OpenAI integration |
+### 📦 Available Agents (7 files)
+
+#### 🎯 Strategic Router (Start Here)
+
+| Mode | Role | Complejidad | When to Use |
+|------|------|-------------|-------------|
+| **al-orchestrator** | Strategic Router & Workflow Coordinator | Todas | **Start here** when unsure - analyzes complexity and routes appropriately |
+
+#### 🏗️ Implementation Agents (Complexity-Driven)
+
+| Mode | Role | Complejidad Target | Best For |
+|------|------|-------------------|----------|
+| **al-architect** | Solution Architecture & Design | 🔴 HIGH | Design phase for complex features, architectural decisions, pattern evaluation |
+| **al-conductor** | TDD Orchestra Coordinator | 🟡 MEDIUM / 🔴 HIGH | Multi-phase implementation with enforced TDD and quality gates |
+| **al-developer** | Tactical Implementation Specialist | 🟢 LOW / 🟡 MEDIUM | Direct implementation when design is clear and scope is limited |
+
+#### 🔧 Specialized Consultants (Complexity-Agnostic)
+
+| Mode | Role | Works With | Best For |
+|------|------|-----------|----------|
+| **al-debugger** | Systematic Debugging Specialist | Any complexity | Root cause analysis, performance bottlenecks, execution flow |
+| **al-tester** | Testing Strategy & TDD Expert | Any complexity | Test design, TDD strategy, coverage planning |
+| **al-api** | RESTful API Design Specialist | 🟡 MEDIUM / 🔴 HIGH | API contracts, endpoint design, external integrations |
+| **al-copilot** | AI-Powered Features Expert | 🟡 MEDIUM / 🔴 HIGH | Copilot experiences, prompt engineering, Azure OpenAI integration |
 
 ## 🏗️ Tool Boundaries (MCP Model)
 
@@ -75,29 +93,126 @@ Each mode follows **professional licensing** constraints:
 - Cross-domain operations (architect shouldn't debug)
 - Loss of strategic focus
 
-## 💡 Decision Tree: Which Mode to Use?
+## 🎯 Complexity-Based Decision Flow with Validation Gate
+
+**MANDATORY PROCESS**: All agents analyze requirements → infer complexity → present classification → user confirms → route to appropriate workflow
 
 ```mermaid
 graph TD
-    Start[I need help with...] --> Complex{Complex/Multi-phase?}
+    Start[📄 Task/Requirements] --> Analyze[🔍 Automatic Complexity Analysis]
     
-    Complex -->|Yes| Orchestrator[al-orchestrator]
-    Complex -->|No| Type{What type of help?}
+    Analyze --> Infer[💭 System infers complexity based on:<br/>- Number of AL objects<br/>- Integration points<br/>- Business logic complexity<br/>- Test requirements]
     
-    Type -->|Design/Plan| Design{What to design?}
-    Type -->|Fix Issue| Debug[al-debugger]
-    Type -->|Test Strategy| Test[al-tester]
-    Type -->|API Design| API[al-api]
-    Type -->|AI Features| Copilot[al-copilot]
+    Infer --> Present[📊 Present Classification]
+    Present --> Gate{🚦 VALIDATION GATE<br/>User confirms complexity?}
     
-    Design -->|Architecture| Architect[al-architect]
-    Design -->|API| API
-    Design -->|Tests| Test
+    Gate -->|❌ Adjust| UserInput[👤 User provides correct complexity]
+    UserInput --> Present
     
-    Orchestrator -.Routes to.-> Architect
-    Orchestrator -.Routes to.-> Debug
-    Orchestrator -.Routes to.-> Test
+    Gate -->|✅ Confirmed: LOW| Low[🟢 LOW Complexity]
+    Gate -->|✅ Confirmed: MEDIUM| Med[🟡 MEDIUM Complexity]
+    Gate -->|✅ Confirmed: HIGH| High[🔴 HIGH Complexity]
+    
+    Low --> LowRoute{Specialized help?}
+    LowRoute -->|No| DevDirect[💻 al-developer<br/>Direct implementation]
+    LowRoute -->|Debug| Debug[🐛 al-debugger]
+    LowRoute -->|Tests| Test1[🧪 al-tester]
+    
+    Med --> MedRoute{Need design first?}
+    MedRoute -->|Yes| Arch1[👨‍💼 al-architect<br/>Then al-conductor]
+    MedRoute -->|No, spec ready| Conductor1[🎼 al-conductor<br/>TDD Orchestra]
+    MedRoute -->|Debug| Debug
+    MedRoute -->|Tests| Test2[🧪 al-tester]
+    
+    High --> HighRoute{Specialized domain?}
+    HighRoute -->|Standard| Arch2[👨‍💼 al-architect<br/>Design phase]
+    HighRoute -->|APIs| API[🌐 al-api<br/>Then al-architect]
+    HighRoute -->|AI Features| Copilot[🤖 al-copilot<br/>Then al-architect]
+    
+    Arch1 --> Conductor2[🎼 al-conductor<br/>Implementation]
+    Arch2 --> Conductor3[🎼 al-conductor<br/>Implementation]
+    API --> Arch3[👨‍💼 al-architect]
+    Copilot --> Arch4[👨‍💼 al-architect]
+    Arch3 --> Conductor4[🎼 al-conductor]
+    Arch4 --> Conductor5[🎼 al-conductor]
+    
+    style Gate fill:#FF6B6B,stroke:#C92A2A,color:#fff
+    style Low fill:#51CF66,stroke:#2F9E44,color:#fff
+    style Med fill:#FFD43B,stroke:#F59F00,color:#000
+    style High fill:#FF6B6B,stroke:#C92A2A,color:#fff
 ```
+
+### 🔍 Automatic Complexity Inference Criteria
+
+The system analyzes these factors to suggest complexity:
+
+#### 🟢 LOW (Low) - Indicators:
+- ✅ 1-2 AL objects (table extension + page extension)
+- ✅ Single feature/change
+- ✅ No external integrations
+- ✅ Clear implementation path
+- ✅ Minimal business logic
+- **Example**: "Add Priority field to Sales Header"
+
+#### 🟡 MEDIUM (Medium) - Indicators:
+- ✅ 3-5 AL objects
+- ✅ 2-3 implementation phases
+- ✅ Some integration points (internal)
+- ✅ Moderate business logic
+- ✅ Requires tests
+- **Example**: "Customer loyalty points with automatic calculation"
+
+#### 🔴 HIGH (High) - Indicators:
+- ✅ 6+ AL objects
+- ✅ 4+ implementation phases
+- ✅ External integrations (APIs, web services)
+- ✅ Complex business rules
+- ✅ Multi-company/multi-user scenarios
+- ✅ Performance considerations
+- **Example**: "Multi-company approval workflow with email notifications and delegation"
+
+### 🚦 Validation Gate Protocol
+
+When you provide requirements, agents will:
+
+1. **Analyze Requirements**
+   ```markdown
+   📊 Complexity Analysis:
+   - Detected: 4 AL objects (Customer.TableExt, CustomerCard.PageExt, 
+                CustomerMgmt.Codeunit, CustomerValidator.Codeunit)
+   - Integration: Internal event subscribers only
+   - Business logic: Email validation + address formatting
+   - Phases: 2 (validation + UI)
+   
+   💭 Inferred Complexity: 🟡 MEDIUM
+   ```
+
+2. **Present Justification**
+   ```markdown
+   Reasoning:
+   - 4 objects falls in MEDIUM range (3-5)
+   - Limited scope, no external dependencies
+   - Moderate logic, manageable in 2 phases
+   - Good candidate for al-conductor with TDD
+   ```
+
+3. **Request Confirmation (GATE)**
+   ```markdown
+   🚦 VALIDATION GATE:
+   Do you confirm complexity level: 🟡 MEDIUM?
+   
+   Options:
+   ✅ Yes, proceed with MEDIUM complexity → al-conductor
+   ❌ No, this is LOW (explain why)
+   ❌ No, this is HIGH (explain why)
+   ```
+
+4. **Route Based on Confirmed Complexity**
+   ```markdown
+   ✅ Confirmed: 🟡 MEDIUM complexity
+   → Routing to al-conductor for TDD orchestration
+   → Will create 2-phase plan with quality gates
+   ```
 
 ## 📖 Detailed Mode Descriptions
 

@@ -106,7 +106,7 @@ if Customer.Get(CustomerNo) then
     // Use loaded fields
 ```
 
-**Temporary Tables** for intermediate processing:
+**Temporary Tables** for interMEDIUMte processing:
 ```al
 procedure CalculateTotals(var TempResult: Record "Result Buffer" temporary)
 // Temporary records exist in memory only - no database I/O

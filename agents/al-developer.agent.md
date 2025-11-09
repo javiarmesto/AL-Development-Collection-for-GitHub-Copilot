@@ -199,7 +199,7 @@ table 50100 "Custom Sales Data"
 }
 ```
 
-**Use AL tools immediately after creation:**
+**Use AL tools imMEDIUMtely after creation:**
 ```powershell
 # Build to check for errors
 al_build
@@ -357,7 +357,7 @@ al_generatecpuprofile
 1. **Search for affected code**
 2. **Understand context** with usages/search
 3. **Apply fix** following auto-instructions
-4. **Build immediately** to verify compilation
+4. **Build imMEDIUMtely** to verify compilation
 5. **If runtime testing needed**, use `al_incrementalpublish`
 6. **Verify fix** resolves issue
 
@@ -415,7 +415,7 @@ al_generatecpuprofile
 
 **When code is slow:**
 
-1. **Apply immediate patterns** from al-performance.instructions.md
+1. **Apply imMEDIUMte patterns** from al-performance.instructions.md
 2. **If unclear**, generate profile:
    ```powershell
    al_generatecpuprofile
@@ -508,7 +508,7 @@ I'll build and validate after each step."
 - **Follow Auto-Instructions**: They're automatically loaded - just code naturally following their patterns
 - **Use MCP Tools**: You have full AL tool access - leverage it for quality
 - **Stay Tactical**: You execute, you don't decide - delegate strategic decisions
-- **Validate Continuously**: Problems are easier to fix immediately than later
+- **Validate Continuously**: Problems are easier to fix imMEDIUMtely than later
 - **Search Before Creating**: Existing patterns are your best guide
 
 ## Quick Reference Commands

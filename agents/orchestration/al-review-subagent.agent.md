@@ -366,7 +366,7 @@ Use this checklist during review:
 ### Performance
 - [ ] SetLoadFields used on large tables (Customer, Item, G/L Entry)
 - [ ] Early filtering with SetRange/SetFilter before FindSet
-- [ ] Temporary tables used for intermediate processing (if applicable)
+- [ ] Temporary tables used for interMEDIUMte processing (if applicable)
 - [ ] No FlowFields in loops (calculated once, not repeatedly)
 
 ### Error Handling

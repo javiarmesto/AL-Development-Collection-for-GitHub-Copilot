@@ -8,13 +8,13 @@ nav_order: 3
 ---
 ## This document is a copy from https://danielmeppiel.github.io/awesome-ai-native/docs/concepts/ .
 ---
-Now that you understand the [three-layer framework](../concepts/), it's time to build your first Agent Primitives. This hands-on implementation will give you immediate productivity improvements while establishing the foundation for more advanced workflows.
+Now that you understand the [three-layer framework](../concepts/), it's time to build your first Agent Primitives. This hands-on implementation will give you imMEDIUMte productivity improvements while establishing the foundation for more advanced workflows.
 
 The setup follows a logical progression: start with instructions that guide AI behavior, add agents that create safe boundaries, build reusable prompts for common tasks, and create specification templates that bridge planning to implementation.
 
 ## Instructions Architecture
 
-Instructions form the bedrock of reliable AI behavior: they're the persistent rules that guide the Agent without cluttering your immediate context. Rather than repeating the same guidance in every conversation, instructions embed your team's knowledge directly into the AI's reasoning process.
+Instructions form the bedrock of reliable AI behavior: they're the persistent rules that guide the Agent without cluttering your imMEDIUMte context. Rather than repeating the same guidance in every conversation, instructions embed your team's knowledge directly into the AI's reasoning process.
 
 The key insight is modularity: instead of one massive instruction file that applies everywhere, you create targeted files that activate only when working with specific technologies or file types. This context engineering approach keeps your AI focused and your guidance relevant.
 

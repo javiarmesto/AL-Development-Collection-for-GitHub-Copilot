@@ -306,7 +306,7 @@ Based on profile, likely causes:
 Step 3: Implement fixes
 I'll suggest optimizations:
 - Add appropriate table key
-- Use temporary table for intermediate data
+- Use temporary table for interMEDIUMte data
 - SetLoadFields for partial records
 
 Step 4: Verify improvement

@@ -277,7 +277,7 @@ if Customer.FindSet() then
     until Customer.Next() = 0;
 ```
 
-**Temporary Tables** - For intermediate processing:
+**Temporary Tables** - For interMEDIUMte processing:
 ```al
 procedure CalculateTotals(var TempResultBuffer: Record "Result Buffer" temporary)
 var

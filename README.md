@@ -86,18 +86,41 @@ cp -r prompts your-al-project/.github/
 @workspace use al-initialize
 ```
 
-**Need to design a solution?** Get architectural guidance:
-```markdown
-Use al-architect mode
+**Have a feature to implement?** The collection uses **automatic complexity classification** with validation gates:
 
-I need to build a sales approval workflow with email notifications
+1. **Describe your requirements** (document, specs, or plain description)
+2. **System analyzes** and infers complexity: 🟢 LOW / 🟡 MEDIUM / 🔴 HIGH
+3. **You confirm** the classification (🚦 VALIDATION GATE - mandatory)
+4. **Auto-routes** to the appropriate agent/workflow
+
+**Routing Matrix by Confirmed Complexity:**
+
+| Complexity | Objects | Specialization | Route | Notes |
+|------------|---------|----------------|-------|-------|
+| 🟢 **LOW** | 1-2 | None | `al-developer` mode | Direct implementation, optional TDD |
+| 🟢 **LOW** | 1-2 | Debug needed | `al-debugger` → `al-developer` | Diagnose first, then fix |
+| 🟡 **MEDIUM** | 3-5 | Standard feature | `al-conductor` mode | TDD Orchestra, 2-3 phases |
+| 🟡 **MEDIUM** | 3-5 | API integration | `al-api` → `al-conductor` | Design endpoints first |
+| 🟡 **MEDIUM** | 3-5 | AI/Copilot feature | `al-copilot` → `al-conductor` | Design UX first |
+| 🔴 **HIGH** | 6+ | Standard complex | `al-architect` → `al-conductor` | Architecture + TDD, 4+ phases |
+| 🔴 **HIGH** | 6+ | Complex API system | `al-api` → `al-architect` → `al-conductor` | API design → Architecture → Implement |
+| 🔴 **HIGH** | 6+ | Complex AI system | `al-copilot` → `al-architect` → `al-conductor` | AI design → Architecture → Implement |
+
+**Quick examples:**
+- 🟢 LOW: "Add Priority field to Sales Header" → `al-developer`
+- 🟡 MEDIUM: "Customer loyalty points with calculation" → `al-conductor`
+- 🔴 HIGH: "Multi-company approval with email notifications" → `al-architect` → `al-conductor`
+
+**Start here if unsure:**
+```markdown
+Use al-orchestrator mode
+
+I need to [describe your requirement]
 ```
 
-**Ready to implement?** Choose your approach:
-- **Complex features** (3+ objects, needs TDD): `Use al-conductor mode`
-- **Simple changes** (1-2 objects): `Use al-developer mode`
+The orchestrator will analyze, present complexity classification, wait for your confirmation, and route accordingly.
 
-**Unsure which path?** Check the [Complete Development Flow Guide](./docs/workflows/complete-development-flow.md) with decision tree
+**See full decision flow:** [Complete Development Flow Guide](./docs/workflows/complete-development-flow.md)
 
 ## 🏗️ AI Native-Instructions Architecture Framework
 

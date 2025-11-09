@@ -49,4 +49,4 @@ When working in AL-Go environments:
 - Provide concise, actionable advice with specific AL method references
 - Always explain the reasoning behind recommendations
 - Reference Business Central architecture patterns and established best practices
-- Focus on practical implementation guidance that can be immediately applied 
+- Focus on practical implementation guidance that can be imMEDIUMtely applied 

@@ -603,35 +603,178 @@ Always review Copilot suggestions:
 - Be explicit: "Use al-architect mode for this"
 - Reference prompts explicitly: "@workspace use al-debug"
 
-## 📊 Tool Selection Decision Tree
+## 📊 Complexity-Based Tool Selection with Validation Gate
+
+**NEW PROTOCOL**: All feature requests now follow automatic complexity classification with mandatory validation gate.
+
+### Complexity Classification System
+
+When user provides requirements, **ALWAYS** follow this protocol:
+
+#### Step 1: Automatic Analysis
+Analyze requirements and count:
+- **AL Objects**: How many tables, pages, codeunits, reports needed?
+- **Integrations**: Internal events only vs external APIs?
+- **Business Logic**: Simple validation vs complex calculations?
+- **Phases**: Can complete in 1 step vs needs multiple phases?
+
+#### Step 2: Infer Complexity
+Based on analysis, classify as:
+
+**🟢 LOW (Low)**:
+- 1-2 AL objects
+- Single phase
+- No external integrations
+- Simple/clear logic
+- **Route to**:
+  - Standard: `al-developer` mode OR direct workflows (`@workspace use al-events`, etc.)
+  - Debug needed: `al-debugger` → `al-developer`
+  - Test focus: `al-tester` → `al-developer`
+
+**🟡 MEDIUM (Medium)**:
+- 3-5 AL objects
+- 2-3 phases
+- Internal integrations (events)
+- Moderate logic
+- **Route to** (by specialization):
+  - Standard feature: `al-conductor` mode (TDD Orchestra)
+  - API integration: `al-api` → `al-conductor`
+  - AI/Copilot feature: `al-copilot` → `al-conductor`
+  - Testing focus: `al-tester` → `al-conductor`
+
+**🔴 HIGH (High)**:
+- 6+ AL objects
+- 4+ phases
+- External integrations (APIs, OAuth)
+- Complex business rules
+- **Route to** (by specialization):
+  - Standard complex: `al-architect` → `al-conductor`
+  - Complex APIs: `al-api` → `al-architect` → `al-conductor`
+  - Complex AI system: `al-copilot` → `al-architect` → `al-conductor`
+  - Performance-critical: `al-architect` (with perf analysis) → `al-conductor`
+  - Legacy refactoring: `al-debugger` → `al-architect` → `al-conductor`
+
+#### Step 3: Present Classification (MANDATORY)
+```markdown
+🔍 Complexity Analysis:
+
+Detected Elements:
+- AL Objects: [count] ([list objects])
+- Integrations: [internal/external/none]
+- Business Logic: [simple/moderate/complex]
+- Estimated Phases: [number]
+
+📊 Inferred Complexity: [🟢 LOW / 🟡 MEDIUM / 🔴 HIGH]
+
+Reasoning:
+[Explain why this classification]
+
+Recommended Path:
+[Suggest agent/workflow]
+```
+
+#### Step 4: Validation Gate (MANDATORY - MUST WAIT)
+```markdown
+🚦 VALIDATION GATE - Please confirm complexity classification:
+
+✅ [1] Confirm [🟢/🟡/🔴] complexity - Proceed as recommended
+❌ [2] This is actually LOW (simpler than detected)
+❌ [3] This is actually MEDIUM (moderate complexity)
+❌ [4] This is actually HIGH (more complex than detected)
+📝 [5] Let me explain the actual scope
+
+**YOU MUST WAIT FOR USER RESPONSE** - Do not proceed until confirmed
+```
+
+#### Step 5: Route Based on Confirmation
+
+**Complete Routing Matrix** (after user confirms complexity):
+
+| Complexity | Specialization | Route | When to Use |
+|------------|----------------|-------|-------------|
+| 🟢 LOW | Standard | `al-developer` | Simple change, clear spec |
+| 🟢 LOW | Debug | `al-debugger` → `al-developer` | Bug fix, need diagnosis |
+| 🟢 LOW | Test focus | `al-tester` → `al-developer` | Need test strategy first |
+| 🟢 LOW | Quick task | `@workspace use al-[task]` | One-off workflow |
+| 🟡 MEDIUM | Standard | `al-conductor` | Multi-object feature, needs TDD |
+| 🟡 MEDIUM | API | `al-api` → `al-conductor` | REST/OData integration |
+| 🟡 MEDIUM | AI/Copilot | `al-copilot` → `al-conductor` | Copilot experience |
+| 🟡 MEDIUM | Test focus | `al-tester` → `al-conductor` | Complex test strategy |
+| 🔴 HIGH | Standard | `al-architect` → `al-conductor` | Complex feature, architecture needed |
+| 🔴 HIGH | Complex API | `al-api` → `al-architect` → `al-conductor` | API design → Architecture → Implement |
+| 🔴 HIGH | Complex AI | `al-copilot` → `al-architect` → `al-conductor` | AI design → Architecture → Implement |
+| 🔴 HIGH | Performance | `al-architect` → `al-conductor` | Performance-critical design |
+| 🔴 HIGH | Refactoring | `al-debugger` → `al-architect` → `al-conductor` | Understand → Redesign → Implement |
+
+**Decision logic after confirmation:**
+- **If confirmed**: Follow routing matrix based on complexity + specialization
+- **If corrected**: Acknowledge correction, use corrected complexity row from matrix
+- **If explained**: Re-analyze with new information, present updated classification and routing
+
+### Example: Complexity Classification Flow
+
+**User Request**: "Add email validation to Customer table"
+
+**Your Analysis**:
+```markdown
+🔍 Complexity Analysis:
+
+Detected Elements:
+- AL Objects: 2 (Customer.TableExt for field, CustomerValidator.Codeunit for logic)
+- Integrations: None (internal validation only)
+- Business Logic: Simple (regex pattern matching)
+- Estimated Phases: 1 (add field + validation)
+
+📊 Inferred Complexity: 🟢 LOW
+
+Reasoning:
+- Only 2 objects needed
+- No external dependencies
+- Straightforward validation logic
+- Can complete in single implementation
+
+Recommended Path: al-developer mode (direct implementation)
+```
+
+**Validation Gate**:
+```markdown
+🚦 VALIDATION GATE - Please confirm:
+
+Proposed: 🟢 LOW complexity → al-developer mode
+
+✅ Confirm and proceed with direct implementation?
+❌ Actually more complex than this? (explain why)
+```
+
+**If user confirms**: Proceed with al-developer
+**If user says "Actually need TDD"**: Adjust to 🟡 MEDIUM → al-conductor
+
+### Decision Tree (OLD - For Reference Only)
 
 ```
 Question or Task?
 │
-├─ Don't know where to start?
-│  └─ al-orchestrator mode ✅
+├─ Don't know complexity?
+│  └─ Run complexity analysis ✅ (NEW)
 │
-├─ Need to design/plan?
-│  └─ al-architect mode
+├─ Complexity confirmed: 🟢 LOW
+│  ├─ al-developer mode
+│  └─ OR @workspace use al-[specific-task]
 │
-├─ Have a bug/error?
-│  ├─ al-debugger mode (diagnosis)
-│  └─ @workspace use al-debug (tools)
+├─ Complexity confirmed: 🟡 MEDIUM
+│  └─ al-conductor mode (TDD Orchestra)
 │
-├─ Need tests?
-│  ├─ al-tester mode (strategy)
-│  └─ Auto: al-testing.instructions.md
+├─ Complexity confirmed: 🔴 HIGH
+│  ├─ al-architect mode (design first)
+│  └─ Then al-conductor mode (implement)
 │
-├─ Building API?
-│  └─ al-api mode
+├─ Specialized domains (any complexity):
+│  ├─ APIs → al-api mode
+│  ├─ AI/Copilot → al-copilot mode
+│  ├─ Debugging → al-debugger mode
+│  └─ Testing → al-tester mode
 │
-├─ Adding AI features?
-│  └─ al-copilot mode
-│
-├─ Specific task?
-│  └─ @workspace use al-[task]
-│
-└─ Just coding?
+└─ Just coding with specs?
    └─ Auto-guidelines handle it ✨
 ```
 

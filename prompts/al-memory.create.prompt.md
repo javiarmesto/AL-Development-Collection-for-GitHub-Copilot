@@ -37,7 +37,7 @@ If `memory.md` doesn't exist, create with this template:
 ## Quick Reference
 
 **Current Focus**: [What we're working on now]  
-**Next Steps**: [Immediate next actions]  
+**Next Steps**: [ImMEDIUMte next actions]  
 **Blockers**: [Current blockers if any]
 
 ---
@@ -425,7 +425,7 @@ At the end of each session, update the top section:
 **Current Focus**: [Update with current work]  
 **Last Session**: [Date of last session]  
 **Next Steps**: 
-1. [Most immediate next action]
+1. [Most imMEDIUMte next action]
 2. [Second priority]
 
 **Active Blockers**: 

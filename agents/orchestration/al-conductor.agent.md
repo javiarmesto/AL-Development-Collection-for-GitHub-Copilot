@@ -439,7 +439,7 @@ Provide this status in your responses to keep the user informed. Use the `#todos
 ### Performance Patterns
 - **SetLoadFields**: Use for large tables before Get/FindSet
 - **Early filtering**: SetRange/SetFilter before FindSet
-- **Temporary tables**: For intermediate processing
+- **Temporary tables**: For interMEDIUMte processing
 
 ### Error Handling
 - **TryFunctions**: For operations that might fail

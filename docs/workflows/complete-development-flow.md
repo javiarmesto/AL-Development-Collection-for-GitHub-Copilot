@@ -12,23 +12,23 @@ The AL Development Collection provides multiple pathways from requirements to pr
 
 ```mermaid
 graph TD
-    A[Start: New Feature] --> B{Have requirements<br/>document?}
+    A[Start: New Feature] --> B{Have requirements document?}
     B -->|YES| C{Feature Complexity?}
     B -->|NO| D[Create Documentation]
-    D --> D1[@workspace use<br/>al-context.create]
-    D --> D2[@workspace use<br/>al-spec.create]
+    D --> D1["@workspace use al-context.create"]
+    D --> D2["@workspace use al-spec.create"]
     D1 --> C
     D2 --> C
     
-    C -->|SIMPLE<br/>1-2 objects| E[Direct Implementation]
-    C -->|MODERATE<br/>3-5 objects| F[Spec + Orchestra]
-    C -->|COMPLEX<br/>5+ objects| G[Architecture + Orchestra]
+    C -->|"SIMPLE (1-2 objects)"| E[Direct Implementation]
+    C -->|"MODERATE (3-5 objects)"| F[Spec + Orchestra]
+    C -->|"COMPLEX (5+ objects)"| G[Architecture + Orchestra]
     C -->|SPECIALIZED| H[See Specialized Flows]
     
-    E --> E1[Option A: Workflows<br/>al-events, al-pages, etc.]
-    E --> E2[Option B:<br/>Use al-developer mode]
+    E --> E1["Option A: Workflows (al-events, al-pages, etc.)"]
+    E --> E2["Option B: Use al-developer mode"]
     
-    F --> F1[@workspace use<br/>al-spec.create]
+    F --> F1["@workspace use al-spec.create"]
     F1 --> F2[Use al-conductor mode]
     
     G --> G1[Use al-architect mode]
@@ -58,19 +58,19 @@ graph LR
     A[requirements.md] --> B{Choose Approach}
     
     B -->|Option A| C[Workflows]
-    C --> C1[@workspace use al-events]
-    C --> C2[@workspace use al-pages]
-    C --> C3[@workspace use al-permissions]
+    C --> C1["@workspace use al-events"]
+    C --> C2["@workspace use al-pages"]
+    C --> C3["@workspace use al-permissions"]
     
     B -->|Option B| D[Use al-developer mode]
-    D --> D1[Implement X following<br/>requirements.md]
+    D --> D1["Implement X following requirements.md"]
     
     C1 --> E[Implemented & Tested]
     C2 --> E
     C3 --> E
     D1 --> E
     
-    E --> F[@workspace use<br/>al-pr-prepare]
+    E --> F["@workspace use al-pr-prepare"]
     F --> G[Create PR]
     
     style A fill:#e1f5ff
@@ -95,30 +95,30 @@ graph LR
 
 ```mermaid
 graph TD
-    A[requirements.md] --> B[@workspace use<br/>al-spec.create]
-    B --> B1[Creates spec.md:<br/>- Object IDs<br/>- Integration points<br/>- Dependencies<br/>- Acceptance criteria]
+    A[requirements.md] --> B["@workspace use al-spec.create"]
+    B --> B1["Creates spec.md: Object IDs, Integration points, Dependencies, Acceptance criteria"]
     B1 --> C[Feature.spec.md]
-    C -->|User reviews<br/>& approves| D[Use al-conductor mode]
+    C -->|"User reviews & approves"| D[Use al-conductor mode]
     
     D --> E[PLANNING PHASE]
     E --> E1[al-planning-subagent]
-    E1 --> E2[- Reads spec.md<br/>- Analyzes AL codebase<br/>- Returns findings]
+    E1 --> E2["Reads spec.md, Analyzes AL codebase, Returns findings"]
     
-    E2 --> F[Multi-phase plan<br/>3-5 phases, TDD per phase]
+    E2 --> F["Multi-phase plan (3-5 phases, TDD per phase)"]
     F -->|User approves| G[IMPLEMENTATION CYCLE]
     
     G --> H[Phase Loop]
-    H --> H1[1. al-implement-subagent<br/>RED → GREEN → REFACTOR]
-    H1 --> H2[2. al-review-subagent<br/>Validate AL patterns<br/>Check test coverage]
+    H --> H1["1. al-implement-subagent (RED → GREEN → REFACTOR)"]
+    H1 --> H2["2. al-review-subagent (Validate AL patterns, Check test coverage)"]
     H2 --> H3{Review Result}
     H3 -->|APPROVED| H4[3. User commits]
-    H3 -->|NEEDS REVISION| H1
+    H3 -->|"NEEDS REVISION"| H1
     
     H4 --> I{More phases?}
     I -->|YES| H
-    I -->|NO| J[Plan Complete<br/>- All objects created<br/>- Tests 100% passing<br/>- Quality gates passed]
+    I -->|NO| J["Plan Complete: All objects created, Tests 100% passing, Quality gates passed"]
     
-    J --> K[@workspace use<br/>al-pr-prepare]
+    J --> K["@workspace use al-pr-prepare"]
     K --> L[Create PR]
     
     style A fill:#e1f5ff
@@ -178,16 +178,16 @@ graph TD
 ```mermaid
 graph TD
     A[requirements.md] --> B[Use al-architect mode]
-    B --> B1[Strategic Design:<br/>- Analyzes requirements<br/>- Reviews architecture<br/>- Designs solution patterns<br/>- Creates architecture spec<br/>- Documents decisions]
+    B --> B1["Strategic Design: Analyzes requirements, Reviews architecture, Designs solution patterns, Creates architecture spec, Documents decisions"]
     
     B1 --> C[Architecture Document]
-    C --> C1[Includes:<br/>- Object model design<br/>- Integration architecture<br/>- Data architecture<br/>- Security model<br/>- Performance strategy<br/>- Testing approach]
+    C --> C1["Includes: Object model design, Integration architecture, Data architecture, Security model, Performance strategy, Testing approach"]
     
-    C1 -->|User reviews| D{Specialized<br/>Design Needed?}
+    C1 -->|User reviews| D{Specialized Design Needed?}
     
-    D -->|APIs| E1[Use al-api mode<br/>Design REST/OData]
-    D -->|AI Features| E2[Use al-copilot mode<br/>Prompt engineering]
-    D -->|Complex Tests| E3[Use al-tester mode<br/>Test strategy]
+    D -->|APIs| E1["Use al-api mode (Design REST/OData)"]
+    D -->|"AI Features"| E2["Use al-copilot mode (Prompt engineering)"]
+    D -->|"Complex Tests"| E3["Use al-tester mode (Test strategy)"]
     D -->|No| F
     
     E1 --> F[Use al-conductor mode]
@@ -195,20 +195,20 @@ graph TD
     E3 --> F
     
     F --> G[PLANNING PHASE]
-    G --> G1[al-planning-subagent<br/>- Reads architecture<br/>- Analyzes AL codebase<br/>- Aligns with design<br/>- Returns findings]
+    G --> G1["al-planning-subagent: Reads architecture, Analyzes AL codebase, Aligns with design, Returns findings"]
     
-    G1 --> H[Multi-phase plan<br/>5-10 phases<br/>Aligned with architecture]
+    G1 --> H["Multi-phase plan (5-10 phases, Aligned with architecture)"]
     
-    H -->|User approves| I[IMPLEMENTATION CYCLE<br/>Same as Pattern 2<br/>- TDD per phase<br/>- Code review per phase<br/>- Commit per phase]
+    H -->|User approves| I["IMPLEMENTATION CYCLE: Same as Pattern 2 - TDD per phase, Code review per phase, Commit per phase"]
     
-    I --> J{Post-Implementation<br/>Issues?}
+    I --> J{Post-Implementation Issues?}
     
-    J -->|Issues found| K1[Use al-debugger mode]
-    J -->|Performance| K2[@workspace use<br/>al-performance]
+    J -->|"Issues found"| K1[Use al-debugger mode]
+    J -->|Performance| K2["@workspace use al-performance"]
     J -->|Adjustments| K3[Use al-developer mode]
-    J -->|All good| L
+    J -->|"All good"| L
     
-    K1 --> L[@workspace use<br/>al-pr-prepare]
+    K1 --> L["@workspace use al-pr-prepare"]
     K2 --> L
     K3 --> L
     
@@ -235,18 +235,18 @@ graph TD
 
 ```mermaid
 graph TD
-    A[requirements.md<br/>AI feature specification] --> B[Use al-copilot mode]
-    B --> B1[- Design Copilot capability<br/>- Engineer prompts<br/>- Plan Azure OpenAI integration<br/>- Design PromptDialog UI<br/>- Plan responsible AI approach]
+    A["requirements.md (AI feature specification)"] --> B[Use al-copilot mode]
+    B --> B1["Design Copilot capability, Engineer prompts, Plan Azure OpenAI integration, Design PromptDialog UI, Plan responsible AI approach"]
     
     B1 --> C[Use al-conductor mode]
     C --> C1[Implement with TDD]
     
-    C1 --> D1[Phase 1: Register capability<br/>@workspace use al-copilot-capability]
-    D1 --> D2[Phase 2: PromptDialog page<br/>@workspace use al-copilot-promptdialog]
-    D2 --> D3[Phase 3: Backend integration]
-    D3 --> D4[Phase 4: AI testing<br/>@workspace use al-copilot-test]
+    C1 --> D1["Phase 1: Register capability (@workspace use al-copilot-capability)"]
+    D1 --> D2["Phase 2: PromptDialog page (@workspace use al-copilot-promptdialog)"]
+    D2 --> D3["Phase 3: Backend integration"]
+    D3 --> D4["Phase 4: AI testing (@workspace use al-copilot-test)"]
     
-    D4 --> E[@workspace use<br/>al-pr-prepare]
+    D4 --> E["@workspace use al-pr-prepare"]
     E --> F[Create PR]
     
     style A fill:#e1f5ff
@@ -262,32 +262,32 @@ graph TD
 
 ```mermaid
 graph TD
-    A[Existing feature with<br/>performance issues] --> B{Need behavior<br/>analysis?}
+    A["Existing feature with performance issues"] --> B{Need behavior analysis?}
     
-    B -->|YES| C[Use al-debugger mode<br/>Analyze behavior and<br/>identify bottlenecks]
+    B -->|YES| C["Use al-debugger mode (Analyze behavior and identify bottlenecks)"]
     B -->|NO| D
     
-    C --> D[@workspace use<br/>al-performance.triage]
+    C --> D["@workspace use al-performance.triage"]
     D --> D1[Quick static analysis]
     
-    D1 --> E[@workspace use<br/>al-performance]
-    E --> E1[Deep profiling with<br/>CPU profile]
+    D1 --> E["@workspace use al-performance"]
+    E --> E1["Deep profiling with CPU profile"]
     
-    E1 --> F{Need<br/>refactoring?}
+    E1 --> F{Need refactoring?}
     
-    F -->|YES| G[Use al-architect mode<br/>Design performance<br/>improvements]
+    F -->|YES| G["Use al-architect mode (Design performance improvements)"]
     F -->|NO| H
     
-    G --> H{Implementation<br/>approach?}
+    G --> H{Implementation approach?}
     
     H -->|Complex| I1[Use al-conductor mode]
     H -->|Simple| I2[Use al-developer mode]
     
-    I1 --> J[Implement optimizations:<br/>- Add SetLoadFields<br/>- Add early filtering<br/>- Optimize keys/indices<br/>- Verify no regressions]
+    I1 --> J["Implement optimizations: Add SetLoadFields, Add early filtering, Optimize keys/indices, Verify no regressions"]
     I2 --> J
     
-    J --> K[@workspace use<br/>al-performance]
-    K --> K1[Re-profile and<br/>confirm improvements]
+    J --> K["@workspace use al-performance"]
+    K --> K1["Re-profile and confirm improvements"]
     
     style A fill:#f8d7da
     style D fill:#fff3cd

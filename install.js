@@ -115,9 +115,10 @@ You've successfully installed the AL Development Collection!
 
 The following directories have been copied to \`.github/\`:
 
-- **agents/** - 6 role-based strategic consultants with MCP tool boundaries
-- **instructions/** - 7 auto-applied coding guidelines
-- **prompts/** - 16 agentic workflows for common tasks
+- **agents/** - 7 role-based strategic agents + 4 orchestra subagents with MCP tool boundaries
+- **instructions/** - 9 auto-applied coding guidelines
+- **prompts/** - 18 agentic workflows for common tasks
+- **collections/** - Collection manifest for validation
 - **getting-started.md** - This guide
 
 ## Quick Start Guide
@@ -157,20 +158,30 @@ Then describe what you want to accomplish. The orchestrator will guide you.
 
 - **al-orchestrator** - Smart router, analyzes and guides (START HERE)
 - **al-architect** - Solution design and architecture
+- **al-developer** - Tactical implementation with build tools
 - **al-debugger** - Systematic debugging and diagnosis
 - **al-tester** - Test strategy and TDD
 - **al-api** - API design and implementation
 - **al-copilot** - AI-powered features design
 
+**Orchestra System** (Multi-agent TDD for MEDIUM/HIGH complexity):
+- **al-conductor** - Main orchestration agent (use: \`Use al-conductor mode\`)
+- **al-planning-subagent** - AL-aware research specialist
+- **al-implement-subagent** - TDD-focused implementation
+- **al-review-subagent** - Code review validation
+
 ### 4. Auto-Applied Guidelines
 
 These activate automatically based on file type:
+- **al-guidelines** - Master hub referencing all patterns
 - **al-code-style** - 2-space indent, PascalCase, feature folders
 - **al-naming-conventions** - 26-char limits, descriptive names
 - **al-performance** - SetLoadFields, early filtering, temp tables
 - **al-error-handling** - TryFunctions, error labels (context-activated)
 - **al-events** - Event subscribers, integration events (context-activated)
 - **al-testing** - AL-Go structure, test patterns
+- **copilot-instructions** - Master coordination document
+- **index** - Complete instructions catalog
 
 ### 5. Complete Workflow List
 
@@ -194,9 +205,11 @@ These activate automatically based on file type:
 - \`al-copilot-test\` - Test Copilot features
 - \`al-copilot-generate\` - Generate AI feature code
 
-**Collaboration:**
+**Collaboration & Documentation:**
 - \`al-spec.create\` - Generate technical specifications
 - \`al-pr-prepare\` - Prepare pull request descriptions
+- \`al-context.create\` - Generate project context.md for AI assistants
+- \`al-memory.create\` - Generate/update session memory.md
 - \`al-translate\` - XLF translation workflows
 - \`al-migrate\` - Migration assistance
 
@@ -267,8 +280,8 @@ This will overwrite files in \`.github/copilot/\`.
 ---
 
 *Version: ${require('./package.json').version}*
-*Framework: AI Native-Instructions Architecture*
-*Total Primitives: 29 (7 instructions + 16 workflows + 6 agents)*
+*Framework: AI Native-Instructions Architecture (3 layers)*
+*Total Primitives: 38 (9 instructions + 18 workflows + 7 agents + 4 orchestra)*
 `;
 
   const destPath = path.join(targetDir, 'getting-started.md');
@@ -387,9 +400,10 @@ async function install() {
 
   log('This will install the AL Development toolkit into your project.', 'cyan');
   log('The following will be copied to .github/:', 'cyan');
-  log('  • agents/      - 6 strategic consultant modes', 'blue');
-  log('  • instructions/ - 7 auto-applied guidelines', 'blue');
-  log('  • prompts/     - 16 agentic workflows', 'blue');
+  log('  • agents/      - 7 strategic agents + 4 orchestra subagents', 'blue');
+  log('  • instructions/ - 9 auto-applied guidelines', 'blue');
+  log('  • prompts/     - 18 agentic workflows', 'blue');
+  log('  • collections/ - Collection manifest', 'blue');
   log('  • getting-started.md - Quick start guide', 'blue');
 
   // Get target directory
@@ -444,6 +458,18 @@ async function install() {
   const promptsResult = copyDirectory(promptsSource, promptsDest, isMerge);
   totalCopied += promptsResult.copied;
   totalSkipped += promptsResult.skipped;
+
+  // Copy collections
+  header('📋 Installing Collections');
+  const collectionsSource = path.join(packageDir, 'collections');
+  const collectionsDest = path.join(targetDir, 'collections');
+  if (fs.existsSync(collectionsSource)) {
+    const collectionsResult = copyDirectory(collectionsSource, collectionsDest, isMerge);
+    totalCopied += collectionsResult.copied;
+    totalSkipped += collectionsResult.skipped;
+  } else {
+    log('  ⊘ collections directory not found (optional)', 'yellow');
+  }
 
   // Create/update quick start guide
   header('📋 Creating Quick Start Guide');
@@ -511,9 +537,10 @@ ${colors.cyan}Examples:${colors.reset}
   npx al-collection install ./my-custom-path
 
 ${colors.cyan}What gets installed:${colors.reset}
-  • agents/           - 6 strategic consultant modes
-  • instructions/     - 7 auto-applied coding guidelines  
-  • prompts/          - 16 agentic workflows
+  • agents/           - 7 strategic agents + 4 orchestra subagents
+  • instructions/     - 9 auto-applied coding guidelines  
+  • prompts/          - 18 agentic workflows
+  • collections/      - Collection manifest for validation
   • getting-started.md - Quick start documentation
 
 ${colors.cyan}Merge behavior:${colors.reset}

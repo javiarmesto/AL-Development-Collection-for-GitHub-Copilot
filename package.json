@@ -1,7 +1,7 @@
 {
   "name": "al-development-collection",
-  "version": "2.3.0",
-  "description": "AL Development Collection for GitHub Copilot - AI Native-Instructions Architecture implementation with 29 Agent Primitives",
+  "version": "2.6.0",
+  "description": "AL Development Collection for GitHub Copilot - AI Native-Instructions Architecture implementation with 38 Agent Primitives (9 instructions + 18 workflows + 7 agents + 4 orchestra)",
   "main": "install.js",
   "bin": {
     "al-collection": "./install.js"

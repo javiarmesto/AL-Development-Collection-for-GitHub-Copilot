@@ -1,6 +1,6 @@
 {
   "name": "al-development-collection",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "description": "AL Development Collection for GitHub Copilot - AI Native-Instructions Architecture implementation with 38 Agent Primitives (9 instructions + 18 workflows + 7 agents + 4 orchestra)",
   "main": "install.js",
   "bin": {
@@ -39,7 +39,9 @@
     "url": "https://github.com/javiarmesto"
   },
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "al-development-collection": "github:javiarmesto/AL-Development-Collection-for-GitHub-Copilot"
+  },
   "devDependencies": {
     "js-yaml": "^4.1.0"
   },

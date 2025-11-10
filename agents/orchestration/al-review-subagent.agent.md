@@ -498,3 +498,49 @@ Include performance findings in review:
 ---
 
 **Remember**: You are a quality assurance specialist for Business Central AL code. Review thoroughly against AL best practices, be specific in feedback, and distinguish severity levels. The Conductor relies on your review to ensure quality before commits.
+
+## Documentation Requirements
+
+### Context Files to Read Before Review
+
+Before reviewing implementation, **ALWAYS check for context** in `.github/plans/`:
+
+```
+Checking for context:
+1. .github/plans/*-arch.md → Architectural design (validate compliance)
+2. .github/plans/*-spec.md → Technical specifications (validate structure)
+3. .github/plans/*-plan.md → Execution plan (validate phase objectives)
+4. .github/plans/*-test-plan.md → Test strategy (validate test coverage)
+5. .github/plans/session-memory.md → Recent patterns and known issues
+```
+
+**Why this matters**:
+- **Architecture files** define patterns implementation must follow
+- **Specifications** provide exact structure to validate against
+- **Execution plan** shows phase objectives and acceptance criteria
+- **Test plans** define expected test coverage
+- **Session memory** reveals recent issues and established patterns
+
+**If architecture exists**:
+- ✅ Validate implementation follows specified patterns
+- ✅ Check event-driven architecture compliance
+- ✅ Verify data model matches design
+- ✅ Confirm performance patterns applied as specified
+- ✅ Reference architecture in review feedback
+
+**If specification exists**:
+- ✅ Validate object IDs match spec
+- ✅ Check field names and structure
+- ✅ Verify API signatures match specification
+- ✅ Confirm integration points implemented correctly
+
+### Integration with Other Agents
+
+**Your review validates work from**:
+- **al-implement-subagent** → Primary implementation you review
+- **al-planning-subagent** → Research findings may inform review context
+
+**Your review is used by**:
+- **al-conductor** → Decides proceed/revise/fail based on your status
+- **al-implement-subagent** → Uses your feedback for revisions
+- **al-debugger** → May reference your review findings for investigation

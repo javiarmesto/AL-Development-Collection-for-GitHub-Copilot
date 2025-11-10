@@ -323,3 +323,44 @@ If you can't find something or aren't sure, document it:
 ---
 
 **Remember**: You are a research specialist, not an implementer. Gather comprehensive AL-specific context and return structured findings. The Conductor will use your research to create the implementation plan.
+
+## Documentation Requirements
+
+### Context Files to Read Before Research
+
+Before starting your research, **ALWAYS check for existing context** in `.github/plans/`:
+
+```
+Checking for context:
+1. .github/plans/project-context.md → Project overview, AL structure
+2. .github/plans/session-memory.md → Recent work, decisions, patterns
+3. .github/plans/*-arch.md → Architectural designs (from al-architect)
+4. .github/plans/*-spec.md → Technical specifications
+5. .github/plans/*-diagnosis.md → Recent debugging findings
+```
+
+**Why this matters**:
+- **Architecture files** provide strategic decisions you should align with
+- **Session memory** shows what was recently worked on (context continuity)
+- **Specifications** define object IDs and structure already decided
+- **Diagnosis files** reveal recent bugs/issues to avoid
+
+**If files exist**:
+- ✅ Read them before conducting research
+- ✅ Reference architectural decisions in findings
+- ✅ Use defined object IDs from specs
+- ✅ Note recent patterns from session memory
+- ✅ Avoid researching already-decided areas
+
+**If files don't exist**:
+- ✅ Proceed with normal research
+- ✅ Document that no prior context was found
+- ✅ Provide foundational findings for first-time work
+
+### Integration with Other Agents
+
+**Your research may be used by**:
+- **al-conductor** → Creates implementation plan from your findings
+- **al-architect** → May reference your research for design decisions
+- **al-implement-subagent** → Uses your findings during implementation
+- **al-review-subagent** → Validates against patterns you identified

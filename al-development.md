@@ -106,6 +106,49 @@ Invoke with `@workspace use [prompt-name]`:
 
 > 💡 **When to Use**: MEDIUM complexity (2-3 phases) or HIGH complexity (4+ phases) features requiring systematic TDD approach.
 
+### 📋 Agent Context & Memory System (NEW in v2.7 - Layer 3)
+
+**Centralized documentation system** ensuring all agents share context and maintain consistency:
+
+**Documentation Location**: `.github/plans/`
+
+**Core Documents**:
+- **`architecture.md`** - System architecture decisions and patterns
+- **`spec.md`** - Functional and technical specifications
+- **`test-plan.md`** - Test strategy and coverage requirements
+- **`memory.md`** - Session history and decision rationale
+
+**Agent Integration**:
+
+**Orchestra Agents** (context-aware collaboration):
+- **al-conductor**: Reads architecture/spec upfront, passes context to subagents
+- **al-planning-subagent**: Documents research findings for conductor's plan creation
+- **al-implement-subagent**: Aligns implementation with architecture/spec/test-plan
+- **al-review-subagent**: Validates compliance against all context documents
+
+**Specialist Agents** (context-aware design):
+- **al-developer**: Reads all context docs before coding, ensures consistency
+- **al-api**: Produces `<endpoint>-api-design.md` documenting contracts and integration
+- **al-copilot**: Generates `<feature>-copilot-ux-design.md` covering AI prompts and UX
+
+**Key Benefits**:
+- ✅ **Consistency**: All agents reference the same architectural decisions
+- 📚 **Knowledge Transfer**: New agents inherit project context automatically
+- 🔄 **Session Continuity**: Memory system preserves decisions across interactions
+- 🎯 **Quality Assurance**: Review validates against documented requirements
+- 📖 **Auto-Documentation**: Design decisions captured for team reference
+
+**Workflow Example**:
+```markdown
+1. Use al-architect mode → Creates architecture.md
+2. @workspace use al-spec.create → Generates spec.md
+3. Use al-conductor mode → Reads docs, implements with subagents
+4. al-review-subagent → Validates against architecture.md + spec.md
+5. Result: Consistent implementation aligned with design
+```
+
+> 💡 **Best Practice**: Always create architecture.md and spec.md before using al-conductor for medium/high complexity features.
+
 ### 📖 Integration Guide (1 primitive - Layer 2)
 
 - **copilot-instructions.md** - Master document coordinating all 38 primitives with comprehensive usage guidance and workflow examples
@@ -394,18 +437,19 @@ Found an issue or have a suggestion? This collection improves through use:
 ## Framework Compliance
 
 **Framework**: [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)  
-**Version**: 2.6.0  
-**Last Updated**: 2025-11-09  
+**Version**: 2.7.0  
+**Last Updated**: 2025-11-10  
 **Author**: javiarmesto  
 **Total Primitives**: 38 (9 instructions + 18 workflows + 7 agents + 4 orchestra)  
 **Status**: ✅ Fully compliant with AI Native-Instructions Architecture
 
 ### Framework Implementation
 - ✅ **Layer 1: Markdown Prompt Engineering** - Structured semantic markdown
-- ✅ **Layer 2: Agent Primitives** - 38 configurable tools (9 instructions + 18 workflows + 7 agents + 4 orchestra + 1 guide)
-- ✅ **Layer 3: Context Engineering** - Modular `applyTo` patterns
+- ✅ **Layer 2: Agent Primitives** - 38 configurable tools (9 instructions + 18 workflows + 7 agents + 4 orchestra)
+- ✅ **Layer 3: Context Engineering** - Modular `applyTo` patterns + centralized context system
 - ✅ **AGENTS.md Ready** - Prepared for universal context compilation
-- ✅ **Orchestra System** - Multi-agent TDD orchestration (specialized feature)
+- ✅ **Orchestra System** - Multi-agent TDD orchestration with context awareness
+- ✅ **Agent Context System** - Centralized documentation in `.github/plans/`
 - ✅ **Validation Passing** - All compliance checks (47 successes, 13 warnings)
 - ✅ **Test Validated** - Customer Loyalty Points test (24/24 validations passed)
 

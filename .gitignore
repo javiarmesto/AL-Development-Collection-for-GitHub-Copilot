@@ -51,3 +51,4 @@ site/
 _site/
 # Local test files and temporary work
 .local/
+agents/orchestration/.local/

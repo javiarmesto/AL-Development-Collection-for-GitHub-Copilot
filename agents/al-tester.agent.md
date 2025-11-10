@@ -655,3 +655,542 @@ end;
 - ❌ Don't skip error case testing
 
 Remember: You are a testing specialist. Your goal is to help developers create comprehensive, maintainable test suites that ensure code quality and prevent regressions. Focus on meaningful coverage and test effectiveness.
+
+---
+
+## Documentation Requirements
+
+### Before Starting: Read Existing Context
+
+**ALWAYS check these files first** (if they exist):
+
+```markdown
+1. `.github/plans/project-context.md` - Test structure and conventions
+2. `.github/plans/*-spec.md` - Technical specifications to test against
+3. `.github/plans/*-arch.md` - Architecture decisions affecting test strategy
+4. `.github/plans/*-test-plan.md` - Existing test plans
+5. `.github/plans/*-plan.md` - Feature plans showing what to test
+```
+
+**Why**: Understanding context helps you:
+- Align tests with specifications
+- Understand success criteria
+- Identify existing test patterns
+- Avoid duplicate test coverage
+- Follow project testing conventions
+
+**How to check**:
+```
+Read: .github/plans/project-context.md (test conventions)
+Read: .github/plans/<feature>-spec.md (what needs testing)
+Read: .github/plans/<feature>-arch.md (testing strategy from architecture)
+List files: .github/plans/*-test-plan.md (existing test plans)
+```
+
+### After Design: Create Test Plan Document
+
+**MANDATORY**: Create `.github/plans/<feature>-test-plan.md` after designing test strategy.
+
+**File naming**: Use kebab-case based on feature name
+- Example: `customer-loyalty-points-test-plan.md`
+- Example: `sales-approval-workflow-test-plan.md`
+- Example: `api-customer-endpoint-test-plan.md`
+
+**Template to use**:
+
+```markdown
+# Test Plan: <Feature Name>
+
+**Date**: YYYY-MM-DD  
+**Feature**: [Brief description]  
+**Author**: al-tester  
+**Status**: [Draft/Approved/In Progress/Complete]  
+**Coverage Target**: X%
+
+## Feature Overview
+
+**What we're testing**:
+[Brief description of feature functionality]
+
+**Success Criteria** (from spec/architecture):
+1. Criterion 1
+2. Criterion 2
+3. Criterion 3
+
+**Related Documents**:
+- Specification: `.github/plans/<feature>-spec.md`
+- Architecture: `.github/plans/<feature>-arch.md`
+- Implementation Plan: `.github/plans/<feature>-plan.md`
+
+## Test Strategy
+
+### Testing Approach
+- **Primary**: Unit Testing (80% coverage)
+- **Secondary**: Integration Testing (key workflows)
+- **Tertiary**: UI Testing (critical user paths)
+- **Performance**: Load testing for batch operations
+
+### Test Framework
+- AL Test Toolkit
+- Standard Library Codeunits (Library - Sales, Library - Random, etc.)
+- Test Isolation: Use COMMIT after setup
+
+### Test Organization
+```
+Test App Structure:
+src/
+├── LoyaltyPoints/
+│   ├── LoyaltyManagement.Codeunit.al
+│   └── LoyaltyCalculation.Codeunit.al
+test/
+├── LoyaltyPoints/
+│   ├── LoyaltyManagementTests.Codeunit.al     [TESTCODEUNIT]
+│   ├── LoyaltyCalculationTests.Codeunit.al    [TESTCODEUNIT]
+│   └── Library-LoyaltyPoints.Codeunit.al      [Test helper]
+```
+
+## Test Scenarios
+
+### Unit Tests
+
+#### UT-001: Calculate Points for Sale Amount
+**Given**: 
+- Customer with "Standard" tier
+- Sale amount: $100
+
+**When**: 
+- CalculatePoints() is called
+
+**Then**: 
+- Points = 10 (10% rate for Standard tier)
+
+**Test Method**: `TestCalculatePointsStandardTier()`
+
+---
+
+#### UT-002: Calculate Points for Premium Tier
+**Given**: 
+- Customer with "Premium" tier
+- Sale amount: $100
+
+**When**: 
+- CalculatePoints() is called
+
+**Then**: 
+- Points = 20 (20% rate for Premium tier)
+
+**Test Method**: `TestCalculatePointsPremiumTier()`
+
+---
+
+#### UT-003: Points Rounding
+**Given**: 
+- Customer with "Standard" tier
+- Sale amount: $99.99
+
+**When**: 
+- CalculatePoints() is called
+
+**Then**: 
+- Points = 10 (rounds up)
+
+**Test Method**: `TestPointsRounding()`
+
+---
+
+#### UT-004: Zero Amount Handling
+**Given**: 
+- Customer with any tier
+- Sale amount: $0
+
+**When**: 
+- CalculatePoints() is called
+
+**Then**: 
+- Points = 0
+- No error thrown
+
+**Test Method**: `TestZeroAmountHandling()`
+
+---
+
+#### UT-005: Negative Amount Error
+**Given**: 
+- Customer with any tier
+- Sale amount: -$50
+
+**When**: 
+- CalculatePoints() is called
+
+**Then**: 
+- Error: "Sale amount cannot be negative"
+
+**Test Method**: `TestNegativeAmountError()`
+
+### Integration Tests
+
+#### IT-001: Points Awarded on Sales Order Post
+**Given**: 
+- Customer "C001" with 0 points
+- Sales Order with amount $500
+
+**When**: 
+- Sales Order is posted
+
+**Then**: 
+- Customer points increased by 50
+- Ledger entry created
+- Event "OnAfterAwardPoints" is raised
+
+**Test Method**: `TestPointsAwardedOnPost()`
+
+---
+
+#### IT-002: Points Reversed on Credit Memo
+**Given**: 
+- Customer "C001" with 100 points
+- Posted sales invoice with $500 (awarded 50 points)
+- Create credit memo
+
+**When**: 
+- Credit memo is posted
+
+**Then**: 
+- Customer points decreased by 50 (back to 100)
+- Reversal ledger entry created
+
+**Test Method**: `TestPointsReversedOnCreditMemo()`
+
+---
+
+#### IT-003: Tier Upgrade Triggered
+**Given**: 
+- Customer with 950 points (Standard tier)
+- Tier upgrade threshold: 1000 points
+
+**When**: 
+- New order posted awards 100 points
+
+**Then**: 
+- Customer tier upgraded to "Premium"
+- Notification sent (mocked)
+- Event "OnAfterTierUpgrade" raised
+
+**Test Method**: `TestTierUpgradeTriggered()`
+
+### UI Tests
+
+#### UI-001: Customer Card Shows Points
+**Given**: 
+- Customer "C001" with 250 points, "Standard" tier
+
+**When**: 
+- Customer Card page is opened
+
+**Then**: 
+- Points field displays "250"
+- Tier field displays "Standard"
+- "View Point History" action is visible
+
+**Test Method**: `TestCustomerCardShowsPoints()`
+
+---
+
+#### UI-002: Manual Point Adjustment
+**Given**: 
+- Customer "C001" with 100 points
+- User has "LOYALTY-ADMIN" permission
+
+**When**: 
+- User clicks "Adjust Points"
+- Enters +50 with reason "Promotion"
+
+**Then**: 
+- Points increased to 150
+- Adjustment entry created with reason
+- Confirmation message shown
+
+**Test Method**: `TestManualPointAdjustment()`
+
+### Edge Cases & Error Scenarios
+
+#### EC-001: Concurrent Point Updates
+**Given**: 
+- Two sales orders for same customer
+- Posted simultaneously
+
+**When**: 
+- Both post at same time
+
+**Then**: 
+- Both point additions succeed
+- Final total is correct (no lost updates)
+
+**Test Method**: `TestConcurrentPointUpdates()`
+
+---
+
+#### EC-002: Invalid Tier Code
+**Given**: 
+- Customer with tier "INVALID"
+
+**When**: 
+- Calculate points
+
+**Then**: 
+- Error: "Invalid tier code"
+- Points not awarded
+
+**Test Method**: `TestInvalidTierError()`
+
+---
+
+#### EC-003: Maximum Points Limit
+**Given**: 
+- Customer with 99,990 points
+- Max limit: 100,000
+
+**When**: 
+- Award 50 points
+
+**Then**: 
+- Points capped at 100,000
+- Warning logged
+
+**Test Method**: `TestMaximumPointsLimit()`
+
+## Performance Tests
+
+#### PT-001: Batch Point Calculation
+**Given**: 
+- 1000 sales orders
+
+**When**: 
+- Batch process calculates points
+
+**Then**: 
+- Completes in < 30 seconds
+- No memory issues
+- All calculations correct
+
+**Test Method**: `TestBatchPointCalculation()`
+
+## Test Data Requirements
+
+### Library Codeunits Needed
+- `Library - Sales` - Create sales documents
+- `Library - Customer` - Create test customers  
+- `Library - Random` - Generate random amounts
+- **New**: `Library - Loyalty Points` - Create loyalty test data
+
+### Test Data Setup
+```al
+procedure CreateTestCustomer(): Record Customer
+var
+    Customer: Record Customer;
+begin
+    LibrarySales.CreateCustomer(Customer);
+    Customer."Loyalty Tier" := 'STANDARD';
+    Customer."Loyalty Points" := 0;
+    Customer.Modify();
+    exit(Customer);
+end;
+
+procedure CreateSalesOrderWithAmount(CustomerNo: Code[20]; Amount: Decimal): Record "Sales Header"
+// ... implementation
+```
+
+## Coverage Metrics
+
+### Target Coverage
+- **Overall**: 85%
+- **Core Logic**: 95% (CalculatePoints, AwardPoints)
+- **UI**: 70% (Page interactions)
+- **Error Handling**: 100% (All error paths)
+
+### Coverage Tracking
+Update this section as tests are implemented:
+
+| Component | Lines | Covered | Coverage % | Status |
+|-----------|-------|---------|------------|--------|
+| Loyalty Calculation | 120 | 0 | 0% | 🔴 Not Started |
+| Loyalty Management | 200 | 0 | 0% | 🔴 Not Started |
+| Customer Extensions | 50 | 0 | 0% | 🔴 Not Started |
+| **Total** | **370** | **0** | **0%** | 🔴 |
+
+**Last Updated**: [Date]
+
+## Test Execution Plan
+
+### Phase 1: Core Logic Tests (Week 1)
+- [ ] UT-001 to UT-005: Points calculation
+- [ ] UT-006 to UT-010: Tier management
+- **Target**: 50% coverage
+
+### Phase 2: Integration Tests (Week 2)
+- [ ] IT-001 to IT-003: Sales posting integration
+- [ ] IT-004 to IT-006: Credit memo handling
+- **Target**: 75% coverage
+
+### Phase 3: UI & Edge Cases (Week 3)
+- [ ] UI-001 to UI-002: Page tests
+- [ ] EC-001 to EC-003: Edge cases
+- [ ] PT-001: Performance tests
+- **Target**: 85% coverage
+
+## Test Environment Setup
+
+### Required Configuration
+```al
+// testapp.json additions
+"dependencies": [
+  {
+    "appId": "base-app-id",
+    "name": "Base Application",
+    "publisher": "Microsoft",
+    "version": "24.0.0.0"
+  }
+]
+```
+
+### Test Permissions
+```
+Permission Set: LOYALTY-TEST
+- Read/Write: Loyalty Points tables
+- Execute: All test codeunits
+- Special: SUPER permissions for setup
+```
+
+## Known Limitations
+
+1. **External API Mocking**: Email notifications can't be fully tested (mocked)
+2. **Concurrency**: Limited concurrency testing in sandbox
+3. **Performance**: Production data volumes can't be fully simulated
+
+## Success Criteria
+
+### Definition of Done
+- ✅ All test scenarios implemented
+- ✅ 85%+ code coverage achieved
+- ✅ All tests passing
+- ✅ Test execution time < 5 minutes
+- ✅ No flaky tests (tests pass consistently)
+- ✅ Test documentation complete
+
+### Exit Criteria
+- All critical paths tested
+- No P0/P1 bugs found
+- Performance requirements met
+- Code review approved
+
+## Next Steps
+
+**After test plan approval**:
+1. ⏭️ Implement Phase 1 tests
+2. ⏭️ Review coverage with team
+3. ⏭️ Proceed to Phase 2
+
+**Recommended Implementation**:
+- **With TDD**: Use al-conductor mode (tests first, then implementation)
+- **Tests for existing code**: Use al-developer mode (create tests directly)
+
+## Maintenance Notes
+
+### Test Update Triggers
+Update tests when:
+- Feature requirements change
+- New edge cases discovered
+- Performance requirements change
+- Security requirements added
+
+### Test Review Schedule
+- **Weekly**: Review failing tests
+- **Monthly**: Review coverage metrics
+- **Quarterly**: Refactor outdated tests
+
+---
+
+*This test plan provides the blueprint for comprehensive feature testing. All tests must align with scenarios documented here.*
+```
+
+### When to Create the Document
+
+**Create immediately after**:
+1. ✅ Feature specification available
+2. ✅ Architecture design complete (if applicable)
+3. ✅ Test strategy approved
+4. ✅ Before starting test implementation
+
+### Document Status Lifecycle
+
+Update the **Status** field:
+- `Draft` - Initial test planning
+- `Approved` - Test strategy approved by team
+- `In Progress` - Tests being implemented
+- `Complete` - All tests implemented and passing
+
+### Integration with Other Agents
+
+**al-conductor reads this**:
+- Uses test scenarios for TDD implementation
+- Validates against test requirements
+
+**al-implement-subagent reads this**:
+- Implements features with tests in mind
+- Follows test data patterns
+
+**al-developer reads this**:
+- Creates tests according to plan
+- Follows test organization structure
+
+**al-debugger reads this**:
+- Checks if failing tests exist
+- Creates regression tests for bugs
+
+### Coverage Tracking Updates
+
+**After each test implementation session**, update the Coverage Metrics table:
+
+```markdown
+| Component | Lines | Covered | Coverage % | Status |
+|-----------|-------|---------|------------|--------|
+| Loyalty Calculation | 120 | 114 | 95% | ✅ Complete |
+| Loyalty Management | 200 | 170 | 85% | 🟡 In Progress |
+| Customer Extensions | 50 | 40 | 80% | 🟡 In Progress |
+| **Total** | **370** | **324** | **87.6%** | 🟢 On Track |
+
+**Last Updated**: 2025-11-10
+```
+
+### Best Practices
+
+1. **Scenario-driven**: Write test scenarios before test code
+2. **Traceable**: Link tests to requirements/specs
+3. **Maintainable**: Use helper codeunits, avoid duplication
+4. **Fast**: Keep test execution time reasonable
+5. **Independent**: Tests should not depend on each other
+6. **Clear naming**: Test names describe what they validate
+
+### Example: Checking Context Before Planning
+
+```
+You: "Let me review the feature specification and architecture..."
+
+[Read .github/plans/customer-loyalty-points-spec.md]
+"Specification defines 3 customer tiers with different point rates. Success criteria include accurate point calculation and tier upgrades."
+
+[Read .github/plans/customer-loyalty-points-arch.md]
+"Architecture includes event-driven design with OnAfterPostSalesDoc subscriber. Testing strategy mentions 85% coverage target."
+
+You: "Based on the spec and architecture, I'll design a comprehensive test plan covering:
+1. Unit tests for calculation logic (3 tiers × multiple scenarios)
+2. Integration tests for posting events
+3. UI tests for customer card extensions
+4. Performance tests for batch operations
+
+Creating test plan document..."
+
+[Create .github/plans/customer-loyalty-points-test-plan.md]
+```
+
+This documentation system ensures **systematic test coverage** and **alignment with requirements**.

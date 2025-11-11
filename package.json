@@ -39,9 +39,7 @@
     "url": "https://github.com/javiarmesto"
   },
   "license": "MIT",
-  "dependencies": {
-    "al-development-collection": "github:javiarmesto/AL-Development-Collection-for-GitHub-Copilot"
-  },
+  "dependencies": {},
   "devDependencies": {
     "js-yaml": "^4.1.0"
   },

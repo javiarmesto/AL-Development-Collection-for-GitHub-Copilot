@@ -30,9 +30,8 @@ coverage/
 .alcache/
 .snapshots/
 rad.json
-.vscode/
 
-#Archive
+#Archive (historical files - not actively maintained)
 Archive/
 
 # Internal analysis and design documents (not for public repo)
@@ -46,9 +45,16 @@ docs/prompts/al-workflow.prompt.md
 docs/prompts/al-workspace.prompt.md
 docs/prompts/al-pr.prepare.prompt.md
 
-# Build outputs
+# Build outputs (MkDocs)
 site/
 _site/
+
 # Local test files and temporary work
 .local/
 agents/orchestration/.local/
+.github/
+# Python cache (MkDocs dependencies)
+__pycache__/
+*.py[cod]
+*$py.class
+.Python

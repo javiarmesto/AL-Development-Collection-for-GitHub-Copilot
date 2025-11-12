@@ -234,7 +234,7 @@ Add email validation to Customer table with these requirements:
 
 **Result**: Multi-phase plan → TDD implementation → Quality validation → Documentation trail
 
-**[📖 Complete Orchestra Documentation](./agents/orchestration/README.md)**
+**[📖 Complete Orchestra Documentation](./agents/orchestration/README.md)** (reference docs in orchestration/ folder)
 
 > 💡 **When to Use**: Complex features (3+ phases), production code requiring quality gates, bug fixes with TDD proof, or learning AL through guided implementation
 

@@ -2,6 +2,19 @@
 
 > **Multi-Agent Test-Driven Development System for Business Central**
 
+⚠️ **IMPORTANT FOR VS CODE COPILOT VISIBILITY**:
+
+The orchestra agents in this folder (`al-conductor`, `al-planning-subagent`, `al-implement-subagent`, `al-review-subagent`) are **NOT directly accessible as modes** in VS Code Copilot Chat.
+
+**Why?** VS Code Copilot only detects `.agent.md` files in the **root `agents/` directory**, not in subfolders.
+
+**How to use these agents:**
+- **al-conductor**: Invoked via `Use al-conductor mode` (references file via collection manifest or direct file path loading by Copilot)
+- **Subagents**: Called automatically by al-conductor using `runSubagent` tool
+- **Alternative**: If visibility issues occur, symlink or copy files to `agents/` root
+
+**Verification**: Run `@workspace /explain` and check which modes are listed. Only root-level agents appear.
+
 ## Quick Links
 
 - **[Complete Documentation](./README.md)** - Full guide to AL Orchestra system

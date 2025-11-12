@@ -403,7 +403,7 @@ items:
   # Layer 2: Agent Primitives - Orchestra System (4 files)
   # Multi-agent TDD workflow coordination following GitHub Copilot Orchestra pattern
   # Adapted for AL development with Business Central best practices
-  - path: agents/orchestration/al-conductor.agent.md
+  - path: agents/al-conductor.agent.md
     kind: agent
     usage: recommended
     description: |
@@ -447,7 +447,7 @@ items:
       - Commit after each phase (don't skip commit gates)
       - Trust the TDD process (tests first, then minimal code)
       
-  - path: agents/orchestration/al-planning-subagent.agent.md
+  - path: agents/al-planning-subagent.agent.md
     kind: agent
     usage: optional
     description: |
@@ -473,7 +473,7 @@ items:
       - Performance context
       - Implementation recommendations
       
-  - path: agents/orchestration/al-implement-subagent.agent.md
+  - path: agents/al-implement-subagent.agent.md
     kind: agent
     usage: optional
     description: |
@@ -503,7 +503,7 @@ items:
       
       Uses Claude Haiku 4.5 for cost-efficient execution.
       
-  - path: agents/orchestration/al-review-subagent.agent.md
+  - path: agents/al-review-subagent.agent.md
     kind: agent
     usage: optional
     description: |

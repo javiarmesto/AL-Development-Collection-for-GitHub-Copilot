@@ -50,15 +50,15 @@ I need to build a sales forecasting system...
 
 **Customization Tip**: You can adjust these complexity definitions by editing this file in your repository. For example, if your team typically works with smaller changes, you might redefine MEDIUM as "1-2 phases" instead of "2-3 phases". The framework adapts to your workflow.
 
-### 📦 Available Agents (7 files)
+### 📦 Available Agents (11 total)
 
-#### 🎯 Strategic Router (Start Here)
+### 🎯 Strategic Router (Start Here)
 
 | Mode | Role | Complejidad | When to Use |
 |------|------|-------------|-------------|
 | **al-orchestrator** | Strategic Router & Workflow Coordinator | Todas | **Start here** when unsure - analyzes complexity and routes appropriately |
 
-#### 🏗️ Implementation Agents (Complexity-Driven)
+### 🏗️ Implementation Agents (Complexity-Driven)
 
 | Mode | Role | Complejidad Target | Best For |
 |------|------|-------------------|----------|
@@ -66,7 +66,17 @@ I need to build a sales forecasting system...
 | **al-conductor** | TDD Orchestra Coordinator | 🟡 MEDIUM / 🔴 HIGH | Multi-phase implementation with enforced TDD and quality gates |
 | **al-developer** | Tactical Implementation Specialist | 🟢 LOW / 🟡 MEDIUM | Direct implementation when design is clear and scope is limited |
 
-#### 🔧 Specialized Consultants (Complexity-Agnostic)
+### 🎭 Orchestra Subagents (Invoked by al-conductor)
+
+| Mode | Role | Model | Purpose |
+|------|------|-------|---------|
+| **al-planning-subagent** | AL-aware Research Specialist | Sonnet 4.5 | Analyzes codebase, gathers context for planning |
+| **al-implement-subagent** | TDD Implementation Executor | Haiku 4.5 | Executes RED→GREEN→REFACTOR cycle |
+| **al-review-subagent** | Quality Assurance Validator | Sonnet 4.5 | Reviews code against AL best practices |
+
+> 💡 **Note**: Subagents are automatically invoked by `al-conductor` via `runSubagent` tool. You don't invoke them directly.
+
+### 🔧 Specialized Consultants (Complexity-Agnostic)
 
 | Mode | Role | Works With | Best For |
 |------|------|-----------|----------|

@@ -2,6 +2,47 @@
 
 > **Structured Test-Driven Development workflow for AL extensions using AI-assisted multi-agent orchestration**
 
+## ⚠️ Important: VS Code Copilot Visibility
+
+**Orchestra agents are located in a subfolder** (`agents/orchestration/`) which **affects VS Code Copilot Chat visibility**.
+
+### The Problem
+
+VS Code Copilot Chat only auto-detects `.agent.md` files located in the **root `agents/` directory**. Files in subfolders like `agents/orchestration/` are **not automatically visible** as chat modes.
+
+### How to Use al-conductor
+
+Despite the subfolder location, you can still use al-conductor:
+
+```markdown
+Use al-conductor mode
+```
+
+**If this doesn't work**, try these solutions:
+
+#### Solution 1: Verify Collection Manifest (Recommended)
+Check that `collections/al-development.collection.yml` includes orchestration agents with correct file paths.
+
+#### Solution 2: Create Symlinks
+Create symbolic links in root `agents/` pointing to orchestration folder:
+```powershell
+# PowerShell (run as Administrator)
+cd agents
+New-Item -ItemType SymbolicLink -Name "al-conductor.agent.md" -Target "orchestration\al-conductor.agent.md"
+```
+
+#### Solution 3: Copy Files to Root
+If symlinks don't work, copy files directly to `agents/` root (maintain both copies).
+
+#### Solution 4: Update VS Code Settings
+Check VS Code settings for custom agent paths configuration.
+
+### Subagents Access
+
+The subagents (`al-planning-subagent`, `al-implement-subagent`, `al-review-subagent`) are **automatically invoked by al-conductor** using the `runSubagent` tool. You don't need direct access to these.
+
+---
+
 ## Overview
 
 The AL Orchestra system implements the **Planning → Implementation → Review → Commit** cycle for Business Central AL development, adapted from the [GitHub Copilot Orchestra pattern](https://github.com/ShepAlderson/copilot-orchestra) with AL-specific enhancements.

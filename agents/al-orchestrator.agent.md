@@ -3,7 +3,7 @@ description: 'DEPRECATED: Use al-conductor instead. GUIDE/EXAMPLE for creating c
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'Microsoft Docs/*', 'github/github-mcp-server/*', 'markitdown/*', 'microsoft-docs/*', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'todos']
 model: Claude Sonnet 4.5
 deprecated: true
-replacement: 'agents/orchestration/al-conductor.agent.md'
+replacement: 'agents/al-conductor.agent.md'
 status: 'reference-only'
 ---
 

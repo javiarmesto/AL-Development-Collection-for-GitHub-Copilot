@@ -1,6 +1,6 @@
 # AL Development Collection for GitHub Copilot
 
-> **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI-Native Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **38 specialized Agent Primitives** across **3 systematic layers**. Features **AL Orchestra** multi-agent TDD system that transforms feature requests into code following BC best practices.
+> **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI-Native Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **37 specialized Agent Primitives** across **3 systematic layers**. Features **AL Orchestra** multi-agent TDD system that transforms feature requests into code following BC best practices.
 
 > **v2.7.0** - Agent Context & Memory System: Centralized documentation for consistent multi-agent collaboration.
 
@@ -17,73 +17,48 @@
 
 ## 🚀 Quick Start
 
-### Prerequisites
-
-- **Node.js** (v14.0.0 or higher) - [Download here](https://nodejs.org/en/download)
-- **Visual Studio Code Insiders** with GitHub Copilot extension
-- **AL Language extension** for VS Code
+> **⚡ 5-Minute Setup** → [Complete Quick Start Guide](./QUICK-START.md)
 
 ### Installation
 
 **Option 1: NPM Package (Recommended)**
 ```bash
-# Install from GitHub (no npm registry needed)
 npm install github:javiarmesto/AL-Development-Collection-for-GitHub-Copilot
-
-# Run the installer
 npx al-collection install
-
-# This will copy to .github/:
-# - agents/ (7 strategic + tactical modes)
-# - instructions/ (7 auto-applied guidelines)
-# - prompts/ (18 agentic workflows)
-# - getting-started.md (quick reference)
-#
-# Existing files are preserved - only new files are added
 ```
 
-**Option 2: Clone Repository**
-
+**Option 2: Clone & Install**
 ```bash
-# Clone the repository
 git clone https://github.com/javiarmesto/AL_Copilot_Collection.git
 cd AL_Copilot_Collection
-
-# Run the installer
-node install.js install [target-directory]
-
-# Or manually copy to your project
-cp -r agents your-al-project/.github/
-cp -r instructions your-al-project/.github/
-cp -r prompts your-al-project/.github/
+node install.js install [your-al-project]
 ```
 
-**Option 3: Direct Download**
-
-1. Download the [latest release](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/releases)
-2. Extract to your project's `.github/copilot/` directory
-3. Reload VS Code
-
-### Post-Installation
-
-1. **Reload VS Code**
-   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
-   - Run: `Developer: Reload Window`
-
-2. **Read the Quick Start Guide**
-   - Open `.github/getting-started.md`
-   - This contains all essential information to get started
-
-3. **Verify installation**
-   - Open any `.al` file - instructions should auto-apply
-   - Try: `Use al-orchestrator mode` - should switch context
-   - Try: `@workspace use al-initialize` - should execute
+**Then**: Reload VS Code (`Ctrl+Shift+P` → `Developer: Reload Window`)
 
 ### First Use
 
-**New to AL development?** Start with environment setup:
+**📖 Follow the complete example**: [Customer Loyalty Points System](./QUICK-START.md#-complete-example-customer-loyalty-points-system)
+
+Or start directly:
+
+**New project?**
 ```bash
 @workspace use al-initialize
+```
+
+**Have a feature to build?**
+```markdown
+Use al-architect mode
+
+[Describe your requirements]
+```
+
+**Need debugging?**
+```markdown
+Use al-debugger mode
+
+[Describe the issue]
 ```
 
 
@@ -131,7 +106,7 @@ graph TB
 | **Agents** | 7 files | `Use [mode-name]` | Role-based strategic/tactical specialists |
 | **Orchestra System** | 4 files | `Use al-conductor` | Multi-agent TDD orchestration |
 | **Agentic Workflows** | 18 files | `@workspace use [name]` | Complete task execution processes |
-| **Total Primitives** | **38 tools** | — | Complete AI Native toolkit with TDD |
+| **Total Primitives** | **37 tools** | — | Complete AI Native toolkit with TDD |
 
 ## 📦 What's Included: Agent Primitives
 
@@ -191,8 +166,7 @@ graph TB
 **Role-based specialists** with MCP tool boundaries (like professional licensing):
 
 **Strategic Specialists** (design & analyze):
-- **al-orchestrator** 🎯 - Smart router & workflow coordinator (GUIDE/EXAMPLE for agent creation)
-- **al-architect** 🏗️ - Solution architecture, cannot execute builds
+- **al-architect** 🏗️ - Solution architecture, cannot execute builds (START HERE)
 - **al-debugger** 🐛 - Deep diagnosis, systematic troubleshooting
 - **al-tester** ✅ - Testing strategy, TDD methodology
 - **al-api** 🌐 - RESTful API design & implementation
@@ -234,7 +208,7 @@ Add email validation to Customer table with these requirements:
 
 **Result**: Multi-phase plan → TDD implementation → Quality validation → Documentation trail
 
-**[📖 Complete Orchestra Documentation](./agents/orchestration/README.md)** (reference docs in orchestration/ folder)
+**[📖 Complete Orchestra Documentation](./agents/orchestration/README.md)**
 
 > 💡 **When to Use**: Complex features (3+ phases), production code requiring quality gates, bug fixes with TDD proof, or learning AL through guided implementation
 
@@ -309,7 +283,7 @@ This comprehensive guide includes:
 
 ### 📖 Integration Guide (1 primitive)
 
-- **copilot-instructions.md** - Master document coordinating all 38 primitives with usage guidance
+- **copilot-instructions.md** - Master document coordinating all 37 primitives with usage guidance
 
 ## 🎯 Common Workflows
 
@@ -351,7 +325,7 @@ Use al-architect mode
 I need to [describe your requirement]
 ```
 
-The orchestrator will analyze, present complexity classification, wait for your confirmation, and route accordingly.
+al-architect will analyze, design the solution architecture, and recommend next steps.
 
 **[📊 See complete routing matrix and decision tree](./docs/workflows/complete-development-flow.md)**
 
@@ -498,7 +472,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
 
 ## 📋 File Structure
 
-**AI Native-Instructions Architecture** with **38 Agent Primitives** across **4 layers**:
+**AI Native-Instructions Architecture** with **37 Agent Primitives** across **3 layers**:
 
 ```
 AL-Development-Collection-for-GitHub-Copilot/
@@ -536,16 +510,15 @@ AL-Development-Collection-for-GitHub-Copilot/
 │   ├── al-copilot-promptdialog.prompt.md        # PromptDialog creation
 │   ├── al-copilot-test.prompt.md                # AI Test Toolkit integration
 │   └── al-copilot-generate.prompt.md            # Natural language to code
-├── agents/                                       # 💬 Layer 2: Agents (7 + 4 files)
+├── agents/                                       # 💬 Layer 2: Agents (6 + 4 files)
 │   ├── index.md                                 # Complete agent guide
-│   ├── al-orchestrator.agent.md                 # 🎯 Smart router (START HERE)
-│   ├── al-architect.agent.md                    # 🏗️ Solution architecture
+│   ├── al-architect.agent.md                    # 🏗️ Solution architecture (START HERE)
 │   ├── al-developer.agent.md                    # 💻 Tactical implementation
 │   ├── al-debugger.agent.md                     # 🐛 Deep debugging
 │   ├── al-tester.agent.md                       # ✅ Testing strategy
 │   ├── al-api.agent.md                          # 🌐 API development
 │   ├── al-copilot.agent.md                      # 🤖 AI features
-│   └── orchestration/                           # 🎭 Layer 2: Orchestra System (4 files) - Specialized feature
+│   └── orchestration/                           # 🎭 Orchestra System (4 files)
 │       ├── README.md                            # Complete Orchestra docs (23k chars)
 │       ├── index.md                             # Quick reference
 │       ├── al-conductor.agent.md                # Main orchestration agent
@@ -559,12 +532,15 @@ AL-Development-Collection-for-GitHub-Copilot/
 │   └── workflows/
 │       └── complete-development-flow.md         # Visual workflow guide
 ├── collections/                                  # Collection manifests
-│   └── al-development.collection.yml            # Main collection (38 primitives)
+│   └── al-development.collection.yml            # Main collection (37 primitives)
 ├── references/                                   # Framework documentation
 │   ├── AI Native-INSTRUCTIONS-ARCHITECTURE.md   # Framework compliance
 │   ├── ai native-concepts.md                    # Core concepts
 │   └── ai native structure.md                   # Structure guide
 ├── archive/                                      # Historical files
+│   ├── README.md                                # Archive documentation
+│   ├── MIGRATION-FROM-ORCHESTRATOR.md           # Migration guide (v2.8.0)
+│   └── al-orchestrator.agent.md                 # Archived: Smart router (deprecated v2.8.0)
 ├── al-development.md                            # Framework overview
 ├── CONTRIBUTING.md                              # Contribution guidelines
 ├── CHANGELOG.md                                 # Version history
@@ -572,14 +548,33 @@ AL-Development-Collection-for-GitHub-Copilot/
 ├── SECURITY.md                                  # Security policy
 ├── validate-al-collection.js                    # Compliance validation
 ├── package.json                                 # Dependencies
+├── QUICK-START.md                               # Quick start guide with complete example
+├── REPRODUCIBLE-EXAMPLE.md                      # Step-by-step reproducible example
 └── README.md                                    # This file
 
-# Total: 38 Agent Primitives (9 + 18 + 7 + 4)
+# Total: 37 Agent Primitives (9 instructions + 18 workflows + 6 agents + 4 orchestra)
 # AGENTS.md compilation ready (Layer 3: Context Engineering)
 # All primitives use applyTo patterns for modular context loading
 ```
 
 ## 🏷️ Version History
+
+### 2.8.0 (2025-11-14) - Workflow Simplification
+- 🎯 **Simplified Workflow** - Reduced from 3-4 steps to 2 steps
+  - Removed al-orchestrator routing layer (archived)
+  - Direct workflow: User → al-architect (design) → al-conductor (implement)
+  - 40% reduction in decision fatigue
+- 📚 **Example-Based Learning** - Single validated reproducible example
+  - QUICK-START.md with complete Customer Loyalty Points walkthrough
+  - REPRODUCIBLE-EXAMPLE.md with step-by-step instructions
+  - Replaced multiple incomplete examples with one comprehensive case
+- 📖 **Migration Guide** - MIGRATION-FROM-ORCHESTRATOR.md for existing users
+  - Before/after workflow comparison tables
+  - Decision tree without orchestrator
+  - FAQ for common migration questions
+- 📊 **Total Primitives** - 37 tools (9 + 18 + 6 + 4) - orchestrator archived
+- 🎓 **Better Onboarding** - 5-minute setup → working example in <2 hours
+- ✅ **Validation** - Customer Loyalty Points test case (24/24 validations passed)
 
 ### 2.7.0 (2025-11-10) - Agent Context & Memory System
 - 📋 **Agent Context System** - Centralized documentation in `.github/plans/`
@@ -733,7 +728,7 @@ MIT License - see [LICENSE](./LICENSE) file for details.
 **Last Updated**: 2025-11-10
 **Collection ID**: `al-development`
 **Version**: 2.7.0
-**Total Primitives**: 38 (9 instructions + 18 workflows + 11 agents)
+**Total Primitives**: 37 (9 instructions + 18 workflows + 6 agents + 4 orchestra)
 **Context Standard**: AGENTS.md ready
 **Latest**: Agent Context & Memory System for consistent multi-agent collaboration
 

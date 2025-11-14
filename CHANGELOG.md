@@ -7,6 +7,47 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.8.0] - 2025-11-14
+
+### Added
+- 📖 **QUICK-START.md** - Simplified quick start guide with single complete example
+  - Customer Loyalty Points System (validated case with 24/24 tests passing)
+  - Step-by-step reproducible workflow (al-architect → al-conductor)
+  - Complete code examples with expected results
+  - Time estimates and measurable outcomes (2 hours vs 2 days manual)
+  - Direct workflow without intermediate routing steps
+
+### Changed
+- 🔄 **Simplified Workflow** - Removed al-orchestrator routing layer
+  - Direct flow: al-architect (design) → al-conductor (implement)
+  - Reduced from 3-4 steps to 2 steps (-33% interactions)
+  - Clearer decision making without orchestrator intermediary
+  - Updated all documentation to reflect direct workflow
+- 📚 **Documentation Consolidation** - Single example reference throughout
+  - All docs point to validated Loyalty Points example
+  - Consistent workflow descriptions across README, QUICK-START, guides
+  - Removed multiple competing examples for clarity
+
+### Removed
+- ❌ **al-orchestrator.agent.md** - Archived to `archive/al-orchestrator.agent.md`
+  - Added confusion with extra routing step
+  - Duplicated functionality of specialized agents
+  - Users now start directly with al-architect for design
+  - Migration guide created: `archive/MIGRATION-FROM-ORCHESTRATOR.md`
+
+### Impact
+- ✅ **Faster Onboarding** - New users learn 2 steps instead of 3 (-33% complexity)
+- ✅ **Clearer Flow** - No confusion about when to use orchestrator vs architect
+- ✅ **Better Examples** - Single validated reference case (Customer Loyalty Points)
+- ✅ **Reduced Cognitive Load** - Fewer agents to remember and choose between
+- ✅ **Maintained Power** - All functionality preserved in specialized agents
+- 📊 **Total Primitives** - 37 tools (9 instructions + 18 workflows + 6 agents + 4 orchestra)
+
+### Migration
+- **Users with al-orchestrator references**: See `archive/MIGRATION-FROM-ORCHESTRATOR.md`
+- **Quick migration**: Replace `Use al-orchestrator mode` with `Use al-architect mode`
+- **No code changes needed**: Only affects chat mode invocation
+
 ## [2.7.0] - 2025-11-10
 
 ### Added

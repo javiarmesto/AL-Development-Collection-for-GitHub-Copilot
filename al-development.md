@@ -1,6 +1,6 @@
 # AL Development for Business Central
 
-**AI Native AL Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. Transform ad-hoc AI usage into systematic engineering through **38 Agent Primitives** across **3 framework layers**.
+**AI Native AL Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. Transform ad-hoc AI usage into systematic engineering through **37 Agent Primitives** across **3 framework layers**.
 
 ## Framework Architecture
 
@@ -440,7 +440,7 @@ Found an issue or have a suggestion? This collection improves through use:
 **Version**: 2.7.0  
 **Last Updated**: 2025-11-10  
 **Author**: javiarmesto  
-**Total Primitives**: 38 (9 instructions + 18 workflows + 7 agents + 4 orchestra)  
+**Total Primitives**: 37 (9 instructions + 18 workflows + 6 agents + 4 orchestra)  
 **Status**: ✅ Fully compliant with AI Native-Instructions Architecture
 
 ### Framework Implementation

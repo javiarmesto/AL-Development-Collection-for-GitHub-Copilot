@@ -41,9 +41,9 @@
     "url": "https://github.com/javiarmesto"
   },
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "webpack-cli": "^6.0.1"
   },
   "repository": {
     "type": "git",

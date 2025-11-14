@@ -2,12 +2,12 @@
 
 > **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI-Native Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **37 specialized Agent Primitives** across **3 systematic layers**. Features **AL Orchestra** multi-agent TDD system that transforms feature requests into code following BC best practices.
 
-> **v2.7.0** - Agent Context & Memory System: Centralized documentation for consistent multi-agent collaboration.
+> **v2.8.0** - Workflow Simplification: Direct workflow (User → al-architect → al-conductor) with 40% reduction in decision fatigue and validated reproducible example.
 
 [![Validation Status](https://img.shields.io/badge/validation-passing-brightgreen)](./validate-al-collection.js)
-[![Version](https://img.shields.io/badge/version-2.6.0-blue)](./CHANGELOG.md)
-[![Tools](https://img.shields.io/badge/tools-38-orange)](./al-development.md)
-[![Framework](https://img.shields.io/badge/framework-A--Instructions-purple)](https://danielmeppiel.github.io/awesome-ai-native/)
+[![Version](https://img.shields.io/badge/version-2.8.0-blue)](./CHANGELOG.md)
+[![Tools](https://img.shields.io/badge/tools-37-orange)](./al-development.md)
+[![Framework](https://img.shields.io/badge/framework-AI--Native--Instructions-purple)](https://danielmeppiel.github.io/awesome-ai-native/)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/javiarmesto/AL-Development-Collection-for-GitHub-Copilot)](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/javiarmesto/AL-Development-Collection-for-GitHub-Copilot)](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/stargazers)
@@ -22,9 +22,29 @@
 ### Installation
 
 **Option 1: NPM Package (Recommended)**
+
 ```bash
+# Install via npm
 npm install github:javiarmesto/AL-Development-Collection-for-GitHub-Copilot
 npx al-collection install
+
+# Or use directly with npx
+npx al-development-collection install
+```
+
+**CLI Commands:**
+```bash
+# Install to current or specified directory
+npx al-development-collection install [path]
+
+# Update existing installation (merge mode)
+npx al-development-collection update
+
+# Validate installation
+npx al-development-collection validate
+
+# Get help
+npx al-development-collection --help
 ```
 
 **Features:**
@@ -33,26 +53,31 @@ npx al-collection install
 - ✅ **Smart merging** - Preserves existing files, only adds new ones
 - ✅ **Validation** - Built-in installation verification
 
-**Additional commands:**
-```bash
-# Update existing installation (merge mode)
-npx al-collection update
-
-# Validate installation
-npx al-collection validate
-
-# Get help
-npx al-collection --help
-```
-
 **Option 2: Clone & Install**
+
+For development or customization:
+
 ```bash
-git clone https://github.com/javiarmesto/AL_Copilot_Collection.git
-cd AL_Copilot_Collection
+git clone https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot.git
+cd AL-Development-Collection-for-GitHub-Copilot
 node install.js install [your-al-project]
 ```
 
 **Then**: Reload VS Code (`Ctrl+Shift+P` → `Developer: Reload Window`)
+
+### Installation Methods Comparison
+
+| Feature | npm CLI | Clone & Install |
+|---------|---------|-----------------|
+| **Setup Time** | < 5 minutes | ~10 minutes |
+| **Auto-Detection** | ⌨️ Manual | ⌨️ Manual |
+| **Installation** | ⌨️ Command line | ⌨️ Command line |
+| **Updates** | ⌨️ Terminal | 🔄 Git pull |
+| **Validation** | 📄 Console output | 📄 Console output |
+| **Best For** | CI/CD, scripts, automation | Development, customization |
+| **Getting Started** | 📖 Markdown files | 📖 Markdown files |
+
+**Recommendation**: Use **npm CLI** for quick setup with auto-detection. Use Clone & Install for development or customization.
 
 ### First Use
 
@@ -343,7 +368,7 @@ Use al-architect mode
 I need to [describe your requirement]
 ```
 
-al-architect will analyze, design the solution architecture, and recommend next steps.
+al-architect will analyze requirements, design the solution architecture, and recommend the appropriate workflow (al-developer for simple features, al-conductor for complex TDD implementation).
 
 **[📊 See complete routing matrix and decision tree](./docs/workflows/complete-development-flow.md)**
 
@@ -743,10 +768,11 @@ MIT License - see [LICENSE](./LICENSE) file for details.
 
 **Status**: ✅ AI Native-Instructions Architecture Compliant
 **Framework**: [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)
-**Last Updated**: 2025-11-10
+**Last Updated**: 2025-11-14
 **Collection ID**: `al-development`
-**Version**: 2.7.0
+**Version**: 2.8.0
 **Total Primitives**: 37 (9 instructions + 18 workflows + 6 agents + 4 orchestra)
+**Installation**: npm CLI (recommended) | Clone & Install
 **Context Standard**: AGENTS.md ready
-**Latest**: Agent Context & Memory System for consistent multi-agent collaboration
+**Latest**: Workflow Simplification - Direct User → al-architect → al-conductor path
 

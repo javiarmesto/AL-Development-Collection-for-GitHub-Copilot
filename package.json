@@ -1,7 +1,7 @@
 {
   "name": "al-development-collection",
-  "version": "2.7.0",
-  "description": "AL Development Collection for GitHub Copilot - AI Native-Instructions Architecture implementation with 38 Agent Primitives (9 instructions + 18 workflows + 7 agents + 4 orchestra)",
+  "version": "2.9.0",
+  "description": "AL Development Collection for GitHub Copilot - AI Native-Instructions Architecture with intelligent installation (auto-detects AL projects, validates setup, smart updates)",
   "main": "install.js",
   "bin": {
     "al-collection": "./install.js"
@@ -10,7 +10,9 @@
     "validate": "node validate-al-collection.js",
     "test": "node validate-al-collection.js",
     "install-toolkit": "node install.js install",
-    "postinstall": "echo '\n✨ AL Development Collection installed! Run: npx al-collection install\n'"
+    "update-toolkit": "node install.js update",
+    "validate-installation": "node install.js validate",
+    "postinstall": "echo '\n✨ AL Development Collection installed!\n\nCommands available:\n  npx al-collection install   - Install to your project\n  npx al-collection update    - Update existing installation\n  npx al-collection validate  - Verify installation\n  npx al-collection --help    - Show full help\n'"
   },
   "files": [
     "agents",

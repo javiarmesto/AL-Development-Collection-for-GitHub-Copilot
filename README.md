@@ -27,6 +27,24 @@ npm install github:javiarmesto/AL-Development-Collection-for-GitHub-Copilot
 npx al-collection install
 ```
 
+**Features:**
+- ✅ **Auto-detects AL projects** - Searches for app.json automatically
+- ✅ **Interactive selection** - Choose from multiple projects if found
+- ✅ **Smart merging** - Preserves existing files, only adds new ones
+- ✅ **Validation** - Built-in installation verification
+
+**Additional commands:**
+```bash
+# Update existing installation (merge mode)
+npx al-collection update
+
+# Validate installation
+npx al-collection validate
+
+# Get help
+npx al-collection --help
+```
+
 **Option 2: Clone & Install**
 ```bash
 git clone https://github.com/javiarmesto/AL_Copilot_Collection.git

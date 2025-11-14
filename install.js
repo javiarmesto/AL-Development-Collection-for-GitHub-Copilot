@@ -290,6 +290,53 @@ This will overwrite files in \`.github/copilot/\`.
 }
 
 /**
+ * Detect if current directory is an AL project
+ */
+function isALProject(directory) {
+  const appJsonPath = path.join(directory, 'app.json');
+  return fs.existsSync(appJsonPath);
+}
+
+/**
+ * Find AL projects in directory tree
+ */
+function findALProjects(startDir, maxDepth = 2) {
+  const projects = [];
+  
+  function search(dir, depth) {
+    if (depth > maxDepth) return;
+    
+    try {
+      const items = fs.readdirSync(dir);
+      
+      // Check if this directory is an AL project
+      if (items.includes('app.json')) {
+        projects.push(dir);
+        return; // Don't search subdirectories of AL projects
+      }
+      
+      // Search subdirectories
+      items.forEach(item => {
+        const fullPath = path.join(dir, item);
+        try {
+          const stat = fs.statSync(fullPath);
+          if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+            search(fullPath, depth + 1);
+          }
+        } catch (err) {
+          // Skip directories we can't access
+        }
+      });
+    } catch (err) {
+      // Skip directories we can't read
+    }
+  }
+  
+  search(startDir, 0);
+  return projects;
+}
+
+/**
  * Get target directory from user or command line
  */
 async function getTargetDirectory() {
@@ -300,7 +347,73 @@ async function getTargetDirectory() {
     return path.resolve(process.cwd(), args[1]);
   }
 
-  // Interactive mode
+  // Auto-detect AL projects
+  const currentDir = process.cwd();
+  const isCurrentAL = isALProject(currentDir);
+  
+  if (isCurrentAL) {
+    log(`\n✓ AL project detected in current directory!`, 'green');
+    const defaultPath = path.join(currentDir, '.github');
+    
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    });
+
+    return new Promise((resolve) => {
+      rl.question(
+        `${colors.cyan}Install to ${defaultPath}? (Y/n): ${colors.reset}`,
+        (answer) => {
+          rl.close();
+          if (!answer || answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes') {
+            resolve(defaultPath);
+          } else {
+            resolve(getTargetDirectoryInteractive());
+          }
+        }
+      );
+    });
+  }
+  
+  // Search for AL projects nearby
+  log(`\n🔍 Searching for AL projects...`, 'cyan');
+  const foundProjects = findALProjects(currentDir);
+  
+  if (foundProjects.length > 0) {
+    log(`\n✓ Found ${foundProjects.length} AL project(s):`, 'green');
+    foundProjects.forEach((proj, idx) => {
+      log(`  ${idx + 1}. ${proj}`, 'blue');
+    });
+    
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    });
+
+    return new Promise((resolve) => {
+      rl.question(
+        `${colors.cyan}\nSelect project number (1-${foundProjects.length}) or Enter for manual path: ${colors.reset}`,
+        (answer) => {
+          rl.close();
+          const selection = parseInt(answer);
+          if (selection >= 1 && selection <= foundProjects.length) {
+            resolve(path.join(foundProjects[selection - 1], '.github'));
+          } else {
+            resolve(getTargetDirectoryInteractive());
+          }
+        }
+      );
+    });
+  }
+
+  // No AL projects found, interactive mode
+  return getTargetDirectoryInteractive();
+}
+
+/**
+ * Get target directory interactively
+ */
+async function getTargetDirectoryInteractive() {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
@@ -512,44 +625,202 @@ async function install() {
 }
 
 /**
+ * Update existing installation
+ */
+async function updateToolkit() {
+  header('🔄 AL Development Collection - Update');
+
+  log('This will update your existing installation.', 'cyan');
+  log('Existing files will be preserved. Only new files will be added.', 'cyan');
+
+  // Find existing installation
+  const currentDir = process.cwd();
+  const possiblePaths = [
+    path.join(currentDir, '.github'),
+    path.join(currentDir, '.github', 'copilot')
+  ];
+
+  let existingPath = null;
+  for (const testPath of possiblePaths) {
+    const agentsPath = path.join(testPath, 'agents');
+    if (fs.existsSync(agentsPath)) {
+      existingPath = testPath;
+      break;
+    }
+  }
+
+  if (!existingPath) {
+    log('\n⚠️  No existing installation found.', 'yellow');
+    log('Use "install" command instead.', 'cyan');
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    });
+
+    return new Promise((resolve) => {
+      rl.question(
+        `${colors.cyan}Run install command now? (Y/n): ${colors.reset}`,
+        async (answer) => {
+          rl.close();
+          if (!answer || answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes') {
+            await install();
+          }
+          resolve();
+        }
+      );
+    });
+  }
+
+  log(`\n✓ Found installation at: ${existingPath}`, 'green');
+  
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+
+  return new Promise((resolve) => {
+    rl.question(
+      `${colors.cyan}Update this installation? (Y/n): ${colors.reset}`,
+      async (answer) => {
+        rl.close();
+        if (!answer || answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes') {
+          // Use install with merge mode
+          process.argv = ['node', 'install.js', 'install', existingPath];
+          await install();
+        }
+        resolve();
+      }
+    );
+  });
+}
+
+/**
+ * Validate existing installation
+ */
+async function validateInstallation() {
+  header('✓ AL Development Collection - Validation');
+
+  // Find installation
+  const currentDir = process.cwd();
+  const possiblePaths = [
+    path.join(currentDir, '.github'),
+    path.join(currentDir, '.github', 'copilot')
+  ];
+
+  let installPath = null;
+  for (const testPath of possiblePaths) {
+    const agentsPath = path.join(testPath, 'agents');
+    if (fs.existsSync(agentsPath)) {
+      installPath = testPath;
+      break;
+    }
+  }
+
+  if (!installPath) {
+    log('\n❌ No installation found in .github/', 'red');
+    log('Run "npx al-collection install" first.', 'cyan');
+    return;
+  }
+
+  log(`\n📁 Checking installation at: ${installPath}`, 'cyan');
+  
+  // Check required directories
+  const requiredDirs = [
+    { name: 'agents', desc: 'Agent modes' },
+    { name: 'instructions', desc: 'Instruction files' },
+    { name: 'prompts', desc: 'Workflow prompts' }
+  ];
+
+  let allValid = true;
+  let totalFiles = 0;
+
+  for (const dir of requiredDirs) {
+    const dirPath = path.join(installPath, dir.name);
+    if (fs.existsSync(dirPath)) {
+      const files = fs.readdirSync(dirPath).filter(f => f.endsWith('.md'));
+      totalFiles += files.length;
+      log(`  ✓ ${dir.name}/ (${files.length} files) - ${dir.desc}`, 'green');
+    } else {
+      log(`  ✗ ${dir.name}/ - Missing!`, 'red');
+      allValid = false;
+    }
+  }
+
+  // Check getting-started.md
+  const gettingStartedPath = path.join(installPath, 'getting-started.md');
+  if (fs.existsSync(gettingStartedPath)) {
+    log(`  ✓ getting-started.md`, 'green');
+  } else {
+    log(`  ⚠ getting-started.md - Missing (optional)`, 'yellow');
+  }
+
+  console.log('');
+  if (allValid) {
+    log('═'.repeat(60), 'green');
+    log(`✅ Installation is valid! (${totalFiles} files found)`, 'green');
+    log('═'.repeat(60), 'green');
+    console.log('');
+    log('🚀 Next steps:', 'bright');
+    log('  1. Open any .al file in VS Code', 'blue');
+    log('  2. Try: Use al-orchestrator mode', 'blue');
+    log('  3. Or: @workspace use al-initialize', 'blue');
+  } else {
+    log('═'.repeat(60), 'red');
+    log('❌ Installation is incomplete!', 'red');
+    log('═'.repeat(60), 'red');
+    console.log('');
+    log('Run "npx al-collection update" to fix.', 'cyan');
+  }
+  console.log('');
+}
+
+/**
  * Show help
  */
 function showHelp() {
   console.log(`
-${colors.bright}AL Development Collection - Installer${colors.reset}
+${colors.bright}AL Development Collection - CLI${colors.reset}
 
 ${colors.cyan}Usage:${colors.reset}
-  npx al-collection install [target-directory]
-  npx al-collection --help
+  npx al-collection <command> [options]
 
-${colors.cyan}Arguments:${colors.reset}
-  target-directory    Optional. Directory where files will be installed.
-                      Default: .github in current directory
+${colors.cyan}Commands:${colors.reset}
+  install [path]      Install toolkit to specified path (default: .github)
+  update              Update existing installation (preserves files)
+  validate            Verify installation is complete and valid
+  --help, -h          Show this help message
 
 ${colors.cyan}Examples:${colors.reset}
-  ${colors.green}# Interactive installation (recommended)${colors.reset}
+  ${colors.green}# Interactive installation (auto-detects AL projects)${colors.reset}
   npx al-collection install
 
-  ${colors.green}# Install to .github (default)${colors.reset}
+  ${colors.green}# Install to specific path${colors.reset}
   npx al-collection install .github
 
-  ${colors.green}# Install to custom location${colors.reset}
-  npx al-collection install ./my-custom-path
+  ${colors.green}# Update existing installation${colors.reset}
+  npx al-collection update
+
+  ${colors.green}# Validate installation${colors.reset}
+  npx al-collection validate
+
+${colors.cyan}Features:${colors.reset}
+  ✓ Auto-detects AL projects (searches for app.json)
+  ✓ Interactive project selection if multiple found
+  ✓ Merge mode preserves existing files
+  ✓ Validation ensures complete installation
 
 ${colors.cyan}What gets installed:${colors.reset}
   • agents/           - 7 strategic agents + 4 orchestra subagents
   • instructions/     - 9 auto-applied coding guidelines  
   • prompts/          - 18 agentic workflows
-  • collections/      - Collection manifest for validation
+  • collections/      - Collection manifest (optional)
   • getting-started.md - Quick start documentation
 
 ${colors.cyan}Merge behavior:${colors.reset}
-  If agents/, instructions/, or prompts/ folders already exist in the target
-  directory, the installer will:
-  - Preserve all existing files (no overwriting)
-  - Only add new files from the collection
-  - Skip files that already exist
-  - Show summary of copied vs skipped files
+  When updating or installing to existing location:
+  - Preserves all existing files (no overwriting)
+  - Only adds new files from the collection
+  - Shows summary of copied vs skipped files
 
 ${colors.cyan}More info:${colors.reset}
   GitHub: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot
@@ -559,16 +830,30 @@ ${colors.cyan}More info:${colors.reset}
 
 // Main execution
 const args = process.argv.slice(2);
+const command = args[0];
 
 if (args.includes('--help') || args.includes('-h')) {
   showHelp();
-} else if (args.length === 0 || args[0] === 'install') {
+} else if (!command || command === 'install') {
   install().catch(err => {
     log(`\n❌ Installation failed: ${err.message}`, 'red');
     console.error(err);
     process.exit(1);
   });
+} else if (command === 'update') {
+  updateToolkit().catch(err => {
+    log(`\n❌ Update failed: ${err.message}`, 'red');
+    console.error(err);
+    process.exit(1);
+  });
+} else if (command === 'validate') {
+  validateInstallation().catch(err => {
+    log(`\n❌ Validation failed: ${err.message}`, 'red');
+    console.error(err);
+    process.exit(1);
+  });
 } else {
-  log('Unknown command. Use --help for usage information.', 'red');
+  log(`\n❌ Unknown command: ${command}`, 'red');
+  log('Use --help for usage information.', 'cyan');
   process.exit(1);
 }

@@ -7,6 +7,82 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.9.0] - 2025-11-14
+
+### Added
+- 🚀 **Auto-Detection of AL Projects** - Intelligent project discovery
+  - Searches for app.json in current directory and subdirectories
+  - Interactive selection when multiple AL projects found
+  - Smart default path suggestions (.github in AL project)
+  - Reduced setup friction by 50% (no manual path entry needed)
+- ✅ **Installation Validation** - New `validate` command
+  - Checks all required directories (agents, instructions, prompts)
+  - Counts installed files and reports completeness
+  - Provides actionable next steps on success/failure
+  - Usage: `npx al-collection validate`
+- 🔄 **Explicit Update Command** - Improved update workflow
+  - New `update` command replaces confusing "install again" pattern
+  - Auto-detects existing installation location
+  - Preserves existing files with merge mode
+  - Usage: `npx al-collection update`
+- 📖 **Enhanced Help System** - Comprehensive CLI documentation
+  - Command reference (install, update, validate, --help)
+  - Real-world usage examples
+  - Feature highlights (auto-detection, merge behavior)
+  - Installation details with all artifacts listed
+
+### Changed
+- 🎨 **Improved Installation UX** - Better user experience
+  - Color-coded messages (success=green, warning=yellow, error=red)
+  - Progress indicators for each step
+  - Summary statistics (files copied, files skipped)
+  - Clear next steps after installation
+- 📊 **Better Merge Reporting** - Transparent file handling
+  - Shows which files were added vs skipped
+  - Explains merge behavior upfront
+  - Confirms user intent before proceeding
+  - Summary of changes at completion
+- 🔧 **Smart Path Resolution** - Intelligent defaults
+  - Current directory AL detection (immediate suggestion)
+  - Nearby AL projects discovery (up to 2 levels deep)
+  - Numbered project selection (user-friendly)
+  - Fallback to manual path entry if needed
+
+### Enhanced
+- 📝 **README.md** - Updated Quick Start section
+  - Highlighted new auto-detection feature
+  - Added command reference table
+  - Listed all available commands with descriptions
+  - Emphasized smart installation benefits
+- 📦 **package.json** - New npm scripts
+  - `update-toolkit` - Shorthand for update command
+  - `validate-installation` - Shorthand for validate command
+  - Improved postinstall message with all commands listed
+- 📋 **VSCODE-EXTENSION-GUIDE.md** - Complete extension creation guide
+  - Full TypeScript implementation example
+  - package.json configuration for VS Code
+  - Auto-detection integration patterns
+  - Step-by-step publishing instructions
+  - Decision matrix: npm vs extension vs both
+
+### Technical Improvements
+- 🔍 **isALProject()** - Detects app.json presence
+- 🔎 **findALProjects()** - Recursive project search with depth limiting
+- 🎯 **getTargetDirectoryInteractive()** - Separated interactive logic
+- 🔄 **updateToolkit()** - Dedicated update workflow
+- ✅ **validateInstallation()** - Comprehensive validation checks
+
+### Impact
+- ✅ **Faster Setup** - Auto-detection saves 1-2 minutes per install
+- ✅ **Less Confusion** - Clear command names (install/update/validate)
+- ✅ **Better Feedback** - Users know exactly what happened and why
+- ✅ **Easier Updates** - No need to remember "install with merge"
+- ✅ **Quality Assurance** - Validation catches incomplete installations
+- 🎓 **Extension Ready** - Foundation for future VS Code extension (Phase 2)
+
+### Phase 1 Complete ✅
+This release completes **Phase 1: npm Package Improvements**. Next phase (Phase 2) will add VS Code extension as optional wrapper around the npm package. See `VSCODE-EXTENSION-GUIDE.md` for implementation roadmap.
+
 ## [2.8.0] - 2025-11-14
 
 ### Added

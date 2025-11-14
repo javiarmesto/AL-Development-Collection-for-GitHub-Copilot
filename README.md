@@ -2,7 +2,7 @@
 
 > **AI Native Development** toolkit for Microsoft Dynamics 365 Business Central implementing the **[AI-Native Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework with **37 specialized Agent Primitives** across **3 systematic layers**. Features **AL Orchestra** multi-agent TDD system that transforms feature requests into code following BC best practices.
 
-> **v2.8.0** - Workflow Simplification: Direct workflow (User → al-architect → al-conductor) with 40% reduction in decision fatigue and validated reproducible example.
+> **v2.8.0** - Workflow Simplification: Direct workflow (User → al-architect → al-conductor)
 
 [![Validation Status](https://img.shields.io/badge/validation-passing-brightgreen)](./validate-al-collection.js)
 [![Version](https://img.shields.io/badge/version-2.8.0-blue)](./CHANGELOG.md)

@@ -65,18 +65,6 @@ node install.js install [your-al-project]
 
 **Then**: Reload VS Code (`Ctrl+Shift+P` → `Developer: Reload Window`)
 
-### Installation Methods Comparison
-
-| Feature | npm CLI | Clone & Install |
-|---------|---------|-----------------|
-| **Setup Time** | < 5 minutes | ~10 minutes |
-| **Auto-Detection** | ⌨️ Manual | ⌨️ Manual |
-| **Installation** | ⌨️ Command line | ⌨️ Command line |
-| **Updates** | ⌨️ Terminal | 🔄 Git pull |
-| **Validation** | 📄 Console output | 📄 Console output |
-| **Best For** | CI/CD, scripts, automation | Development, customization |
-| **Getting Started** | 📖 Markdown files | 📖 Markdown files |
-
 **Recommendation**: Use **npm CLI** for quick setup with auto-detection. Use Clone & Install for development or customization.
 
 ### First Use
@@ -312,7 +300,7 @@ Add email validation to Customer table with these requirements:
 
 This comprehensive guide includes:
 - **Decision Tree** - Automated routing based on complexity level (Simple/Moderate/Complex/Specialized)
-- **3 Development Patterns** with Mermaid diagrams:
+- **3 Development Patterns** :
   - Pattern 1: Simple Features (direct implementation)
   - Pattern 2: Moderate Features (TDD with multi-phase planning)
   - Pattern 3: Complex Features (architecture + specialized design)

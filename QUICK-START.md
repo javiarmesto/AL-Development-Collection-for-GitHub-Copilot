@@ -6,13 +6,20 @@
 
 ## 🚀 Quick Installation (5 minutes)
 
-### Option 1: NPM (Recommended)
+### Option 1: VS Code Extension (Recommended)
+```
+1. Install from Marketplace: Search "AL Development Collection"
+2. Command Palette: AL Collection: Install Toolkit to Workspace
+3. Reload VS Code
+```
+
+### Option 2: NPM
 ```bash
 npm install github:javiarmesto/AL-Development-Collection-for-GitHub-Copilot
 npx al-collection install
 ```
 
-### Option 2: Manual
+### Option 3: Manual
 ```bash
 git clone https://github.com/javiarmesto/AL_Copilot_Collection.git
 cd AL_Copilot_Collection

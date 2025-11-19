@@ -21,7 +21,15 @@
 
 ### Installation
 
-**Option 1: NPM Package (Recommended)**
+**Option 1: VS Code Extension (Recommended)**
+
+```
+1. Install from Marketplace: Search "AL Development Collection"
+2. Open Command Palette (Ctrl+Shift+P)
+3. Run: AL Collection: Install Toolkit to Workspace
+```
+
+**Option 2: NPM Package**
 
 ```bash
 # Install via npm
@@ -53,7 +61,7 @@ npx al-development-collection --help
 - ✅ **Smart merging** - Preserves existing files, only adds new ones
 - ✅ **Validation** - Built-in installation verification
 
-**Option 2: Clone & Install**
+**Option 3: Clone & Install**
 
 For development or customization:
 
@@ -65,7 +73,7 @@ node install.js install [your-al-project]
 
 **Then**: Reload VS Code (`Ctrl+Shift+P` → `Developer: Reload Window`)
 
-**Recommendation**: Use **npm CLI** for quick setup with auto-detection. Use Clone & Install for development or customization.
+**Recommendation**: Use **VS Code Extension** for easiest setup. Use npm CLI for automation. Use Clone for development.
 
 ### First Use
 

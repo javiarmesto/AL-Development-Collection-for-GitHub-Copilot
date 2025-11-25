@@ -2,7 +2,7 @@
 agent: agent
 model: Claude Sonnet 4.5
 description: 'Create a structured AL specification document (.spec.md) before starting a new feature or enhancement in Business Central.'
-tools: ['runCommands', 'runTasks', 'github/*', 'microsoft-docs/*', 'upstash/context7/*', 'edit', 'runNotebooks', 'search', 'new', 'Microsoft Docs/*', 'Azure MCP/search', 'extensions', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-vscode.vscode-websearchforcopilot/websearch', 'todos', 'runTests']
+tools: ['runCommands', 'runTasks', 'github/*', 'microsoft-docs/*', 'upstash/context7/*', 'edit', 'runNotebooks', 'search', 'new', 'Microsoft Docs/*', 'Azure MCP/search', 'extensions', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-vscode.vscode-websearchforcopilot/websearch', 'al-symbols-mcp/al_search_objects', 'al-symbols-mcp/al_get_object_summary', 'todos', 'runTests']
 ---
 
 # AL Specification Creation Workflow

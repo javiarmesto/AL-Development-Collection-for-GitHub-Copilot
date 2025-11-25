@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- 📝 **Documentation Coherence Audit** - Comprehensive cross-document consistency fixes
+  - Removed all references to archived `al-orchestrator` agent (replaced by `al-architect` as entry point)
+  - Updated primitive counts: 37 total (9 instructions + 18 workflows + 6 agents + 4 orchestra)
+  - Fixed corrupted emojis in `copilot-instructions.md`
+  - Synchronized version numbers across all documentation files to v2.8.0
+  - Updated workflow lists to include all 18 workflows (added al-context.create, al-memory.create, al-copilot-generate)
+  - Fixed broken reference to `AI Native-INSTRUCTIONS-ARCHITECTURE.md` in docs/instructions/index.md
+  - Updated agents count from 11 to 10 (6 strategic + 4 orchestra subagents)
+  - Corrected workflow counts from 11 to 18 in docs/prompts/index.md
+  - Synchronized `docs/al-development.md` with root `al-development.md`
+
 ## [2.9.0] - 2025-11-14
 
 ### Added

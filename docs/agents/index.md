@@ -17,15 +17,15 @@ Activate modes explicitly for strategic consultation:
 Use [mode-name]
 
 Examples:
-Use al-orchestrator
 Use al-architect
+Use al-conductor
 Use al-debugger
 ```
 
 Or in multi-turn conversations:
 ```markdown
 ---
-mode: al-orchestrator
+mode: al-architect
 title: Complex feature planning
 ---
 
@@ -50,19 +50,13 @@ I need to build a sales forecasting system...
 
 **Customization Tip**: You can adjust these complexity definitions by editing this file in your repository. For example, if your team typically works with smaller changes, you might redefine MEDIUM as "1-2 phases" instead of "2-3 phases". The framework adapts to your workflow.
 
-### 📦 Available Agents (11 total)
-
-### 🎯 Strategic Router (Start Here)
-
-| Mode | Role | Complejidad | When to Use |
-|------|------|-------------|-------------|
-| **al-orchestrator** | Strategic Router & Workflow Coordinator | Todas | **Start here** when unsure - analyzes complexity and routes appropriately |
+### 📦 Available Agents (10 total)
 
 ### 🏗️ Implementation Agents (Complexity-Driven)
 
 | Mode | Role | Complejidad Target | Best For |
 |------|------|-------------------|----------|
-| **al-architect** | Solution Architecture & Design | 🔴 HIGH | Design phase for complex features, architectural decisions, pattern evaluation |
+| **al-architect** | Solution Architecture & Design | 🔴 HIGH | **Start here** - Design phase for new features, architectural decisions, pattern evaluation |
 | **al-conductor** | TDD Orchestra Coordinator | 🟡 MEDIUM / 🔴 HIGH | Multi-phase implementation with enforced TDD and quality gates |
 | **al-developer** | Tactical Implementation Specialist | 🟢 LOW / 🟡 MEDIUM | Direct implementation when design is clear and scope is limited |
 
@@ -158,112 +152,14 @@ graph TD
     style High fill:#FF6B6B,stroke:#C92A2A,color:#fff
 ```
 
-### 🔍 Automatic Complexity Inference Criteria
-
-The system analyzes these factors to suggest complexity:
-
-#### 🟢 LOW (Low) - Indicators:
-- ✅ Limited scope - single feature/change
-- ✅ No external integrations
-- ✅ Clear, straightforward implementation path
-- ✅ Minimal business logic
-- ✅ Single implementation phase
-- **Example**: "Add Priority field to Sales Header"
-
-#### 🟡 MEDIUM (Medium) - Indicators:
-- ✅ Moderate scope - multiple interrelated components
-- ✅ 2-3 implementation phases
-- ✅ Internal integration points (events, interfaces)
-- ✅ Moderate business logic with some complexity
-- ✅ Comprehensive testing required
-- **Example**: "Customer loyalty points with automatic calculation"
-
-#### 🔴 HIGH (High) - Indicators:
-- ✅ Extensive scope - complex system with many interconnected parts
-- ✅ 4+ implementation phases required
-- ✅ External integrations (REST APIs, OAuth, web services)
-- ✅ Complex business rules and workflows
-- ✅ Multi-company/multi-user/multi-tenant scenarios
-- ✅ Performance optimization critical
-- **Example**: "Multi-company approval workflow with email notifications and delegation"
-
-### 🚦 Validation Gate Protocol
-
-When you provide requirements, agents will:
-
-1. **Analyze Requirements**
-   ```markdown
-   📊 Complexity Analysis:
-   - Scope: Customer management enhancement (validation + UI integration)
-   - Integration: Internal event subscribers only
-   - Business logic: Email validation + address formatting
-   - Phases: 2 (validation logic + UI updates)
-   - Architectural Impact: Moderate (extends existing patterns)
-   
-   💭 Inferred Complexity: 🟡 MEDIUM
-   ```
-
-2. **Present Justification**
-   ```markdown
-   Reasoning:
-   - Moderate scope with internal integration points
-   - No external dependencies
-   - Manageable in 2-phase implementation
-   - Benefits from structured TDD approach via al-conductor
-   ```
-
-3. **Request Confirmation (GATE)**
-   ```markdown
-   🚦 VALIDATION GATE:
-   Do you confirm complexity level: 🟡 MEDIUM?
-   
-   Options:
-   ✅ Yes, proceed with MEDIUM complexity → al-conductor
-   ❌ No, this is LOW (explain why)
-   ❌ No, this is HIGH (explain why)
-   ```
-
-4. **Route Based on Confirmed Complexity**
-   ```markdown
-   ✅ Confirmed: 🟡 MEDIUM complexity
-   → Routing to al-conductor for TDD orchestration
-   → Will create 2-phase plan with quality gates
-   ```
-
 ## 📖 Detailed Mode Descriptions
 
-### 🎯 al-orchestrator (★ Recommended Entry Point)
-
-**Role**: Strategic router and workflow coordinator
-
-**Use when**:
-- Starting a complex, multi-phase project
-- Unsure which tools/modes to use
-- Need to coordinate multiple specialists
-- Planning feature implementation
-
-**Example**:
-```markdown
-Use al-orchestrator
-
-I need to build a sales approval workflow with email notifications.
-I'm not sure where to start.
-```
-
-**Orchestrator will**:
-1. Analyze requirements
-2. Load relevant Instructions
-3. Recommend appropriate Workflows
-4. Route to specialized Agents
-5. Create multi-phase plan
-
----
-
-### 🏗️ al-architect
+### �️ al-architect (★ Recommended Entry Point)
 
 **Role**: Solution architecture and design specialist
 
 **Use when**:
+- **Starting a new feature** (design first)
 - Planning new feature architecture
 - Designing data models
 - Evaluating integration strategies
@@ -285,7 +181,7 @@ Should work across companies, support delegation, send emails.
 
 ---
 
-### � al-developer (★ New)
+### 💻 al-developer
 
 **Role**: Tactical implementation specialist with full MCP tool access
 
@@ -332,7 +228,7 @@ Implement email validation on Customer table extension:
 
 ---
 
-### �🐛 al-debugger
+### 🐛 al-debugger
 
 **Role**: Systematic debugging specialist
 
@@ -344,9 +240,9 @@ Implement email validation on Customer table extension:
 - Investigating intermittent issues
 
 **Recommends Workflows**:
-- `al-debug.prompt.md`
+- `al-diagnose.prompt.md`
 - `al-performance.prompt.md`
-- `al-troubleshoot.prompt.md`
+- `al-performance.triage.prompt.md`
 
 **Example**:
 ```markdown
@@ -391,30 +287,25 @@ What test scenarios should I cover for sales posting logic?
 **Use when**:
 - Designing API endpoints
 - Implementing API pages (v2.0)
-1. **New Feature Development**
-   ```
-   al-orchestrator → al-architect (design) → al-developer (implement) → al-tester (validate)
-   ```
+- Creating OData endpoints
+- Planning API versioning
+- External system integrations
 
-2. **Bug Fix**
-   ```
-   al-debugger (diagnose) → al-developer (fix) → al-tester (verify)
-   ```
+**Coordinates with**:
+- `al-architect` (for API architecture decisions)
+- `al-error-handling.instructions.md` (for API error responses)
 
-3. **Performance Optimization**
-   ```
-   al-debugger (profile) → al-architect (redesign) → al-developer (implement)
-   ```
+**Example**:
+```markdown
+Use al-api
 
-4. **Testing Implementation**
-   ```
-   al-tester (strategy) → al-developer (create tests) → al-debugger (fix failures)
-   ```
+Design a REST API for customer data with CRUD operations.
+Should support filtering and pagination.
+```
 
-5. **API Development**
-   ```
-   al-architect (design) → al-api (contract) → al-developer (implement)
-   ``` al-copilot
+---
+
+### 🤖 al-copilot
 
 **Role**: AI-powered features specialist
 
@@ -445,7 +336,7 @@ Should analyze historical data and suggest order quantities.
 
 1. **New Feature Development**
    ```
-   al-orchestrator → al-architect → Execute workflows → al-debugger (if needed)
+   al-architect (design) → al-conductor (TDD) → al-debugger (if needed)
    ```
 
 2. **Performance Optimization**
@@ -467,8 +358,8 @@ Should analyze historical data and suggest order quantities.
 
 Modes can recommend switching:
 ```markdown
-Orchestrator: "Based on your requirements, switch to al-architect to design the solution."
-Architect: "Design complete. Execute @workspace /al-build to implement."
+Architect: "Design complete. Switch to al-conductor for TDD implementation."
+Conductor: "Implementation complete. Execute @workspace /al-build to deploy."
 Debugger: "Root cause identified. Switch to al-architect to redesign this component."
 ```
 
@@ -476,7 +367,8 @@ Debugger: "Root cause identified. Switch to al-architect to redesign this compon
 
 ### ✅ DO
 
-- **Start with al-orchestrator** for complex tasks
+- **Start with al-architect** for new features (design first)
+- **Use al-conductor** for medium/high complexity TDD orchestration
 - **Stay in strategic mode** - let modes recommend workflows
 - **Provide context** (#file:, business requirements)
 - **Ask about alternatives** and trade-offs
@@ -511,7 +403,7 @@ Debugger: "Root cause identified. Switch to al-architect to redesign this compon
 ## 🔗 Related Resources
 
 - **Collection Manifest**: `collections/al-development.collection.yml`
-- **Framework Reference**: `references/A-INSTRUCTIONS-ARCHITECTURE.md`
+- **Framework Reference**: `references/AI Native-INSTRUCTIONS-ARCHITECTURE.md`
 - **User Guide**: `al-development.md`
 - **Contributing**: `CONTRIBUTING.md`
 
@@ -525,6 +417,10 @@ Run `npm run validate` to verify:
 
 ---
 
-**Framework Compliance**: These agents implement **A-Instructions Architecture** - Layer 2 (Agent Primitives) with clear Tool Boundaries (MCP model), auto-loading Instructions (Layer 1), and strategic Context Engineering (Layer 3).
+**Framework Compliance**: These agents implement **AI Native-Instructions Architecture** - Layer 2 (Agent Primitives) with clear Tool Boundaries (MCP model), auto-loading Instructions (Layer 1), and strategic Context Engineering (Layer 3).
+
+**Version**: 2.8.0
+**Total Agents**: 10 (6 strategic + 4 orchestra subagents)
+**Last Updated**: 2025-11-25
 
 **Usage Philosophy**: Agents are **strategic consultants**, not **code executors**. They analyze, design, and recommend. For execution, they delegate to **Agentic Workflows**.

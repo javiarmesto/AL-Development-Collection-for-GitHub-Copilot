@@ -79,13 +79,13 @@ Open any `.al` file and use:
 
 This will initialize your AL workspace with proper configuration.
 
-### Ask the Orchestrator
+### Start with the Architect
 
-The orchestrator mode helps route you to the right primitive:
+The architect mode helps design your solution from the start:
 
 ```
-Switch to al-orchestrator mode and ask: 
-"I need to build a sales approval workflow"
+Switch to al-architect mode and ask: 
+"I need to build a sales approval workflow. How should I design it?"
 ```
 
 ---
@@ -94,19 +94,18 @@ Switch to al-orchestrator mode and ask:
 
 ### Building a New Feature
 
-1. **al-orchestrator** → Analyze requirements
-2. **al-architect** → Design solution
-3. `@workspace use al-workspace` → Setup
-4. Code (auto-guidelines active)
-5. `@workspace use al-events` → Add events
-6. **al-tester** → Test strategy
-7. `@workspace use al-permissions` → Security
-8. `@workspace use al-build` → Deploy
+1. **al-architect** → Design solution
+2. `@workspace use al-initialize` → Setup
+3. Code (auto-guidelines active)
+4. `@workspace use al-events` → Add events
+5. **al-tester** → Test strategy
+6. `@workspace use al-permissions` → Security
+7. `@workspace use al-build` → Deploy
 
 ### Debugging Issues
 
 1. **al-debugger** → Diagnose
-2. `@workspace use al-debug` → Debug tools
+2. `@workspace use al-diagnose` → Debug tools
 3. `@workspace use al-performance` → Profile
 4. Fix (auto-guidelines active)
 5. **al-tester** → Regression tests

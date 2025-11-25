@@ -17,7 +17,7 @@ Instructions work **automatically** - no activation needed. When you:
 - Type code → Copilot applies these guidelines in real-time
 - Ask for help → Context from relevant instructions is available
 
-## 📦 Available Instructions (8 files)
+## 📦 Available Instructions (9 files)
 
 ### Always Active (apply to `**/*.al`)
 
@@ -34,13 +34,14 @@ Instructions work **automatically** - no activation needed. When you:
 |------|---------------|---------|
 | **al-error-handling.instructions.md** | `**/*.al` | TryFunctions, error labels, telemetry patterns |
 | **al-events.instructions.md** | `**/*.al` | Event publishers/subscribers, IntegrationEvent patterns |
-| **al-testing.instructions.md** | `**/*.al` | AL-Go test structure, test codeunits, scenarios |
+| **al-testing.instructions.md** | `**/*.al`, `**/test/**` | AL-Go test structure, test codeunits, scenarios |
 
-### Reference Only
+### Integration & Reference
 
 | File | Purpose |
 |------|---------|
-| **copilot-instructions.md** | Meta-instructions for Copilot behavior (not AL-specific) |
+| **copilot-instructions.md** | Master integration guide for GitHub Copilot with all primitives |
+| **complete-development-flow.instructions.md** | Visual workflow guide with Mermaid diagrams |
 
 ## 🏗️ Architecture Patterns
 
@@ -99,7 +100,7 @@ Instructions work alongside:
 ## 🔗 Related Resources
 
 - **Collection Manifest**: `collections/al-development.collection.yml`
-- **Framework Reference**: `references/A-INSTRUCTIONS-ARCHITECTURE.md`
+- **Framework Reference**: `references/AI Native-INSTRUCTIONS-ARCHITECTURE.md`
 - **User Guide**: `al-development.md`
 - **Contributing**: `CONTRIBUTING.md`
 
@@ -113,4 +114,8 @@ Run `npm run validate` to verify:
 
 ---
 
-**Framework Compliance**: These instructions implement **A-Instructions Architecture** - Layer 2 (Agent Primitives) using Layer 1 (Markdown Prompt Engineering) and Layer 3 (Context Engineering) principles.
+**Framework Compliance**: These instructions implement **AI Native-Instructions Architecture** - Layer 2 (Agent Primitives) using Layer 1 (Markdown Prompt Engineering) and Layer 3 (Context Engineering) principles.
+
+**Version**: 2.8.0
+**Total Instructions**: 9
+**Last Updated**: 2025-11-25

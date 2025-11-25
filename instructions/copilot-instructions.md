@@ -3,14 +3,14 @@
 # GitHub Copilot Instructions for AL Development
 
 ## Overview
-This workspace contains AL (Application Language) code for Microsoft Dynamics 365 Business Central. This is an **AI Native AL Development** toolkit implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. GitHub Copilot is configured with **38 Agent Primitives** across **3 framework layers** to assist with AL development following Microsoft's best practices and this project's specific standards.
+This workspace contains AL (Application Language) code for Microsoft Dynamics 365 Business Central. This is an **AI Native AL Development** toolkit implementing the **[AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)** framework. GitHub Copilot is configured with **37 Agent Primitives** across **3 framework layers** to assist with AL development following Microsoft's best practices and this project's specific standards.
 
 ### Framework Architecture
 This collection implements the **AI Native-Instructions Architecture** with three systematic layers:
 
 **Layer 1: Markdown Prompt Engineering** - Structured instructions using semantic markdown (headers, lists, links) that guide AI reasoning for predictable, repeatable results.
 
-**Layer 2: Agent Primitives** - 28 configurable tools (7 instructions + 14 workflows + 6 modes + 1 guide) that deploy your prompt engineering systematically.
+**Layer 2: Agent Primitives** - 37 configurable tools (9 instructions + 18 workflows + 6 agents + 4 orchestra) that deploy your prompt engineering systematically.
 
 **Layer 3: Context Engineering** - Strategic management of LLM context windows through modular loading, `applyTo` patterns, and optimized information retrieval.
 
@@ -18,7 +18,7 @@ This collection implements the **AI Native-Instructions Architecture** with thre
 
 ## 🎯 Complete Toolset Available
 
-This workspace provides **38 Agent Primitives** organized across **3 framework layers** of Copilot assistance leveraging the AI Native-Instructions Architecture:
+This workspace provides **37 Agent Primitives** organized across **3 framework layers** of Copilot assistance leveraging the AI Native-Instructions Architecture:
 
 ### Layer 1: Auto-Applied Instructions (Always Active)
 Located in `instructions/` - These **Agent Primitives** apply automatically based on file type via `applyTo` patterns:
@@ -49,29 +49,41 @@ Located in `prompts/` - **Complete systematic processes** invoked with `@workspa
 - `al-pages` - Page designer & UI
 - `al-spec.create` - Functional-technical specifications
 - `al-pr-prepare` - Pull request preparation (streamlined template)
+- `al-context.create` - Generate project context.md for AI assistants
+- `al-memory.create` - Generate/update memory.md for session continuity
 - `al-copilot-capability` - Register Copilot capability
 - `al-copilot-promptdialog` - Create PromptDialog pages
 - `al-copilot-test` - Test with AI Test Toolkit
+- `al-copilot-generate` - Generate Copilot code from natural language
 - `al-translate` - XLF translation file management
 
 ### Layer 4: Agents (Strategic Consulting & Tactical Execution)
 Located in `agents/` - **Role-based specialists** with MCP tool boundaries:
 
-- **al-orchestrator** - Smart router, guides you to the right tool (ESSENTIAL)
-- **al-architect** - Solution architecture & design (strategic only)
-- **al-developer** - Tactical implementation with full build tools (NEW - executes code)
-- **al-debugger** - Deep debugging & diagnosis (strategic only)
-- **al-tester** - Testing strategy & TDD (strategic only)
-- **al-api** - API development (strategic + implementation)
-- **al-copilot** - AI/Copilot feature development (strategic only)
+**Strategic Specialists:**
+- **al-architect** - Solution architecture & design (START HERE for new features)
+- **al-debugger** - Deep debugging & diagnosis
+- **al-tester** - Testing strategy & TDD
+- **al-api** - API development
+- **al-copilot** - AI/Copilot feature development
+
+**Tactical Specialist:**
+- **al-developer** - Tactical implementation with full build tools
+
+**Orchestra System** (multi-agent TDD):
+- **al-conductor** - Orchestrates Planning → Implementation → Review
+- **al-planning-subagent** - AL-aware research
+- **al-implement-subagent** - TDD implementation
+- **al-review-subagent** - Code review validation
 
 ## 🚀 Quick Start Guide
 
 ### For New AL Developers
 
-1. **Start here**: Ask the **al-orchestrator** mode
-   - It will analyze your request and route you to the right tool
+1. **Start here**: Use **al-architect** mode for new features
+   - It will analyze your request and design the solution
    - Example: "I need to build a sales approval workflow"
+   - For complex features, al-architect → al-conductor (TDD implementation)
 
 2. **Let the auto-guidelines work**
    - As you code, auto-applied instructions (Layer 1 & 2) activate automatically
@@ -442,20 +454,20 @@ All prompts are invoked with: `@workspace use [prompt-name]`
 
 ### Role-Based Agents
 
-#### al-orchestrator 🎯
-**Your starting point when unsure**
-- Analyzes your request
-- Routes to appropriate mode or prompt
-- Provides workflow roadmaps for complex tasks
-- Acts as strategic guide
-
 #### al-architect 🏗️
-**Solution design specialist**
+**Solution design specialist (START HERE for new features)**
 - Architecture planning
 - Data model design
 - Integration strategy
 - Design pattern guidance
 - Long-term maintainability
+
+#### al-developer 💻
+**Tactical implementation specialist**
+- Code implementation with full AL MCP tools
+- Builds and publishes extensions
+- Executes fixes and refactoring
+- Bridges design to working code
 
 #### al-debugger 🐛
 **Debugging & troubleshooting expert**
@@ -511,11 +523,11 @@ The instruction files work automatically:
 - You don't need to request performance optimization (al-performance suggests it)
 - Error handling patterns apply automatically (al-error-handling activates)
 
-### 5. Leverage the Orchestrator
-Not sure which tool to use?
+### 5. Use al-architect for New Features
+Not sure where to start?
 ```
 User: "I need to build a feature but not sure how to start"
-Copilot (orchestrator): "Let me analyze your needs and provide a roadmap..."
+Copilot (al-architect): "Let me design the solution architecture..."
 ```
 
 ### 6. Review Generated Code
@@ -529,14 +541,13 @@ Always review Copilot suggestions:
 
 ### Workflow 1: Complete Feature Development
 ```markdown
-1. al-orchestrator → Analyze requirements
-2. al-architect → Design solution
-3. @workspace use al-initialize → Setup (if needed)
-4. Implement (auto-guidelines active)
-5. @workspace use al-events → Add events
-6. al-tester → Design tests
-7. @workspace use al-permissions → Security
-8. @workspace use al-build → Deploy
+1. al-architect → Design solution architecture
+2. @workspace use al-initialize → Setup (if needed)
+3. al-conductor → TDD implementation (for medium/high complexity)
+   OR al-developer → Direct implementation (for low complexity)
+4. @workspace use al-events → Add events
+5. @workspace use al-permissions → Security
+6. @workspace use al-build → Deploy
 ```
 
 ### Workflow 2: Bug Investigation
@@ -785,8 +796,9 @@ Question or Task?
 ## 🎯 Quick Commands Cheat Sheet
 
 ### Modes (Strategic)
-- "Use al-orchestrator" - Route me to the right tool
-- "Use al-architect" - Design my solution
+- "Use al-architect" - Design my solution (START HERE for new features)
+- "Use al-conductor" - TDD orchestration for medium/high complexity
+- "Use al-developer" - Direct implementation for low complexity
 - "Use al-debugger" - Help me debug
 - "Use al-tester" - Testing strategy
 - "Use al-api" - API development
@@ -804,9 +816,12 @@ Question or Task?
 - `@workspace use al-pages` - Design UI
 - `@workspace use al-spec.create` - Create specifications
 - `@workspace use al-pr-prepare` - Prepare pull request
+- `@workspace use al-context.create` - Generate project context.md
+- `@workspace use al-memory.create` - Generate memory.md
 - `@workspace use al-copilot-capability` - Register Copilot capability
 - `@workspace use al-copilot-promptdialog` - Create PromptDialog
 - `@workspace use al-copilot-test` - Test Copilot features
+- `@workspace use al-copilot-generate` - Generate Copilot code
 - `@workspace use al-translate` - Manage translations
 
 ### Auto-Active (Background)
@@ -819,14 +834,14 @@ Question or Task?
 
 ## 💡 Tips for Maximum Productivity
 
-1. **Start with the orchestrator** if you're ever unsure
+1. **Start with al-architect** for new features - it designs the solution
 2. **Let auto-guidelines work** - don't micromanage formatting
 3. **Use modes for thinking**, prompts for doing
 4. **Combine tools** - modes can recommend prompts
 5. **Trust the system** - all layers work together
 6. **Provide context** - the more Copilot knows, the better it helps
 
-## � Workspace Structure
+## 📂 Workspace Structure
 
 Understanding the folder organization helps you leverage the AI Native-Instructions Architecture:
 
@@ -841,9 +856,9 @@ AL-Development-Collection/
 │   ├── al-error-handling.instructions.md
 │   ├── al-events.instructions.md
 │   └── al-testing.instructions.md       # Testing (applies to test files)
-├── prompts/                              # Agentic Workflows (15 primitives)
-│   ├── al-initialize.prompt.md          # Environment & workspace setup (consolidated)
-│   ├── al-diagnose.prompt.md            # Debug & troubleshoot (consolidated)
+├── prompts/                              # Agentic Workflows (18 primitives)
+│   ├── al-initialize.prompt.md          # Environment & workspace setup
+│   ├── al-diagnose.prompt.md            # Debug & troubleshoot
 │   ├── al-build.prompt.md
 │   ├── al-events.prompt.md
 │   ├── al-performance.prompt.md
@@ -853,20 +868,28 @@ AL-Development-Collection/
 │   ├── al-pages.prompt.md
 │   ├── al-spec.create.prompt.md
 │   ├── al-pr-prepare.prompt.md
+│   ├── al-context.create.prompt.md
+│   ├── al-memory.create.prompt.md
 │   ├── al-copilot-capability.prompt.md
 │   ├── al-copilot-promptdialog.prompt.md
 │   ├── al-copilot-test.prompt.md
+│   ├── al-copilot-generate.prompt.md
 │   └── al-translate.prompt.md
-├── agents/                            # Agents with MCP tool boundaries
-│   ├── al-orchestrator.agent.md      # Smart router (START HERE)
-│   ├── al-architect.agent.md         # Architecture & design
+├── agents/                            # Agents with MCP tool boundaries (10)
+│   ├── al-architect.agent.md         # Architecture & design (START HERE)
+│   ├── al-developer.agent.md         # Tactical implementation
 │   ├── al-debugger.agent.md          # Deep debugging
 │   ├── al-tester.agent.md            # Testing strategy
 │   ├── al-api.agent.md               # API development
-│   └── al-copilot.agent.md           # AI features
+│   ├── al-copilot.agent.md           # AI features
+│   ├── al-conductor.agent.md         # TDD Orchestra coordinator
+│   ├── al-planning-subagent.agent.md # AL-aware research
+│   ├── al-implement-subagent.agent.md # TDD implementation
+│   └── al-review-subagent.agent.md   # Code review validation
 ├── references/                           # Framework documentation
 │   ├── AI Native-INSTRUCTIONS-ARCHITECTURE.md
 │   ├── ai native structure.md
+│   └── ai native-concepts.md
 │   └── ai native-concepts.md
 ├── src/                                  # Your AL code here
 │   ├── Tables/
@@ -894,24 +917,24 @@ AL-Development-Collection/
 
 **Agents** (`.agent.md`):
 - Switched via "Use [mode-name] mode"
-- 6 role-based strategic specialists with MCP tool boundaries (Layer 4)
+- 10 role-based specialists with MCP tool boundaries (6 strategic + 4 orchestra)
 - Can recommend prompts and instructions
-- Orchestrator is essential for routing
+- al-architect is the entry point for new features
 
-## �📝 Feedback & Iteration
+## 📝 Feedback & Iteration
 
 This workspace configuration evolves based on usage. If you find:
 - Suggestions don't meet expectations → Try rephrasing or use a different mode
 - Missing functionality → Suggest new prompts or modes
 - Conflicting guidance → Report for clarification
 
-Remember: **You have 38 Agent Primitives working together to make AL development easier, faster, and better!**
+Remember: **You have 37 Agent Primitives working together to make AL development easier, faster, and better!**
 
 ---
 
 **Framework**: [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)  
-**Version**: 2.2.0  
-**Last Updated**: 2025-10-23  
+**Version**: 2.8.0  
+**Last Updated**: 2025-11-25  
 **Workspace**: AL Development for Business Central  
-**Total Primitives**: 28 (7 instructions + 14 workflows + 6 modes + 1 guide)  
+**Total Primitives**: 37 (9 instructions + 18 workflows + 6 agents + 4 orchestra)  
 **Status**: ✅ Fully compliant with AI Native-Instructions Architecture

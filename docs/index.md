@@ -76,7 +76,7 @@ cp -r prompts your-al-project/.github/
 
 3. **Verify installation**
    - Open any `.al` file - instructions should auto-apply
-   - Try: `Use al-orchestrator mode` - should switch context
+   - Try: `Use al-architect mode` - should switch context
    - Try: `@workspace use al-initialize` - should execute
 
 ### First Use
@@ -186,13 +186,12 @@ graph TB
 
 > 💡 **Agentic Workflows**: Prompts orchestrate primitives into complete processes with human validation checkpoints.
 
-### 💬 Agents (7 primitives)
+### 💬 Agents (10 primitives = 6 strategic + 4 orchestra)
 
 **Role-based specialists** with MCP tool boundaries (like professional licensing):
 
 **Strategic Specialists** (design & analyze):
-- **al-orchestrator** 🎯 - Smart router & workflow coordinator (GUIDE/EXAMPLE for agent creation)
-- **al-architect** 🏗️ - Solution architecture, cannot execute builds
+- **al-architect** 🏗️ - Solution architecture (START HERE for new features)
 - **al-debugger** 🐛 - Deep diagnosis, systematic troubleshooting
 - **al-tester** ✅ - Testing strategy, TDD methodology
 - **al-api** 🌐 - RESTful API design & implementation
@@ -203,7 +202,7 @@ graph TB
 
 > 💡 **Tool Boundaries**: Each mode has explicit CAN/CANNOT lists preventing cross-domain security breaches
 
-### 🎭 AL Orchestra System (4 primitives) - NEW in v2.6
+### 🎭 AL Orchestra System (4 primitives)
 
 **Multi-Agent TDD Orchestration** adapted from [GitHub Copilot Orchestra](https://github.com/ShepAlderson/copilot-orchestra) with AL-specific enhancements:
 
@@ -536,22 +535,18 @@ AL-Development-Collection-for-GitHub-Copilot/
 │   ├── al-copilot-promptdialog.prompt.md        # PromptDialog creation
 │   ├── al-copilot-test.prompt.md                # AI Test Toolkit integration
 │   └── al-copilot-generate.prompt.md            # Natural language to code
-├── agents/                                       # 💬 Layer 2: Agents (7 + 4 files)
+├── agents/                                       # 💬 Layer 2: Agents (6 + 4 = 10 files)
 │   ├── index.md                                 # Complete agent guide
-│   ├── al-orchestrator.agent.md                 # 🎯 Smart router (START HERE)
-│   ├── al-architect.agent.md                    # 🏗️ Solution architecture
+│   ├── al-architect.agent.md                    # 🏗️ Solution architecture (START HERE)
 │   ├── al-developer.agent.md                    # 💻 Tactical implementation
 │   ├── al-debugger.agent.md                     # 🐛 Deep debugging
 │   ├── al-tester.agent.md                       # ✅ Testing strategy
 │   ├── al-api.agent.md                          # 🌐 API development
 │   ├── al-copilot.agent.md                      # 🤖 AI features
-│   └── orchestration/                           # 🎭 Layer 2: Orchestra System (4 files) - Specialized feature
-│       ├── README.md                            # Complete Orchestra docs (23k chars)
-│       ├── index.md                             # Quick reference
-│       ├── al-conductor.agent.md                # Main orchestration agent
-│       ├── al-planning-subagent.agent.md        # AL-aware research
-│       ├── al-implement-subagent.agent.md       # TDD implementation (Haiku 4.5)
-│       └── al-review-subagent.agent.md          # Quality validation
+│   ├── al-conductor.agent.md                    # 🎭 TDD Orchestra coordinator
+│   ├── al-planning-subagent.agent.md            # 🔍 AL-aware research
+│   ├── al-implement-subagent.agent.md           # ⚙️ TDD implementation (Haiku 4.5)
+│   └── al-review-subagent.agent.md              # ✅ Quality validation
 ├── docs/                                         # Documentation mirrors
 │   ├── agents/                                  # Agent documentation
 │   ├── instructions/                            # Instructions documentation
@@ -574,28 +569,22 @@ AL-Development-Collection-for-GitHub-Copilot/
 ├── package.json                                 # Dependencies
 └── README.md                                    # This file
 
-# Total: 38 Agent Primitives (9 + 18 + 7 + 4)
+# Total: 37 Agent Primitives (9 + 18 + 6 + 4)
 # AGENTS.md compilation ready (Layer 3: Context Engineering)
 # All primitives use applyTo patterns for modular context loading
 ```
 
 ## 🏷️ Version History
 
-### 2.7.0 (2025-11-10) - Agent Context & Memory System
-- 📋 **Agent Context System** - Centralized documentation in `.github/plans/`
-  - Core documents: architecture.md, spec.md, test-plan.md, memory.md
-  - All orchestra agents read and reference shared context
-  - Specialist agents (developer, API, Copilot) produce design documents
-- 🔄 **Session Continuity** - Memory system preserves decisions across interactions
-- 📚 **Knowledge Transfer** - Context automatically shared between agents
-- 🎯 **Quality Consistency** - Review validates against documented requirements
-- 📖 **Auto-Documentation** - Design decisions captured in structured templates
-- 🏗️ **Enhanced Collaboration** - Conductor delegates with full context awareness
-- ✅ **Phase 2 Complete** - All orchestration subagents and specialists context-aware
-- 📊 **Total Primitives** - 38 tools unchanged (9 + 18 + 7 + 4)
-- 🎓 **Production Ready** - Context system validated across orchestra workflow
+### 2.8.0 (2025-11-14) - Simplified Workflow & al-orchestrator Removal
+- 📖 **QUICK-START.md** - Simplified with single validated example (Customer Loyalty Points)
+- 🔄 **Simplified Workflow** - Removed al-orchestrator routing layer
+  - Direct flow: al-architect (design) → al-conductor (implement)
+  - Reduced from 3-4 steps to 2 steps (-33% interactions)
+- ❌ **al-orchestrator archived** - Use al-architect as entry point for new features
+- 📊 **Total Primitives** - 37 tools (9 instructions + 18 workflows + 6 agents + 4 orchestra)
 
-### 2.6.0 (2025-11-09) - Routing Matrix Optimization & Complexity Classification
+### 2.7.0 (2025-11-10) - Agent Context & Memory System
 - 🎯 **Routing Matrix Optimization** - Streamlined from 14 to 10 essential paths
   - Removed edge cases (AI System, Migration) for clarity
   - Enhanced with 5-column format: Domain | Scenario | Route | Rationale
@@ -664,9 +653,10 @@ AL-Development-Collection-for-GitHub-Copilot/
   - al-copilot-capability: Register Copilot capability
   - al-copilot-promptdialog: Create PromptDialog pages
   - al-copilot-test: Test with AI Test Toolkit
-- 📚 **al-orchestrator** - Converted to GUIDE/EXAMPLE for agent creation
-- 📊 **Total Primitives** - 29 tools (7 instructions + 15 workflows + 6 modes + 1 guide)
+- � **Total Primitives** - 29 tools (7 instructions + 15 workflows + 6 modes + 1 guide)
 - 🏗️ **AI Native Development** - Full compliance maintained across all new content
+
+> **Note**: al-orchestrator was archived in v2.8.0. Use al-architect as entry point.
 
 ### 2.3.0 (2025-10-27) - Workflow Optimization
 - 🔄 **Consolidated Workflows** - Reduced from 14 to 11 workflows (-21%)

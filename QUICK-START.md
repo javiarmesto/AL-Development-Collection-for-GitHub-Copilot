@@ -49,9 +49,9 @@
 
 - **[Complete Framework / Framework Completo](./al-development.md)** - Detailed technical guide / Guía técnica detallada
 - **[Reproducible Example / Ejemplo Reproducible](./REPRODUCIBLE-EXAMPLE.md)** - Complete walkthrough / Tutorial completo
-- **[Instructions / Instrucciones](./instructions/index.md)** - Auto-guidelines
-- **[Workflows](./prompts/index.md)** - Available commands / Comandos disponibles
-- **[Modes / Modos](./agents/index.md)** - Specialists / Especialistas
+- **[Instructions / Instrucciones](./instructions/)** - Auto-guidelines
+- **[Workflows](./prompts/README.md)** - Available commands / Comandos disponibles
+- **[Modes / Modos](./agents/)** - Specialists / Especialistas
 
 ---
 

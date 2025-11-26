@@ -489,9 +489,9 @@ npm run validate
 ## 📚 Complete Documentation
 
 - **[Complete Framework](./al-development.md)** - Detailed technical guide
-- **[Instructions](./instructions/index.md)** - Auto-guidelines
-- **[Workflows](./prompts/index.md)** - Available commands
-- **[Modes](./agents/index.md)** - Specialists
+- **[Instructions](./instructions/)** - Auto-guidelines
+- **[Workflows](./prompts/README.md)** - Available commands
+- **[Modes](./agents/)** - Specialists
 
 ---
 

@@ -1,5 +1,6 @@
 {
     "d365bc-admin-mcp.autoInstall": false,
     "gitlens.gitkraken.mcp.autoEnabled": false,
-    "mcp": {}
+    "mcp": {},
+    "codeQL.githubDatabase.download": "never"
 }

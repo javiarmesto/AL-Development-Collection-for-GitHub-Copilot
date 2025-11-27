@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.10.0] - 2025-11-27
+
 ### Fixed
 - 📝 **Documentation Coherence Audit** - Comprehensive cross-document consistency fixes
   - Removed all references to archived `al-orchestrator` agent (replaced by `al-architect` as entry point)
@@ -379,8 +381,14 @@ This project follows [Semantic Versioning](https://semver.org/):
 - [Issues](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/issues)
 - [Discussions](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/discussions)
 
-[Unreleased]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.2.0...HEAD
-[2.2.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.1.0...v2.2.0
+[Unreleased]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.10.0...HEAD
+[2.10.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.9.0...v2.10.0
+[2.9.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.8.0...v2.9.0
+[2.8.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.7.0...v2.8.0
+[2.7.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.6.0...v2.7.0
+[2.6.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.5.0...v2.6.0
+[2.5.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.4.0...v2.5.0
+[2.4.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.1.0...v2.4.0
 [2.1.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/releases/tag/v1.0.0

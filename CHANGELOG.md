@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.10.0] - 2025-11-27
+
+### Fixed
+- 📝 **Documentation Coherence Audit** - Comprehensive cross-document consistency fixes
+  - Removed all references to archived `al-orchestrator` agent (replaced by `al-architect` as entry point)
+  - Updated primitive counts: 37 total (9 instructions + 18 workflows + 6 agents + 4 orchestra)
+  - Fixed corrupted emojis in `copilot-instructions.md`
+  - Synchronized version numbers across all documentation files to v2.8.0
+  - Updated workflow lists to include all 18 workflows (added al-context.create, al-memory.create, al-copilot-generate)
+  - Fixed broken reference to `AI Native-INSTRUCTIONS-ARCHITECTURE.md` in docs/instructions/index.md
+  - Updated agents count from 11 to 10 (6 strategic + 4 orchestra subagents)
+  - Corrected workflow counts from 11 to 18 in docs/prompts/index.md
+  - Synchronized `docs/al-development.md` with root `al-development.md`
+
 ## [2.9.0] - 2025-11-14
 
 ### Added
@@ -367,8 +381,14 @@ This project follows [Semantic Versioning](https://semver.org/):
 - [Issues](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/issues)
 - [Discussions](https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/discussions)
 
-[Unreleased]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.2.0...HEAD
-[2.2.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.1.0...v2.2.0
+[Unreleased]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.10.0...HEAD
+[2.10.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.9.0...v2.10.0
+[2.9.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.8.0...v2.9.0
+[2.8.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.7.0...v2.8.0
+[2.7.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.6.0...v2.7.0
+[2.6.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.5.0...v2.6.0
+[2.5.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.4.0...v2.5.0
+[2.4.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.1.0...v2.4.0
 [2.1.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/javiarmesto/AL-Development-Collection-for-GitHub-Copilot/releases/tag/v1.0.0

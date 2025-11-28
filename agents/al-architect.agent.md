@@ -1,6 +1,6 @@
 ---
 description: 'AL Architecture and Design assistant for Business Central extensions. Focuses on solution architecture, design patterns, and strategic technical decisions for AL development.'
-tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'microsoft-docs/*', 'upstash/context7/*', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_download_source', 'extensions', 'todos', 'runTests']
+tools: ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'microsoft-docs/*', 'upstash/context7/*', 'al-symbols-mcp/al_search_objects', 'al-symbols-mcp/al_get_object_definition', 'al-symbols-mcp/al_find_references', 'al-symbols-mcp/al_get_object_summary', 'ms-dynamics-smb.al/al_download_source', 'todo']
 model: Claude Sonnet 4.5
 ---
 

@@ -81,46 +81,18 @@ items:
       Use as reference to understand when to use workflows vs Orchestra, how agents interact,
       and complete workflow patterns for different feature complexities.
 
-  # Layer 2: Agent Primitives - Agents (7 files)
+  # Layer 2: Agent Primitives - Agents (6 strategic + 4 orchestra = 10 total)
   # Role-based specialists with MCP tool boundaries preventing cross-domain operations
-  - path: agents/al-orchestrator.agent.md
-    kind: agent
-    usage: deprecated
-    description: |
-      Strategic router and workflow coordinator implementing Markdown Prompt Engineering principles. This is your entry point for complex tasks - it analyzes requirements and orchestrates the right combination of Agent Primitives (Instructions, Workflows, Agents) for optimal results.
-
-      Orchestrates Agent Primitives through:
-      - Context Loading - Analyzes requirements and loads relevant Instructions
-      - Workflow Routing - Recommends appropriate Agentic Workflows for execution
-      - Mode Coordination - Routes to specialized Agents for strategic work
-      - Multi-Phase Planning - Creates systematic workflows for complex features
-
-      Implements Context Engineering by:
-      - Selective primitive activation based on task complexity
-      - Preventing context window pollution through strategic routing
-      - Recommending parallel vs sequential execution patterns
-
-      Example usage:
-      ```markdown
-      ---
-      mode: al-orchestrator
-      title: Build AI-powered API for sales forecasting
-      ---
-      
-      I need to create an API that uses AI to forecast sales based on historical data.
-      I'm not sure where to start or which tools I need.
-      ```
-
-      To get the best results:
-      - Provide context about what you're trying to accomplish
-      - Mention any constraints (timeline, existing code, team size)
-      - Let the orchestrator analyze before jumping into implementation
-
+  # NOTE: al-orchestrator was archived in v2.8.0 - use al-architect as entry point
+  
   - path: agents/al-architect.agent.md
     kind: agent
     usage: recommended
     description: |
-      Solution architecture and design specialist applying Markdown Prompt Engineering for structured technical decision-making. Uses semantic markdown (headers, lists, links) to create clear architectural documentation and design rationale.
+      Solution architecture and design specialist - YOUR ENTRY POINT FOR NEW FEATURES.
+      Applies Markdown Prompt Engineering for structured technical decision-making. 
+      Uses semantic markdown (headers, lists, links) to create clear architectural 
+      documentation and design rationale.
 
       Tool Boundaries (professional licensing model):
       - CAN: Design solutions, analyze patterns, recommend approaches

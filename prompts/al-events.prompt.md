@@ -2,7 +2,7 @@
 agent: agent
 model: Claude Sonnet 4.5
 description: 'Implement AL events, subscribers, and publishers in Business Central extensions.'
-tools: ['runCommands', 'runTasks', 'edit', 'runNotebooks', 'search', 'new', 'Microsoft Docs/*', 'extensions', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_insert_event', 'todos', 'runTests']
+tools: ['runCommands', 'runTasks', 'edit', 'runNotebooks', 'search', 'new', 'Microsoft Docs/*', 'extensions', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_insert_event', 'al-symbols-mcp/al_search_objects', 'al-symbols-mcp/al_get_object_definition', 'al-symbols-mcp/al_find_references', 'todos', 'runTests']
 ---
 
 # Implement AL Events

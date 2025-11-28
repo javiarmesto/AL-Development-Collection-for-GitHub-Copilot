@@ -142,11 +142,11 @@ The following directories have been copied to \`.github/\`:
 
 ### 2. Essential First Steps
 
-**Start here if unsure:**
+**Start here for new features:**
 \`\`\`
-Use al-orchestrator mode
+Use al-architect mode
 \`\`\`
-Then describe what you want to accomplish. The orchestrator will guide you.
+Then describe what you want to accomplish. The architect will design your solution.
 
 **Common workflows:**
 - **New project setup**: \`@workspace use al-initialize\`
@@ -156,8 +156,7 @@ Then describe what you want to accomplish. The orchestrator will guide you.
 
 ### 3. Key Agents
 
-- **al-orchestrator** - Smart router, analyzes and guides (START HERE)
-- **al-architect** - Solution design and architecture
+- **al-architect** - Solution design and architecture (START HERE)
 - **al-developer** - Tactical implementation with build tools
 - **al-debugger** - Systematic debugging and diagnosis
 - **al-tester** - Test strategy and TDD
@@ -255,7 +254,7 @@ src/
 To validate your setup works correctly:
 1. Open any \`.al\` file - instructions should auto-apply
 2. Try: \`@workspace use al-initialize\` - should execute
-3. Try: \`Use al-orchestrator mode\` - should switch context
+3. Try: \`Use al-architect mode\` - should switch context
 
 ### 9. Updates
 
@@ -271,7 +270,7 @@ This will overwrite files in \`.github/copilot/\`.
 
 ## Next Steps
 
-1. **Start with the orchestrator**: \`Use al-orchestrator mode\` and describe your task
+1. **Start with the architect**: \`Use al-architect mode\` and describe your feature
 2. **Initialize a project**: \`@workspace use al-initialize\` to set up your environment
 3. **Explore the collection**: Browse the files in \`.github/copilot/\` to understand what's available
 
@@ -607,7 +606,7 @@ async function install() {
   log('🎯 Next Steps:', 'bright');
   log('  1. Open VS Code in your AL project', 'blue');
   log(`  2. Read: ${path.join(targetDir, 'getting-started.md')}`, 'blue');
-  log('  3. Try: Use al-orchestrator mode', 'blue');
+  log('  3. Try: Use al-architect mode', 'blue');
   log('  4. Or try: @workspace use al-initialize', 'blue');
   
   console.log('');
@@ -762,7 +761,7 @@ async function validateInstallation() {
     console.log('');
     log('🚀 Next steps:', 'bright');
     log('  1. Open any .al file in VS Code', 'blue');
-    log('  2. Try: Use al-orchestrator mode', 'blue');
+    log('  2. Try: Use al-architect mode', 'blue');
     log('  3. Or: @workspace use al-initialize', 'blue');
   } else {
     log('═'.repeat(60), 'red');

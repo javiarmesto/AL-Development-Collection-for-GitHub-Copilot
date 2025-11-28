@@ -1,7 +1,7 @@
 ---
 description: 'AL Planning Subagent - AL-aware research and context gathering for Business Central development. Returns structured findings to Conductor for plan creation.'
 argument-hint: 'Research goal or problem statement for AL development'
-tools: ['search', 'usages', 'problems', 'changes', 'ms-dynamics-smb.al/al_get_package_dependencies', 'ms-dynamics-smb.al/al_download_source', 'githubRepo', 'fetch']
+tools: ['search', 'usages', 'problems', 'changes', 'ms-dynamics-smb.al/al_get_package_dependencies', 'ms-dynamics-smb.al/al_download_source', 'githubRepo', 'fetch', 'al-symbols-mcp/al_search_objects', 'al-symbols-mcp/al_get_object_definition', 'al-symbols-mcp/al_find_references', 'al-symbols-mcp/al_search_object_members', 'al-symbols-mcp/al_get_object_summary', 'al-symbols-mcp/al_packages']
 model: Claude Sonnet 4.5
 ---
 # AL Planning Subagent - AL-Aware Context Gathering

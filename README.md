@@ -422,6 +422,51 @@ al-architect will analyze requirements, design the solution architecture, and re
 - Business Central development environment (sandbox recommended)
 - Node.js 14+ (for validation script)
 
+## 🔌 MCP Servers Integration
+
+This collection leverages **Model Context Protocol (MCP) servers** to enhance GitHub Copilot's capabilities with specialized tools:
+
+### Configured MCP Servers
+
+| Server | Purpose | Key Tools |
+|--------|---------|-----------|
+| **[al-symbols-mcp](https://github.com/StefanMaron/AL-Dependency-MCP-Server)** | AL object analysis from compiled .app packages (by Stefan Maron) | `al_search_objects`, `al_get_object_definition`, `al_find_references`, `al_search_object_members`, `al_get_object_summary`, `al_packages` |
+| **[context7](https://github.com/upstash/context7)** | Up-to-date library documentation retrieval | `resolve-library-id`, `get-library-docs` |
+| **[microsoft-docs](https://github.com/nicholasglazer/microsoft-docs-mcp)** | Official Microsoft/Azure documentation search | `microsoft_docs_search`, `microsoft_code_sample_search`, `microsoft_docs_fetch` |
+
+### Configuration
+
+MCP servers are configured in `.vscode/mcp.json`:
+
+```json
+{
+  "servers": {
+    "al-symbols-mcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["al-mcp-server"]
+    }
+  }
+}
+```
+
+### Agent Integration
+
+The MCP tools are integrated into specific agents based on their specialization:
+
+**al-symbols-mcp tools assigned to:**
+- **al-planning-subagent** - All 6 tools for comprehensive AL research
+- **al-developer** - All tools via wildcard for implementation
+- **al-architect** - Search, definition, references, summary for design analysis
+- **al-debugger** - References, definition, members for troubleshooting
+
+**Prompts with al-symbols-mcp:**
+- **al-events** - Object search and references for event implementation
+- **al-diagnose** - References and definitions for debugging
+- **al-spec.create** - Object search and summary for specifications
+
+> 💡 **Note**: al-symbols-mcp requires compiled `.app` files in `.alpackages` directory. Ensure you have downloaded symbols (`al_download_symbols`) before using these tools.
+
 ## ✅ Validation
 
 Validate the collection before contributing:

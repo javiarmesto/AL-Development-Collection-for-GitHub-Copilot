@@ -77,6 +77,8 @@ Examples:
 |------|---------|-------------|
 | **al-translate** | XLF translation file management | Localization workflows |
 
+> **Note**: Total of 18 workflow files matching the prompts/ directory contents.
+
 ## 🏗️ Workflow Structure
 
 Each workflow follows this pattern:
@@ -155,36 +157,52 @@ Common workflow sequences:
 Workflows complement:
 - **Instructions** - Automatically loaded context during workflow execution
 - **Agents** - Strategic consultation before/after workflow execution
-  - Use `al-orchestrator` to choose right workflow
-  - Use `al-architect` to design before implementing workflow
+  - Use `al-architect` to design before implementing workflow (entry point for new features)
+  - Use `al-conductor` for TDD orchestration on medium/high complexity tasks
   - Use `al-debugger` when workflow execution reveals issues
 
-## 🔄 Workflow Optimization (v2.3)
+## 🔄 Workflow Evolution
 
-This collection has been optimized to reduce redundancy and improve clarity:
+This collection has evolved to optimize clarity and completeness:
 
-### What Changed
+### Current State (v2.8)
 
-**Consolidated Workflows:**
-- `al-setup` + `al-workspace` → **al-initialize** (single initialization workflow)
-- `al-debug` + `al-troubleshoot` → **al-diagnose** (unified diagnostics)
+**18 Agentic Workflows:**
 
-**Simplified Workflows:**
-- **al-pr-prepare** - Reduced from 509 to ~240 lines (template streamlined)
+1. `al-initialize` - Environment & workspace setup
+2. `al-diagnose` - Debug & troubleshoot  
+3. `al-build` - Build/package/deploy
+4. `al-events` - Event implementation
+5. `al-performance` - Deep performance profiling
+6. `al-performance.triage` - Quick performance check
+7. `al-permissions` - Permission set generation
+8. `al-migrate` - Version migration
+9. `al-pages` - Page design & UI
+10. `al-spec.create` - Functional specifications
+11. `al-pr-prepare` - Pull request preparation
+12. `al-context.create` - Project context generation
+13. `al-memory.create` - Session memory management
+14. `al-copilot-capability` - Copilot capability registration
+15. `al-copilot-promptdialog` - PromptDialog creation
+16. `al-copilot-test` - Copilot feature testing
+17. `al-copilot-generate` - AI code generation
+18. `al-translate` - XLF translation management
 
-**Removed Workflows:**
-- `al-workflow` - Redundant with specialized prompts and orchestrator mode
+### Historical Changes
 
-**Result:**
-- 14 workflows → 11 workflows (-21%)
-- Clearer purpose for each workflow
-- Less confusion about which workflow to use
-- Reduced context consumption
+**v2.3 Consolidations:**
+- `al-setup` + `al-workspace` → **al-initialize**
+- `al-debug` + `al-troubleshoot` → **al-diagnose**
+
+**v2.7 Additions:**
+- `al-context.create` - Project context for AI assistants
+- `al-memory.create` - Session continuity
+- `al-copilot-generate` - Natural language code generation
 
 ## 🔗 Related Resources
 
 - **Collection Manifest**: `collections/al-development.collection.yml`
-- **Framework Reference**: `references/A-INSTRUCTIONS-ARCHITECTURE.md`
+- **Framework Reference**: `references/AI Native-INSTRUCTIONS-ARCHITECTURE.md`
 - **User Guide**: `al-development.md`
 - **Contributing**: `CONTRIBUTING.md`
 
@@ -214,6 +232,6 @@ Run `npm run validate` to verify:
 
 **Framework Compliance**: These workflows implement **AI-Native Instructions Architecture** - Layer 2 (Agent Primitives) providing systematic execution processes that coordinate Instructions and Agents for complete task fulfillment.
 
-**Version**: 2.3 (Optimized)
-**Total Workflows**: 11
-**Last Updated**: 2025-10-27
+**Version**: 2.8.0
+**Total Workflows**: 18
+**Last Updated**: 2025-11-25

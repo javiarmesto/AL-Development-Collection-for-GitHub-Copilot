@@ -10,11 +10,11 @@ This collection implements the **AI Native-Instructions Architecture** with thre
 **Foundation** - Structured instructions using semantic markdown (headers, lists, links) that guide AI reasoning for predictable, repeatable results.
 
 ### Layer 2: Agent Primitives  
-**Implementation** - 38 configurable tools that deploy your prompt engineering systematically:
+**Implementation** - 37 configurable tools that deploy your prompt engineering systematically:
 - **📋 Instructions** (9) - Auto-applied coding rules via `applyTo` patterns
 - **🎯 Agentic Workflows** (18) - Complete task execution processes
-- **💬 Agents** (7) - Role-based specialists with tool boundaries
-- **📖 Integration Guide** (1) - Master coordination document
+- **💬 Agents** (6) - Role-based specialists with tool boundaries
+- **🎭 Orchestra System** (4) - Multi-agent TDD orchestration
 
 **🎭 Orchestra System** (4 agents) - Multi-agent TDD orchestration for MEDIUM/HIGH complexity:
 - **al-conductor** - Main orchestration agent coordinating Planning → Implementation → Review
@@ -74,13 +74,12 @@ Invoke with `@workspace use [prompt-name]`:
 
 > 💡 **Agentic Workflows**: Prompts orchestrate all primitives (instructions, modes, tools) into end-to-end processes with human validation checkpoints.
 
-### 💬 Agents (7 primitives - Layer 2)
+### 💬 Agents (6 primitives - Layer 2)
 
 **Role-based specialists** with MCP tool boundaries preventing cross-domain security breaches:
 
-- **al-orchestrator** 🎯 - Smart router, workflow coordinator (START HERE)
-- **al-architect** 🏗️ - Solution architecture design (cannot execute builds)
-- **al-developer** 💻 - Tactical implementation with full build tool access (NEW)
+- **al-architect** 🏗️ - Solution architecture design, entry point for new features
+- **al-developer** 💻 - Tactical implementation with full build tool access
 - **al-debugger** 🐛 - Deep systematic diagnosis and troubleshooting
 - **al-tester** ✅ - Testing strategy, TDD methodology, quality assurance
 - **al-api** 🌐 - RESTful API design and implementation
@@ -157,11 +156,11 @@ Invoke with `@workspace use [prompt-name]`:
 
 ### For New AL Developers
 
-1. **Start with the orchestrator**
+1. **Start with al-architect**
 
    ```markdown
-   Switch to al-orchestrator mode and ask:
-   "I need to build a sales approval workflow. Where should I start?"
+   Switch to al-architect mode and ask:
+   "I need to build a sales approval workflow. How should I design it?"
    ```
 
 2. **Let auto-instructions work**
@@ -196,28 +195,25 @@ Invoke with `@workspace use [prompt-name]`:
 
 **Simple (🟢 LOW)**:
 ```text
-1. al-orchestrator → Analyze & classify
-2. al-developer → Direct implementation
-3. @workspace use al-build → Deploy
+1. al-developer → Direct implementation
+2. @workspace use al-build → Deploy
 ```
 
 **Moderate (🟡 MEDIUM)**:
 ```text
-1. al-orchestrator → Analyze & classify
-2. al-architect → Design architecture
-3. al-conductor → TDD orchestration (Planning → Implement → Review)
-4. @workspace use al-permissions → Security
-5. @workspace use al-build → Deploy
+1. al-architect → Design architecture
+2. al-conductor → TDD orchestration (Planning → Implement → Review)
+3. @workspace use al-permissions → Security
+4. @workspace use al-build → Deploy
 ```
 
 **Complex (🔴 HIGH)**:
 ```text
-1. al-orchestrator → Analyze & classify
-2. al-architect → Complete architecture design
-3. al-api/al-copilot → Specialized design (if needed)
-4. al-conductor → Multi-phase TDD implementation
-5. @workspace use al-performance → Validation
-6. @workspace use al-build → Deploy
+1. al-architect → Complete architecture design
+2. al-api/al-copilot → Specialized design (if needed)
+3. al-conductor → Multi-phase TDD implementation
+4. @workspace use al-performance → Validation
+5. @workspace use al-build → Deploy
 ```
 
 ### Debugging Issues
@@ -258,10 +254,10 @@ All prompts have access to specialized AL tools:
 - `al_generate_permissionset_for_extension_objects` - Security
 
 ### Intelligent Routing
-The **al-orchestrator** mode analyzes your request and provides:
-- Mode recommendations for your scenario
+The **al-architect** mode analyzes your request and provides:
+- Solution design recommendations for your scenario
 - Multi-phase workflows for complex tasks
-- Time estimates and success criteria
+- Integration strategies and patterns
 - Alternative approaches with trade-offs
 
 ## Best Practices: AI Native Development
@@ -304,7 +300,7 @@ The **al-orchestrator** mode analyzes your request and provides:
 
 ### Getting Maximum Value
 
-1. **Start with al-orchestrator** - Routes you to right primitive
+1. **Start with al-architect** - Designs your solution architecture
 2. **Provide rich context** - More information = better guidance
 3. **Trust instruction primitives** - They work automatically
 4. **Combine primitives** - Modes recommend workflows, workflows use instructions
@@ -317,7 +313,7 @@ The **al-orchestrator** mode analyzes your request and provides:
 ```markdown
 User: "I'm new to AL. How do I start?"
 
-al-orchestrator responds:
+al-architect responds:
 "Let's get you set up for AL development. Here's your path:
 
 Phase 1: Environment Setup
@@ -330,7 +326,7 @@ Phase 2: Learn the Basics
 - Try creating a simple table extension
 
 Phase 3: First Feature
-- Use al-architect mode to plan it
+- I'll help you design it
 - Code with auto-guidelines helping
 - Use al-tester mode for tests
 
@@ -342,7 +338,7 @@ Would you like to start with Phase 1?"
 ```markdown
 User: "Build customer loyalty points system"
 
-al-orchestrator analyzes:
+al-architect analyzes:
 "Let me assess the complexity:
 
 Scope Assessment:
@@ -354,7 +350,7 @@ Scope Assessment:
 
 🚦 VALIDATION GATE:
 📊 Inferred Complexity: 🟡 MEDIUM
-Recommended Path: al-architect → al-conductor
+Recommended Path: al-architect (design) → al-conductor (TDD)
 
 Confirm classification? [Yes/Adjust]"
 
@@ -420,7 +416,7 @@ What does the CPU profile show?"
 
 ## Tips for Success
 
-1. **Use al-orchestrator when stuck** - It routes you correctly
+1. **Use al-architect for new features** - It designs your solution
 2. **Read auto-applied instruction files** - Understand the standards
 3. **Combine modes and prompts** - They work together
 4. **Provide file context** - Include relevant code
@@ -437,20 +433,20 @@ Found an issue or have a suggestion? This collection improves through use:
 ## Framework Compliance
 
 **Framework**: [AI Native-Instructions Architecture](https://danielmeppiel.github.io/awesome-ai-native/)  
-**Version**: 2.7.0  
-**Last Updated**: 2025-11-10  
+**Version**: 2.8.0  
+**Last Updated**: 2025-11-25  
 **Author**: javiarmesto  
 **Total Primitives**: 37 (9 instructions + 18 workflows + 6 agents + 4 orchestra)  
 **Status**: ✅ Fully compliant with AI Native-Instructions Architecture
 
 ### Framework Implementation
 - ✅ **Layer 1: Markdown Prompt Engineering** - Structured semantic markdown
-- ✅ **Layer 2: Agent Primitives** - 38 configurable tools (9 instructions + 18 workflows + 7 agents + 4 orchestra)
+- ✅ **Layer 2: Agent Primitives** - 37 configurable tools (9 instructions + 18 workflows + 6 agents + 4 orchestra)
 - ✅ **Layer 3: Context Engineering** - Modular `applyTo` patterns + centralized context system
 - ✅ **AGENTS.md Ready** - Prepared for universal context compilation
 - ✅ **Orchestra System** - Multi-agent TDD orchestration with context awareness
 - ✅ **Agent Context System** - Centralized documentation in `.github/plans/`
-- ✅ **Validation Passing** - All compliance checks (47 successes, 13 warnings)
+- ✅ **Validation Passing** - All compliance checks
 - ✅ **Test Validated** - Customer Loyalty Points test (24/24 validations passed)
 
 ## Related Resources

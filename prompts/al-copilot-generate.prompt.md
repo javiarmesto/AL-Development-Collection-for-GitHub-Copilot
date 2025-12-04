@@ -1,7 +1,7 @@
 ---
 agent: agent
 description: 'Create AI generation codeunit for Copilot capability in Business Central. Auto-discovers workspace settings (namespace, IDs, structure), intelligently infers configuration, asks only essential questions. Implements Azure OpenAI chat completion with system/user prompts, JSON response parsing, and comprehensive error handling.'
-tools: ['runCommands', 'runTasks', 'edit', 'runNotebooks', 'search', 'new', 'Microsoft Docs/*', 'Azure MCP/search', 'extensions', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_incremental_publish', 'ms-vscode.vscode-websearchforcopilot/websearch', 'todos', 'runTests']
+tools: ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'azure-mcp/search', 'agent', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_insert_event', 'ms-dynamics-smb.al/al_incremental_publish', 'ms-vscode.vscode-websearchforcopilot/websearch', 'todo']
 model: Claude Sonnet 4.5
 ---
 

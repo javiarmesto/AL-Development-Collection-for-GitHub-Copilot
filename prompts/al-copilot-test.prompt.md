@@ -2,7 +2,7 @@
 agent: agent
 model: Claude Sonnet 4.5
 description: 'Create comprehensive tests for Copilot features using AI Test Toolkit. Tests prompt quality, response accuracy, error handling, and user experience.'
-tools: ['edit', 'search', 'new', 'Microsoft Docs/*', 'Azure MCP/search', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_view_snapshots', 'runTests']
+tools: ['vscode/getProjectSetupInfo', 'vscode/installExtension', 'vscode/newWorkspace', 'vscode/runCommand', 'vscode/vscodeAPI', 'execute/testFailure', 'execute/runTests', 'read/problems', 'read/readFile', 'edit', 'search', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_view_snapshots']
 
 ---
 

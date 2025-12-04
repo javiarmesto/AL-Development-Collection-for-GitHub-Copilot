@@ -2,7 +2,7 @@
 agent: agent
 model: Claude Sonnet 4.5
 description: "Generate or update context.md file documenting project structure, architecture, and key patterns for AI assistants and developers"
-tools: ['edit', 'search', 'usages', 'list_dir', 'read_file', 'microsoft-docs/*', 'ms-dynamics-smb.al/al_get_package_dependencies']
+tools: ['read/readFile', 'al-symbols-mcp/al_find_references', 'al-symbols-mcp/al_get_object_summary', 'edit', 'search', 'microsoft-docs/*', 'azure-mcp/search', 'microsoft-docs/*', 'memory', 'todo']
 ---
 
 # AL Context File Generator

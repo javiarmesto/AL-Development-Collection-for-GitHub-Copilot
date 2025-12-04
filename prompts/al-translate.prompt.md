@@ -1,8 +1,8 @@
 ---
 agent: agent
-model: Claude Sonnet 4.5
+model: Claude Opus 4.5 (Preview) (copilot)
 description: 'Translate AL extensions using XLF translation files for Business Central multilingual support.'
-tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'nab-al.al-toolbox/getTextsToTranslate', 'nab-al.al-toolbox/saveTranslatedTexts', 'nab-al.al-toolbox/getTranslatedTextsMap', 'nab-al.al-toolbox/getTranslatedTextsByState', 'nab-al.al-toolbox/getTextsByKeyword', 'nab-al.al-toolbox/refreshXlf', 'nab-al.al-toolbox/createLanguageXlf', 'extensions', 'todos', 'runTests']
+tools: ['vscode', 'execute', 'read', 'al-symbols-mcp/*', 'edit', 'search', 'web', 'microsoft-docs/*', 'agent', 'memory', 'nabsolutions.nab-al-tools/refreshXlf', 'nabsolutions.nab-al-tools/getTextsToTranslate', 'nabsolutions.nab-al-tools/getTranslatedTextsMap', 'nabsolutions.nab-al-tools/getTextsByKeyword', 'nabsolutions.nab-al-tools/getTranslatedTextsByState', 'nabsolutions.nab-al-tools/saveTranslatedTexts', 'nabsolutions.nab-al-tools/createLanguageXlf', 'nabsolutions.nab-al-tools/getGlossaryTerms', 'todo']
 ---
 
 # AL Translation Workflow

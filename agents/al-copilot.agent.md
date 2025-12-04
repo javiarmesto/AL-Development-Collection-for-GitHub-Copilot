@@ -1,7 +1,7 @@
 ---
 description: '⭐ PRIMARY MODE: AL Copilot Development specialist for Business Central. Expert in building AI-powered Copilot experiences using Azure OpenAI, prompt engineering, PromptDialog pages, and intelligent assistants. START HERE for Copilot features in BC.'
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'Azure MCP/search', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_incremental_publish', 'extensions', 'todos', 'runTests']
-model: Claude Sonnet 4.5
+model: Claude Opus 4.5 (Preview) (copilot)
 ---
 
 # AL Copilot Mode - Copilot Development Specialist ⭐

@@ -1,7 +1,7 @@
 ---
 description: 'AL Conductor Agent - Orchestrates Planning → Implementation → Review → Commit cycle for AL Development. Enforces TDD and quality gates for Business Central extensions.'
-tools: ['runSubagent', 'edit', 'search', 'usages', 'problems', 'changes', 'todos', 'githubRepo', 'fetch']
-model: Claude Sonnet 4.5
+tools: ['execute', 'read/problems', 'read/readFile', 'edit', 'search', 'web', 'azure-mcp/search', 'github/search_code', 'agent', 'memory', 'todo']
+model: Claude Opus 4.5 (Preview) (copilot)
 ---
 # AL Conductor Agent - Multi-Agent TDD Orchestration for Business Central
 

@@ -1,6 +1,6 @@
 ---
 description: 'AL Developer - Tactical implementation specialist for Business Central extensions. Focuses on code execution with full access to build/edit/test tools. Implements features following specifications without architectural decisions.'
-tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'microsoft-docs/*', 'upstash/context7/*', 'github/github-mcp-server/*', 'runSubagent', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-dynamics-smb.al/*', 'al-symbols-mcp/*', 'extensions', 'todos', 'runTests']
+tools: ['vscode', 'execute', 'read', 'al-symbols-mcp/*', 'edit', 'search', 'web', 'microsoft-docs/*', 'azure-mcp/search', 'github/search_code', 'github/search_repositories', 'github/*', 'microsoft-docs/*', 'upstash/context7/*', 'agent', 'memory', 'ms-dynamics-smb.al/al_generate_permission_set_for_extension_objects', 'ms-dynamics-smb.al/al_generate_permission_set_for_extension_objects_as_xml', 'todo']
 model: Claude Sonnet 4.5
 ---
 

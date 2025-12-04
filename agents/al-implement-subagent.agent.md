@@ -1,6 +1,6 @@
 ---
 description: 'AL Implementation Subagent - TDD-focused AL development for Business Central. Executes implementation tasks following strict Test-Driven Development with AL patterns.'
-tools: ['edit', 'search', 'runCommands', 'runTasks', 'usages', 'problems', 'changes', 'testFailure', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_publish', 'ms-dynamics-smb.al/al_incremental_publish', 'ms-dynamics-smb.al/al_debug_without_publish', 'todos', 'githubRepo', 'fetch']
+tools: ['execute/getTerminalOutput', 'execute/runTask', 'execute/getTaskOutput', 'execute/createAndRunTask', 'execute/runInTerminal', 'execute/testFailure', 'read/terminalSelection', 'read/terminalLastCommand', 'read/problems', 'read/readFile', 'edit', 'search', 'web', 'azure-mcp/search', 'github/search_code', 'github/search_repositories', 'ms-dynamics-smb.al/al_build', 'ms-dynamics-smb.al/al_incremental_publish', 'ms-dynamics-smb.al/al_debug_without_publish', 'ms-dynamics-smb.al/al_publish', 'todo']
 model: Claude Sonnet 4.5
 ---
 # AL Implementation Subagent - TDD for Business Central
